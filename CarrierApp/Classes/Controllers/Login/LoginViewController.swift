@@ -59,20 +59,19 @@ class LoginViewController: BaseViewController {
 extension LoginViewController : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if textField.text?.count == 0 && string != "+"
-        {
-            textField.text = "+"
+        if textField == phoneNoTextfield {
+            if textField.text?.count == 0 && string != "+" {
+                textField.text = "+"
+            }
+            
+            if textField.text!.count > 0 {
+                nextButton.makeEnable(value: true)
+            }
+            else {
+                nextButton.makeEnable(value: false)
+            }
         }
         
-        if textField.text!.count > 0
-        {
-            nextButton.makeEnable(value: true)
-        }
-        else
-        {
-            nextButton.makeEnable(value: false)
-        }
         return true
     }
 }
