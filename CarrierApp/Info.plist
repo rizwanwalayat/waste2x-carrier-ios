@@ -26,18 +26,18 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.enmassenergy.waste2x</string>
+			<string>com.enmassenergy.Carrier</string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.1093030722260-8l62ct8ir86kddotfpduhj1ed34cdsfe</string>
-			</array>
+			<array/>
 		</dict>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>paudapay</string>
+			<string>carrier</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>paudapay</string>
+				<string>carrier</string>
 			</array>
 		</dict>
 	</array>
