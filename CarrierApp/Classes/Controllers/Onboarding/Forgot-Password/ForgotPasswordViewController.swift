@@ -9,7 +9,7 @@
 import UIKit
 //import LocalAuthentication
 
-class LoginViewController: BaseViewController {
+class ForgotPasswordViewController: BaseViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var enterYourPhoneLabel  : UILabel!
@@ -58,14 +58,14 @@ class LoginViewController: BaseViewController {
             }
         }
     }
-    @IBAction func forgotPasswordPressed(_ sender: Any) {
+    @IBAction func backToLoginPressed(_ sender: Any) {
     
-        let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
-        self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
 }
-extension LoginViewController : UITextFieldDelegate {
+extension ForgotPasswordViewController : UITextFieldDelegate {
     
    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -76,7 +76,7 @@ extension LoginViewController : UITextFieldDelegate {
             }
         }
         
-        if phoneNoTextField.text!.count > 7 && passwordTextField.text!.count > 8 {
+        if phoneNoTextField.text!.count > 7  {
             loginButton.makeEnable(value: true)
         }
         else {

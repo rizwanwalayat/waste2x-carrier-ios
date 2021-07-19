@@ -280,12 +280,43 @@ struct NetworkingConnection {
         manager?.startListening()
         return bConnected!
     }
-    
+  
     class func DictToJsonString(_ dict : [String : Any]) -> String?
     {
         guard let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: []) else {return nil}
         let decoded = String(data: jsonData, encoding: .utf8)!
         return decoded
+    }
+    
+    class func selectTextField(_ view: UIView, isSelected: Bool) {
+        
+        let selectedBodyLabelTextColor = UIColor(named: "selectedText")
+        let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
+        
+        let selectedBackground = UIColor.white
+        let unSelectedBackground = UIColor(named: "inactiveGrey")
+        
+        
+        for subView in view.subviews {
+            if let textfield = subView as? UITextField {
+                textfield.textColor = isSelected ? selectedBodyLabelTextColor :  unSelectedBodyLabelTextColor
+            }
+            
+            if let imageView = subView as? UIImageView {
+                imageView.setImageColor(color: (isSelected ? UIColor.appColor :  unSelectedBodyLabelTextColor)!)
+            }
+        }
+        
+        if isSelected{
+            view.borderWidth = 1
+            view.animateBorderColor(toColor: UIColor.appColor, duration: 0.1)
+            view.backgroundColor = selectedBackground
+        }
+        else {
+            view.animateBorderColor(toColor: UIColor.appColor, duration: 0.1)
+            view.borderWidth = 0
+            view.backgroundColor = unSelectedBackground
+        }
     }
     
 }
