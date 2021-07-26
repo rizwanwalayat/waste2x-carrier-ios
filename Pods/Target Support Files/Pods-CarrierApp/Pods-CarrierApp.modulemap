@@ -1,6 +1,0 @@
-framework module Pods_CarrierApp {
-  umbrella header "Pods-CarrierApp-umbrella.h"
-
-  export *
-  module * { export * }
-}
