@@ -7,7 +7,7 @@ enum UIColorHex: String {
 
 extension UIColor {
     static var appColor: UIColor {
-        return UIColor(red: 125/255.0, green: 157/255.0, blue: 21/255.0, alpha: 1)
+        return UIColor(red: 42/255.0, green: 125/255.0, blue: 154/255.0, alpha: 1)
     }
     convenience init(hexString:String, alpha:CGFloat = 1.0) {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
