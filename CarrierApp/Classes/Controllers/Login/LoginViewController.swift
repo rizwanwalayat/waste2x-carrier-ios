@@ -40,20 +40,30 @@ class LoginViewController: BaseViewController {
     
 
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
-        if Utility.isTextFieldHasText(textField: phoneNoTextField)
-        {
-            CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
-                
-                if error == nil {
-                    let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                    Global.shared.phoneNumber = self.phoneNoTextField.text ?? ""
-                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
-                }
-                else {
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        
+        if AppDelegate.demo {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarViewController") as UIViewController
+
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            
+        } else {
+            
+            if Utility.isTextFieldHasText(textField: phoneNoTextField)
+            {
+                CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
                     
-                    Utility.showAlertController(self, error!.localizedDescription)
-                    
+                    if error == nil {
+                        let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
+                        Global.shared.phoneNumber = self.phoneNoTextField.text ?? ""
+                        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                    }
+                    else {
+                        
+                        Utility.showAlertController(self, error!.localizedDescription)
+                        
+                    }
                 }
             }
         }

@@ -82,6 +82,7 @@
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
+		96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96893BAC26AE953E00C4E0FD /* Main.storyboard */; };
 		96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174326A01FC4007FCD9C /* ContainerViewController.xib */; };
 		96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174426A01FC5007FCD9C /* ContainerViewController.swift */; };
 		96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */; };
@@ -178,6 +179,7 @@
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
+		96893BAC26AE953E00C4E0FD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		96DE174326A01FC4007FCD9C /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		96DE174426A01FC5007FCD9C /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				048C09E6265E2265003E301F /* ImagePickerVC.swift */,
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
 				047E83D2268338DC006A0F18 /* LocationPicker */,
+				96893BAC26AE953E00C4E0FD /* Main.storyboard */,
 			);
 			path = CommonClasses;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
+				96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,

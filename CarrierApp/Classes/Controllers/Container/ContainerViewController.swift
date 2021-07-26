@@ -25,7 +25,8 @@ class ContainerViewController: BaseViewController {
     @IBOutlet weak var tabbarHiddenView: UIView!
     
     var nav = BaseNavigationViewController()
-
+    
+    let tabBar = UITabBarController()
     
     //MARK: - Variables
     override func viewDidLoad() {
