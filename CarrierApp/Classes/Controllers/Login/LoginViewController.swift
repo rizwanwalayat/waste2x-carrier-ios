@@ -14,8 +14,9 @@ class LoginViewController: BaseViewController {
     //MARK:- IBOutlets
     @IBOutlet weak var enterYourPhoneLabel  : UILabel!
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
-    @IBOutlet weak var phoneNoTextfield     : UITextField!
-    @IBOutlet weak var nextButton           : UIButton!
+    @IBOutlet weak var phoneNoTextField     : UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton           : UIButton!
     
     //MARK:- Variables
    
@@ -31,82 +32,72 @@ class LoginViewController: BaseViewController {
     
     //MARK: - SetupView
     func setupView() {
-        nextButton.makeEnable(value: false)
+        loginButton.makeEnable(value: false)
     }
     
     
     //MARK: - IBActions
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
-        if Utility.isTextFieldHasText(textField: phoneNoTextfield)
-        {
-            CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status,message in
-                
-                if error == nil {
-                    let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                    Global.shared.phoneNumber = self.phoneNoTextfield.text ?? ""
-                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
-                }
-                else {
+
+    
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        
+        if AppDelegate.demo {
+            Utility.setupHomeAsRootViewController()
+            
+        } else {
+            
+            if Utility.isTextFieldHasText(textField: phoneNoTextField)
+            {
+                CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
                     
-                    Utility.showAlertController(self, error!.localizedDescription)
-                    
+                    if error == nil {
+                        
+                    }
+                    else {
+                        
+                        Utility.showAlertController(self, error!.localizedDescription)
+                        
+                    }
                 }
             }
         }
     }
+    @IBAction func forgotPasswordPressed(_ sender: Any) {
+    
+        let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
+        self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
+    
+}
 extension LoginViewController : UITextFieldDelegate {
     
-    
+   
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == phoneNoTextfield {
+
+        if textField == phoneNoTextField {
             if textField.text?.count == 0 && string != "+" {
                 textField.text = "+"
             }
-            
-            if textField.text!.count > 0 {
-                nextButton.makeEnable(value: true)
-            }
-            else {
-                nextButton.makeEnable(value: false)
-            }
+        }
+        
+        if phoneNoTextField.text!.count > 11 {
+            loginButton.makeEnable(value: true)
+        }
+        else {
+            loginButton.makeEnable(value: false)
         }
         
         return true
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        Utility.selectTextField(textField.superview!, isSelected: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.isEmpty {
+            Utility.selectTextField(textField.superview!, isSelected: false)
+        }
+    }
 }
-
-
-
-
-//enum BiometricType {
-//    case none
-//    case touchID
-//    case faceID
-//}
-//
-//var biometricType: BiometricType {
-//    get {
-//        let context = LAContext()
-//        var error: NSError?
-//
-//        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-//            print(error?.localizedDescription ?? "")
-//            return .none
-//        }
-//
-//        if #available(iOS 11.0, *) {
-//            switch context.biometryType {
-//            case .none:
-//                return .none
-//            case .touchID:
-//                return .touchID
-//            case .faceID:
-//                return .faceID
-//            }
-//        } else {
-//            return  .touchID
-//        }
-//    }
-//}

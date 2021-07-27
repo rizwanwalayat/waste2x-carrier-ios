@@ -22,6 +22,7 @@ let gcmMessageIDKey = "gcm.message_id"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    static var demo: Bool = true
 //    var weaterCalldelegate:WeatherCallDelegate?
     var locationManager = CLLocationManager()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

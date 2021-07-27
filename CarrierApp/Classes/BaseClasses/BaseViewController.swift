@@ -98,4 +98,17 @@ class BaseViewController: UIViewController {
         nameAttrString.append(activityAttrString)
         return nameAttrString
     }
+    
+    @IBAction func backPressed(_ sender: UIButton){
+        if let navigationController = self.navigationController {
+            navigationController.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func menuPressed(_ sender: UIButton)
+    {
+        
+    }
 }

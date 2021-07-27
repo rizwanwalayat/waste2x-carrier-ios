@@ -14,6 +14,12 @@ extension UITextField {
         set { self.font = UIFont(name: newValue, size: (self.font?.pointSize)!) }
     }
     
+    var isEmpty: Bool {
+        if let text = self.text, !text.isEmpty {
+            return false
+        }
+        return true
+    }
     public enum Direction {
         case Left
         case Right
@@ -49,4 +55,6 @@ extension UITextField {
         self.leftView = paddingView
         self.leftViewMode = .always
     }
+    
+    
 }

@@ -10,18 +10,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Inter-Medium.ttf">
-            <string>Inter-Medium</string>
-        </array>
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
-                <outlet property="nextButton" destination="Ls1-Bi-pNd" id="GEf-o6-asd"/>
-                <outlet property="phoneNoTextfield" destination="jft-uV-ElE" id="EWh-k5-Ori"/>
+                <outlet property="loginButton" destination="Ls1-Bi-pNd" id="GEf-o6-asd"/>
+                <outlet property="passwordTextField" destination="kvs-TZ-TcJ" id="woH-ym-elx"/>
+                <outlet property="phoneNoTextField" destination="jft-uV-ElE" id="EWh-k5-Ori"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,7 +38,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylz-tM-Ye9" userLabel="Center View">
-                                    <rect key="frame" x="0.0" y="95" width="414" height="628"/>
+                                    <rect key="frame" x="0.0" y="96.5" width="414" height="625"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Carriers Logo" translatesAutoresizingMaskIntoConstraints="NO" id="78F-bG-JaX">
                                             <rect key="frame" x="117.5" y="20" width="179" height="200"/>
@@ -58,14 +59,19 @@
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jft-uV-ElE">
                                                             <rect key="frame" x="48" y="14" width="316" height="30"/>
                                                             <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                                    <color key="value" name="inactiveGrey"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="delegate" destination="-1" id="J0y-rv-OyJ"/>
                                                             </connections>
                                                         </textField>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.94876259569999999" green="0.95272165539999998" blue="0.96919578309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="bgColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="jft-uV-ElE" secondAttribute="bottom" constant="14" id="2Tr-gI-y5T"/>
                                                         <constraint firstItem="cf8-Ou-EdP" firstAttribute="leading" secondItem="qEo-I0-gDL" secondAttribute="leading" constant="18" id="4VP-Tn-npm"/>
@@ -97,14 +103,19 @@
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvs-TZ-TcJ">
                                                             <rect key="frame" x="48" y="14" width="316" height="30"/>
                                                             <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                                    <color key="value" name="inactiveGrey"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="delegate" destination="-1" id="iyz-9x-rDb"/>
                                                             </connections>
                                                         </textField>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.94876259569999999" green="0.95272165539999998" blue="0.96919578309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="bgColor"/>
                                                     <constraints>
                                                         <constraint firstItem="kvs-TZ-TcJ" firstAttribute="leading" secondItem="YNY-x0-eRw" secondAttribute="trailing" constant="10" id="9cO-3S-tv6"/>
                                                         <constraint firstItem="YNY-x0-eRw" firstAttribute="leading" secondItem="5ME-Bl-LI4" secondAttribute="leading" constant="18" id="F3K-he-cxI"/>
@@ -131,6 +142,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="64" id="9Nj-yR-6b3"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                             <state key="normal" title="Login"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -138,15 +150,18 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="a0e-1b-yw8"/>
+                                                <action selector="loginBtnPressed:" destination="-1" eventType="touchUpInside" id="a0e-1b-yw8"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-Sj-WAg">
-                                            <rect key="frame" x="144.5" y="576" width="125" height="32"/>
+                                            <rect key="frame" x="149.5" y="576" width="115" height="29"/>
                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                             <state key="normal" title="Forgot Password?">
                                                 <color key="titleColor" name="themeColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="forgotPasswordPressed:" destination="-1" eventType="touchUpInside" id="VSb-Rz-diH"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -201,6 +216,12 @@
         <image name="Carriers Logo" width="179" height="200"/>
         <image name="Phone-inactive" width="16" height="16"/>
         <image name="lock-inactive" width="14" height="16"/>
+        <namedColor name="bgColor">
+            <color red="0.94900000095367432" green="0.95300000905990601" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="inactiveGrey">
+            <color red="0.63137254901960782" green="0.64313725490196072" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="themeColor">
             <color red="0.16500000655651093" green="0.49000000953674316" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
