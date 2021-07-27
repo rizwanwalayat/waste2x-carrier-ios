@@ -26,21 +26,20 @@
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
 		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
-		0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */; };
-		0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */; };
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
 		0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C5265BC9EC007C51EE /* UINavigationController.swift */; };
-		0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */; };
-		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
 		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
 		047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */; };
 		047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */; };
 		047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */; };
 		047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047E83D7268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
-		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
 		04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */; };
+		04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB591B26AED6A500C88804 /* QuotationListViewController.swift */; };
+		04DB591E26AED6A500C88804 /* QuotationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB591C26AED6A500C88804 /* QuotationListViewController.xib */; };
+		04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */; };
+		04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */; };
 		181025282657E36500DEBF7D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025252657E36500DEBF7D /* Global.swift */; };
 		181025292657E36500DEBF7D /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025262657E36500DEBF7D /* GCD.swift */; };
 		1810252A2657E36500DEBF7D /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025272657E36500DEBF7D /* Extentions.swift */; };
@@ -118,13 +117,8 @@
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
-		0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVerificationViewController.swift; sourceTree = "<group>"; };
-		0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCodeVerificationViewController.xib; sourceTree = "<group>"; };
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		0428F1C5265BC9EC007C51EE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
-		0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputEmailViewController.swift; sourceTree = "<group>"; };
-		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
 		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
 		047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPickerViewController.xib; sourceTree = "<group>"; };
 		047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +127,10 @@
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNoDataModel.swift; sourceTree = "<group>"; };
+		04DB591B26AED6A500C88804 /* QuotationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationListViewController.swift; sourceTree = "<group>"; };
+		04DB591C26AED6A500C88804 /* QuotationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationListViewController.xib; sourceTree = "<group>"; };
+		04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsTableViewCell.swift; sourceTree = "<group>"; };
+		04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationsTableViewCell.xib; sourceTree = "<group>"; };
 		181025252657E36500DEBF7D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		181025262657E36500DEBF7D /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		181025272657E36500DEBF7D /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -248,6 +246,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04DB591A26AED61700C88804 /* Quotations */,
 				96DE175026A02072007FCD9C /* Tabs */,
 				96DE174226A01F73007FCD9C /* Container */,
 				96DE174126A01F55007FCD9C /* SideMenu */,
@@ -268,8 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				96893B9F26A5EFE500C4E0FD /* Forgot-Password */,
-				0428F1CA265BEC76007C51EE /* Login-InputEmail */,
-				0428F1BC265B8019007C51EE /* Login-CodeVerification */,
 				18397DC82660FD35003DE30C /* Login */,
 			);
 			path = Onboarding;
@@ -349,33 +346,6 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
-		0428F1BC265B8019007C51EE /* Login-CodeVerification */ = {
-			isa = PBXGroup;
-			children = (
-				0428F1C9265BD9B5007C51EE /* ViewModel */,
-				0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */,
-				0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */,
-			);
-			path = "Login-CodeVerification";
-			sourceTree = "<group>";
-		};
-		0428F1C9265BD9B5007C51EE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0428F1CA265BEC76007C51EE /* Login-InputEmail */ = {
-			isa = PBXGroup;
-			children = (
-				0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */,
-				0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */,
-			);
-			path = "Login-InputEmail";
-			sourceTree = "<group>";
-		};
 		047E83D2268338DC006A0F18 /* LocationPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +374,25 @@
 				96893BAC26AE953E00C4E0FD /* Main.storyboard */,
 			);
 			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		04DB591A26AED61700C88804 /* Quotations */ = {
+			isa = PBXGroup;
+			children = (
+				04DB591B26AED6A500C88804 /* QuotationListViewController.swift */,
+				04DB591C26AED6A500C88804 /* QuotationListViewController.xib */,
+				04DB591F26AEE8DE00C88804 /* Cells */,
+			);
+			path = Quotations;
+			sourceTree = "<group>";
+		};
+		04DB591F26AEE8DE00C88804 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */,
+				04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		183262722670A38F00F0CCBA /* Login */ = {
@@ -620,7 +609,6 @@
 				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
-				0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
@@ -632,13 +620,14 @@
 				0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */,
 				18397E242660FF54003DE30C /* Poppins-Black.ttf in Resources */,
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
+				04DB591E26AED6A500C88804 /* QuotationListViewController.xib in Resources */,
 				18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
-				0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */,
 				96DE175426A020C4007FCD9C /* HomeViewController.xib in Resources */,
 				96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
+				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
 				96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
@@ -754,13 +743,13 @@
 				047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
-				0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */,
 				18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */,
 				18A579C2269321A60067952F /* ApiResponseHandler.swift in Sources */,
 				96DE175326A020C4007FCD9C /* HomeViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
+				04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
@@ -770,7 +759,6 @@
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				18A579BB269320230067952F /* Constants.swift in Sources */,
-				048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
@@ -782,12 +770,12 @@
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
+				04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
 				047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
-				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

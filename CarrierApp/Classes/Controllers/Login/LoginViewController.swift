@@ -86,7 +86,7 @@ extension LoginViewController : UITextFieldDelegate {
             }
         }
         
-        if phoneNoTextField.text!.count > 7 && passwordTextField.text!.count > 8 {
+        if phoneNoTextField.text!.count > 11 {
             loginButton.makeEnable(value: true)
         }
         else {
