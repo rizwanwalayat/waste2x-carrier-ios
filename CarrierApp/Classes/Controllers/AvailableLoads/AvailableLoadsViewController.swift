@@ -13,13 +13,8 @@ class AvailableLoadsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
-//        var imageView = UIImageView(frame: view.frame)
-//        imageView.image = UIImage(named: "NavBar Header")
-//        imageView.contentMode = .scaleAspectFill
-//        view.insertSubview(imageView, at: 0)
-//        self.view.addSubview(view)
-        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBar Header"), for: UIBarMetrics.default)
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,15 +24,12 @@ class AvailableLoadsViewController: BaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func applyFilter(_ sender: Any) {
+        let vc = AvailableLoadsListViewController(nibName: "AvailableLoadsListViewController", bundle: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc , animated: true)
     }
-    */
-
+    
 }
 
