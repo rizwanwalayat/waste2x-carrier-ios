@@ -45,6 +45,10 @@ class QuotationsTableViewCell: UITableViewCell {
     
     func configCell(_ status: QuotationsStatusess)
     {
+        
+        quotationLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
+        postLabel.setAttributedTextInLable("Post", "525A64", 10, " #2", "1C2439", 14)
+        
         switch status {
         case .accepted:
             

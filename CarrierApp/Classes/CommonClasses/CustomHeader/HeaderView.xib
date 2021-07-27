@@ -8,19 +8,103 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="CarrierApp" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="GBb-E4-qc4" id="b6f-JL-GSL"/>
+                <outlet property="menuButton" destination="G0a-19-0z1" id="DRT-yJ-XcJ"/>
+                <outlet property="titleLable" destination="RBS-xY-Y9I" id="1iz-jw-bh3"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="559" height="233"/>
+            <rect key="frame" x="0.0" y="0.0" width="559" height="136"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldb-Qw-rps">
+                    <rect key="frame" x="0.0" y="0.0" width="559" height="136"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="Zsi-F1-ouP">
+                            <rect key="frame" x="0.0" y="0.0" width="559" height="136"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q14-ha-FGt">
+                            <rect key="frame" x="0.0" y="44" width="559" height="92"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0a-19-0z1">
+                                    <rect key="frame" x="30" y="34" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="dRb-66-vcS"/>
+                                        <constraint firstAttribute="width" secondItem="G0a-19-0z1" secondAttribute="height" multiplier="1:1" id="kru-uD-xIy"/>
+                                    </constraints>
+                                    <state key="normal" image="Sidemenu"/>
+                                    <connections>
+                                        <action selector="menuPressed:" destination="-1" eventType="touchUpInside" id="IRu-r8-436"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBb-E4-qc4">
+                                    <rect key="frame" x="30" y="34" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="9tF-8F-4DH"/>
+                                        <constraint firstAttribute="width" secondItem="GBb-E4-qc4" secondAttribute="height" multiplier="1:1" id="prt-rd-eth"/>
+                                    </constraints>
+                                    <state key="normal" image="Back"/>
+                                    <connections>
+                                        <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="E3v-uf-oaV"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quotations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBS-xY-Y9I">
+                                    <rect key="frame" x="228.5" y="20" width="102" height="52"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="RBS-xY-Y9I" firstAttribute="top" secondItem="Q14-ha-FGt" secondAttribute="top" constant="20" id="7eD-ex-PDH"/>
+                                <constraint firstAttribute="bottom" secondItem="RBS-xY-Y9I" secondAttribute="bottom" constant="20" id="Jze-wT-7Zm"/>
+                                <constraint firstItem="GBb-E4-qc4" firstAttribute="leading" secondItem="Q14-ha-FGt" secondAttribute="leading" constant="30" id="fde-LO-KvF"/>
+                                <constraint firstItem="G0a-19-0z1" firstAttribute="leading" secondItem="Q14-ha-FGt" secondAttribute="leading" constant="30" id="hah-qK-N8L"/>
+                                <constraint firstItem="RBS-xY-Y9I" firstAttribute="centerX" secondItem="Q14-ha-FGt" secondAttribute="centerX" id="liR-As-8T2"/>
+                                <constraint firstItem="G0a-19-0z1" firstAttribute="centerY" secondItem="RBS-xY-Y9I" secondAttribute="centerY" id="mdS-KK-C7i"/>
+                                <constraint firstItem="GBb-E4-qc4" firstAttribute="centerY" secondItem="Q14-ha-FGt" secondAttribute="centerY" id="wIO-Xo-kvo"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Zsi-F1-ouP" firstAttribute="top" secondItem="Ldb-Qw-rps" secondAttribute="top" id="53p-3a-Z0P"/>
+                        <constraint firstAttribute="trailing" secondItem="Zsi-F1-ouP" secondAttribute="trailing" id="64U-PY-rMU"/>
+                        <constraint firstAttribute="trailing" secondItem="Q14-ha-FGt" secondAttribute="trailing" id="Ybw-qe-eUf"/>
+                        <constraint firstAttribute="bottom" secondItem="Q14-ha-FGt" secondAttribute="bottom" id="ism-P4-CVe"/>
+                        <constraint firstItem="Q14-ha-FGt" firstAttribute="leading" secondItem="Ldb-Qw-rps" secondAttribute="leading" id="jtW-PA-5YY"/>
+                        <constraint firstItem="Zsi-F1-ouP" firstAttribute="leading" secondItem="Ldb-Qw-rps" secondAttribute="leading" id="yIe-bm-Flp"/>
+                        <constraint firstAttribute="bottom" secondItem="Zsi-F1-ouP" secondAttribute="bottom" id="z6P-8S-ne1"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="p8a-yP-7JQ"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ldb-Qw-rps" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0yX-pl-HMJ"/>
+                <constraint firstAttribute="bottom" secondItem="Ldb-Qw-rps" secondAttribute="bottom" id="204-h1-MSf"/>
+                <constraint firstItem="p8a-yP-7JQ" firstAttribute="trailing" secondItem="Ldb-Qw-rps" secondAttribute="trailing" id="4XX-NT-adf"/>
+                <constraint firstItem="Q14-ha-FGt" firstAttribute="top" secondItem="p8a-yP-7JQ" secondAttribute="top" id="FLx-cX-MnO"/>
+                <constraint firstItem="Ldb-Qw-rps" firstAttribute="leading" secondItem="p8a-yP-7JQ" secondAttribute="leading" id="mCK-4q-tsP"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="168.84057971014494" y="-142.29910714285714"/>
+            <point key="canvasLocation" x="168.84057971014494" y="-174.77678571428569"/>
         </view>
     </objects>
     <resources>
+        <image name="Back" width="9" height="15"/>
+        <image name="NavBar Header" width="375" height="142"/>
+        <image name="Sidemenu" width="27" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
