@@ -46,10 +46,11 @@ struct NetworkingConnection {
     }
     
     class func setupHomeAsRootViewController () {
-//        let slideMenuController = SlideMenuController(mainViewController: HomeViewController(), leftMenuViewController: SideMenuViewController())
-//        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-//        kApplicationWindow?.rootViewController = slideMenuController
-//        kApplicationWindow?.makeKeyAndVisible()
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabbarController") as! UITabBarController
+        UIApplication.shared.windows.first?.rootViewController = viewController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 
     class func autoLogin() {

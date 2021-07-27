@@ -43,10 +43,7 @@ class LoginViewController: BaseViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         
         if AppDelegate.demo {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarViewController") as UIViewController
-
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+            Utility.setupHomeAsRootViewController()
             
         } else {
             
@@ -55,9 +52,7 @@ class LoginViewController: BaseViewController {
                 CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
                     
                     if error == nil {
-                        let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                        Global.shared.phoneNumber = self.phoneNoTextField.text ?? ""
-                        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                        
                     }
                     else {
                         
@@ -106,37 +101,3 @@ extension LoginViewController : UITextFieldDelegate {
         }
     }
 }
-
-
-
-
-//enum BiometricType {
-//    case none
-//    case touchID
-//    case faceID
-//}
-//
-//var biometricType: BiometricType {
-//    get {
-//        let context = LAContext()
-//        var error: NSError?
-//
-//        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-//            print(error?.localizedDescription ?? "")
-//            return .none
-//        }
-//
-//        if #available(iOS 11.0, *) {
-//            switch context.biometryType {
-//            case .none:
-//                return .none
-//            case .touchID:
-//                return .touchID
-//            case .faceID:
-//                return .faceID
-//            }
-//        } else {
-//            return  .touchID
-//        }
-//    }
-//}

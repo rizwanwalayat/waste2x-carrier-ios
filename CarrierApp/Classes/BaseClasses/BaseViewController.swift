@@ -106,4 +106,9 @@ class BaseViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    @IBAction func menuPressed(_ sender: UIButton)
+    {
+        
+    }
 }

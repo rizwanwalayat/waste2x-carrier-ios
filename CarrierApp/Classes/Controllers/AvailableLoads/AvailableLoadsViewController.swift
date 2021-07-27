@@ -20,8 +20,12 @@ class AvailableLoadsViewController: BaseViewController {
 //        view.insertSubview(imageView, at: 0)
 //        self.view.addSubview(view)
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBar Header"), for: UIBarMetrics.default)
-
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
 

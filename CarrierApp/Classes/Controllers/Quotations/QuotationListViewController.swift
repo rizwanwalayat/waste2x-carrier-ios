@@ -8,22 +8,64 @@
 
 import UIKit
 
-class QuotationListViewController: UIViewController {
+class QuotationListViewController: BaseViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var tableview : UITableView!
+    @IBOutlet weak var mainHolderView : UIView!
+    
+    
+    // MARK: - Controller's LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mainHolderView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
+        
+        tableviewHandlings()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+
+        self.navigationController?.navigationBar.isHidden = true
+        mainHolderView.layer.cornerRadius = 36
+        mainHolderView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+    }
+    
+    func tableviewHandlings()
+    {
+        tableview.register(UINib(nibName: "QuotationsTableViewCell", bundle: nil), forCellReuseIdentifier: "QuotationsTableViewCell")
+        tableview.rowHeight = UITableView.automaticDimension
+        tableview.estimatedRowHeight = UITableView.automaticDimension
     }
 
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension QuotationListViewController : UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableview.dequeueReusableCell(withIdentifier: "QuotationsTableViewCell", for: indexPath) as! QuotationsTableViewCell
+        
+        if indexPath.row == 1
+        {
+            cell.configCell(.accepted)
+        }
+        else
+        {
+            cell.configCell(.rejected)
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
 }

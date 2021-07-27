@@ -46,9 +46,7 @@ class ForgotPasswordViewController: BaseViewController {
             CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
                 
                 if error == nil {
-                    let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                    Global.shared.phoneNumber = self.phoneNoTextField.text ?? ""
-                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                    
                 }
                 else {
                     
