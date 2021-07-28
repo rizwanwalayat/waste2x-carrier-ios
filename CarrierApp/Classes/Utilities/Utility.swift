@@ -295,7 +295,7 @@ struct NetworkingConnection {
         let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
         
         let selectedBackground = UIColor.white
-        let unSelectedBackground = UIColor(named: "inactiveGrey")
+        let unSelectedBackground = UIColor(named: "bgColor")
         
         
         for subView in view.subviews {

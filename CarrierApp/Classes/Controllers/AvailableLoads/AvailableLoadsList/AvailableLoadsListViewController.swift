@@ -41,5 +41,9 @@ extension AvailableLoadsListViewController: UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = AvailableLoadsDetailViewController(nibName: "AvailableLoadsDetailViewController", bundle: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
     
 }
