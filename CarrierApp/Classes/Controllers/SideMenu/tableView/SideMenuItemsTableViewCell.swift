@@ -13,11 +13,9 @@ class SideMenuItemsTableViewCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectionView: UIView!
+    @IBOutlet weak var sepratorView: UIView!
     
     
-    //MARK: - Variables
-    var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar")]
-    var text = ["Payments","Schedule Pickup"]
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,9 +25,15 @@ class SideMenuItemsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func config(index:Int) {
-        self.imgView.image = img[index]
-        self.nameLabel.text = text[index]
+    func config(_ title : String, _ image : UIImage) {
+        
+        nameLabel.text = title
+        imgView.image = image
+        self.sepratorView.isHidden = true
+        if title == "My Contracts"
+        {
+            self.sepratorView.isHidden = false
+        }
     }
     
 }

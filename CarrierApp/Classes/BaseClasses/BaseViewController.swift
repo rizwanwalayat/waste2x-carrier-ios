@@ -14,6 +14,8 @@ class BaseViewController: UIViewController {
     var tabbarViewHeight : CGFloat = 0.0
     var userData : RegistrationResult?
     let refreshControl = UIRefreshControl()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,6 +111,8 @@ class BaseViewController: UIViewController {
     
     @IBAction func menuPressed(_ sender: UIButton)
     {
-        
+        let sideMenuVC                      = SideMenuViewController(nibName: "SideMenuViewController", bundle: nil)
+        sideMenuVC.modalPresentationStyle   = .overFullScreen
+        self.present(sideMenuVC, animated: false, completion: nil)
     }
 }

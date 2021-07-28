@@ -29,7 +29,6 @@ class QuotationListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
 
-        self.navigationController?.navigationBar.isHidden = true
         mainHolderView.layer.cornerRadius = 36
         mainHolderView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
     }
