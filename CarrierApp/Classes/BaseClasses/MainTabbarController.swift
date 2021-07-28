@@ -14,6 +14,7 @@ class MainTabbarController: UITabBarController, UITabBarControllerDelegate {
     var isThirdTapSelected = false
     
     var arrayOfImageNameForSelectedState = ["Unselected Quotation Icon", "Unselected Dispatches Icon", "Unselected Available Load", "Unselected Receivable Icon", "Unselected Contract Icon"]
+    
     var arrayOfImageNameForUnselectedState = ["Unselected Quotation Icon", "Unselected Dispatches Icon", "Unselected Available Load", "Unselected Receivable Icon", "Unselected Contract Icon"]
     
     override func viewDidLoad() {
@@ -41,7 +42,6 @@ class MainTabbarController: UITabBarController, UITabBarControllerDelegate {
     
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("Selected item")
         tabbarSelectedItem = item.tag
         
     }

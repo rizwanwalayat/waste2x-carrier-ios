@@ -1,7 +1,7 @@
 import UIKit
 
 enum UIColorHex: String {
-    case appColorCode = "#7D9D15"
+    case appColorCode = "#2A7D9A"
     case controllerBgColor = "F4F7F4"
 }
 

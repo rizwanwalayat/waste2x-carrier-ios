@@ -115,6 +115,9 @@
                                     <constraint firstItem="oX6-z3-6As" firstAttribute="leading" secondItem="Jsy-2Y-507" secondAttribute="leading" id="pCh-3i-K9t"/>
                                     <constraint firstItem="Wr0-v8-Jl7" firstAttribute="leading" secondItem="Jsy-2Y-507" secondAttribute="leading" id="vSA-QS-aaW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isMenuShow" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEp-yn-UMK">
                                 <rect key="frame" x="0.0" y="145.5" width="414" height="667.5"/>

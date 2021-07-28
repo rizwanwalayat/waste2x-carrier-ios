@@ -55,6 +55,20 @@ extension UILabel {
         self.attributedText = answerAttributed
     }
     
+    func setAttributedTextInLable(_ text1:String, _ text1ColorStr : String, _ text1Size : Int, _ text2 :String, _ text2ColorStr : String, _ text2Size: Int)
+    {
+        let firstTitle       = UIFont(name: "Poppins", size: CGFloat(text1Size)) ?? UIFont.systemFont(ofSize: CGFloat(text1Size))
+        let activityAttribute   = [ NSAttributedString.Key.font: firstTitle, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: text1ColorStr)]
+        let nameAttrString      = NSMutableAttributedString(string: text1, attributes: activityAttribute)
+        
+        let secondTitle            = UIFont(name: "Poppins-Medium", size: CGFloat(text2Size)) ?? UIFont.systemFont(ofSize: CGFloat(text2Size))
+        let nameAttribute       = [ NSAttributedString.Key.font: secondTitle, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: text2ColorStr)]
+        let activityAttrString  = NSAttributedString(string: text2, attributes: nameAttribute)
+        
+        nameAttrString.append(activityAttrString)
+        self.attributedText = nameAttrString
+    }
+    
     var vissibleTextLength: Int {
         let font: UIFont = self.font
         let mode: NSLineBreakMode = self.lineBreakMode

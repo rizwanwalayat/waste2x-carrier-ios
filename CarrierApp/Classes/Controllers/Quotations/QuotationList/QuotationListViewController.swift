@@ -68,4 +68,8 @@ extension QuotationListViewController : UITableViewDelegate, UITableViewDataSour
         UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = QuotationDetailViewController(nibName: "QuotationDetailViewController", bundle: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }

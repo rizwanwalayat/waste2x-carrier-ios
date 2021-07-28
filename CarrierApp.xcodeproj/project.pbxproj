@@ -33,9 +33,13 @@
 		047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */; };
 		047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */; };
 		047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047E83D7268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib */; };
+		0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480667C26B012E400DF4B1E /* HeaderView.swift */; };
+		0480668226B0306700DF4B1E /* QuotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480668026B0306700DF4B1E /* QuotationDetailViewController.swift */; };
+		0480668326B0306700DF4B1E /* QuotationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0480668126B0306700DF4B1E /* QuotationDetailViewController.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		049C052426B0022200A81023 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C052326B0022200A81023 /* MainTabbarController.swift */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
+		04D4FB5526B00C8400F8C9F6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D4FB5426B00C8400F8C9F6 /* HeaderView.xib */; };
 		04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */; };
 		04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB591B26AED6A500C88804 /* QuotationListViewController.swift */; };
 		04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */; };
@@ -129,9 +133,13 @@
 		047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLocationAutoCompleteTableViewCell.swift; sourceTree = "<group>"; };
 		047E83D7268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleLocationAutoCompleteTableViewCell.xib; sourceTree = "<group>"; };
+		0480667C26B012E400DF4B1E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		0480668026B0306700DF4B1E /* QuotationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationDetailViewController.swift; sourceTree = "<group>"; };
+		0480668126B0306700DF4B1E /* QuotationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationDetailViewController.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		049C052326B0022200A81023 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		04D4FB5426B00C8400F8C9F6 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNoDataModel.swift; sourceTree = "<group>"; };
 		04DB591B26AED6A500C88804 /* QuotationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationListViewController.swift; sourceTree = "<group>"; };
 		04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -376,21 +384,49 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		0480667E26B0303600DF4B1E /* QuotationList */ = {
+			isa = PBXGroup;
+			children = (
+				04DB591B26AED6A500C88804 /* QuotationListViewController.swift */,
+				04DB591F26AEE8DE00C88804 /* Cells */,
+			);
+			path = QuotationList;
+			sourceTree = "<group>";
+		};
+		0480667F26B0304900DF4B1E /* QuotationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0480668026B0306700DF4B1E /* QuotationDetailViewController.swift */,
+				0480668126B0306700DF4B1E /* QuotationDetailViewController.xib */,
+			);
+			path = QuotationDetail;
+			sourceTree = "<group>";
+		};
 		048C09E5265E223E003E301F /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
 				048C09E6265E2265003E301F /* ImagePickerVC.swift */,
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
+				04D4FB5326B00C3C00F8C9F6 /* CustomHeader */,
 				047E83D2268338DC006A0F18 /* LocationPicker */,
 			);
 			path = CommonClasses;
 			sourceTree = "<group>";
 		};
+		04D4FB5326B00C3C00F8C9F6 /* CustomHeader */ = {
+			isa = PBXGroup;
+			children = (
+				04D4FB5426B00C8400F8C9F6 /* HeaderView.xib */,
+				0480667C26B012E400DF4B1E /* HeaderView.swift */,
+			);
+			path = CustomHeader;
+			sourceTree = "<group>";
+		};
 		04DB591A26AED61700C88804 /* Quotations */ = {
 			isa = PBXGroup;
 			children = (
-				04DB591B26AED6A500C88804 /* QuotationListViewController.swift */,
-				04DB591F26AEE8DE00C88804 /* Cells */,
+				0480667F26B0304900DF4B1E /* QuotationDetail */,
+				0480667E26B0303600DF4B1E /* QuotationList */,
 			);
 			path = Quotations;
 			sourceTree = "<group>";
@@ -635,7 +671,9 @@
 				96DE175826A023D6007FCD9C /* ProfileViewController.xib in Resources */,
 				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
 				9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */,
+				0480668326B0306700DF4B1E /* QuotationDetailViewController.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
+				04D4FB5526B00C8400F8C9F6 /* HeaderView.xib in Resources */,
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
@@ -759,6 +797,7 @@
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
+				0480668226B0306700DF4B1E /* QuotationDetailViewController.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
@@ -809,6 +848,7 @@
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */,
+				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
