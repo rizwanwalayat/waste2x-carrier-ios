@@ -55,6 +55,25 @@ class QuotationDetailViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func acceptButtonPressed(_ sender: Any) {
+        
+        let actionVc = QuotationActionViewController(nibName: "QuotationActionViewController", bundle: nil)
+        actionVc.modalPresentationStyle = .overFullScreen
+        actionVc.delegate = self
+        self.present(actionVc, animated: false, completion: nil)
     }
+    
+}
+
+
+extension QuotationDetailViewController: QuotationActionViewControllerDelegate
+{
+    func quotationAccepted() {
+        print("accepted")
+    }
+    
+    func quotationRejected() {
+        print("rejected")
+    }
+    
     
 }

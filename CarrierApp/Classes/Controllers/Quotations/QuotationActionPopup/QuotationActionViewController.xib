@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuotationActionViewController" customModule="CarrierApp" customModuleProvider="target">
+            <connections>
+                <outlet property="acceptButton" destination="Spg-xX-hsG" id="b7i-n9-ET5"/>
+                <outlet property="holderViews" destination="bfN-8k-w0Z" id="MFr-2n-AsW"/>
+                <outlet property="rejectButton" destination="Hce-5Y-DHh" id="jrL-VH-86a"/>
+                <outlet property="titleLabel" destination="IS0-3R-ihG" id="PZd-7A-5o7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lD-3K-QSx">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <connections>
+                        <action selector="backgroundButton:" destination="-1" eventType="touchUpInside" id="eeW-pN-oOs"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfN-8k-w0Z">
+                    <rect key="frame" x="32.5" y="323.5" width="349" height="249"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to accept this revised quotation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS0-3R-ihG">
+                            <rect key="frame" x="25" y="25" width="299" height="42"/>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                            <color key="textColor" red="0.10980392156862745" green="0.14117647058823529" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spg-xX-hsG">
+                            <rect key="frame" x="25" y="91" width="299" height="52"/>
+                            <color key="backgroundColor" name="themeColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="ge8-XM-DOo"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                            <state key="normal" title="Accept">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="acceptPressed:" destination="-1" eventType="touchUpInside" id="TKQ-lq-ay5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hce-5Y-DHh">
+                            <rect key="frame" x="25" y="159" width="299" height="52"/>
+                            <color key="backgroundColor" red="0.16500000655651093" green="0.49000000953674316" blue="0.60399997234344482" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="6fh-Vc-6gG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                            <state key="normal" title="Reject">
+                                <color key="titleColor" red="0.16500000655651093" green="0.49000000953674316" blue="0.60399997234344482" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="rejectPressed:" destination="-1" eventType="touchUpInside" id="E9g-M9-lbx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="IS0-3R-ihG" secondAttribute="trailing" constant="25" id="1XT-Um-UFz"/>
+                        <constraint firstItem="Spg-xX-hsG" firstAttribute="trailing" secondItem="IS0-3R-ihG" secondAttribute="trailing" id="9qu-Wo-K0n"/>
+                        <constraint firstItem="Hce-5Y-DHh" firstAttribute="leading" secondItem="Spg-xX-hsG" secondAttribute="leading" id="CNM-Lz-SpJ"/>
+                        <constraint firstAttribute="height" constant="249" id="EVY-Xi-vDP"/>
+                        <constraint firstItem="Hce-5Y-DHh" firstAttribute="trailing" secondItem="Spg-xX-hsG" secondAttribute="trailing" id="Ky6-h8-3ki"/>
+                        <constraint firstItem="Hce-5Y-DHh" firstAttribute="top" secondItem="Spg-xX-hsG" secondAttribute="bottom" constant="16" id="Rqh-jq-8BW"/>
+                        <constraint firstItem="IS0-3R-ihG" firstAttribute="top" secondItem="bfN-8k-w0Z" secondAttribute="top" constant="25" id="TYS-mK-Hlk"/>
+                        <constraint firstItem="IS0-3R-ihG" firstAttribute="leading" secondItem="bfN-8k-w0Z" secondAttribute="leading" constant="25" id="ZqQ-40-hLG"/>
+                        <constraint firstItem="Spg-xX-hsG" firstAttribute="leading" secondItem="IS0-3R-ihG" secondAttribute="leading" id="b4v-DJ-wwu"/>
+                        <constraint firstAttribute="width" constant="349" id="ffm-eT-cvd"/>
+                        <constraint firstItem="Spg-xX-hsG" firstAttribute="top" secondItem="IS0-3R-ihG" secondAttribute="bottom" constant="24" id="zJp-ph-n4r"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.6705882352941176" green="0.6705882352941176" blue="0.6705882352941176" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bfN-8k-w0Z" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2cD-VX-yxR"/>
+                <constraint firstItem="7lD-3K-QSx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QrZ-cM-yS7"/>
+                <constraint firstAttribute="trailing" secondItem="7lD-3K-QSx" secondAttribute="trailing" id="YwB-br-Wga"/>
+                <constraint firstAttribute="bottom" secondItem="7lD-3K-QSx" secondAttribute="bottom" id="jEB-7M-Wbv"/>
+                <constraint firstItem="7lD-3K-QSx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lQB-ZH-kbF"/>
+                <constraint firstItem="bfN-8k-w0Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="x4k-6P-Vpw"/>
+            </constraints>
+            <point key="canvasLocation" x="89.855072463768124" y="87.723214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="themeColor">
+            <color red="0.16500000655651093" green="0.49000000953674316" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

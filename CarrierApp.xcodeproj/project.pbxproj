@@ -39,6 +39,8 @@
 		048B797A26B120C300189054 /* QuotationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B797926B120C300189054 /* QuotationListViewController.xib */; };
 		048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B797D26B1337800189054 /* AvailableLoadsViewController.swift */; };
 		048B798026B1337800189054 /* AvailableLoadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B797E26B1337800189054 /* AvailableLoadsViewController.xib */; };
+		048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B953A26B2A6E80013DAAD /* QuotationActionViewController.swift */; };
+		048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B953B26B2A6E80013DAAD /* QuotationActionViewController.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		049C052426B0022200A81023 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C052326B0022200A81023 /* MainTabbarController.swift */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
@@ -137,6 +139,8 @@
 		048B797926B120C300189054 /* QuotationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationListViewController.xib; sourceTree = "<group>"; };
 		048B797D26B1337800189054 /* AvailableLoadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsViewController.swift; sourceTree = "<group>"; };
 		048B797E26B1337800189054 /* AvailableLoadsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsViewController.xib; sourceTree = "<group>"; };
+		048B953A26B2A6E80013DAAD /* QuotationActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationActionViewController.swift; sourceTree = "<group>"; };
+		048B953B26B2A6E80013DAAD /* QuotationActionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationActionViewController.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		049C052326B0022200A81023 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -399,6 +403,15 @@
 			path = QuotationDetail;
 			sourceTree = "<group>";
 		};
+		048B953926B2A5300013DAAD /* QuotationActionPopup */ = {
+			isa = PBXGroup;
+			children = (
+				048B953A26B2A6E80013DAAD /* QuotationActionViewController.swift */,
+				048B953B26B2A6E80013DAAD /* QuotationActionViewController.xib */,
+			);
+			path = QuotationActionPopup;
+			sourceTree = "<group>";
+		};
 		048C09E5265E223E003E301F /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +435,7 @@
 		04DB591A26AED61700C88804 /* Quotations */ = {
 			isa = PBXGroup;
 			children = (
+				048B953926B2A5300013DAAD /* QuotationActionPopup */,
 				0480667F26B0304900DF4B1E /* QuotationDetail */,
 				0480667E26B0303600DF4B1E /* QuotationList */,
 			);
@@ -677,6 +691,7 @@
 				96DE175426A020C4007FCD9C /* HomeViewController.xib in Resources */,
 				96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
+				048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
 				96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */,
@@ -823,6 +838,7 @@
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */,
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
+				048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
 				04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */,
