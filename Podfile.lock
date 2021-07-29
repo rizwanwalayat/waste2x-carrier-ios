@@ -53,6 +53,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.5.0):
     - GoogleUtilities/Logger
+  - iOSDropDown (0.3.4)
   - IQKeyboardManagerSwift (6.5.6)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -67,7 +68,6 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
-  - SlideMenuControllerSwift (4.0.0)
   - StepIndicator (1.0.8)
 
 DEPENDENCIES:
@@ -75,11 +75,11 @@ DEPENDENCIES:
   - Firebase/Messaging
   - GoogleMaps
   - GooglePlaces
+  - iOSDropDown
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.4)
   - SDWebImage
-  - SlideMenuControllerSwift
   - StepIndicator (~> 1.0.8)
 
 SPEC REPOS:
@@ -94,13 +94,13 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
+    - iOSDropDown
     - IQKeyboardManagerSwift
     - nanopb
     - NVActivityIndicatorView
     - ObjectMapper
     - PromisesObjC
     - SDWebImage
-    - SlideMenuControllerSwift
     - StepIndicator
 
 SPEC CHECKSUMS:
@@ -114,15 +114,15 @@ SPEC CHECKSUMS:
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
 
-PODFILE CHECKSUM: 06fca5ea96000400b558458d0dd36c8519d51b56
+PODFILE CHECKSUM: 635585cca7907c1131cdb45c863aae5edb3fb59d
 
 COCOAPODS: 1.10.1

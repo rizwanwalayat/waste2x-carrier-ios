@@ -26,7 +26,7 @@ class ForgotPasswordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        self.navigationController?.navigationBar.isHidden = true
+        
     }
     
     

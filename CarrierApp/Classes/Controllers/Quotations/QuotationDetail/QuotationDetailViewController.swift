@@ -40,12 +40,12 @@ class QuotationDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        quotationNoLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
 
-        self.navigationController?.navigationBar.isHidden = true
         mainScrollView.layer.cornerRadius = 36
         mainScrollView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainScrollView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
@@ -57,5 +57,4 @@ class QuotationDetailViewController: BaseViewController {
     @IBAction func acceptButtonPressed(_ sender: Any) {
     }
     
-
 }

@@ -12,7 +12,6 @@ target 'CarrierApp' do
   pod 'Firebase/Messaging'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'SlideMenuControllerSwift'
   pod 'StepIndicator', '~> 1.0.8'
   pod 'SDWebImage'
 

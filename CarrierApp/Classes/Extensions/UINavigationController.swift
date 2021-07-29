@@ -28,13 +28,32 @@ extension UINavigationController {
         navigationController?.popViewController(animated: false)
     }
     
-    func pushTo(controller: UIViewController) {
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.moveIn
-        transition.subtype = CATransitionSubtype.fromTop
-        view.layer.add(transition, forKey: nil)
-        pushViewController(controller, animated: false)
+//    func pushTo(controller: UIViewController) {
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//        transition.type = CATransitionType.moveIn
+//        transition.subtype = CATransitionSubtype.fromTop
+//        view.layer.add(transition, forKey: nil)
+//        pushViewController(controller, animated: false)
+//    }
+    
+    func pushTo(controller: UIViewController)
+    {
+        if let navController = self.navigationController
+        {
+            if navController.viewControllers.contains(controller)
+            {
+                navController.popToViewController(controller, animated: true)
+            }
+            else
+            {
+                navController.pushViewController(controller, animated: true)
+            }
+        }
+        else
+        {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

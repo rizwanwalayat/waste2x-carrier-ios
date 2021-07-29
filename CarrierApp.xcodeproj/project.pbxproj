@@ -36,6 +36,9 @@
 		0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480667C26B012E400DF4B1E /* HeaderView.swift */; };
 		0480668226B0306700DF4B1E /* QuotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480668026B0306700DF4B1E /* QuotationDetailViewController.swift */; };
 		0480668326B0306700DF4B1E /* QuotationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0480668126B0306700DF4B1E /* QuotationDetailViewController.xib */; };
+		048B797A26B120C300189054 /* QuotationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B797926B120C300189054 /* QuotationListViewController.xib */; };
+		048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B797D26B1337800189054 /* AvailableLoadsViewController.swift */; };
+		048B798026B1337800189054 /* AvailableLoadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B797E26B1337800189054 /* AvailableLoadsViewController.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		049C052426B0022200A81023 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C052326B0022200A81023 /* MainTabbarController.swift */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
@@ -143,6 +146,9 @@
 		0480667C26B012E400DF4B1E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0480668026B0306700DF4B1E /* QuotationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationDetailViewController.swift; sourceTree = "<group>"; };
 		0480668126B0306700DF4B1E /* QuotationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationDetailViewController.xib; sourceTree = "<group>"; };
+		048B797926B120C300189054 /* QuotationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationListViewController.xib; sourceTree = "<group>"; };
+		048B797D26B1337800189054 /* AvailableLoadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsViewController.swift; sourceTree = "<group>"; };
+		048B797E26B1337800189054 /* AvailableLoadsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsViewController.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		049C052326B0022200A81023 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -404,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				04DB591B26AED6A500C88804 /* QuotationListViewController.swift */,
+				048B797926B120C300189054 /* QuotationListViewController.xib */,
 				04DB591F26AEE8DE00C88804 /* Cells */,
 			);
 			path = QuotationList;
@@ -621,9 +628,10 @@
 		96D6919C26AED1F600183D4D /* AvailableLoads */ = {
 			isa = PBXGroup;
 			children = (
+				048B797D26B1337800189054 /* AvailableLoadsViewController.swift */,
+				048B797E26B1337800189054 /* AvailableLoadsViewController.xib */,
 				96B4E97F26B13C790032C9F2 /* AvailableLoadsDetail */,
 				96956FC626B13B1300309322 /* AvailableLoadsList */,
-				96D6919D26AED21400183D4D /* AvailableLoadsViewController.swift */,
 			);
 			path = AvailableLoads;
 			sourceTree = "<group>";
@@ -747,6 +755,7 @@
 				18397E192660FF54003DE30C /* Poppins-ExtraLightItalic.ttf in Resources */,
 				0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */,
 				18397E242660FF54003DE30C /* Poppins-Black.ttf in Resources */,
+				048B798026B1337800189054 /* AvailableLoadsViewController.xib in Resources */,
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
 				18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
@@ -760,6 +769,7 @@
 				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
 				96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
+				048B797A26B120C300189054 /* QuotationListViewController.xib in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
 				047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */,
@@ -872,7 +882,6 @@
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
 				18A579BE269321690067952F /* ApiClient.swift in Sources */,
-				96D6919E26AED21400183D4D /* AvailableLoadsViewController.swift in Sources */,
 				047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
@@ -892,6 +901,7 @@
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				049C052426B0022200A81023 /* MainTabbarController.swift in Sources */,
 				18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */,
+				048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */,
 				9659288526B06D28004EF2DF /* AvailableLoadsListViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,

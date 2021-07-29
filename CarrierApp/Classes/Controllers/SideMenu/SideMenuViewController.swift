@@ -12,20 +12,31 @@ class SideMenuViewController: BaseViewController {
     
     
     //MARK: - Outlets
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var phoneNoHolderView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var leadingConstOfScrollView : NSLayoutConstraint!
+    @IBOutlet weak var mainShadowView: UIView!
+    
     //MARK: - Variables
-    var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar")]
-    var text = ["Payments","Schedule Pickup"]
+    
     var selectionIndex = -1
-//    var paymentModel : PaymentModel?
     var reload = -1
     var timerTest : Timer?
     var counter = 0
-    @IBOutlet weak var headerView: UIView!
+    var imgArray = [#imageLiteral(resourceName: "available-Loads"),#imageLiteral(resourceName: "Quotations"), #imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Contract"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
+    var textArray = ["My Available Loads","My Quotations", "My Dispatches", "My Receivables", "My Contracts", "Payments", "FAQ", "Contact", "Logout"]
+    let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        leadingConstOfScrollView.constant    = -270
+        mainShadowView.alpha                 = 0
+        customMethodsForSideMenu()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -33,62 +44,80 @@ class SideMenuViewController: BaseViewController {
         headerView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         headerView.layer.masksToBounds = true
         self.phoneNumberLabel.text = self.userData?.phone
+        phoneNoHolderView.layer.cornerRadius = 20
+        phoneNoHolderView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        leadingConstOfScrollView.constant   = 0
+        UIView.animate(withDuration: 0.3,
+                   delay: 0.1,
+                   options: UIView.AnimationOptions.curveEaseInOut,
+                   animations: { () -> Void in
+                    
+                    self.mainShadowView.alpha = 1
+                    self.view.layoutIfNeeded()
+                    
+        }, completion: { (finished) -> Void in
+        // ....
+        })
+    }
+    
+    func customMethodsForSideMenu()
+    {
+//        editProfileLabel.text           = "Edit Profile"
+        let swipeLeftMainView           = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeftMainView.direction     = .left
+        let swipeLeftSubView            = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeftSubView.direction      = .left
+        let swipeLeftTopView            = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeftTopView.direction      = .left
+        let swipeLeftBottomView         = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeftBottomView.direction   = .left
+        
+        self.headerView.addGestureRecognizer(swipeLeftMainView)
+        self.tableView.addGestureRecognizer(swipeLeftSubView)
+        
+    }
+    
+    func hideSideMenu(completionHandler : @escaping( ) -> Void)
+    {
+        leadingConstOfScrollView.constant   = -UIScreen.main.bounds.width * 0.821256
+        UIView.animate(withDuration: 0.3,
+                   delay: 0.1,
+                   options: UIView.AnimationOptions.curveEaseInOut,
+                   animations: { () -> Void in
+                    
+                    self.mainShadowView.alpha = 0
+                    self.view.layoutIfNeeded()
+                    
+        }, completion: { (finished) -> Void in
+            
+            self.dismiss(animated: false, completion: nil)
+            
+            completionHandler()
+        })
+    }
+    
+    
     //MARK: - Action Buttons
     
-    @IBAction func logoutButtonAction(_ sender: Any) {
-        print("LogOut")
-        
-        let alertVc = UIAlertController(title: "Logout", message: "Are you sure want to logout?", preferredStyle: .alert)
-        
-        let image = UIImage(named: "appIcon")
-        let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
-        imageView.image = image
-        imageView.cornerRadius = 4
-        imageView.clipsToBounds = true
-        alertVc.view.addSubview(imageView)
-        
-        alertVc.setValue(image, forKey: "image")
-        alertVc.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
-            self.startTimer()
-        }))
-        alertVc.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(alertVc, animated: true, completion: nil)
-        
-    }
-    @IBAction func logOutAction(_ sender: Any) {
-        
-    }
-    
-    func startTimer ()
+    @IBAction func hideSideMenu(_ sender : UIButton)
     {
-        Utility.showLoading()
-        counter = 0
-        timerTest =  Timer.scheduledTimer(
-            timeInterval: TimeInterval(1.0),
-            target      : self,
-            selector    : #selector(self.updateTime(_:)),
-            userInfo    : nil,
-            repeats     : true)
+        hideSideMenu {
+            //nil
+        }
     }
     
-    func stopTimer() {
-        timerTest?.invalidate()
-        timerTest = nil
-        DataManager.shared.deleteUser()
-        Global.shared.apiCurve = false
-        let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        self.navigationController?.setViewControllers([vc], animated: true)
-        Utility.hideLoading()
-
-    }
-    @objc func updateTime(_ timer: Timer) {
-        counter = counter+1
-        if counter == 1 || counter > 1 {
-            
-            stopTimer()
-            
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+       
+        print("Side Menu gesture Cliceked ")
+        hideSideMenu {
+            //nil
         }
     }
     
@@ -97,36 +126,67 @@ class SideMenuViewController: BaseViewController {
 //MARK: - Extentions
 extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return textArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(SideMenuItemsTableViewCell.self, indexPath: indexPath)
-        if selectionIndex == indexPath.row {
+        
+        if selectionIndex == indexPath.row
+        {
             cell.selectionView.isHidden = false
+            cell.imgView.tintColor = UIColor.appColor
         }
-        else {
+        else
+        {
             cell.selectionView.isHidden = true
+            cell.imgView.tintColor = unSelectedBodyLabelTextColor
         }
-        cell.config(index: indexPath.row)
+        
+        cell.config(textArray[indexPath.row], imgArray[indexPath.row])
+        
         return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        self.selectionIndex = indexPath.row
         switch indexPath.row {
         case 0:
-            
-            print("none")
+                    
+            // Available loads controller shows
+            if selectionIndex != 0 {
+                
+                self.hideSideMenu {
+                    let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
+                    Utility.setupRoot(controller: vc)
+                }
+                
+            }
 
         case 1:
-            print("none")
-//            let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
-//            navigationController?.pushViewController(vc, animated: true)
+            
+            // Quotations loads controller shows
+            if selectionIndex != 1 {
+                
+                self.hideSideMenu {
+                    let vc = QuotationListViewController(nibName: "QuotationListViewController", bundle: nil)
+                    Utility.setupRoot(controller: vc)
+                }
+            }
+            
+        case 8:
+            
+            self.hideSideMenu {
+                let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+                Utility.setupRoot(controller: vc)
+            }
+            
         default:
-            print("none")
+            
+            break
         }
+        
+        self.selectionIndex = indexPath.row
         self.tableView.reloadData()
     }
     
@@ -136,17 +196,3 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     
     
 }
-
-
-//MARK: - API call
-//extension SideMenuViewController{
-//
-//
-//    func paymentApi(){
-//        PaymentModel.paymentApiFunction{ result, error, status,message in
-//            Global.shared.paymentModel = result
-//            let objectDict = ["result" : result]
-//            NotificationCenter.default.post(name: Notification.Name("NavigateToPayment"), object: nil, userInfo: objectDict as [AnyHashable : Any])
-//        }
-//    }
-//}
