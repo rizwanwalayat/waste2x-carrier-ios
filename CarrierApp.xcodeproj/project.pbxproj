@@ -87,10 +87,22 @@
 		18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD84752673770B00B5F797 /* WeatherAPI.swift */; };
 		18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */; };
 		18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */; };
+		9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */; };
+		9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */; };
+		9659288526B06D28004EF2DF /* AvailableLoadsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */; };
+		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
+		9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */; };
+		9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */; };
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
 		96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96893BAC26AE953E00C4E0FD /* Main.storyboard */; };
+		96B4E98326B13E210032C9F2 /* AvailableLoadsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */; };
+		96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */; };
+		96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */; };
+		96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */; };
+		96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */; };
+		96D6919E26AED21400183D4D /* AvailableLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6919D26AED21400183D4D /* AvailableLoadsViewController.swift */; };
 		96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174326A01FC4007FCD9C /* ContainerViewController.xib */; };
 		96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174426A01FC5007FCD9C /* ContainerViewController.swift */; };
 		96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */; };
@@ -191,10 +203,22 @@
 		18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarrierApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32353D33B65F658FE2977E9B /* Pods-CarrierApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarrierApp.debug.xcconfig"; path = "Target Support Files/Pods-CarrierApp/Pods-CarrierApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListTableViewCell.swift; sourceTree = "<group>"; };
+		9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListTableViewCell.xib; sourceTree = "<group>"; };
+		9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListViewController.swift; sourceTree = "<group>"; };
+		9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListViewController.xib; sourceTree = "<group>"; };
+		9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
 		96893BAC26AE953E00C4E0FD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableLoadsDetailViewController.swift; sourceTree = "<group>"; };
+		96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableLoadsDetailViewController.xib; sourceTree = "<group>"; };
+		96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
+		96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
+		96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeVerificationViewController.xib; sourceTree = "<group>"; };
+		96D6919D26AED21400183D4D /* AvailableLoadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsViewController.swift; sourceTree = "<group>"; };
 		96DE174326A01FC4007FCD9C /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		96DE174426A01FC5007FCD9C /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +307,9 @@
 		0067A2DE2527549400CECA8C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				96B4E98526B197850032C9F2 /* CodeVerification */,
+				0067A313252AFC9E00CECA8C /* String.swift */,
+				9674908D26B28EF8001C4A62 /* Reset-Password */,
 				96893B9F26A5EFE500C4E0FD /* Forgot-Password */,
 				18397DC82660FD35003DE30C /* Login */,
 			);
@@ -327,12 +354,11 @@
 			isa = PBXGroup;
 			children = (
 				0067A30B252AFC9D00CECA8C /* Int.swift */,
-				0067A313252AFC9E00CECA8C /* String.swift */,
 				0067A30D252AFC9D00CECA8C /* TimeInterval.swift */,
+				0067A316252AFC9E00CECA8C /* UIFont.swift */,
 				0067A310252AFC9E00CECA8C /* UIButton.swift */,
 				0067A30C252AFC9D00CECA8C /* UICollectionView.swift */,
 				0067A30A252AFC9D00CECA8C /* UIDevice.swift */,
-				0067A316252AFC9E00CECA8C /* UIFont.swift */,
 				0067A314252AFC9E00CECA8C /* UIImage.swift */,
 				96893B9D26A5DA7900C4E0FD /* UIImageView.swift */,
 				0067A315252AFC9E00CECA8C /* UILabel.swift */,
@@ -549,6 +575,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9659287E26B03186004EF2DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */,
+				9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9674908D26B28EF8001C4A62 /* Reset-Password */ = {
+			isa = PBXGroup;
+			children = (
+				9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */,
+				9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */,
+			);
+			path = "Reset-Password";
+			sourceTree = "<group>";
+		};
 		96893B9F26A5EFE500C4E0FD /* Forgot-Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,11 +602,50 @@
 			path = "Forgot-Password";
 			sourceTree = "<group>";
 		};
+		96956FC626B13B1300309322 /* AvailableLoadsList */ = {
+			isa = PBXGroup;
+			children = (
+				9659287E26B03186004EF2DF /* Cells */,
+				9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */,
+				9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */,
+			);
+			path = AvailableLoadsList;
+			sourceTree = "<group>";
+		};
+		96B4E97F26B13C790032C9F2 /* AvailableLoadsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */,
+				96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */,
+			);
+			path = AvailableLoadsDetail;
+			sourceTree = "<group>";
+		};
+		96B4E98526B197850032C9F2 /* CodeVerification */ = {
+			isa = PBXGroup;
+			children = (
+				96B4E98626B197850032C9F2 /* ViewModel */,
+				96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */,
+				96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */,
+			);
+			path = CodeVerification;
+			sourceTree = "<group>";
+		};
+		96B4E98626B197850032C9F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		96D6919C26AED1F600183D4D /* AvailableLoads */ = {
 			isa = PBXGroup;
 			children = (
 				048B797D26B1337800189054 /* AvailableLoadsViewController.swift */,
 				048B797E26B1337800189054 /* AvailableLoadsViewController.xib */,
+				96B4E97F26B13C790032C9F2 /* AvailableLoadsDetail */,
+				96956FC626B13B1300309322 /* AvailableLoadsList */,
 			);
 			path = AvailableLoads;
 			sourceTree = "<group>";
@@ -670,6 +753,7 @@
 			files = (
 				96DE175826A023D6007FCD9C /* ProfileViewController.xib in Resources */,
 				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
+				9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */,
 				0480668326B0306700DF4B1E /* QuotationDetailViewController.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
 				04D4FB5526B00C8400F8C9F6 /* HeaderView.xib in Resources */,
@@ -677,6 +761,7 @@
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
+				9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */,
 				96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
@@ -690,9 +775,12 @@
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				96DE175426A020C4007FCD9C /* HomeViewController.xib in Resources */,
 				96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */,
+				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
+				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
+				96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */,
 				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
 				96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
@@ -802,6 +890,7 @@
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
+				96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				96DE175726A023D6007FCD9C /* ProfileViewController.swift in Sources */,
 				96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */,
@@ -816,11 +905,13 @@
 				96DE175326A020C4007FCD9C /* HomeViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
+				9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
+				96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				049C052426B0022200A81023 /* MainTabbarController.swift in Sources */,
@@ -838,6 +929,7 @@
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */,
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
+				9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */,
 				048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,

@@ -10,7 +10,6 @@ import UIKit
 
 class AvailableLoadsViewController: BaseViewController {
 
-    // MARK: - Outlets
     @IBOutlet weak var pickupLabel: UILabel!
     @IBOutlet weak var pickupCountryTextField: UITextField!
     @IBOutlet weak var pickupStateTextField: UITextField!
@@ -30,6 +29,7 @@ class AvailableLoadsViewController: BaseViewController {
     
     // MARK: - Controllers LifeCycle
     
+    // MARK: - Outlets
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +40,9 @@ class AvailableLoadsViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func applyPressed(_ sender: Any) {
+        let vc = AvailableLoadsListViewController(nibName: "AvailableLoadsListViewController", bundle: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc , animated: true)
     }
     
     @IBAction func clearPressed(_ sender: Any) {
@@ -112,6 +115,7 @@ class AvailableLoadsViewController: BaseViewController {
     {
         
     }
+    
 }
 
 

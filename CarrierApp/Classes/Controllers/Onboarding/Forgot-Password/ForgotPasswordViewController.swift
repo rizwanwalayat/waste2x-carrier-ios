@@ -16,7 +16,7 @@ class ForgotPasswordViewController: BaseViewController {
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
     @IBOutlet weak var phoneNoTextField     : UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton           : UIButton!
+    @IBOutlet weak var resetButton           : UIButton!
     
     //MARK:- Variables
    
@@ -32,7 +32,7 @@ class ForgotPasswordViewController: BaseViewController {
     
     //MARK: - SetupView
     func setupView() {
-        loginButton.makeEnable(value: false)
+        resetButton.makeEnable(value: false)
     }
     
     
@@ -43,6 +43,9 @@ class ForgotPasswordViewController: BaseViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         if Utility.isTextFieldHasText(textField: phoneNoTextField)
         {
+            let codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
+            self.navigationController?.pushViewController(codeVC, animated: true)
+            
             CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
                 
                 if error == nil {
@@ -74,11 +77,11 @@ extension ForgotPasswordViewController : UITextFieldDelegate {
             }
         }
         
-        if phoneNoTextField.text!.count > 7  {
-            loginButton.makeEnable(value: true)
+        if phoneNoTextField.text!.count > 11  {
+            resetButton.makeEnable(value: true)
         }
         else {
-            loginButton.makeEnable(value: false)
+            resetButton.makeEnable(value: false)
         }
         
         return true

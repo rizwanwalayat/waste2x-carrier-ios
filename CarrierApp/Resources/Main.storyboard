@@ -543,6 +543,9 @@
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="applyFilter:" destination="NBg-Mj-FW3" eventType="touchUpInside" id="yrw-rM-PyW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6x-dF-kxl">
                                                 <rect key="frame" x="0.0" y="460" width="374" height="56"/>
