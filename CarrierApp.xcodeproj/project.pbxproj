@@ -86,6 +86,8 @@
 		9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */; };
 		9659288526B06D28004EF2DF /* AvailableLoadsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */; };
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
+		9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */; };
+		9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */; };
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
@@ -195,6 +197,8 @@
 		9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListTableViewCell.xib; sourceTree = "<group>"; };
 		9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListViewController.swift; sourceTree = "<group>"; };
 		9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListViewController.xib; sourceTree = "<group>"; };
+		9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -295,6 +299,7 @@
 			children = (
 				96B4E98526B197850032C9F2 /* CodeVerification */,
 				0067A313252AFC9E00CECA8C /* String.swift */,
+				9674908D26B28EF8001C4A62 /* Reset-Password */,
 				96893B9F26A5EFE500C4E0FD /* Forgot-Password */,
 				18397DC82660FD35003DE30C /* Login */,
 			);
@@ -558,6 +563,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		9674908D26B28EF8001C4A62 /* Reset-Password */ = {
+			isa = PBXGroup;
+			children = (
+				9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */,
+				9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */,
+			);
+			path = "Reset-Password";
+			sourceTree = "<group>";
+		};
 		96893B9F26A5EFE500C4E0FD /* Forgot-Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +752,7 @@
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				96DE175426A020C4007FCD9C /* HomeViewController.xib in Resources */,
 				96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */,
+				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
@@ -866,6 +881,7 @@
 				96DE175326A020C4007FCD9C /* HomeViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
+				9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
