@@ -40,6 +40,9 @@ class AvailableLoadsViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func applyPressed(_ sender: Any) {
+        let vc = AvailableLoadsListViewController(nibName: "AvailableLoadsListViewController", bundle: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc , animated: true)
     }
     
     @IBAction func clearPressed(_ sender: Any) {
@@ -111,13 +114,6 @@ class AvailableLoadsViewController: BaseViewController {
     func showDropDown (_ textField : UITextField , _ dropDownData : [String], completionHandler : @escaping( String, Int) -> Void)
     {
         
-    }
-
-    
-    @IBAction func applyFilter(_ sender: Any) {
-        let vc = AvailableLoadsListViewController(nibName: "AvailableLoadsListViewController", bundle: nil)
-//        self.present(vc, animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc , animated: true)
     }
     
 }

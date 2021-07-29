@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
 
 class CodeVerificationViewController: BaseViewController {
 
@@ -67,8 +66,7 @@ class CodeVerificationViewController: BaseViewController {
                 
                 if DataManager.shared.getUser()?.result?.isNewUser == false {
                     
-                    let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
-                    self.navigationController?.setViewControllers([slider], animated: true)
+                   
                 }
                 else {
                     
