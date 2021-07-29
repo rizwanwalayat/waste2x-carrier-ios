@@ -91,6 +91,10 @@
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
 		9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */; };
 		9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */; };
+		9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */; };
+		9674909726B2ED1B001C4A62 /* DispatchesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */; };
+		9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674909926B32165001C4A62 /* DispatchesListViewController.xib */; };
+		9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674909A26B32165001C4A62 /* DispatchesListViewController.swift */; };
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
@@ -100,7 +104,6 @@
 		96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */; };
 		96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */; };
 		96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */; };
-		96D6919E26AED21400183D4D /* AvailableLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D6919D26AED21400183D4D /* AvailableLoadsViewController.swift */; };
 		96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174326A01FC4007FCD9C /* ContainerViewController.xib */; };
 		96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174426A01FC5007FCD9C /* ContainerViewController.swift */; };
 		96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */; };
@@ -205,6 +208,10 @@
 		9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListViewController.xib; sourceTree = "<group>"; };
 		9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListTableViewCell.swift; sourceTree = "<group>"; };
+		9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchesListTableViewCell.xib; sourceTree = "<group>"; };
+		9674909926B32165001C4A62 /* DispatchesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesListViewController.xib; sourceTree = "<group>"; };
+		9674909A26B32165001C4A62 /* DispatchesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesListViewController.swift; sourceTree = "<group>"; };
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -214,7 +221,6 @@
 		96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
 		96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
 		96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeVerificationViewController.xib; sourceTree = "<group>"; };
-		96D6919D26AED21400183D4D /* AvailableLoadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsViewController.swift; sourceTree = "<group>"; };
 		96DE174326A01FC4007FCD9C /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		96DE174426A01FC5007FCD9C /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9674909226B2EAA7001C4A62 /* Dispatches */,
 				96D6919C26AED1F600183D4D /* AvailableLoads */,
 				04DB591A26AED61700C88804 /* Quotations */,
 				96DE175026A02072007FCD9C /* Tabs */,
@@ -579,6 +586,33 @@
 			path = "Reset-Password";
 			sourceTree = "<group>";
 		};
+		9674909226B2EAA7001C4A62 /* Dispatches */ = {
+			isa = PBXGroup;
+			children = (
+				9674909826B320C6001C4A62 /* DispatchesList */,
+			);
+			path = Dispatches;
+			sourceTree = "<group>";
+		};
+		9674909326B2EAC0001C4A62 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */,
+				9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9674909826B320C6001C4A62 /* DispatchesList */ = {
+			isa = PBXGroup;
+			children = (
+				9674909A26B32165001C4A62 /* DispatchesListViewController.swift */,
+				9674909926B32165001C4A62 /* DispatchesListViewController.xib */,
+				9674909326B2EAC0001C4A62 /* Cells */,
+			);
+			path = DispatchesList;
+			sourceTree = "<group>";
+		};
 		96893B9F26A5EFE500C4E0FD /* Forgot-Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +798,7 @@
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
+				9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */,
 				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
@@ -774,6 +809,7 @@
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
 				047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */,
 				96DE174F26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib in Resources */,
+				9674909726B2ED1B001C4A62 /* DispatchesListTableViewCell.xib in Resources */,
 				96DE174D26A01FE3007FCD9C /* SideMenuViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
@@ -905,6 +941,7 @@
 				9659288526B06D28004EF2DF /* AvailableLoadsListViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
+				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
 				18A579BB269320230067952F /* Constants.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
@@ -917,6 +954,7 @@
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
 				9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
+				9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
 				04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,

@@ -174,6 +174,17 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
+        case 2:
+            
+            // Dispatches controller shows
+            if selectionIndex != 1 {
+                
+                self.hideSideMenu {
+                    let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
+                    Utility.setupRoot(controller: vc)
+                }
+            }
+            
         case 8:
             
             self.hideSideMenu {

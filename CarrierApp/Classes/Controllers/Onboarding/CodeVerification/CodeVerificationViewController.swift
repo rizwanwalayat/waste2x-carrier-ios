@@ -46,6 +46,11 @@ class CodeVerificationViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func checkCodeAndResetPassword(){
+        let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
+        self.navigationController?.pushViewController(resetPasswordVC, animated: true)
+    }
+    
     @IBAction func nextButtonPressed(_ sender: Any) {
         let code = firstTextField.text! + secondTextField.text! + thirdTextField.text! + fourthTextField.text!
         print(code)
