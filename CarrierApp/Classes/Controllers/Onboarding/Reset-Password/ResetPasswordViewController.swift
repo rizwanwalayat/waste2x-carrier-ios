@@ -1,5 +1,5 @@
 //
-//  PasswordResetViewController.swift
+//  ResetPasswordViewController.swift
 //  Haid3r
 //
 //  Created by a on 02/10/2020.
@@ -9,13 +9,13 @@
 import UIKit
 //import LocalAuthentication
 
-class PasswordResetViewController: BaseViewController {
+class ResetPasswordViewController: BaseViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var enterYourPhoneLabel  : UILabel!
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
-    @IBOutlet weak var phoneNoTextField     : UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var newPasswordTextField     : UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var loginButton           : UIButton!
     
     //MARK:- Variables
@@ -47,9 +47,9 @@ class PasswordResetViewController: BaseViewController {
             
         } else {
             
-            if Utility.isTextFieldHasText(textField: phoneNoTextField)
+            if Utility.isTextFieldHasText(textField: newPasswordTextField)
             {
-                CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
+                CodeVerification.verificationCode(phoneNumber: newPasswordTextField.text ?? "") { result, error, status,message in
                     
                     if error == nil {
                         
@@ -70,18 +70,13 @@ class PasswordResetViewController: BaseViewController {
     }
     
 }
-extension PasswordResetViewController : UITextFieldDelegate {
+extension ResetPasswordViewController : UITextFieldDelegate {
     
    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-        if textField == phoneNoTextField {
-            if textField.text?.count == 0 && string != "+" {
-                textField.text = "+"
-            }
-        }
         
-        if phoneNoTextField.text!.count > 11 {
+        if newPasswordTextField.text!.count > 8, newPasswordTextField.text! == confirmPasswordTextField.text! {
             loginButton.makeEnable(value: true)
         }
         else {

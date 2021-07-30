@@ -53,6 +53,7 @@ extension CodeVerificationViewController
 //                        nextButton.makeEnable(value: true)
                         nextField .resignFirstResponder()
                         self.nextButtonCalled()
+                        self.checkCodeAndResetPassword()
                     }
                 }
                 

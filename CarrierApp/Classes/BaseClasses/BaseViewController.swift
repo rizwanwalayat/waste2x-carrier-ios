@@ -73,7 +73,7 @@ class BaseViewController: UIViewController {
             toastLabel.removeFromSuperview()
         })
     }
-    func setAttributedTextInLable(boldString:String,emailAddress :String) -> NSMutableAttributedString
+    func setAttributedTextInLabel(boldString:String,emailAddress :String) -> NSMutableAttributedString
     {
         let boldfont       = UIFont(name: "Poppins-Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .semibold)
         let activityAttribute   = [ NSAttributedString.Key.font: boldfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
@@ -87,7 +87,7 @@ class BaseViewController: UIViewController {
         
         return nameAttrString
     }
-    func setAttributedTextInLable(text1:String,text2 :String,size:Int) -> NSMutableAttributedString
+    func setAttributedTextInLabel(text1:String,text2 :String,size:Int) -> NSMutableAttributedString
     {
         let firstTitle       = UIFont(name: "Poppins", size: CGFloat(size)) ?? UIFont.systemFont(ofSize: 14)
         let activityAttribute   = [ NSAttributedString.Key.font: firstTitle, NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.31, green: 0.31, blue: 0.31, alpha: 0.9)]

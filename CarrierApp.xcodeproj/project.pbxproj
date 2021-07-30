@@ -104,6 +104,10 @@
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
 		9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */; };
 		9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */; };
+		9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */; };
+		9674909726B2ED1B001C4A62 /* DispatchesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */; };
+		9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674909926B32165001C4A62 /* DispatchesListViewController.xib */; };
+		9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674909A26B32165001C4A62 /* DispatchesListViewController.swift */; };
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
@@ -228,6 +232,10 @@
 		9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListViewController.xib; sourceTree = "<group>"; };
 		9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListTableViewCell.swift; sourceTree = "<group>"; };
+		9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchesListTableViewCell.xib; sourceTree = "<group>"; };
+		9674909926B32165001C4A62 /* DispatchesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesListViewController.xib; sourceTree = "<group>"; };
+		9674909A26B32165001C4A62 /* DispatchesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesListViewController.swift; sourceTree = "<group>"; };
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -304,6 +312,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9674909226B2EAA7001C4A62 /* Dispatches */,
 				04028FE926B418DA0053F41C /* Logout */,
 				04D2422226B406D600312E2E /* Contracts */,
 				04D2421826B3CC8A00312E2E /* Receivables */,
@@ -670,6 +679,33 @@
 			path = "Reset-Password";
 			sourceTree = "<group>";
 		};
+		9674909226B2EAA7001C4A62 /* Dispatches */ = {
+			isa = PBXGroup;
+			children = (
+				9674909826B320C6001C4A62 /* DispatchesList */,
+			);
+			path = Dispatches;
+			sourceTree = "<group>";
+		};
+		9674909326B2EAC0001C4A62 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */,
+				9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9674909826B320C6001C4A62 /* DispatchesList */ = {
+			isa = PBXGroup;
+			children = (
+				9674909A26B32165001C4A62 /* DispatchesListViewController.swift */,
+				9674909926B32165001C4A62 /* DispatchesListViewController.xib */,
+				9674909326B2EAC0001C4A62 /* Cells */,
+			);
+			path = DispatchesList;
+			sourceTree = "<group>";
+		};
 		96893B9F26A5EFE500C4E0FD /* Forgot-Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -859,6 +895,7 @@
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
+				9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */,
 				048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */,
@@ -870,6 +907,7 @@
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
 				047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */,
 				96DE174F26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib in Resources */,
+				9674909726B2ED1B001C4A62 /* DispatchesListTableViewCell.xib in Resources */,
 				96DE174D26A01FE3007FCD9C /* SideMenuViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
@@ -1006,6 +1044,7 @@
 				048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
+				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
 				18A579BB269320230067952F /* Constants.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
@@ -1019,6 +1058,7 @@
 				9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */,
 				048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
+				9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
 				04D2421B26B3CCB600312E2E /* ReceivableListViewController.swift in Sources */,
 				04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */,
