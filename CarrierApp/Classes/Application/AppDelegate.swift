@@ -59,8 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
-        GMSAutocompleteViewControllerHandling()
-        initializeLocationManager()
+        //GMSAutocompleteViewControllerHandling()
+        //initializeLocationManager()
 //        loginToTwillio()
         return true
     }

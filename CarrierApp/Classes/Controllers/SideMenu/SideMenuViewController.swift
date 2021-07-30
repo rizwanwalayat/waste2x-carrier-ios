@@ -174,12 +174,38 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
+        case 3:
+            
+            if selectionIndex != 3 {
+                
+                self.hideSideMenu {
+                    let vc = ReceivableListViewController(nibName: "ReceivableListViewController", bundle: nil)
+                    Utility.setupRoot(controller: vc)
+                }
+            }
+            
+        case 4:
+            
+            if selectionIndex != 3 {
+                
+                self.hideSideMenu {
+                    let vc = ContractsViewController(nibName: "ContractsViewController", bundle: nil)
+                    Utility.setupRoot(controller: vc)
+                }
+            }
+            
         case 8:
             
-            self.hideSideMenu {
-                let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-                Utility.setupRoot(controller: vc)
+            let actionVc = LogoutViewController(nibName: "LogoutViewController", bundle: nil)
+            actionVc.modalPresentationStyle = .overFullScreen
+            actionVc.confirmButtonPressed = {
+                
+                self.hideSideMenu {
+                    let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+                    Utility.setupRoot(controller: vc)
+                }
             }
+            self.present(actionVc, animated: false, completion: nil)
             
         default:
             

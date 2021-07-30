@@ -48,6 +48,7 @@ class QuotationsTableViewCell: UITableViewCell {
         
         quotationLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
         postLabel.setAttributedTextInLable("Post", "525A64", 10, " #2", "1C2439", 14)
+        statusValueLabel.text = status.rawValue
         
         switch status {
         case .accepted:
@@ -63,12 +64,10 @@ class QuotationsTableViewCell: UITableViewCell {
             statusValueLabel.textColor = UIColor(hexString: rejectedColorCode)
 
         }
-        
     }
-    
 }
 
-enum QuotationsStatusess  {
-    case accepted
-    case rejected
+enum QuotationsStatusess: String {
+    case accepted = "Accepted"
+    case rejected = "Revise"
 }
