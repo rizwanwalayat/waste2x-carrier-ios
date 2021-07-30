@@ -10,6 +10,9 @@ import UIKit
 
 class DispatchesListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bottomBorder: UIView!
+    @IBOutlet weak var dispatchesButton: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +24,23 @@ class DispatchesListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configCell(_ status: DispatchesStatus)
+    {
+        var statusColor: UIColor
+        switch status {
+        case .scheduled:
+            statusColor = UIColor(named: "redScheduled") ??  UIColor.red
+            dispatchesButton.setImageColor(color: statusColor)
+            bottomBorder.backgroundColor = statusColor
+        case .inTransit:
+            statusColor = UIColor(named: "yellowTransit") ??  UIColor.red
+            dispatchesButton.setImageColor(color: statusColor)
+            bottomBorder.backgroundColor = statusColor
+        case .delivered:
+            statusColor = UIColor(named: "greenDelivered") ??  UIColor.red
+            dispatchesButton.setImageColor(color: statusColor)
+            bottomBorder.backgroundColor = statusColor
+            
+        }
+    }
 }
