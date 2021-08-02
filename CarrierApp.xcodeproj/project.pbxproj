@@ -112,6 +112,12 @@
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
 		96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96893BAC26AE953E00C4E0FD /* Main.storyboard */; };
+		969FB4DF26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FB4DB26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift */; };
+		969FB4E026B4743600C77CE0 /* DispatchesTrackingStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969FB4DC26B4743600C77CE0 /* DispatchesTrackingStatusCell.xib */; };
+		969FB4E126B4743600C77CE0 /* DispatchesTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FB4DD26B4743600C77CE0 /* DispatchesTrackingViewController.swift */; };
+		969FB4E226B4743600C77CE0 /* DispatchesTrackingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969FB4DE26B4743600C77CE0 /* DispatchesTrackingViewController.xib */; };
+		96AE407F26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE407D26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift */; };
+		96AE408026B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96AE407E26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib */; };
 		96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */; };
 		96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */; };
 		96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */; };
@@ -240,6 +246,12 @@
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
 		96893BAC26AE953E00C4E0FD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		969FB4DB26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesTrackingStatusCell.swift; sourceTree = "<group>"; };
+		969FB4DC26B4743600C77CE0 /* DispatchesTrackingStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesTrackingStatusCell.xib; sourceTree = "<group>"; };
+		969FB4DD26B4743600C77CE0 /* DispatchesTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesTrackingViewController.swift; sourceTree = "<group>"; };
+		969FB4DE26B4743600C77CE0 /* DispatchesTrackingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesTrackingViewController.xib; sourceTree = "<group>"; };
+		96AE407D26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesTrackingDetailsCell.swift; sourceTree = "<group>"; };
+		96AE407E26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesTrackingDetailsCell.xib; sourceTree = "<group>"; };
 		96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableLoadsDetailViewController.swift; sourceTree = "<group>"; };
 		96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableLoadsDetailViewController.xib; sourceTree = "<group>"; };
 		96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
@@ -682,6 +694,7 @@
 		9674909226B2EAA7001C4A62 /* Dispatches */ = {
 			isa = PBXGroup;
 			children = (
+				969FB4D926B4743600C77CE0 /* DispatchesTracking */,
 				9674909826B320C6001C4A62 /* DispatchesList */,
 			);
 			path = Dispatches;
@@ -723,6 +736,43 @@
 				9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */,
 			);
 			path = AvailableLoadsList;
+			sourceTree = "<group>";
+		};
+		969FB4D926B4743600C77CE0 /* DispatchesTracking */ = {
+			isa = PBXGroup;
+			children = (
+				969FB4DD26B4743600C77CE0 /* DispatchesTrackingViewController.swift */,
+				969FB4DE26B4743600C77CE0 /* DispatchesTrackingViewController.xib */,
+				969FB4DA26B4743600C77CE0 /* Cells */,
+			);
+			path = DispatchesTracking;
+			sourceTree = "<group>";
+		};
+		969FB4DA26B4743600C77CE0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96AE407C26B84ABD008ABA66 /* DispatchesTrackingDetailsCell */,
+				96AE407B26B84A4A008ABA66 /* DispatchesTrackingStatusCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		96AE407B26B84A4A008ABA66 /* DispatchesTrackingStatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				969FB4DB26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift */,
+				969FB4DC26B4743600C77CE0 /* DispatchesTrackingStatusCell.xib */,
+			);
+			path = DispatchesTrackingStatusCell;
+			sourceTree = "<group>";
+		};
+		96AE407C26B84ABD008ABA66 /* DispatchesTrackingDetailsCell */ = {
+			isa = PBXGroup;
+			children = (
+				96AE407D26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift */,
+				96AE407E26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib */,
+			);
+			path = DispatchesTrackingDetailsCell;
 			sourceTree = "<group>";
 		};
 		96B4E97F26B13C790032C9F2 /* AvailableLoadsDetail */ = {
@@ -863,6 +913,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969FB4E026B4743600C77CE0 /* DispatchesTrackingStatusCell.xib in Resources */,
 				96DE175826A023D6007FCD9C /* ProfileViewController.xib in Resources */,
 				04D2422626B4070200312E2E /* ContractsViewController.xib in Resources */,
 				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
@@ -891,12 +942,14 @@
 				18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				96DE175426A020C4007FCD9C /* HomeViewController.xib in Resources */,
+				96AE408026B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib in Resources */,
 				96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */,
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */,
 				048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */,
+				969FB4E226B4743600C77CE0 /* DispatchesTrackingViewController.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */,
 				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
@@ -1012,6 +1065,7 @@
 				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */,
+				969FB4DF26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				96DE175726A023D6007FCD9C /* ProfileViewController.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
@@ -1056,6 +1110,7 @@
 				96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */,
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
 				9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */,
+				96AE407F26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift in Sources */,
 				048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */,
@@ -1066,6 +1121,7 @@
 				047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
+				969FB4E126B4743600C77CE0 /* DispatchesTrackingViewController.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */,
 				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,
