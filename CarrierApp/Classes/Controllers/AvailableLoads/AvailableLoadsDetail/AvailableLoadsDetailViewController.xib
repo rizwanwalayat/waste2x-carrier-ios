@@ -56,6 +56,7 @@
                                         <constraint firstAttribute="height" constant="24" id="ncI-mg-8gQ"/>
                                         <constraint firstAttribute="width" secondItem="1RG-7M-tf1" secondAttribute="height" multiplier="1:1" id="wRU-4A-IJN"/>
                                     </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="Back"/>
                                     <connections>
                                         <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="uco-GN-akH"/>

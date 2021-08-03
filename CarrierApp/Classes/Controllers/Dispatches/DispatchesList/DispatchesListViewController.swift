@@ -87,10 +87,10 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
         UITableView.automaticDimension
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let detailVC = QuotationDetailViewController(nibName: "QuotationDetailViewController", bundle: nil)
-//        self.navigationController?.pushViewController(detailVC, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DispatchesTrackingViewController(nibName: "DispatchesTrackingViewController", bundle: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 enum DispatchesStatus:String {
