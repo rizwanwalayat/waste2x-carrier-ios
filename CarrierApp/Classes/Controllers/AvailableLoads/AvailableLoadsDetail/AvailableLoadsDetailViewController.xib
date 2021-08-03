@@ -57,7 +57,7 @@
                                         <constraint firstAttribute="width" secondItem="1RG-7M-tf1" secondAttribute="height" multiplier="1:1" id="wRU-4A-IJN"/>
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="Back"/>
+                                    <state key="normal" image="BackButton"/>
                                     <connections>
                                         <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="uco-GN-akH"/>
                                     </connections>
@@ -429,7 +429,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Back" width="9" height="15"/>
+        <image name="BackButton" width="9" height="15"/>
         <image name="Drop Off Icon with Bg" width="20" height="20"/>
         <image name="Loads Detail Image" width="295" height="233"/>
         <image name="NavBar Header" width="375" height="142"/>
