@@ -46,6 +46,12 @@
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		049C052426B0022200A81023 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C052326B0022200A81023 /* MainTabbarController.swift */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
+		04C3091826B7E70F00BEC895 /* CreatePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C3091426B7E70F00BEC895 /* CreatePaymentViewController.xib */; };
+		04C3091926B7E70F00BEC895 /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C3091526B7E70F00BEC895 /* PaymentViewController.xib */; };
+		04C3091A26B7E70F00BEC895 /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3091626B7E70F00BEC895 /* CreatePaymentViewController.swift */; };
+		04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3091726B7E70F00BEC895 /* PaymentViewController.swift */; };
+		04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3091D26B81BB400BEC895 /* TrackerViewController.swift */; };
+		04C3092026B81BB400BEC895 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C3091E26B81BB400BEC895 /* TrackerViewController.xib */; };
 		04C3D36026B2C45C005FCF5A /* AvailableLoadsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */; };
 		04C3D36126B2C47A005FCF5A /* AvailableLoadsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */; };
 		04D2421B26B3CCB600312E2E /* ReceivableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2421926B3CCB600312E2E /* ReceivableListViewController.swift */; };
@@ -177,6 +183,12 @@
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		049C052326B0022200A81023 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		04C3091426B7E70F00BEC895 /* CreatePaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePaymentViewController.xib; sourceTree = "<group>"; };
+		04C3091526B7E70F00BEC895 /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
+		04C3091626B7E70F00BEC895 /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
+		04C3091726B7E70F00BEC895 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		04C3091D26B81BB400BEC895 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		04C3091E26B81BB400BEC895 /* TrackerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
 		04D2421926B3CCB600312E2E /* ReceivableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivableListViewController.swift; sourceTree = "<group>"; };
 		04D2421A26B3CCB600312E2E /* ReceivableListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivableListViewController.xib; sourceTree = "<group>"; };
 		04D2421D26B3D02100312E2E /* ReceivableLIstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivableLIstTableViewCell.swift; sourceTree = "<group>"; };
@@ -324,6 +336,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04C3091326B7E70F00BEC895 /* Payments */,
 				9674909226B2EAA7001C4A62 /* Dispatches */,
 				04028FE926B418DA0053F41C /* Logout */,
 				04D2422226B406D600312E2E /* Contracts */,
@@ -498,6 +511,26 @@
 				047E83D2268338DC006A0F18 /* LocationPicker */,
 			);
 			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		04C3091326B7E70F00BEC895 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				04C3091426B7E70F00BEC895 /* CreatePaymentViewController.xib */,
+				04C3091626B7E70F00BEC895 /* CreatePaymentViewController.swift */,
+				04C3091526B7E70F00BEC895 /* PaymentViewController.xib */,
+				04C3091726B7E70F00BEC895 /* PaymentViewController.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		04C3091C26B81BB400BEC895 /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				04C3091D26B81BB400BEC895 /* TrackerViewController.swift */,
+				04C3091E26B81BB400BEC895 /* TrackerViewController.xib */,
+			);
+			path = Tracker;
 			sourceTree = "<group>";
 		};
 		04C3D36226B2C607005FCF5A /* AvailableLoadsFilter */ = {
@@ -694,6 +727,7 @@
 		9674909226B2EAA7001C4A62 /* Dispatches */ = {
 			isa = PBXGroup;
 			children = (
+				04C3091C26B81BB400BEC895 /* Tracker */,
 				969FB4D926B4743600C77CE0 /* DispatchesTracking */,
 				9674909826B320C6001C4A62 /* DispatchesList */,
 			);
@@ -928,6 +962,7 @@
 				04D2422026B3D02100312E2E /* ReceivableLIstTableViewCell.xib in Resources */,
 				04D2422B26B4078200312E2E /* ContractsTableViewCell.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
+				04C3091926B7E70F00BEC895 /* PaymentViewController.xib in Resources */,
 				9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */,
 				96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
@@ -938,6 +973,7 @@
 				18397E242660FF54003DE30C /* Poppins-Black.ttf in Resources */,
 				04D2421C26B3CCB600312E2E /* ReceivableListViewController.xib in Resources */,
 				048B798026B1337800189054 /* AvailableLoadsViewController.xib in Resources */,
+				04C3092026B81BB400BEC895 /* TrackerViewController.xib in Resources */,
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
 				18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
@@ -965,6 +1001,7 @@
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
+				04C3091826B7E70F00BEC895 /* CreatePaymentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,6 +1106,7 @@
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				96DE175726A023D6007FCD9C /* ProfileViewController.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
+				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
 				96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
@@ -1098,6 +1136,7 @@
 				048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
+				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
 				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
 				18A579BB269320230067952F /* Constants.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
@@ -1125,6 +1164,7 @@
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */,
 				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,
+				04C3091A26B7E70F00BEC895 /* CreatePaymentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -196,10 +196,20 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             
         case 4:
             
-            if selectionIndex != 3 {
+            if selectionIndex != 4 {
                 
                 self.hideSideMenu {
                     let vc = ContractsViewController(nibName: "ContractsViewController", bundle: nil)
+                    Utility.setupRoot(controller: vc)
+                }
+            }
+            
+        case 5:
+            
+            if selectionIndex != 5
+            {
+                self.hideSideMenu {
+                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
                     Utility.setupRoot(controller: vc)
                 }
             }
