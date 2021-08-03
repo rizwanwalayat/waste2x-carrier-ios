@@ -227,6 +227,8 @@
             <connections>
                 <outlet property="statusTitleLabel" destination="D5v-Za-27O" id="y7f-Ds-06U"/>
                 <outlet property="statusValueLabel" destination="1e0-cC-SVN" id="eR9-Sp-1yr"/>
+                <outlet property="trackOrderBtn" destination="irz-p4-dDa" id="QFE-HI-KLo"/>
+                <outlet property="viewOrderDetailBtn" destination="8SN-h1-Ipy" id="vmB-6F-J59"/>
             </connections>
             <point key="canvasLocation" x="136.95652173913044" y="220.3125"/>
         </tableViewCell>

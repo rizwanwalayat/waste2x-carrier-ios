@@ -43,6 +43,14 @@ class DispatchesTrackingViewController: BaseViewController {
         tableview.estimatedRowHeight = UITableView.automaticDimension
     }
 
+    @objc func trackOrderBtnPressed(_ sender: UIButton){
+        let trackerVC = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+        self.navigationController?.pushViewController(trackerVC, animated: true)
+    }
+    @objc func viewOrderDetailBtnPressed(_ sender: UIButton){
+        let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
+        self.navigationController?.pushViewController(orderDetailVC, animated: true)
+    }
 }
 
 extension DispatchesTrackingViewController : UITableViewDelegate, UITableViewDataSource
@@ -53,16 +61,23 @@ extension DispatchesTrackingViewController : UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell
-       
-       if indexPath.row == 0 {
-            cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingStatusCell", for: indexPath) as! DispatchesTrackingStatusCell
+        switch indexPath.row {
+        case 0:
+            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingStatusCell", for: indexPath) as! DispatchesTrackingStatusCell
+             cell.trackOrderBtn.addTarget(self, action: #selector(trackOrderBtnPressed(_:)), for: .touchUpInside)
+             cell.viewOrderDetailBtn.addTarget(self, action: #selector(viewOrderDetailBtnPressed(_:)), for: .touchUpInside)
+             return cell
+        case 1:
+            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingDetailsCell", for: indexPath) as! DispatchesTrackingDetailsCell
+            cell.configCell(DispatchesDeliveryType.pickup)
+            return cell
+        case 2:
+            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingDetailsCell", for: indexPath) as! DispatchesTrackingDetailsCell
+            cell.configCell(DispatchesDeliveryType.delivery)
+            return cell
+        default:
+            return UITableViewCell()
         }
-        else {
-            cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingDetailsCell", for: indexPath) as! DispatchesTrackingDetailsCell
-        }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

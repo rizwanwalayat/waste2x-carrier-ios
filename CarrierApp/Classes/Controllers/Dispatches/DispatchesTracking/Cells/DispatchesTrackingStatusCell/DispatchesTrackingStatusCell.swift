@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DispatchesTrackingStatusCell: UITableViewCell {
+class DispatchesTrackingStatusCell: BaseTableViewCell {
 
     // MARK: - Outlets
     
@@ -22,6 +22,8 @@ class DispatchesTrackingStatusCell: UITableViewCell {
     @IBOutlet weak var priceValueLabel : UILabel!
     @IBOutlet weak var TransporterTitleLabel : UILabel!
     @IBOutlet weak var TransporterValueLabel : UILabel!
+    @IBOutlet weak var viewOrderDetailBtn: UIButton!
+    @IBOutlet weak var trackOrderBtn: UIButton!
     
     
     // MARK: - Variables

@@ -128,6 +128,8 @@
 		96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */; };
 		96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */; };
 		96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */; };
+		96C44C2C26B952BD00ED5696 /* DispatchesOrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C44C2A26B952BC00ED5696 /* DispatchesOrderDetail.swift */; };
+		96C44C2D26B952BD00ED5696 /* DispatchesOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C44C2B26B952BD00ED5696 /* DispatchesOrderDetail.xib */; };
 		96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174326A01FC4007FCD9C /* ContainerViewController.xib */; };
 		96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174426A01FC5007FCD9C /* ContainerViewController.swift */; };
 		96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */; };
@@ -269,6 +271,8 @@
 		96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
 		96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
 		96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeVerificationViewController.xib; sourceTree = "<group>"; };
+		96C44C2A26B952BC00ED5696 /* DispatchesOrderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesOrderDetail.swift; sourceTree = "<group>"; };
+		96C44C2B26B952BD00ED5696 /* DispatchesOrderDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesOrderDetail.xib; sourceTree = "<group>"; };
 		96DE174326A01FC4007FCD9C /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		96DE174426A01FC5007FCD9C /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -727,6 +731,7 @@
 		9674909226B2EAA7001C4A62 /* Dispatches */ = {
 			isa = PBXGroup;
 			children = (
+				96C44C2926B952BC00ED5696 /* DispatchesOrderDetail */,
 				04C3091C26B81BB400BEC895 /* Tracker */,
 				969FB4D926B4743600C77CE0 /* DispatchesTracking */,
 				9674909826B320C6001C4A62 /* DispatchesList */,
@@ -785,8 +790,8 @@
 		969FB4DA26B4743600C77CE0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				96AE407C26B84ABD008ABA66 /* DispatchesTrackingDetailsCell */,
 				96AE407B26B84A4A008ABA66 /* DispatchesTrackingStatusCell */,
+				96AE407C26B84ABD008ABA66 /* DispatchesTrackingDetailsCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -834,6 +839,15 @@
 				96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		96C44C2926B952BC00ED5696 /* DispatchesOrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				96C44C2A26B952BC00ED5696 /* DispatchesOrderDetail.swift */,
+				96C44C2B26B952BD00ED5696 /* DispatchesOrderDetail.xib */,
+			);
+			path = DispatchesOrderDetail;
 			sourceTree = "<group>";
 		};
 		96D6919C26AED1F600183D4D /* AvailableLoads */ = {
@@ -964,6 +978,7 @@
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				04C3091926B7E70F00BEC895 /* PaymentViewController.xib in Resources */,
 				9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */,
+				96C44C2D26B952BD00ED5696 /* DispatchesOrderDetail.xib in Resources */,
 				96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
@@ -1157,6 +1172,7 @@
 				04D2421B26B3CCB600312E2E /* ReceivableListViewController.swift in Sources */,
 				04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
+				96C44C2C26B952BD00ED5696 /* DispatchesOrderDetail.swift in Sources */,
 				047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,

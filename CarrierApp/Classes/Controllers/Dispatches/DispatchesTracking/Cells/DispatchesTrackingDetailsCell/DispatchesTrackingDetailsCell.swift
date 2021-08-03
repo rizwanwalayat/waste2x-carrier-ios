@@ -8,11 +8,15 @@
 
 import UIKit
 
-class DispatchesTrackingDetailsCell: UITableViewCell {
+enum DispatchesDeliveryType: String {
+    case pickup = "Pickup"
+    case delivery = "Delivery"
+}
 
-    @IBOutlet weak var bottomBorder: UIView!
-    @IBOutlet weak var dispatchesButton: UIImageView!
-    
+class DispatchesTrackingDetailsCell: BaseTableViewCell {
+
+    @IBOutlet weak var DeliveryIcon: UIImageView!
+    @IBOutlet weak var DeliveryLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,23 +28,15 @@ class DispatchesTrackingDetailsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(_ status: DispatchesStatus)
+    func configCell(_ status: DispatchesDeliveryType)
     {
-        var statusColor: UIColor
         switch status {
-        case .scheduled:
-            statusColor = UIColor(named: "redScheduled") ??  UIColor.red
-            dispatchesButton.setImageColor(color: statusColor)
-            bottomBorder.backgroundColor = statusColor
-        case .inTransit:
-            statusColor = UIColor(named: "yellowTransit") ??  UIColor.red
-            dispatchesButton.setImageColor(color: statusColor)
-            bottomBorder.backgroundColor = statusColor
-        case .delivered:
-            statusColor = UIColor(named: "greenDelivered") ??  UIColor.red
-            dispatchesButton.setImageColor(color: statusColor)
-            bottomBorder.backgroundColor = statusColor
-            
+        case .pickup:
+            DeliveryIcon.image = UIImage(named: "Pick up Icon with Bg Big")
+            DeliveryLabel.text = "Pickup"
+        case .delivery:
+            DeliveryIcon.image = UIImage(named: "Drop Off Icon with Bg Big")
+            DeliveryLabel.text = "Delivery"
         }
     }
 }
