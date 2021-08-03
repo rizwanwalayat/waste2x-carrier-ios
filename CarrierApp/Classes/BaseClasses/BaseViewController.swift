@@ -49,15 +49,8 @@ class BaseViewController: UIViewController {
         let toastLabel = UILabel(frame: CGRect(x: 0 , y:ScreenSize.SCREEN_HEIGHT/2, width: ScreenSize.SCREEN_WIDTH, height: 40))
         toastLabel.backgroundColor = UIColor.appColor
         toastLabel.textColor = UIColor.white
-        var font = UIFont()
-        if let tempFont = UIFont(name: "Poppins-Regular", size: 13)
-        {
-            font = tempFont
-        }
-        else
-        {
-            font = UIFont.systemFont(ofSize: 13)
-        }
+        let font = UIFont.poppinFont(withSize: 13)
+        
         
         toastLabel.font = font
         toastLabel.textAlignment = .center;
@@ -75,11 +68,11 @@ class BaseViewController: UIViewController {
     }
     func setAttributedTextInLabel(boldString:String,emailAddress :String) -> NSMutableAttributedString
     {
-        let boldfont       = UIFont(name: "Poppins-Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .semibold)
+        let boldfont       = UIFont.poppinBoldFont(withSize: 18)
         let activityAttribute   = [ NSAttributedString.Key.font: boldfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
         let nameAttrString      = NSMutableAttributedString(string: boldString, attributes: activityAttribute)
         
-        let emailFont            = UIFont(name: "Poppins", size: 18) ?? UIFont.systemFont(ofSize: 18)
+        let emailFont            = UIFont.poppinFont(withSize: 18)
         let nameAttribute       = [ NSAttributedString.Key.font: emailFont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
         let activityAttrString  = NSAttributedString(string: emailAddress, attributes: nameAttribute)
         
@@ -89,11 +82,11 @@ class BaseViewController: UIViewController {
     }
     func setAttributedTextInLabel(text1:String,text2 :String,size:Int) -> NSMutableAttributedString
     {
-        let firstTitle       = UIFont(name: "Poppins", size: CGFloat(size)) ?? UIFont.systemFont(ofSize: 14)
+        let firstTitle       = UIFont.poppinFont(withSize: CGFloat(size))
         let activityAttribute   = [ NSAttributedString.Key.font: firstTitle, NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.31, green: 0.31, blue: 0.31, alpha: 0.9)]
         let nameAttrString      = NSMutableAttributedString(string: text1, attributes: activityAttribute)
         
-        let secondTitle            = UIFont(name: "Poppins-Bold", size: CGFloat(size)) ?? UIFont.systemFont(ofSize: 14)
+        let secondTitle            = UIFont.poppinBoldFont(withSize: CGFloat(size))
         let nameAttribute       = [ NSAttributedString.Key.font: secondTitle, NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.31, green: 0.31, blue: 0.31, alpha: 1.0)]
         let activityAttrString  = NSAttributedString(string: text2, attributes: nameAttribute)
         

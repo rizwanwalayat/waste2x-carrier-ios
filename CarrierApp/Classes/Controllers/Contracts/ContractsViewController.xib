@@ -27,13 +27,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRU-DA-bLN" userLabel="NavBar">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="zD6-lV-Hu2">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fk-KN-zGV" userLabel="NavBar View">
-                            <rect key="frame" x="0.0" y="56.5" width="414" height="85.5"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="85.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-oy-f4f">
                                     <rect key="frame" x="30" y="22" width="22" height="22"/>
@@ -74,10 +74,10 @@
                     </constraints>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-Bm-rNj" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="114" width="414" height="782"/>
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s7c-ig-Ht1">
-                            <rect key="frame" x="16" y="16" width="382" height="766"/>
+                            <rect key="frame" x="16" y="16" width="382" height="778.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="N4D-Se-pEH"/>
@@ -111,7 +111,7 @@
                 <constraint firstItem="Rpg-Bm-rNj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="axX-hL-y7U"/>
                 <constraint firstItem="ZRU-DA-bLN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bFh-Ec-9S4"/>
                 <constraint firstItem="ZRU-DA-bLN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dP0-Ip-skM"/>
-                <constraint firstItem="5fk-KN-zGV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12.5" id="es6-n3-kPb"/>
+                <constraint firstItem="5fk-KN-zGV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="es6-n3-kPb"/>
                 <constraint firstItem="Rpg-Bm-rNj" firstAttribute="top" secondItem="ZRU-DA-bLN" secondAttribute="bottom" constant="-28" id="ikj-YU-5CX"/>
             </constraints>
             <point key="canvasLocation" x="100" y="88"/>

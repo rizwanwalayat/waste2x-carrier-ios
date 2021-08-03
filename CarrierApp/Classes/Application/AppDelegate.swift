@@ -168,10 +168,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           UINavigationBar.appearance().barTintColor = barColor
           UINavigationBar.appearance().tintColor = UIColor.white
         // Color and font of typed text in the search bar.
-          let searchBarTextAttributes = [NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.font: UIFont(name: "Poppins-Regular", size: 16)]
+        let searchBarTextAttributes = [NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.font: UIFont.poppinFont(withSize: 16)]
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = searchBarTextAttributes as [NSAttributedString.Key : Any]
         // Color of the placeholder text in the search bar prior to text entry
-          let placeholderAttributes = [NSAttributedString.Key.foregroundColor: backgroundColor, NSAttributedString.Key.font: UIFont(name: "Poppins-Regular", size: 15)]
+        let placeholderAttributes = [NSAttributedString.Key.foregroundColor: backgroundColor, NSAttributedString.Key.font: UIFont.poppinFont(withSize: 15)]
         // Color of the default search text.
           let attributedPlaceholder = NSAttributedString(string: "Search", attributes: placeholderAttributes as [NSAttributedString.Key : Any])
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = attributedPlaceholder

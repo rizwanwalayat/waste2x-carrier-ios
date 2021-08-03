@@ -57,12 +57,25 @@ extension UILabel {
     
     func setAttributedTextInLable(_ text1:String, _ text1ColorStr : String, _ text1Size : Int, _ text2 :String, _ text2ColorStr : String, _ text2Size: Int)
     {
-        let firstTitle       = UIFont(name: "Poppins", size: CGFloat(text1Size)) ?? UIFont.systemFont(ofSize: CGFloat(text1Size))
+        let firstTitle       = UIFont.poppinFont(withSize: CGFloat(text1Size))
         let activityAttribute   = [ NSAttributedString.Key.font: firstTitle, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: text1ColorStr)]
         let nameAttrString      = NSMutableAttributedString(string: text1, attributes: activityAttribute)
         
-        let secondTitle            = UIFont(name: "Poppins-Medium", size: CGFloat(text2Size)) ?? UIFont.systemFont(ofSize: CGFloat(text2Size))
+        let secondTitle            = UIFont.poppinMediumFont(withSize: CGFloat(text2Size))
         let nameAttribute       = [ NSAttributedString.Key.font: secondTitle, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: text2ColorStr)]
+        let activityAttrString  = NSAttributedString(string: text2, attributes: nameAttribute)
+        
+        nameAttrString.append(activityAttrString)
+        self.attributedText = nameAttrString
+    }
+    
+    func setAttributedTextInLable(_ text1:String, _ text1ColorStr : String, _ text1Font: UIFont, _ text2 :String, _ text2ColorStr : String, _ text2Font: UIFont)
+    {
+        
+        let activityAttribute   = [ NSAttributedString.Key.font: text1Font, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: text1ColorStr)]
+        let nameAttrString      = NSMutableAttributedString(string: text1, attributes: activityAttribute)
+        
+        let nameAttribute       = [ NSAttributedString.Key.font: text2Font, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: text2ColorStr)]
         let activityAttrString  = NSAttributedString(string: text2, attributes: nameAttribute)
         
         nameAttrString.append(activityAttrString)

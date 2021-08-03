@@ -65,7 +65,7 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
         image.image = UIImage(named: "Schedule Icon")
         view.addSubview(image)
         let label = UILabel(frame: CGRect(x: image.frame.width + 16, y: 24, width: UIScreen.main.bounds.width - 46, height: 24))
-        label.font = UIFont(name: "Poppins-Regular", size: 16)
+        label.font = UIFont.poppinFont(withSize: 16)
         label.text = "Scheduled"
         view.addSubview(label)
         let status = dispatchesStatusArray[section]
