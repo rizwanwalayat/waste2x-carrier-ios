@@ -14,7 +14,6 @@ class QuotationListViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableview : UITableView!
-    @IBOutlet weak var mainHolderView : UIView!
     
     
     // MARK: - Controller's LifeCycle
@@ -22,18 +21,10 @@ class QuotationListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainHolderView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
         
         tableviewHandlings()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super .viewWillAppear(animated)
-
-        mainHolderView.layer.cornerRadius = 36
-        mainHolderView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-    }
-    
+        
     func tableviewHandlings()
     {
         tableview.register(UINib(nibName: "QuotationsTableViewCell", bundle: nil), forCellReuseIdentifier: "QuotationsTableViewCell")

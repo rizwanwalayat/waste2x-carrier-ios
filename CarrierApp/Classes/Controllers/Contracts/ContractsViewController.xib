@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContractsViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
-                <outlet property="mainHolderView" destination="Rpg-Bm-rNj" id="t9i-aw-BDn"/>
+                <outlet property="baseHolderView" destination="Rpg-Bm-rNj" id="1W0-of-rFA"/>
                 <outlet property="tableView" destination="s7c-ig-Ht1" id="xmk-0z-qVQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

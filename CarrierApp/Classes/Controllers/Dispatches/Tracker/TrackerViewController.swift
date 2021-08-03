@@ -48,14 +48,8 @@ class TrackerViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        mainView.layer.cornerRadius = 16
-        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        mainView.layer.masksToBounds = true
-        mapView.layer.cornerRadius = 36
-        mapView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        mapView.layer.masksToBounds = true
-        
-        globalObjectContainer?.tabbarHiddenView.isHidden = true
+        mainView.roundCornersTopView(36)    
+        mapView.roundCornersTopView(36)
         initializeTheLocationManager()
         
     }
@@ -97,7 +91,7 @@ class TrackerViewController: BaseViewController {
     //MARK: - IBOutlets
     
     @IBAction func backAction(_ sender: Any) {
-        globalObjectContainer?.tabbarHiddenView.isHidden = false
+        
         self.navigationController?.popViewController(animated: true)
     }
     

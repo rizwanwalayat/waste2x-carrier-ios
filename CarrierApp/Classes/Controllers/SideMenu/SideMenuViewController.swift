@@ -43,7 +43,6 @@ class SideMenuViewController: BaseViewController {
         headerView.layer.cornerRadius = 30
         headerView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         headerView.layer.masksToBounds = true
-        self.phoneNumberLabel.text = self.userData?.phone
         phoneNoHolderView.layer.cornerRadius = 20
         phoneNoHolderView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
         

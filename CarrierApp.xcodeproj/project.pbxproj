@@ -117,21 +117,14 @@
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
-		96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96893BAC26AE953E00C4E0FD /* Main.storyboard */; };
 		96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */; };
 		96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */; };
 		96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */; };
 		96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */; };
-		96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174326A01FC4007FCD9C /* ContainerViewController.xib */; };
-		96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174426A01FC5007FCD9C /* ContainerViewController.swift */; };
 		96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */; };
 		96DE174D26A01FE3007FCD9C /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */; };
 		96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */; };
 		96DE174F26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174B26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib */; };
-		96DE175326A020C4007FCD9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE175126A020C4007FCD9C /* HomeViewController.swift */; };
-		96DE175426A020C4007FCD9C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE175226A020C4007FCD9C /* HomeViewController.xib */; };
-		96DE175726A023D6007FCD9C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE175526A023D6007FCD9C /* ProfileViewController.swift */; };
-		96DE175826A023D6007FCD9C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE175626A023D6007FCD9C /* ProfileViewController.xib */; };
 		B15E6762F9E144B246EE40F4 /* Pods_CarrierApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -251,22 +244,15 @@
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
-		96893BAC26AE953E00C4E0FD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableLoadsDetailViewController.swift; sourceTree = "<group>"; };
 		96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableLoadsDetailViewController.xib; sourceTree = "<group>"; };
 		96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
 		96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
 		96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeVerificationViewController.xib; sourceTree = "<group>"; };
-		96DE174326A01FC4007FCD9C /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
-		96DE174426A01FC5007FCD9C /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuItemsTableViewCell.swift; sourceTree = "<group>"; };
 		96DE174B26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuItemsTableViewCell.xib; sourceTree = "<group>"; };
-		96DE175126A020C4007FCD9C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		96DE175226A020C4007FCD9C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		96DE175526A023D6007FCD9C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		96DE175626A023D6007FCD9C /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,8 +317,6 @@
 				04D2421826B3CC8A00312E2E /* Receivables */,
 				96D6919C26AED1F600183D4D /* AvailableLoads */,
 				04DB591A26AED61700C88804 /* Quotations */,
-				96DE175026A02072007FCD9C /* Tabs */,
-				96DE174226A01F73007FCD9C /* Container */,
 				96DE174126A01F55007FCD9C /* SideMenu */,
 				0067A2DE2527549400CECA8C /* Onboarding */,
 			);
@@ -388,7 +372,6 @@
 			children = (
 				18397E032660FF47003DE30C /* Foonts */,
 				0067A33A252B91BA00CECA8C /* Assets.xcassets */,
-				96893BAC26AE953E00C4E0FD /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -806,15 +789,6 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		96DE174226A01F73007FCD9C /* Container */ = {
-			isa = PBXGroup;
-			children = (
-				96DE174426A01FC5007FCD9C /* ContainerViewController.swift */,
-				96DE174326A01FC4007FCD9C /* ContainerViewController.xib */,
-			);
-			path = Container;
-			sourceTree = "<group>";
-		};
 		96DE174926A01FE3007FCD9C /* tableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,17 +796,6 @@
 				96DE174B26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib */,
 			);
 			path = tableView;
-			sourceTree = "<group>";
-		};
-		96DE175026A02072007FCD9C /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				96DE175126A020C4007FCD9C /* HomeViewController.swift */,
-				96DE175226A020C4007FCD9C /* HomeViewController.xib */,
-				96DE175526A023D6007FCD9C /* ProfileViewController.swift */,
-				96DE175626A023D6007FCD9C /* ProfileViewController.xib */,
-			);
-			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -897,7 +860,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DE175826A023D6007FCD9C /* ProfileViewController.xib in Resources */,
 				04D2422626B4070200312E2E /* ContractsViewController.xib in Resources */,
 				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
 				04028FF526B419640053F41C /* LogoutViewController.xib in Resources */,
@@ -926,8 +888,6 @@
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
 				18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
-				96DE175426A020C4007FCD9C /* HomeViewController.xib in Resources */,
-				96DE174526A01FC5007FCD9C /* ContainerViewController.xib in Resources */,
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
@@ -936,7 +896,6 @@
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */,
 				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
-				96893BAD26AE953E00C4E0FD /* Main.storyboard in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				048B797A26B120C300189054 /* QuotationListViewController.xib in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
@@ -1050,10 +1009,8 @@
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
-				96DE175726A023D6007FCD9C /* ProfileViewController.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
 				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
-				96DE174626A01FC5007FCD9C /* ContainerViewController.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
 				18A579BE269321690067952F /* ApiClient.swift in Sources */,
@@ -1062,7 +1019,6 @@
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */,
 				18A579C2269321A60067952F /* ApiResponseHandler.swift in Sources */,
-				96DE175326A020C4007FCD9C /* HomeViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				04D2422A26B4078200312E2E /* ContractsTableViewCell.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,

@@ -11,17 +11,21 @@ import SDWebImage
 
 class BaseViewController: UIViewController {
 
-    var tabbarViewHeight : CGFloat = 0.0
-    var userData : RegistrationResult?
-    let refreshControl = UIRefreshControl()
+
     
+    @IBOutlet weak var baseHolderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userData = DataManager.shared.getUser()?.result
-        tabbarViewHeight = (UIScreen.main.bounds.height * 0.0926339)+10
-        print("Bottom Const : \(tabbarViewHeight)\nscreen height : \(UIScreen.main.bounds.height)")
+        baseHolderView?.roundCornersTopView(36)
+        baseHolderView?.backgroundColor = UIColor(hexString: "F9F9FB")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        baseHolderView?.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F9F9FB").cgColor])
     }
 
     /**************************************************/

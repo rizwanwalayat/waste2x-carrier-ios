@@ -13,7 +13,6 @@ class ContractsViewController: BaseViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -25,9 +24,6 @@ class ContractsViewController: BaseViewController {
         tableView.register(UINib(nibName: "ContractsTableViewCell", bundle: nil), forCellReuseIdentifier: "ContractsTableViewCell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        mainHolderView.layer.cornerRadius = 36
-        mainHolderView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        mainHolderView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
     }
 }
 

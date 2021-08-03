@@ -50,6 +50,7 @@ struct NetworkingConnection {
         let navigationController = BaseNavigationViewController()
         navigationController.viewControllers = [vc]
         navigationController.navigationBar.isHidden = true
+        navigationController.navigationBar.barStyle = .black
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
         kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()

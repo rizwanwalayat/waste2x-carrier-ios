@@ -24,6 +24,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvailableLoadsViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
                 <outlet property="applyButton" destination="bdm-xi-fvS" id="evS-2J-XbI"/>
+                <outlet property="baseHolderView" destination="NiY-NZ-t4h" id="fY2-lE-KUi"/>
                 <outlet property="clearFilterButton" destination="fvX-es-4nz" id="qa4-nl-clu"/>
                 <outlet property="dropOffCityTextField" destination="soJ-uu-fqk" id="J3S-Ni-1RY"/>
                 <outlet property="dropOffCountryTextField" destination="vzU-AF-AFE" id="rhL-PY-Yxc"/>
@@ -558,9 +559,6 @@
                         <constraint firstItem="WhE-Nz-MWC" firstAttribute="leading" secondItem="NiY-NZ-t4h" secondAttribute="leading" constant="20" symbolic="YES" id="xY2-kI-HOd"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="32"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                             <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>

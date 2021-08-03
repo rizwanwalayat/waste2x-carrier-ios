@@ -12,7 +12,6 @@ class ReceivableListViewController: BaseViewController {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var mainContentView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -24,9 +23,6 @@ class ReceivableListViewController: BaseViewController {
         tableView.register(UINib(nibName: "ReceivableLIstTableViewCell", bundle: nil), forCellReuseIdentifier: "ReceivableLIstTableViewCell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        mainContentView.layer.cornerRadius = 36
-        mainContentView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        mainContentView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
     }
 
 }

@@ -11,12 +11,10 @@ import UIKit
 class AvailableLoadsListViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var mainHolderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainHolderView.addGradient(colors: [UIColor(hexString: "FDFDFD").cgColor, UIColor(hexString: "F0F2F4").cgColor])
         
         tableViewSetup()
     }

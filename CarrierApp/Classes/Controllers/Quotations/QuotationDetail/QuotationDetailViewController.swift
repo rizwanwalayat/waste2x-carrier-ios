@@ -12,7 +12,6 @@ class QuotationDetailViewController: BaseViewController {
 
     // MARK: - Outlet
     
-    @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var quotationNoLabel: UILabel!
     @IBOutlet weak var originDestinationHolderView: UIView!
@@ -41,14 +40,6 @@ class QuotationDetailViewController: BaseViewController {
         super.viewDidLoad()
 
         quotationNoLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super .viewWillAppear(animated)
-
-        mainScrollView.layer.cornerRadius = 36
-        mainScrollView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        mainScrollView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
     }
 
     

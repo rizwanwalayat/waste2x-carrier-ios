@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReceivableListViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
-                <outlet property="mainContentView" destination="unw-ir-4KJ" id="xyc-0Y-o0v"/>
+                <outlet property="baseHolderView" destination="unw-ir-4KJ" id="hwc-Bw-Nio"/>
                 <outlet property="tableView" destination="ivz-2v-0zf" id="gyh-Kc-isA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

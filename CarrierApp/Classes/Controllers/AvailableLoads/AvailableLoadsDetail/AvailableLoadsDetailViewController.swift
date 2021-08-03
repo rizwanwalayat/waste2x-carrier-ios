@@ -12,7 +12,7 @@ class AvailableLoadsDetailViewController: BaseViewController {
 
     // MARK: - Outlet
     
-    @IBOutlet weak var mainScrollView: UIScrollView!
+    
     @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var quotationNoLabel: UILabel!
     @IBOutlet weak var originDestinationHolderView: UIView!
@@ -46,9 +46,6 @@ class AvailableLoadsDetailViewController: BaseViewController {
         super .viewWillAppear(animated)
 
         self.navigationController?.navigationBar.isHidden = true
-        mainScrollView.layer.cornerRadius = 36
-        mainScrollView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        mainScrollView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
     }
 
     

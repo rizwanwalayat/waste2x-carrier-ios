@@ -396,6 +396,13 @@ extension UIView {
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
+    func roundCornersTopView(_ radius: CGFloat)
+    {
+        layer.cornerRadius = radius
+        layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        layer.masksToBounds = true
+    }
+    
     func hide() {
         self.isHidden = true
     }

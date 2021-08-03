@@ -9,7 +9,7 @@
 import UIKit
 
 class CreatePaymentViewController: BaseViewController {
-    @IBOutlet weak var mainView: UIView!
+    
     @IBOutlet weak var idTitle: UITextField!
     @IBOutlet weak var emailTitle: UITextField!
     @IBOutlet weak var informationText: UILabel!
@@ -20,18 +20,8 @@ class CreatePaymentViewController: BaseViewController {
         super.viewDidLoad()
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super .viewWillAppear(animated)
-        mainView.layer.cornerRadius = 36
-        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        mainView.layer.masksToBounds = true
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        mainView.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F9F9FB").cgColor])
-    }
+    
     override func viewWillLayoutSubviews() {
         super .viewWillLayoutSubviews()
         

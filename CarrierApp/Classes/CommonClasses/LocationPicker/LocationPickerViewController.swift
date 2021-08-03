@@ -48,11 +48,7 @@ class LocationPickerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !isForSiteCreation {
-            constBottomSpaceOfMapView.constant = tabbarViewHeight+15
-            constBottomOfButtonView.constant = tabbarViewHeight+15
-            
-        }
+        
         setupView()
     }
     
