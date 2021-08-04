@@ -19,13 +19,13 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         baseHolderView?.roundCornersTopView(36)
-        baseHolderView?.backgroundColor = UIColor(hexString: "F9F9FB")
+        baseHolderView?.backgroundColor = UIColor(hexString: "F0F2F4")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        baseHolderView?.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F9F9FB").cgColor])
+        baseHolderView?.addGradient(colors: [UIColor(hexString: "FFFFFF").cgColor, UIColor(hexString: "F0F2F4").cgColor])
     }
 
     /**************************************************/

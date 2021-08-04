@@ -356,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				96B4E98526B197850032C9F2 /* CodeVerification */,
-				0067A313252AFC9E00CECA8C /* String.swift */,
 				9674908D26B28EF8001C4A62 /* Reset-Password */,
 				96893B9F26A5EFE500C4E0FD /* Forgot-Password */,
 				18397DC82660FD35003DE30C /* Login */,
@@ -400,6 +399,7 @@
 		0067A308252AFC5000CECA8C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0067A313252AFC9E00CECA8C /* String.swift */,
 				0067A30B252AFC9D00CECA8C /* Int.swift */,
 				0067A30D252AFC9D00CECA8C /* TimeInterval.swift */,
 				0067A316252AFC9E00CECA8C /* UIFont.swift */,

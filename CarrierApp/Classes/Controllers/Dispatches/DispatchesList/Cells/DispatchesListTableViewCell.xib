@@ -106,8 +106,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqf-on-rb2">
                                 <rect key="frame" x="304" y="8" width="22" height="171"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me7-vx-mtI">
-                                        <rect key="frame" x="3" y="0.0" width="16" height="36.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me7-vx-mtI">
+                                        <rect key="frame" x="11" y="0.0" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="26"/>
                                         <color key="textColor" name="lightText"/>
                                         <nil key="highlightedColor"/>

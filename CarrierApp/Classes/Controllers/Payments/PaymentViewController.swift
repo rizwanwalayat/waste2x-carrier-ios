@@ -13,9 +13,12 @@ class PaymentViewController: BaseViewController {
     
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var connectButtonLbl: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.setAttributedTextInLable("Your payment account is\n", "1C2439", UIFont.poppinMediumFont(withSize: 16), "not made", "1C2439", UIFont.poppinSemiBoldFont(withSize: 16))
         
         connectButtonLbl.setAttributedTextInLable("Connect with ", "ffffff", UIFont.poppinMediumFont(withSize: 15), "Stripe", "ffffff", UIFont.poppinBlack(withSize: 20))
     }

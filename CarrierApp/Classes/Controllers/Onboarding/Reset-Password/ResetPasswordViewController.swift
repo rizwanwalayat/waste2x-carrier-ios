@@ -47,20 +47,20 @@ class ResetPasswordViewController: BaseViewController {
             
         } else {
             
-            if Utility.isTextFieldHasText(textField: newPasswordTextField)
-            {
-                CodeVerification.verificationCode(phoneNumber: newPasswordTextField.text ?? "") { result, error, status,message in
-                    
-                    if error == nil {
-                        
-                    }
-                    else {
-                        
-                        Utility.showAlertController(self, error!.localizedDescription)
-                        
-                    }
-                }
-            }
+//            if Utility.isTextFieldHasText(textField: newPasswordTextField)
+//            {
+//                CodeVerification.verificationCode(phoneNumber: newPasswordTextField.text ?? "") { result, error, status,message in
+//                    
+//                    if error == nil {
+//                        
+//                    }
+//                    else {
+//                        
+//                        Utility.showAlertController(self, error!.localizedDescription)
+//                        
+//                    }
+//                }
+//            }
         }
     }
     @IBAction func forgotPasswordPressed(_ sender: Any) {
@@ -76,7 +76,7 @@ extension ResetPasswordViewController : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         
-        if newPasswordTextField.text!.count > 8, newPasswordTextField.text! == confirmPasswordTextField.text! {
+        if newPasswordTextField.text!.count > 0 {
             loginButton.makeEnable(value: true)
         }
         else {
