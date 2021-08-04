@@ -49,14 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
 
         // [END register_for_notifications]
-        if DataManager.shared.getUser() == nil
-        {
-            Utility.loginRootViewController()
-        }
-        else
-        {
-            Utility.homeViewController()
-        }
+        Utility.loginRootViewController()
+        
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         //GMSAutocompleteViewControllerHandling()
@@ -66,21 +60,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-//        loginToTwillio()
-        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
+
+        
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
+        
     }
     func applicationDidEnterBackground(_ application: UIApplication) {
-        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
-//        TwillioChatDataModel.shared.shutdown()
+        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
-//        TwillioChatDataModel.shared.shutdown()
+        
     }
     
     // code for load all messages

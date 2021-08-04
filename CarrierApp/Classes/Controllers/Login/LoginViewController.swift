@@ -16,7 +16,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
     @IBOutlet weak var phoneNoTextField     : UITextField!
     @IBOutlet weak var passwordTextField    : UITextField!
-    @IBOutlet weak var loginButton           : UIButton!
+    @IBOutlet weak var loginButton          : UIButton!
     
     //MARK:- Variables
    
@@ -25,15 +25,14 @@ class LoginViewController: BaseViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        
         self.navigationController?.navigationBar.isHidden = true
+        phoneNoTextField.text = "+17734777019"
+        passwordTextField.text = "123456"
+        //loginButton.makeEnable(value: false)
     }
     
     
-    //MARK: - SetupView
-    func setupView() {
-        loginButton.makeEnable(value: false)
-    }
     
     
     //MARK: - IBActions
@@ -42,25 +41,16 @@ class LoginViewController: BaseViewController {
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
-        if AppDelegate.demo {
+        LoginUser.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "") { result, error, success, message in
+
+            if !(success ?? false) {
+
+                self.showToast(message: message)
+                return
+            }
+
+            
             Utility.setupHomeAsRootViewController()
-            
-        } else {
-            
-//            if Utility.isTextFieldHasText(textField: phoneNoTextField)
-//            {
-//                CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
-//                    
-//                    if error == nil {
-//                        
-//                    }
-//                    else {
-//                        
-//                        Utility.showAlertController(self, error!.localizedDescription)
-//                        
-//                    }
-//                }
-//            }
         }
     }
     @IBAction func forgotPasswordPressed(_ sender: Any) {
