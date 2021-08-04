@@ -46,17 +46,17 @@ class ForgotPasswordViewController: BaseViewController {
             let codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
             self.navigationController?.pushViewController(codeVC, animated: true)
             
-            CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
-                
-                if error == nil {
-                    
-                }
-                else {
-                    
-                    Utility.showAlertController(self, error!.localizedDescription)
-                    
-                }
-            }
+//            CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
+//                
+//                if error == nil {
+//                    
+//                }
+//                else {
+//                    
+//                    Utility.showAlertController(self, error!.localizedDescription)
+//                    
+//                }
+//            }
         }
     }
     @IBAction func backToLoginPressed(_ sender: Any) {
@@ -77,7 +77,7 @@ extension ForgotPasswordViewController : UITextFieldDelegate {
             }
         }
         
-        if phoneNoTextField.text!.count > 11  {
+        if phoneNoTextField.text!.count > 0  {
             resetButton.makeEnable(value: true)
         }
         else {

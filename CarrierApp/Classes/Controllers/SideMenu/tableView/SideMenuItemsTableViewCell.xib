@@ -22,7 +22,7 @@
                         <color key="backgroundColor" red="0.16470588235294117" green="0.49019607843137253" blue="0.60392156862745094" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="15"/>
+                                <real key="value" value="4"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>

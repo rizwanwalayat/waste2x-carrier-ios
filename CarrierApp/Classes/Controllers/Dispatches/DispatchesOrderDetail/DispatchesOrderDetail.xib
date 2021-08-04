@@ -22,8 +22,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DispatchesOrderDetail" customModule="CarrierApp" customModuleProvider="target">
             <connections>
+                <outlet property="baseHolderView" destination="NR9-O7-asr" id="3iS-ex-3B7"/>
                 <outlet property="mainHolderView" destination="ZqW-cm-HY2" id="Ffa-Zh-74e"/>
-                <outlet property="mainScrollView" destination="NR9-O7-asr" id="J8j-ng-lyx"/>
                 <outlet property="originAddressLabel" destination="9BZ-p3-6bc" id="Gh8-Hz-71u"/>
                 <outlet property="originDestinationHolderView" destination="3vb-M8-glB" id="YOB-B2-NDk"/>
                 <outlet property="originLabel" destination="V9I-1c-tUd" id="Veu-cx-wIc"/>
@@ -46,7 +46,7 @@
                             <rect key="frame" x="0.0" y="44" width="414" height="85.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RG-7M-tf1">
-                                    <rect key="frame" x="30" y="21" width="24" height="24"/>
+                                    <rect key="frame" x="16" y="21" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="ncI-mg-8gQ"/>
                                         <constraint firstAttribute="width" secondItem="1RG-7M-tf1" secondAttribute="height" multiplier="1:1" id="wRU-4A-IJN"/>
@@ -58,7 +58,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4Q-yI-osm">
-                                    <rect key="frame" x="152.5" y="20" width="109.5" height="25.5"/>
+                                    <rect key="frame" x="56" y="20" width="342" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -66,11 +66,12 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="f4Q-yI-osm" secondAttribute="trailing" constant="16" id="01Y-UL-6SC"/>
                                 <constraint firstItem="1RG-7M-tf1" firstAttribute="centerY" secondItem="f4Q-yI-osm" secondAttribute="centerY" id="F4q-wZ-bwy"/>
                                 <constraint firstAttribute="bottom" secondItem="f4Q-yI-osm" secondAttribute="bottom" constant="40" id="Og2-r0-0fk"/>
-                                <constraint firstItem="f4Q-yI-osm" firstAttribute="centerX" secondItem="Fp4-ES-G8Q" secondAttribute="centerX" id="SKg-XL-Bo4"/>
-                                <constraint firstItem="1RG-7M-tf1" firstAttribute="leading" secondItem="Fp4-ES-G8Q" secondAttribute="leading" constant="30" id="ipz-gX-2hg"/>
+                                <constraint firstItem="1RG-7M-tf1" firstAttribute="leading" secondItem="Fp4-ES-G8Q" secondAttribute="leading" constant="16" id="ipz-gX-2hg"/>
                                 <constraint firstItem="f4Q-yI-osm" firstAttribute="top" secondItem="Fp4-ES-G8Q" secondAttribute="top" constant="20" id="upS-ma-w5J"/>
+                                <constraint firstItem="f4Q-yI-osm" firstAttribute="leading" secondItem="1RG-7M-tf1" secondAttribute="trailing" constant="16" id="vaQ-5F-Ppl"/>
                             </constraints>
                         </view>
                     </subviews>

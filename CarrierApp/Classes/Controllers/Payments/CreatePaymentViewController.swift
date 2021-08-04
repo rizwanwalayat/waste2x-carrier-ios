@@ -14,11 +14,16 @@ class CreatePaymentViewController: BaseViewController {
     @IBOutlet weak var emailTitle: UITextField!
     @IBOutlet weak var informationText: UILabel!
     @IBOutlet weak var emailStackView: UIStackView!
+    
+    
     var id : String?
     var email : String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        informationText.setAttributedTextInLable("Your payment account is Connected with ", "1C2439", UIFont.poppinMediumFont(withSize: 16), "Stripe", "1C2439", UIFont.poppinSemiBoldFont(withSize: 16))
     }
     
     

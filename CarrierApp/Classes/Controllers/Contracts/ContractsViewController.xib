@@ -36,7 +36,7 @@
                             <rect key="frame" x="0.0" y="44" width="414" height="85.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-oy-f4f">
-                                    <rect key="frame" x="30" y="22" width="22" height="22"/>
+                                    <rect key="frame" x="16" y="22" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="HgY-It-Cbp"/>
                                         <constraint firstAttribute="width" secondItem="MuI-oy-f4f" secondAttribute="height" multiplier="1:1" id="PMu-FQ-MXt"/>
@@ -46,8 +46,8 @@
                                         <action selector="menuPressed:" destination="-1" eventType="touchUpInside" id="s31-Hp-Qla"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Loads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vwu-co-1Co">
-                                    <rect key="frame" x="134.5" y="20" width="145" height="25.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contracts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vwu-co-1Co">
+                                    <rect key="frame" x="54" y="20" width="344" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -55,10 +55,11 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="MuI-oy-f4f" firstAttribute="leading" secondItem="5fk-KN-zGV" secondAttribute="leading" constant="30" id="O4t-7l-te6"/>
+                                <constraint firstItem="Vwu-co-1Co" firstAttribute="leading" secondItem="MuI-oy-f4f" secondAttribute="trailing" constant="16" id="G4B-2y-m4U"/>
+                                <constraint firstItem="MuI-oy-f4f" firstAttribute="leading" secondItem="5fk-KN-zGV" secondAttribute="leading" constant="16" id="O4t-7l-te6"/>
+                                <constraint firstAttribute="trailing" secondItem="Vwu-co-1Co" secondAttribute="trailing" constant="16" id="OqK-sF-oyB"/>
                                 <constraint firstAttribute="bottom" secondItem="Vwu-co-1Co" secondAttribute="bottom" constant="40" id="RL2-uH-bZH"/>
                                 <constraint firstItem="MuI-oy-f4f" firstAttribute="centerY" secondItem="Vwu-co-1Co" secondAttribute="centerY" id="TS8-vN-b5z"/>
-                                <constraint firstItem="Vwu-co-1Co" firstAttribute="centerX" secondItem="5fk-KN-zGV" secondAttribute="centerX" id="YIG-xE-1WG"/>
                                 <constraint firstItem="Vwu-co-1Co" firstAttribute="top" secondItem="5fk-KN-zGV" secondAttribute="top" constant="20" id="lHm-iN-0QL"/>
                             </constraints>
                         </view>

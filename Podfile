@@ -14,5 +14,6 @@ target 'CarrierApp' do
   pod 'GooglePlaces'
   pod 'StepIndicator', '~> 1.0.8'
   pod 'SDWebImage'
-
+  pod 'iOSDropDown'
+  
 end

@@ -15,7 +15,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var enterYourPhoneLabel  : UILabel!
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
     @IBOutlet weak var phoneNoTextField     : UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField    : UITextField!
     @IBOutlet weak var loginButton           : UIButton!
     
     //MARK:- Variables
@@ -47,20 +47,20 @@ class LoginViewController: BaseViewController {
             
         } else {
             
-            if Utility.isTextFieldHasText(textField: phoneNoTextField)
-            {
-                CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
-                    
-                    if error == nil {
-                        
-                    }
-                    else {
-                        
-                        Utility.showAlertController(self, error!.localizedDescription)
-                        
-                    }
-                }
-            }
+//            if Utility.isTextFieldHasText(textField: phoneNoTextField)
+//            {
+//                CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
+//                    
+//                    if error == nil {
+//                        
+//                    }
+//                    else {
+//                        
+//                        Utility.showAlertController(self, error!.localizedDescription)
+//                        
+//                    }
+//                }
+//            }
         }
     }
     @IBAction func forgotPasswordPressed(_ sender: Any) {
