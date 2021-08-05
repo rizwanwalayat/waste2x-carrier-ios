@@ -37,18 +37,21 @@ class LoginViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         loginViewModel = LoginViewModel()
-        loginViewModel?.controller = self
     }
+    
     
     //MARK: - IBActions
-    
-
-    
     @IBAction func loginBtnPressed(_ sender: Any) {
-        
-        loginViewModel!.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "")
-    
+        loginViewModel?.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "", { result, error, status, message in
+            if error != nil {
+                Utility.showAlertController(self, (error?.localizedDescription ?? message)!)
+            } else {
+                Utility.setupHomeAsRootViewController()
+
+            }
+        })
     }
+    
     @IBAction func forgotPasswordPressed(_ sender: Any) {
     
         let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
