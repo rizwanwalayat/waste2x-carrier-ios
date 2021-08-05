@@ -9,11 +9,20 @@
 import Foundation
 import ObjectMapper
 
-typealias FaqsCompletionHandler = (_ data: LoginUser?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
+typealias FaqsCompletionHandler = (_ data: FAQsDataModel?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
 
 class FAQsViewModel: NSObject{
     
-    func FetchFAQsData(_ completion: @escaping FaqsCompletionHandler ) {
+    var data = Observable<FAQsDataModel?>(nil)
+    var controller : FaqViewController?
+    
+    override init() {
+        super.init()
+        
+        FetchFAQsData()
+    }
+    
+    private func FetchFAQsData() {
         Utility.showLoading()
         APIClient.shared.FaqApiFunctionCall { result, error, status, message in
             
@@ -21,14 +30,15 @@ class FAQsViewModel: NSObject{
             
             if error == nil {
                 let newResult = ["result" : result]
-                if let data = Mapper<LoginUser>().map(JSON: newResult as [String : Any]) {
-                    completion(data, nil, status,message)
+                if let data = Mapper<FAQsDataModel>().map(JSON: newResult as [String : Any]) {
+                    self.data.value = data
+                    
                 } else {
-                    completion(nil, nil, status,message)
+                    Utility.showAlertController(self.controller!, message)
                 }
                 
             } else {
-                 completion(nil, error, status,message)
+                Utility.showAlertController(self.controller!, error?.localizedDescription ?? message)
             }
         }
     }
