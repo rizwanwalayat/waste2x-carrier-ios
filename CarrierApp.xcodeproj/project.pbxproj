@@ -127,6 +127,8 @@
 		96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */; };
 		96C44C2C26B952BD00ED5696 /* DispatchesOrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C44C2A26B952BC00ED5696 /* DispatchesOrderDetail.swift */; };
 		96C44C2D26B952BD00ED5696 /* DispatchesOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C44C2B26B952BD00ED5696 /* DispatchesOrderDetail.xib */; };
+		96C44C3126B9862800ED5696 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C44C2F26B9862800ED5696 /* SettingsViewController.xib */; };
+		96C44C3226B9862800ED5696 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C44C3026B9862800ED5696 /* SettingsViewController.swift */; };
 		96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */; };
 		96DE174D26A01FE3007FCD9C /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */; };
 		96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */; };
@@ -261,6 +263,8 @@
 		96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeVerificationViewController.xib; sourceTree = "<group>"; };
 		96C44C2A26B952BC00ED5696 /* DispatchesOrderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesOrderDetail.swift; sourceTree = "<group>"; };
 		96C44C2B26B952BD00ED5696 /* DispatchesOrderDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesOrderDetail.xib; sourceTree = "<group>"; };
+		96C44C2F26B9862800ED5696 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		96C44C3026B9862800ED5696 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuItemsTableViewCell.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				96C44C2E26B9862800ED5696 /* Settings */,
 				04C3091326B7E70F00BEC895 /* Payments */,
 				9674909226B2EAA7001C4A62 /* Dispatches */,
 				04028FE926B418DA0053F41C /* Logout */,
@@ -827,6 +832,15 @@
 			path = DispatchesOrderDetail;
 			sourceTree = "<group>";
 		};
+		96C44C2E26B9862800ED5696 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				96C44C2F26B9862800ED5696 /* SettingsViewController.xib */,
+				96C44C3026B9862800ED5696 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		96D6919C26AED1F600183D4D /* AvailableLoads */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,6 +945,7 @@
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				04D2422026B3D02100312E2E /* ReceivableLIstTableViewCell.xib in Resources */,
 				04D2422B26B4078200312E2E /* ContractsTableViewCell.xib in Resources */,
+				96C44C3126B9862800ED5696 /* SettingsViewController.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				04C3091926B7E70F00BEC895 /* PaymentViewController.xib in Resources */,
 				9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */,
@@ -1100,6 +1115,7 @@
 				049C052426B0022200A81023 /* MainTabbarController.swift in Sources */,
 				18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */,
 				048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */,
+				96C44C3226B9862800ED5696 /* SettingsViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
