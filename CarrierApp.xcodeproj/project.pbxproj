@@ -30,6 +30,7 @@
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
 		0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C5265BC9EC007C51EE /* UINavigationController.swift */; };
+		043498A726BBFD310046BD46 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043498A626BBFD310046BD46 /* FAQsViewModel.swift */; };
 		0461744126BBBF290055DD3E /* FaqViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461743C26BBBF290055DD3E /* FaqViewController.xib */; };
 		0461744226BBBF290055DD3E /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461743E26BBBF290055DD3E /* FaqTableViewCell.xib */; };
 		0461744326BBBF290055DD3E /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461743F26BBBF290055DD3E /* FaqTableViewCell.swift */; };
@@ -168,6 +169,7 @@
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		0428F1C5265BC9EC007C51EE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		043498A626BBFD310046BD46 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
 		0461743C26BBBF290055DD3E /* FaqViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqViewController.xib; sourceTree = "<group>"; };
 		0461743E26BBBF290055DD3E /* FaqTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
 		0461743F26BBBF290055DD3E /* FaqTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
@@ -456,11 +458,20 @@
 			path = Logout;
 			sourceTree = "<group>";
 		};
+		043498A526BBFD1A0046BD46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				043498A626BBFD310046BD46 /* FAQsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0461743B26BBBF290055DD3E /* Faq */ = {
 			isa = PBXGroup;
 			children = (
 				0461743C26BBBF290055DD3E /* FaqViewController.xib */,
 				0461744026BBBF290055DD3E /* FaqViewController.swift */,
+				043498A526BBFD1A0046BD46 /* ViewModel */,
 				0461743D26BBBF290055DD3E /* Views */,
 			);
 			path = Faq;
@@ -1185,6 +1196,7 @@
 				04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */,
 				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,
 				04C3091A26B7E70F00BEC895 /* CreatePaymentViewController.swift in Sources */,
+				043498A726BBFD310046BD46 /* FAQsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

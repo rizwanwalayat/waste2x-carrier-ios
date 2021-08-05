@@ -13,10 +13,10 @@ class FaqViewController: BaseViewController {
 //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
-    //MARK: - Variables
-//    var faqListModell : [FaqResult]?
-//    var faqModelobject : FaqModel?
     
+    //MARK: - Variables
+
+    var viewModel : FAQsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +24,28 @@ class FaqViewController: BaseViewController {
 //        tableView.addSubview(refreshControl)
         
     }
-    @objc func refresh(_ sender: AnyObject) {
-       // self.faqApiCall()
-        //refreshControl.endRefreshing()
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         
+        viewModel?.FetchFAQsData({ response, error, status, message in
+            
+        })
+        
         if Global.shared.faqApiCheck{
-           // faqApiCall()
+            // faqApiCall()
         }
         else{
-//            self.faqModelobject = Global.shared.faqModel
-//            self.faqListModell = Global.shared.faqListModel
+            //            self.faqModelobject = Global.shared.faqModel
+            //            self.faqListModell = Global.shared.faqListModel
             self.tableView.reloadData()
         }
         
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+       // self.faqApiCall()
+        //refreshControl.endRefreshing()
     }
 
 }
