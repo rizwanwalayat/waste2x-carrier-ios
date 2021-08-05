@@ -102,7 +102,7 @@ extension CodeVerificationViewController
         if isFieldsHasValidInput()
         {
             
-            let verificationCode    = "\(firstTextField.text!)\(secondTextField.text!)\(thirdTextField.text!)\(fourthTextField.text!)"
+            self.verificationCode    = "\(firstTextField.text!)\(secondTextField.text!)\(thirdTextField.text!)\(fourthTextField.text!)"
         }
         else
         {

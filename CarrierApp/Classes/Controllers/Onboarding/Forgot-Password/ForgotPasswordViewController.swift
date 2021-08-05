@@ -12,14 +12,12 @@ import UIKit
 class ForgotPasswordViewController: BaseViewController {
     
     //MARK:- IBOutlets
-    @IBOutlet weak var enterYourPhoneLabel  : UILabel!
-    @IBOutlet weak var weWillSendYouLabel   : UILabel!
+
     @IBOutlet weak var phoneNoTextField     : UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var resetButton           : UIButton!
     
     //MARK:- Variables
-   
+    var forgotPasswordViewModel: ForgotPasswordViewModel?
     
     
     //MARK: - Lifecycle
@@ -29,6 +27,10 @@ class ForgotPasswordViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        forgotPasswordViewModel = ForgotPasswordViewModel()
+    }
     
     //MARK: - SetupView
     func setupView() {
@@ -40,11 +42,20 @@ class ForgotPasswordViewController: BaseViewController {
     
 
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
+    @IBAction func resetButtonPressed(_ sender: Any) {
         if Utility.isTextFieldHasText(textField: phoneNoTextField)
         {
-            let codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
-            self.navigationController?.pushViewController(codeVC, animated: true)
+            forgotPasswordViewModel?.forgotPassword(phoneNumber: phoneNoTextField.text ?? "", { result, error, status, message in
+                
+                if error != nil, status ?? false {
+                    self.showToast(message: error?.localizedDescription ?? message ?? "")
+                } else {
+                    let codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
+                    codeVC.enteredPhoneNumber = self.phoneNoTextField.text ?? ""
+                    self.navigationController?.pushViewController(codeVC, animated: true)
+                }
+            })
+           
             
 //            CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
 //                
