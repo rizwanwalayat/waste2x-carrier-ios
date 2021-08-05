@@ -19,8 +19,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var loginButton          : UIButton!
     
     //MARK:- Variables
-   
     
+    var loginViewModel: LoginViewModel?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -40,18 +40,9 @@ class LoginViewController: BaseViewController {
 
     
     @IBAction func loginBtnPressed(_ sender: Any) {
-        
-        LoginUser.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "") { result, error, success, message in
-
-            if !(success ?? false) {
-
-                self.showToast(message: message)
-                return
-            }
-
-            
-            Utility.setupHomeAsRootViewController()
-        }
+        loginViewModel = LoginViewModel()
+        loginViewModel?.login(phoneNumber: phoneNoTextField.text, password: <#T##String#>, <#T##completion: LoginUserCompletionHandler##LoginUserCompletionHandler##(LoginUser?, Error?, Bool?, String) -> Void#>)
+    
     }
     @IBAction func forgotPasswordPressed(_ sender: Any) {
     

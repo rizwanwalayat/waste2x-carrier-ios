@@ -27,24 +27,7 @@ class LoginUser : Mappable
         result <- map["result"]
     }
     
-    class func login(phoneNumber: String, password: String, _ completion: @escaping LoginUserCompletionHandler) {
-        Utility.showLoading()
-        APIClient.shared.login(number: phoneNumber, pasword: password) { result, error, status,message in
-            Utility.hideLoading()
-            
-            if error == nil {
-                let newResult = ["result" : result]
-                if let data = Mapper<LoginUser>().map(JSON: newResult as [String : Any]) {
-                    completion(data, nil, status,message)
-                } else {
-                    completion(nil, nil, status,message)
-                }
-                
-            } else {
-                 completion(nil, error, status,message)
-            }
-        }
-    }
+    
 
 }
 
