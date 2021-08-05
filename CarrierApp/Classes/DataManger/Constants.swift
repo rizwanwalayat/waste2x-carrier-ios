@@ -18,6 +18,7 @@ struct APIRoutes {
     static var baseUrl = "https://enmass-cache-programme.appspot.com/"
     static var imageBaseUrl = "/api/shared/user/userImage"
     static var login = "carriers/api/login"
+    static var loads = "carriers/api/loads"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""
