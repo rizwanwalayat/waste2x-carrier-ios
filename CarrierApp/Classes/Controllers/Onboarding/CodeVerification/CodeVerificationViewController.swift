@@ -55,49 +55,11 @@ class CodeVerificationViewController: BaseViewController {
         let code = firstTextField.text! + secondTextField.text! + thirdTextField.text! + fourthTextField.text!
         print(code)
         let os = device.systemVersion
-        Registration.verificationCode(phone: Global.shared.phoneNumber, code: code, latitude: Global.shared.current_lat, longitude: Global.shared.current_lng, firebase_token: Global.shared.fireBaseToken, phone_imei: 123456789, phone_os: os, phone_model: model) { result, error, status,message in
-            
-            if error != nil{
-                
-                Utility.showAlertController(self, message)
-                
-            }
-            
-            else if result?.result != nil {
-                
-                
-                let convretedData = result!.toJSONString()
-                DataManager.shared.setUser(user: convretedData ?? "")
-                
-                if DataManager.shared.getUser()?.result?.isNewUser == false {
-                    
-                   
-                }
-                else {
-                    
-//                    let codeVerificationVC = LoginInputEmailViewController(nibName: "LoginInputEmailViewController", bundle: nil)
-//                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
-                }
-                                
-            }
-            else{
-                Utility.showAlertController(self, message)
-                
-            }
-        }
+        
     }
     
     @IBAction func resendCodeButtonPressed(_ sender: Any) {
-        CodeVerification.verificationCode(phoneNumber: Global.shared.phoneNumber) { result, error, status, message in
-            
-            if error == nil {
-                self.showToast(message: message)
-            }
-            else{
-                Utility.showAlertController(self, error!.localizedDescription)
-                
-            }
-        }
+        
     }
     
 }

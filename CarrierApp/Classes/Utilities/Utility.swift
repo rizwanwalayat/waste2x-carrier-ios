@@ -57,15 +57,6 @@ struct NetworkingConnection {
         kApplicationWindow?.makeKeyAndVisible()
     }
 
-    class func autoLogin() {
-        
-        if DataManager.shared.getUser() == nil {
-            loginRootViewController()
-
-        } else {
-           setupHomeAsRootViewController()
-        }
-    }
     
     class func setPlaceHolderTextColor (_ textField: UITextField, _ text: String, _ color: UIColor) {
         textField.attributedPlaceholder = NSAttributedString(string: text,
@@ -172,6 +163,7 @@ struct NetworkingConnection {
 
             let superView = UIView(frame: CGRect(x: 0, y: 0 - offSet, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0))
             let iconImageView = UIImageView(frame: CGRect(x: superView.frame.width/2 - 32.5, y: superView.frame.height/2 - 32.5, width: 65, height: 65))
+            iconImageView.tintColor = UIColor.appColor
             iconImageView.image = UIImage(named: "loading")
             
             if isVisible {

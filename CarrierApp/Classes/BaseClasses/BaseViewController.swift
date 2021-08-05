@@ -50,7 +50,7 @@ class BaseViewController: UIViewController {
     func showToast(message : String) {
 
        
-        let toastLabel = UILabel(frame: CGRect(x: 0 , y:ScreenSize.SCREEN_HEIGHT/2, width: ScreenSize.SCREEN_WIDTH, height: 40))
+        let toastLabel = UILabel(frame: CGRect(x: 20 , y:ScreenSize.SCREEN_HEIGHT - 100, width: ScreenSize.SCREEN_WIDTH - 40, height: 40))
         toastLabel.backgroundColor = UIColor.appColor
         toastLabel.textColor = UIColor.white
         let font = UIFont.poppinFont(withSize: 13)
@@ -60,7 +60,7 @@ class BaseViewController: UIViewController {
         toastLabel.textAlignment = .center;
         toastLabel.text = message
         toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10;
+        toastLabel.layer.cornerRadius = 4;
         toastLabel.clipsToBounds  =  true
         toastLabel.numberOfLines  =  2
         self.view.addSubview(toastLabel)
@@ -70,6 +70,7 @@ class BaseViewController: UIViewController {
             toastLabel.removeFromSuperview()
         })
     }
+    
     func setAttributedTextInLabel(boldString:String,emailAddress :String) -> NSMutableAttributedString
     {
         let boldfont       = UIFont.poppinBoldFont(withSize: 18)

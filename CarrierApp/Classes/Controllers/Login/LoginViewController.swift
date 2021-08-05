@@ -16,53 +16,42 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
     @IBOutlet weak var phoneNoTextField     : UITextField!
     @IBOutlet weak var passwordTextField    : UITextField!
-    @IBOutlet weak var loginButton           : UIButton!
+    @IBOutlet weak var loginButton          : UIButton!
     
     //MARK:- Variables
-   
     
+    var loginViewModel: LoginViewModel?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        
         self.navigationController?.navigationBar.isHidden = true
+        phoneNoTextField.text = "+17734777019"
+        passwordTextField.text = "123456"
+        //loginButton.makeEnable(value: false)
     }
     
     
-    //MARK: - SetupView
-    func setupView() {
-        loginButton.makeEnable(value: false)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loginViewModel = LoginViewModel()
     }
     
     
     //MARK: - IBActions
-    
-
-    
     @IBAction func loginBtnPressed(_ sender: Any) {
-        
-        if AppDelegate.demo {
-            Utility.setupHomeAsRootViewController()
-            
-        } else {
-            
-//            if Utility.isTextFieldHasText(textField: phoneNoTextField)
-//            {
-//                CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
-//                    
-//                    if error == nil {
-//                        
-//                    }
-//                    else {
-//                        
-//                        Utility.showAlertController(self, error!.localizedDescription)
-//                        
-//                    }
-//                }
-//            }
-        }
+        loginViewModel?.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "", { result, error, status, message in
+            if error != nil {
+                Utility.showAlertController(self, (error?.localizedDescription ?? message)!)
+            } else {
+                Utility.setupHomeAsRootViewController()
+
+            }
+        })
     }
+    
     @IBAction func forgotPasswordPressed(_ sender: Any) {
     
         let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
