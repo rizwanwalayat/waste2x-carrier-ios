@@ -30,6 +30,11 @@
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
 		0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C5265BC9EC007C51EE /* UINavigationController.swift */; };
+		043498A726BBFD310046BD46 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043498A626BBFD310046BD46 /* FAQsViewModel.swift */; };
+		0461744126BBBF290055DD3E /* FaqViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461743C26BBBF290055DD3E /* FaqViewController.xib */; };
+		0461744226BBBF290055DD3E /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461743E26BBBF290055DD3E /* FaqTableViewCell.xib */; };
+		0461744326BBBF290055DD3E /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461743F26BBBF290055DD3E /* FaqTableViewCell.swift */; };
+		0461744426BBBF290055DD3E /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461744026BBBF290055DD3E /* FaqViewController.swift */; };
 		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
 		047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */; };
 		047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */; };
@@ -113,6 +118,8 @@
 		9674909726B2ED1B001C4A62 /* DispatchesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */; };
 		9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674909926B32165001C4A62 /* DispatchesListViewController.xib */; };
 		9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674909A26B32165001C4A62 /* DispatchesListViewController.swift */; };
+		967A713A26BBCD5E002D72DD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A713926BBCD5E002D72DD /* LoginViewModel.swift */; };
+		967A713C26BBCFC3002D72DD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A713B26BBCFC3002D72DD /* Observable.swift */; };
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
 		96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */; };
 		96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */; };
@@ -163,6 +170,11 @@
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		0428F1C5265BC9EC007C51EE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		043498A626BBFD310046BD46 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
+		0461743C26BBBF290055DD3E /* FaqViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqViewController.xib; sourceTree = "<group>"; };
+		0461743E26BBBF290055DD3E /* FaqTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
+		0461743F26BBBF290055DD3E /* FaqTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
+		0461744026BBBF290055DD3E /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
 		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
 		047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPickerViewController.xib; sourceTree = "<group>"; };
 		047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +261,8 @@
 		9674909526B2ED1B001C4A62 /* DispatchesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DispatchesListTableViewCell.xib; sourceTree = "<group>"; };
 		9674909926B32165001C4A62 /* DispatchesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesListViewController.xib; sourceTree = "<group>"; };
 		9674909A26B32165001C4A62 /* DispatchesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesListViewController.swift; sourceTree = "<group>"; };
+		967A713926BBCD5E002D72DD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		967A713B26BBCFC3002D72DD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgotPasswordViewController.xib; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.xib"; sourceTree = SOURCE_ROOT; };
 		96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "CarrierApp/Classes/Controllers/Onboarding/Forgot-Password/ForgotPasswordViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -321,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				1895403C26BBC21E00702C38 /* Loads */,
+				967A713B26BBCFC3002D72DD /* Observable.swift */,
 				183262722670A38F00F0CCBA /* Login */,
 			);
 			path = Models;
@@ -329,6 +344,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0461743B26BBBF290055DD3E /* Faq */,
 				96C44C2E26B9862800ED5696 /* Settings */,
 				04C3091326B7E70F00BEC895 /* Payments */,
 				9674909226B2EAA7001C4A62 /* Dispatches */,
@@ -444,6 +460,34 @@
 				04028FF326B419640053F41C /* LogoutViewController.xib */,
 			);
 			path = Logout;
+			sourceTree = "<group>";
+		};
+		043498A526BBFD1A0046BD46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				043498A626BBFD310046BD46 /* FAQsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0461743B26BBBF290055DD3E /* Faq */ = {
+			isa = PBXGroup;
+			children = (
+				0461743C26BBBF290055DD3E /* FaqViewController.xib */,
+				0461744026BBBF290055DD3E /* FaqViewController.swift */,
+				043498A526BBFD1A0046BD46 /* ViewModel */,
+				0461743D26BBBF290055DD3E /* Views */,
+			);
+			path = Faq;
+			sourceTree = "<group>";
+		};
+		0461743D26BBBF290055DD3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0461743E26BBBF290055DD3E /* FaqTableViewCell.xib */,
+				0461743F26BBBF290055DD3E /* FaqTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		047E83D2268338DC006A0F18 /* LocationPicker */ = {
@@ -618,6 +662,7 @@
 		18397DC82660FD35003DE30C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				967A713826BBCD49002D72DD /* ViewModel */,
 				18397DCB2660FD35003DE30C /* LoginViewController.xib */,
 				18397DCC2660FD35003DE30C /* LoginViewController.swift */,
 			);
@@ -749,6 +794,14 @@
 				9674909326B2EAC0001C4A62 /* Cells */,
 			);
 			path = DispatchesList;
+			sourceTree = "<group>";
+		};
+		967A713826BBCD49002D72DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				967A713926BBCD5E002D72DD /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		96893B9F26A5EFE500C4E0FD /* Forgot-Password */ = {
@@ -984,6 +1037,7 @@
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */,
 				04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */,
+				0461744226BBBF290055DD3E /* FaqTableViewCell.xib in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				048B797A26B120C300189054 /* QuotationListViewController.xib in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
@@ -994,6 +1048,7 @@
 				96DE174D26A01FE3007FCD9C /* SideMenuViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
+				0461744126BBBF290055DD3E /* FaqViewController.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
 				04C3091826B7E70F00BEC895 /* CreatePaymentViewController.xib in Resources */,
 			);
@@ -1082,6 +1137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967A713C26BBCFC3002D72DD /* Observable.swift in Sources */,
 				96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
@@ -1120,6 +1176,7 @@
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
+				967A713A26BBCD5E002D72DD /* LoginViewModel.swift in Sources */,
 				96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
@@ -1136,8 +1193,10 @@
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
+				0461744426BBBF290055DD3E /* FaqViewController.swift in Sources */,
 				96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
+				0461744326BBBF290055DD3E /* FaqTableViewCell.swift in Sources */,
 				96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */,
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
 				9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */,
@@ -1156,6 +1215,7 @@
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,
 				04C3091A26B7E70F00BEC895 /* CreatePaymentViewController.swift in Sources */,
+				043498A726BBFD310046BD46 /* FAQsViewModel.swift in Sources */,
 				1895403E26BBC23000702C38 /* LoadsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

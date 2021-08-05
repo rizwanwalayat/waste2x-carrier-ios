@@ -17,7 +17,10 @@ var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 struct APIRoutes {
     static var baseUrl = "https://enmass-cache-programme.appspot.com/"
     static var imageBaseUrl = "/api/shared/user/userImage"
+    
+    // MARK: End Ponints
     static var login = "carriers/api/login"
+    static var faqs = "carriers/api/fetch_faqs/1"
     static var loads = "carriers/api/loads"
 }
 struct FireBaseVariables {

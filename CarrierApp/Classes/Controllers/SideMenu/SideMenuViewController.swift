@@ -29,7 +29,7 @@ class SideMenuViewController: BaseViewController {
     var imgArray = [#imageLiteral(resourceName: "available-Loads"),#imageLiteral(resourceName: "Quotations"), #imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Contract"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
     var textArray = ["My Available Loads","My Quotations", "My Dispatches", "My Receivables", "My Contracts", "Payments", "FAQ", "Contact", "Logout"]
     let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
-    
+    var fromVC : UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,7 +157,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
-                    Utility.setupRoot(controller: vc)
+                    Utility.setupRoot([vc])
                 }
                 
             }
@@ -169,7 +169,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = QuotationListViewController(nibName: "QuotationListViewController", bundle: nil)
-                    Utility.setupRoot(controller: vc)
+                    Utility.setupRoot([vc])
                 }
             }
             
@@ -180,7 +180,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
-                    Utility.setupRoot(controller: vc)
+                    Utility.setupRoot([vc])
                 }
             }
         case 3:
@@ -189,7 +189,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = ReceivableListViewController(nibName: "ReceivableListViewController", bundle: nil)
-                    Utility.setupRoot(controller: vc)
+                    Utility.setupRoot([vc])
                 }
             }
             
@@ -199,7 +199,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = ContractsViewController(nibName: "ContractsViewController", bundle: nil)
-                    Utility.setupRoot(controller: vc)
+                    Utility.setupRoot([vc])
                 }
             }
             
@@ -209,7 +209,17 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             {
                 self.hideSideMenu {
                     let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    Utility.setupRoot(controller: vc)
+                    Utility.setupRoot([vc])
+                }
+            }
+            
+        case 6:
+            
+            if selectionIndex != 5
+            {
+                self.hideSideMenu {
+                    let vc = FaqViewController(nibName: "FaqViewController", bundle: nil)
+                    Utility.setupRoot([self.fromVC!, vc])
                 }
             }
             
@@ -221,7 +231,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-                    Utility.setupRoot(controller: vc)
+                    Utility.setupRoot([vc])
                 }
             }
             self.present(actionVc, animated: false, completion: nil)

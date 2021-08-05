@@ -19,8 +19,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var loginButton          : UIButton!
     
     //MARK:- Variables
-   
     
+    var loginViewModel: LoginViewModel?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -33,26 +33,36 @@ class LoginViewController: BaseViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loginViewModel = LoginViewModel()
+    }
     
     
     //MARK: - IBActions
-    
-
-    
-    @IBAction func loginBtnPressed(_ sender: Any) {
-        
-        LoginUser.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "") { result, error, success, message in
-
-            if !(success ?? false) {
-
-                self.showToast(message: message)
+    @IBAction func loginBtnPressed(_ sender: Any)
+    {
+        loginViewModel?.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "", { result, error, status, message in
+            
+            if error != nil {
+                //Utility.showAlertController(self, error?.localizedDescription ?? message ?? "")
+                self.showToast(message: error?.localizedDescription ?? message ?? "")
                 return
             }
-
             
-            Utility.setupHomeAsRootViewController()
-        }
+            if (status ?? false)
+            {
+                DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
+                Utility.setupHomeAsRootViewController()
+            }
+            else
+            {
+                self.showToast(message: message ?? "")
+            }
+        })
     }
+    
     @IBAction func forgotPasswordPressed(_ sender: Any) {
     
         let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)

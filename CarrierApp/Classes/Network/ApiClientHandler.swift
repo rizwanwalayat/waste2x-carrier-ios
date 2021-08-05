@@ -17,7 +17,7 @@ let APIClientHandlerDefaultErrorDescription = "Operation failed" //"Operation fa
 
 class APIClientHandler: TSAPIClient {
     var status : Bool = true
-    var message : String = ""
+    var message : String = "Data not fetched"
     
     func sendRequestUsingMultipart (_ url: String, parameters: [String : AnyObject]?, httpMethod: HTTPMethod = .post, headers: [String : String]?, completionBlock: @escaping APIClientCompletionHandler) {
         var parameters = parameters
