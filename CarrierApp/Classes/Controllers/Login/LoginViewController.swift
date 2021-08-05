@@ -33,15 +33,20 @@ class LoginViewController: BaseViewController {
     }
     
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loginViewModel = LoginViewModel()
+        loginViewModel?.controller = self
+    }
     
     //MARK: - IBActions
     
 
     
     @IBAction func loginBtnPressed(_ sender: Any) {
-        loginViewModel = LoginViewModel()
-        loginViewModel?.login(phoneNumber: phoneNoTextField.text, password: <#T##String#>, <#T##completion: LoginUserCompletionHandler##LoginUserCompletionHandler##(LoginUser?, Error?, Bool?, String) -> Void#>)
+        
+        loginViewModel!.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "")
     
     }
     @IBAction func forgotPasswordPressed(_ sender: Any) {

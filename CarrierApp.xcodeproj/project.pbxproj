@@ -322,8 +322,8 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				183262722670A38F00F0CCBA /* Login */,
 				967A713B26BBCFC3002D72DD /* Observable.swift */,
+				183262722670A38F00F0CCBA /* Login */,
 			);
 			path = Models;
 			sourceTree = "<group>";
