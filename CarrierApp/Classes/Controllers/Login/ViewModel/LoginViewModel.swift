@@ -9,12 +9,12 @@
 import Foundation
 import ObjectMapper
 
-typealias LoginCompletionHandlerVC = (_ result: LoginUser?,_ error: Error?, _ status: Bool?, _ message: String?) -> ()
+typealias LoginCompletionHandler = (_ result: LoginUser?,_ error: Error?, _ status: Bool?, _ message: String?) -> ()
 
 class LoginViewModel: NSObject
 {
     
-    func login(phoneNumber: String, password: String, _ completion: @escaping LoginCompletionHandlerVC) {
+    func login(phoneNumber: String, password: String, _ completion: @escaping LoginCompletionHandler) {
         Utility.showLoading()
         
         APIClient.shared.login(number: phoneNumber, password: password) { result, error, status, message in

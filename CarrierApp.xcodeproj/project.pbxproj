@@ -129,13 +129,15 @@
 		96AE407F26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE407D26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift */; };
 		96AE408026B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96AE407E26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib */; };
 		96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */; };
-		96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */; };
+		96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewController+Extensions.swift */; };
 		96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */; };
 		96B4E98C26B197850032C9F2 /* CodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */; };
 		96C44C2C26B952BD00ED5696 /* DispatchesOrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C44C2A26B952BC00ED5696 /* DispatchesOrderDetail.swift */; };
 		96C44C2D26B952BD00ED5696 /* DispatchesOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C44C2B26B952BD00ED5696 /* DispatchesOrderDetail.xib */; };
 		96C44C3126B9862800ED5696 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C44C2F26B9862800ED5696 /* SettingsViewController.xib */; };
 		96C44C3226B9862800ED5696 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C44C3026B9862800ED5696 /* SettingsViewController.swift */; };
+		96D1E9D326BC281A00EA9D0D /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1E9D226BC281A00EA9D0D /* ForgotPasswordViewModel.swift */; };
+		96D1E9D526BC4B9600EA9D0D /* CodeVerificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1E9D426BC4B9600EA9D0D /* CodeVerificationVM.swift */; };
 		96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */; };
 		96DE174D26A01FE3007FCD9C /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */; };
 		96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */; };
@@ -272,13 +274,15 @@
 		96AE407E26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesTrackingDetailsCell.xib; sourceTree = "<group>"; };
 		96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableLoadsDetailViewController.swift; sourceTree = "<group>"; };
 		96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableLoadsDetailViewController.xib; sourceTree = "<group>"; };
-		96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
+		96B4E98726B197850032C9F2 /* CodeVerificationViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CodeVerificationViewController+Extensions.swift"; sourceTree = "<group>"; };
 		96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
 		96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeVerificationViewController.xib; sourceTree = "<group>"; };
 		96C44C2A26B952BC00ED5696 /* DispatchesOrderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesOrderDetail.swift; sourceTree = "<group>"; };
 		96C44C2B26B952BD00ED5696 /* DispatchesOrderDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesOrderDetail.xib; sourceTree = "<group>"; };
 		96C44C2F26B9862800ED5696 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		96C44C3026B9862800ED5696 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		96D1E9D226BC281A00EA9D0D /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		96D1E9D426BC4B9600EA9D0D /* CodeVerificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationVM.swift; sourceTree = "<group>"; };
 		96DE174726A01FE2007FCD9C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuItemsTableViewCell.swift; sourceTree = "<group>"; };
@@ -796,6 +800,7 @@
 		96893B9F26A5EFE500C4E0FD /* Forgot-Password */ = {
 			isa = PBXGroup;
 			children = (
+				96D1E9D126BC27CD00EA9D0D /* ViewModel */,
 				96893BA026A5F02D00C4E0FD /* ForgotPasswordViewController.xib */,
 				96893BA226A5F05100C4E0FD /* ForgotPasswordViewController.swift */,
 			);
@@ -863,6 +868,7 @@
 			children = (
 				96B4E98626B197850032C9F2 /* ViewModel */,
 				96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */,
+				96B4E98726B197850032C9F2 /* CodeVerificationViewController+Extensions.swift */,
 				96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */,
 			);
 			path = CodeVerification;
@@ -871,7 +877,7 @@
 		96B4E98626B197850032C9F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				96B4E98726B197850032C9F2 /* CodeVerificationViewModel.swift */,
+				96D1E9D426BC4B9600EA9D0D /* CodeVerificationVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -892,6 +898,14 @@
 				96C44C3026B9862800ED5696 /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		96D1E9D126BC27CD00EA9D0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96D1E9D226BC281A00EA9D0D /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		96D6919C26AED1F600183D4D /* AvailableLoads */ = {
@@ -1141,11 +1155,12 @@
 				04028FF426B419640053F41C /* LogoutViewController.swift in Sources */,
 				183262742670A3A500F0CCBA /* LoginUser.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
-				96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */,
+				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
 				969FB4DF26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
 				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
+				96D1E9D526BC4B9600EA9D0D /* CodeVerificationVM.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
 				18A579BE269321690067952F /* ApiClient.swift in Sources */,
@@ -1182,6 +1197,7 @@
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
+				96D1E9D326BC281A00EA9D0D /* ForgotPasswordViewModel.swift in Sources */,
 				0461744426BBBF290055DD3E /* FaqViewController.swift in Sources */,
 				96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
