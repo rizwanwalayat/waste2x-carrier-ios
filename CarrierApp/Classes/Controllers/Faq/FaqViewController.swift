@@ -28,6 +28,7 @@ class FaqViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         
+        viewModel = FAQsViewModel()
         viewModel?.FetchFAQsData({ response, error, status, message in
             
         })

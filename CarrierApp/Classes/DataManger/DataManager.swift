@@ -13,5 +13,30 @@ class DataManager {
     
     static let shared = DataManager()
     
+}
 
+// MARK: - Methods for set values
+extension DataManager
+{
+    
+    
+    func saveAuthToken(_ token : String)
+    {
+        UserDefaults.standard.set(token, forKey: "auth_token")
+    }
+}
+
+// MARK: - Methods for get values
+extension DataManager
+{
+    
+    func fetchAuthToken() -> String
+    {
+        var token = ""
+
+        if UserDefaults.standard.string(forKey: "auth_token") != nil {
+            token = UserDefaults.standard.string(forKey: "auth_token")!
+        }
+        return token
+    }
 }

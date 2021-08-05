@@ -76,8 +76,8 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }
     func FaqApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
-        _ = sendRequest(APIRoutes.faqUrl , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.faqs , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 }
 

@@ -41,13 +41,24 @@ class LoginViewController: BaseViewController {
     
     
     //MARK: - IBActions
-    @IBAction func loginBtnPressed(_ sender: Any) {
+    @IBAction func loginBtnPressed(_ sender: Any)
+    {
         loginViewModel?.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "", { result, error, status, message in
+            
             if error != nil {
-                Utility.showAlertController(self, (error?.localizedDescription ?? message)!)
-            } else {
+                //Utility.showAlertController(self, error?.localizedDescription ?? message ?? "")
+                self.showToast(message: error?.localizedDescription ?? message ?? "")
+                return
+            }
+            
+            if (status ?? false)
+            {
+                DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
                 Utility.setupHomeAsRootViewController()
-
+            }
+            else
+            {
+                self.showToast(message: message ?? "")
             }
         })
     }
