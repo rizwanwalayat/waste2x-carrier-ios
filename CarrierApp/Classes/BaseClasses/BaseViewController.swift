@@ -110,6 +110,7 @@ class BaseViewController: UIViewController {
     {
         let sideMenuVC                      = SideMenuViewController(nibName: "SideMenuViewController", bundle: nil)
         sideMenuVC.modalPresentationStyle   = .overFullScreen
+        sideMenuVC.fromVC = self
         self.present(sideMenuVC, animated: false, completion: nil)
     }
 }

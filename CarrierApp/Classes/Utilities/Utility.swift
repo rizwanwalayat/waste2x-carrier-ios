@@ -34,16 +34,7 @@ struct NetworkingConnection {
         kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
     }
-    
-    class func homeViewController () {
-//        let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
-//        let navigationController = BaseNavigationViewController()
-//        navigationController.viewControllers = [slider]
-//        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-//        kApplicationWindow?.rootViewController = navigationController
-//        kApplicationWindow?.makeKeyAndVisible()
-    }
-    
+        
     class func setupHomeAsRootViewController () {
         
         let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
@@ -56,10 +47,10 @@ struct NetworkingConnection {
         kApplicationWindow?.makeKeyAndVisible()
     }
     
-    class func setupRoot(controller : UIViewController)
+    class func setupRoot(_ controller : [UIViewController])
     {
         let navigationController = BaseNavigationViewController()
-        navigationController.viewControllers = [controller]
+        navigationController.viewControllers = controller
         navigationController.navigationBar.isHidden = true
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
         kApplicationWindow?.rootViewController = navigationController
