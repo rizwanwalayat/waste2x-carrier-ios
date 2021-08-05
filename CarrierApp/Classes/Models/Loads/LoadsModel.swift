@@ -29,7 +29,7 @@ class LoadsModel : Mappable
     
     class func loads(phoneNumber: String, password: String, _ completion: @escaping LoadsUserCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.login(number: phoneNumber, pasword: password) { result, error, status,message in
+        APIClient.shared.login(number: phoneNumber, password: password) { result, error, status,message in
             Utility.hideLoading()
             if error == nil {
                 let newResult = ["result" : result]
