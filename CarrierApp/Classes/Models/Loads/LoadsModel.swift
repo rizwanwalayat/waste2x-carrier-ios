@@ -8,9 +8,9 @@
 
 import Foundation
 import ObjectMapper
-typealias LoadsUserCompletionHandler = (_ data: Loads?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
+typealias LoadsUserCompletionHandler = (_ data: LoadsModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
-class Loads : Mappable
+class LoadsModel : Mappable
 {
     var success = false
     var message = ""
@@ -27,14 +27,13 @@ class Loads : Mappable
         result <- map["result"]
     }
     
-    class func login(phoneNumber: String, password: String, _ completion: @escaping LoginUserCompletionHandler) {
+    class func loads(phoneNumber: String, password: String, _ completion: @escaping LoadsUserCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.login(number: phoneNumber, pasword: password) { result, error, status,message in
             Utility.hideLoading()
-            
             if error == nil {
                 let newResult = ["result" : result]
-                if let data = Mapper<LoginUser>().map(JSON: newResult as [String : Any]) {
+                if let data = Mapper<LoadsModel>().map(JSON: newResult as [String : Any]) {
                     completion(data, nil, status,message)
                 } else {
                     completion(nil, nil, status,message)
