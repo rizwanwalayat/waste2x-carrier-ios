@@ -28,6 +28,19 @@
 		04028FF426B419640053F41C /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04028FF226B419640053F41C /* LogoutViewController.swift */; };
 		04028FF526B419640053F41C /* LogoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04028FF326B419640053F41C /* LogoutViewController.xib */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
+		04206C3126BD388C006AB6A4 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04206C2F26BD388C006AB6A4 /* ContactViewController.xib */; };
+		04206C3226BD388C006AB6A4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3026BD388C006AB6A4 /* ContactViewController.swift */; };
+		04206C3626BD3D63006AB6A4 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04206C3426BD3D63006AB6A4 /* ContactTableViewCell.xib */; };
+		04206C3726BD3D63006AB6A4 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3526BD3D63006AB6A4 /* ContactTableViewCell.swift */; };
+		04206C3A26BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3926BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift */; };
+		04206C4026BD72BF006AB6A4 /* AvailabelLoadsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3C26BD72BF006AB6A4 /* AvailabelLoadsDataModel.swift */; };
+		04206C4126BD72BF006AB6A4 /* AvailableLoadsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3D26BD72BF006AB6A4 /* AvailableLoadsResult.swift */; };
+		04206C4226BD72BF006AB6A4 /* LoadsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3E26BD72BF006AB6A4 /* LoadsDataModel.swift */; };
+		04206C4326BD72BF006AB6A4 /* CountriesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3F26BD72BF006AB6A4 /* CountriesDataModel.swift */; };
+		04206C4826BD83C3006AB6A4 /* StatesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C4626BD83C3006AB6A4 /* StatesDataModel.swift */; };
+		04206C4926BD83C3006AB6A4 /* StatesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C4726BD83C3006AB6A4 /* StatesResult.swift */; };
+		04206C4D26BD8608006AB6A4 /* CitiesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C4B26BD8608006AB6A4 /* CitiesResult.swift */; };
+		04206C4E26BD8608006AB6A4 /* CitiesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C4C26BD8608006AB6A4 /* CitiesDataModel.swift */; };
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
 		0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C5265BC9EC007C51EE /* UINavigationController.swift */; };
 		043498A726BBFD310046BD46 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043498A626BBFD310046BD46 /* FAQsViewModel.swift */; };
@@ -173,6 +186,19 @@
 		04028FF226B419640053F41C /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		04028FF326B419640053F41C /* LogoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutViewController.xib; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
+		04206C2F26BD388C006AB6A4 /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
+		04206C3026BD388C006AB6A4 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		04206C3426BD3D63006AB6A4 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		04206C3526BD3D63006AB6A4 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		04206C3926BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsFilterVM.swift; sourceTree = "<group>"; };
+		04206C3C26BD72BF006AB6A4 /* AvailabelLoadsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabelLoadsDataModel.swift; sourceTree = "<group>"; };
+		04206C3D26BD72BF006AB6A4 /* AvailableLoadsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableLoadsResult.swift; sourceTree = "<group>"; };
+		04206C3E26BD72BF006AB6A4 /* LoadsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadsDataModel.swift; sourceTree = "<group>"; };
+		04206C3F26BD72BF006AB6A4 /* CountriesDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesDataModel.swift; sourceTree = "<group>"; };
+		04206C4626BD83C3006AB6A4 /* StatesDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesDataModel.swift; sourceTree = "<group>"; };
+		04206C4726BD83C3006AB6A4 /* StatesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesResult.swift; sourceTree = "<group>"; };
+		04206C4B26BD8608006AB6A4 /* CitiesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesResult.swift; sourceTree = "<group>"; };
+		04206C4C26BD8608006AB6A4 /* CitiesDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesDataModel.swift; sourceTree = "<group>"; };
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		0428F1C5265BC9EC007C51EE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		043498A626BBFD310046BD46 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
@@ -345,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				967A713B26BBCFC3002D72DD /* Observable.swift */,
+				04206C3B26BD729B006AB6A4 /* AvailabelLoads */,
 				045DDADE26BC144A00B3E232 /* FAQ's */,
 				183262722670A38F00F0CCBA /* Login */,
 			);
@@ -354,6 +381,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04206C2E26BD388C006AB6A4 /* Contact */,
 				0461743B26BBBF290055DD3E /* Faq */,
 				96C44C2E26B9862800ED5696 /* Settings */,
 				04C3091326B7E70F00BEC895 /* Payments */,
@@ -470,6 +498,72 @@
 				04028FF326B419640053F41C /* LogoutViewController.xib */,
 			);
 			path = Logout;
+			sourceTree = "<group>";
+		};
+		04206C2E26BD388C006AB6A4 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				04206C2F26BD388C006AB6A4 /* ContactViewController.xib */,
+				04206C3026BD388C006AB6A4 /* ContactViewController.swift */,
+				04206C3326BD3D52006AB6A4 /* Cell */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		04206C3326BD3D52006AB6A4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04206C3526BD3D63006AB6A4 /* ContactTableViewCell.swift */,
+				04206C3426BD3D63006AB6A4 /* ContactTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		04206C3826BD6C73006AB6A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04206C3926BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04206C3B26BD729B006AB6A4 /* AvailabelLoads */ = {
+			isa = PBXGroup;
+			children = (
+				04206C4A26BD85F0006AB6A4 /* Citites */,
+				04206C4526BD83AF006AB6A4 /* States */,
+				04206C4426BD8396006AB6A4 /* CountriesAndLoads */,
+			);
+			path = AvailabelLoads;
+			sourceTree = "<group>";
+		};
+		04206C4426BD8396006AB6A4 /* CountriesAndLoads */ = {
+			isa = PBXGroup;
+			children = (
+				04206C3F26BD72BF006AB6A4 /* CountriesDataModel.swift */,
+				04206C3C26BD72BF006AB6A4 /* AvailabelLoadsDataModel.swift */,
+				04206C3E26BD72BF006AB6A4 /* LoadsDataModel.swift */,
+				04206C3D26BD72BF006AB6A4 /* AvailableLoadsResult.swift */,
+			);
+			path = CountriesAndLoads;
+			sourceTree = "<group>";
+		};
+		04206C4526BD83AF006AB6A4 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				04206C4626BD83C3006AB6A4 /* StatesDataModel.swift */,
+				04206C4726BD83C3006AB6A4 /* StatesResult.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		04206C4A26BD85F0006AB6A4 /* Citites */ = {
+			isa = PBXGroup;
+			children = (
+				04206C4C26BD8608006AB6A4 /* CitiesDataModel.swift */,
+				04206C4B26BD8608006AB6A4 /* CitiesResult.swift */,
+			);
+			path = Citites;
 			sourceTree = "<group>";
 		};
 		043498A526BBFD1A0046BD46 /* ViewModel */ = {
@@ -592,6 +686,7 @@
 		04C3D36226B2C607005FCF5A /* AvailableLoadsFilter */ = {
 			isa = PBXGroup;
 			children = (
+				04206C3826BD6C73006AB6A4 /* ViewModel */,
 				048B797D26B1337800189054 /* AvailableLoadsViewController.swift */,
 				048B797E26B1337800189054 /* AvailableLoadsViewController.xib */,
 			);
@@ -1032,6 +1127,7 @@
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				04D2422026B3D02100312E2E /* ReceivableLIstTableViewCell.xib in Resources */,
 				04D2422B26B4078200312E2E /* ContractsTableViewCell.xib in Resources */,
+				04206C3126BD388C006AB6A4 /* ContactViewController.xib in Resources */,
 				96C44C3126B9862800ED5696 /* SettingsViewController.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				04C3091926B7E70F00BEC895 /* PaymentViewController.xib in Resources */,
@@ -1051,6 +1147,7 @@
 				18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				96AE408026B84ABD008ABA66 /* DispatchesTrackingDetailsCell.xib in Resources */,
+				04206C3626BD3D63006AB6A4 /* ContactTableViewCell.xib in Resources */,
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
@@ -1166,6 +1263,7 @@
 				045DDAE426BC146F00B3E232 /* Others.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
+				04206C4D26BD8608006AB6A4 /* CitiesResult.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
@@ -1174,17 +1272,20 @@
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				04C3D36126B2C47A005FCF5A /* AvailableLoadsDetailViewController.swift in Sources */,
 				04ABB4C626BACB0A00C24153 /* ResultLoginUser.swift in Sources */,
+				04206C4E26BD8608006AB6A4 /* CitiesDataModel.swift in Sources */,
 				04028FF426B419640053F41C /* LogoutViewController.swift in Sources */,
 				183262742670A3A500F0CCBA /* LoginUserDataModel.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
 				045DDAE526BC146F00B3E232 /* Result.swift in Sources */,
-				96B4E98A26B197850032C9F2 /* CodeVerificationViewModel.swift in Sources */,
+				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
 				045DDAE326BC146F00B3E232 /* Faqs.swift in Sources */,
+				04206C4926BD83C3006AB6A4 /* StatesResult.swift in Sources */,
 				969FB4DF26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
 				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
+				04206C4326BD72BF006AB6A4 /* CountriesDataModel.swift in Sources */,
 				96D1E9D526BC4B9600EA9D0D /* CodeVerificationVM.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
@@ -1201,6 +1302,7 @@
 				9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				04C3D36026B2C45C005FCF5A /* AvailableLoadsListViewController.swift in Sources */,
+				04206C3226BD388C006AB6A4 /* ContactViewController.swift in Sources */,
 				04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
@@ -1212,6 +1314,7 @@
 				049C052426B0022200A81023 /* MainTabbarController.swift in Sources */,
 				18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */,
 				048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */,
+				04206C4126BD72BF006AB6A4 /* AvailableLoadsResult.swift in Sources */,
 				96C44C3226B9862800ED5696 /* SettingsViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
@@ -1221,12 +1324,14 @@
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
+				04206C3A26BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				96D1E9D326BC281A00EA9D0D /* ForgotPasswordViewModel.swift in Sources */,
 				0461744426BBBF290055DD3E /* FaqViewController.swift in Sources */,
 				96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				0461744326BBBF290055DD3E /* FaqTableViewCell.swift in Sources */,
+				04206C3726BD3D63006AB6A4 /* ContactTableViewCell.swift in Sources */,
 				96DE174C26A01FE3007FCD9C /* SideMenuViewController.swift in Sources */,
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
 				9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */,
@@ -1237,11 +1342,14 @@
 				04D2421B26B3CCB600312E2E /* ReceivableListViewController.swift in Sources */,
 				04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
+				04206C4226BD72BF006AB6A4 /* LoadsDataModel.swift in Sources */,
 				96C44C2C26B952BD00ED5696 /* DispatchesOrderDetail.swift in Sources */,
 				047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
+				04206C4026BD72BF006AB6A4 /* AvailabelLoadsDataModel.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				969FB4E126B4743600C77CE0 /* DispatchesTrackingViewController.swift in Sources */,
+				04206C4826BD83C3006AB6A4 /* StatesDataModel.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,
 				04C3091A26B7E70F00BEC895 /* CreatePaymentViewController.swift in Sources */,

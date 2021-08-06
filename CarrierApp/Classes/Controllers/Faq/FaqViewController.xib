@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-SP-e1g">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="162.66666666666666"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="172.66666666666666"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-Sl-OEe">
-                    <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="118.66666666666669"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="128.66666666666666"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-Z1-8Nb">
                             <rect key="frame" x="56" y="19.999999999999996" width="153" height="50.666666666666657"/>
@@ -53,29 +53,29 @@ Asked Questions</string>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" image="FAQ's" translatesAutoresizingMaskIntoConstraints="NO" id="ADF-5s-9lS">
-                            <rect key="frame" x="270.33333333333331" y="0.0" width="88.666666666666686" height="88.666666666666671"/>
+                            <rect key="frame" x="289" y="10.333333333333336" width="70" height="70"/>
                             <constraints>
+                                <constraint firstAttribute="height" constant="70" id="Cqb-ul-hIP"/>
                                 <constraint firstAttribute="width" secondItem="ADF-5s-9lS" secondAttribute="height" multiplier="1:1" id="MIH-SF-ERz"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="ADF-5s-9lS" firstAttribute="centerY" secondItem="uIq-Z1-8Nb" secondAttribute="centerY" id="0lH-fO-59B"/>
                         <constraint firstItem="SAJ-oW-sL9" firstAttribute="centerY" secondItem="uIq-Z1-8Nb" secondAttribute="centerY" id="FK8-XD-ZaU"/>
-                        <constraint firstItem="ADF-5s-9lS" firstAttribute="top" secondItem="ctp-Sl-OEe" secondAttribute="top" id="LcM-6G-kGO"/>
-                        <constraint firstAttribute="bottom" secondItem="uIq-Z1-8Nb" secondAttribute="bottom" constant="48" id="Wxu-y6-eTP"/>
-                        <constraint firstAttribute="bottom" secondItem="ADF-5s-9lS" secondAttribute="bottom" constant="30" id="XAi-n2-Tko"/>
+                        <constraint firstAttribute="bottom" secondItem="uIq-Z1-8Nb" secondAttribute="bottom" constant="58" id="Wxu-y6-eTP"/>
+                        <constraint firstAttribute="trailing" secondItem="ADF-5s-9lS" secondAttribute="trailing" constant="16" id="a1H-RA-KIt"/>
                         <constraint firstItem="uIq-Z1-8Nb" firstAttribute="leading" secondItem="SAJ-oW-sL9" secondAttribute="trailing" constant="16" id="b3V-mo-4x7"/>
                         <constraint firstItem="uIq-Z1-8Nb" firstAttribute="top" secondItem="ctp-Sl-OEe" secondAttribute="top" constant="20" id="bYH-o9-OKl"/>
-                        <constraint firstAttribute="trailing" secondItem="ADF-5s-9lS" secondAttribute="trailing" constant="16" id="r9W-kW-pgb"/>
                         <constraint firstItem="SAJ-oW-sL9" firstAttribute="leading" secondItem="ctp-Sl-OEe" secondAttribute="leading" constant="16" id="slg-T8-Qfn"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-gt-qF7">
-                    <rect key="frame" x="0.0" y="134.66666666666669" width="375" height="677.33333333333326"/>
+                    <rect key="frame" x="0.0" y="144.66666666666669" width="375" height="667.33333333333326"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-ds-4o4">
-                            <rect key="frame" x="15" y="0.0" width="345" height="677.33333333333337"/>
+                            <rect key="frame" x="15" y="0.0" width="345" height="667.33333333333337"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

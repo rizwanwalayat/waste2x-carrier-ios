@@ -10,7 +10,18 @@ import UIKit
 
 class AvailableLoadsListViewController: BaseViewController {
 
+    
+    // MARK: - Outelts
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    // MARK: - Outlet
+    
+    var viewModel : AvailabelLoadsViewModel?
+    
+    
+    // MARK: - Controller's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +41,7 @@ class AvailableLoadsListViewController: BaseViewController {
 
 extension AvailableLoadsListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel?.data?.result?.loads.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
