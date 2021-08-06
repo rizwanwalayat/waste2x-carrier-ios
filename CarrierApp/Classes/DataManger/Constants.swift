@@ -22,6 +22,7 @@ struct APIRoutes {
     static var login = "carriers/api/login"
     static var faqs = "carriers/api/fetch_faqs/1"
     static var loads = "carriers/api/loads"
+    static var send_code = "carriers/api/send_code"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

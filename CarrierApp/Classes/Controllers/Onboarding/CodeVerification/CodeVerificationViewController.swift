@@ -12,6 +12,7 @@ class CodeVerificationViewController: BaseViewController {
 
     //MARK:- IBOutlets
     
+    @IBOutlet weak var phoneNumberTextField: UILabel!
     @IBOutlet weak var enterCodeSendsToYourPhoneLabel   : UILabel!
     @IBOutlet weak var sendsConfirmationCodeLabel       : UILabel!
     @IBOutlet weak var firstTextField                   : UITextField!
@@ -27,15 +28,18 @@ class CodeVerificationViewController: BaseViewController {
     let device = UIDevice()
 //    var phone = ""
     let model = UIDevice.modelName
-    
+    var viewModel: CodeVerificationVM?
     var enteredPhoneNumber = ""
+    var verificationCode: String?
     
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setAttributedTextInLable(phoneNo: enteredPhoneNumber)
+//        setAttributedTextInLable(phoneNo: enteredPhoneNumber)
 //        nextButton.makeEnable(value: false)
+        viewModel = CodeVerificationVM()
+        phoneNumberTextField.text = enteredPhoneNumber
         firstTextField.becomeFirstResponder()
     }
 
@@ -47,8 +51,16 @@ class CodeVerificationViewController: BaseViewController {
     }
     
     func checkCodeAndResetPassword(){
-        let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
-        self.navigationController?.pushViewController(resetPasswordVC, animated: true)
+        viewModel?.verifyOTP(phoneNumber: enteredPhoneNumber, code: self.verificationCode ?? "", { result, error, status, message in
+            if status ?? false, error != nil {
+                let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
+                self.navigationController?.pushViewController(resetPasswordVC, animated: true)
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message ?? "")
+
+            }
+        })
+       
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
@@ -59,7 +71,9 @@ class CodeVerificationViewController: BaseViewController {
     }
     
     @IBAction func resendCodeButtonPressed(_ sender: Any) {
-        
+        viewModel?.sendCodeAgain(phoneNumber: enteredPhoneNumber, { result, error, status, message in
+            self.showToast(message: error?.localizedDescription ?? message ?? "")
+        })
     }
     
 }

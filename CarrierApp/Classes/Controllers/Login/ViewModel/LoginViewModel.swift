@@ -9,39 +9,29 @@
 import Foundation
 import ObjectMapper
 
-typealias LoginCompletionHandlerVC = (_ result: LoginUser?,_ error: Error?, _ status: Bool?, _ message: String?) -> ()
+typealias LoginCompletionHandler = (_ result: LoginUser?,_ error: Error?, _ status: Bool?, _ message: String?) -> ()
 
 class LoginViewModel: NSObject
 {
     
-    func login(phoneNumber: String, password: String, _ completion: @escaping LoginCompletionHandlerVC) {
+    func login(phoneNumber: String, password: String, _ completion: @escaping LoginCompletionHandler) {
         Utility.showLoading()
+        
         APIClient.shared.login(number: phoneNumber, password: password) { result, error, status, message in
             Utility.hideLoading()
             
-            if error != nil {
-                
-                completion(nil, error, status, message)
-                return
-            }
-            
-            if status {
+            if status, error == nil {
                 let newResult = ["result" : result]
                 if let data = Mapper<LoginUser>().map(JSON: newResult as [String : Any]) {
                     completion(data, nil, status, message)
                 }
-                else
-                {
-                    completion(nil, error, status, message)
+                else {
+                    completion(nil, nil, false, message)
                 }
-            }
-            else
-            {
+            } else {
                 completion(nil, error, status, message)
             }
-            
-            
         }
+        
     }
-    
 }
