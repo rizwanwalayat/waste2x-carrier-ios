@@ -9,6 +9,7 @@ class FAQsDataModel : Mappable {
 	var message = ""
 	var result : ResultFAQs?
 
+    
 	required init?(map: Map) {
 
 	}

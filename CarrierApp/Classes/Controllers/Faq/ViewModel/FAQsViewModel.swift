@@ -13,16 +13,14 @@ typealias FaqsCompletionHandler = (_ data: FAQsDataModel?, _ error: Error?, _ st
 
 class FAQsViewModel: NSObject{
     
-    var data = Observable<FAQsDataModel?>(nil)
-    var controller : FaqViewController?
+    var data : FAQsDataModel?
     
     override init() {
         super.init()
         
-        FetchFAQsData()
     }
     
-    private func FetchFAQsData() {
+    func FetchFAQsData(_ completionHandler: @escaping FaqsCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.FaqApiFunctionCall { result, error, status, message in
             
@@ -31,14 +29,18 @@ class FAQsViewModel: NSObject{
             if error == nil {
                 let newResult = ["result" : result]
                 if let data = Mapper<FAQsDataModel>().map(JSON: newResult as [String : Any]) {
-                    self.data.value = data
+                    
+                    self.data = data
+                    
+                    completionHandler(data, error, status, message)
                     
                 } else {
-                    Utility.showAlertController(self.controller!, message)
+                    
+                    completionHandler(nil, error, status, message)
                 }
                 
             } else {
-                Utility.showAlertController(self.controller!, error?.localizedDescription ?? message)
+                completionHandler(nil, error, status, message)
             }
         }
     }

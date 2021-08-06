@@ -29,9 +29,14 @@ class FaqViewController: BaseViewController {
         super .viewWillAppear(animated)
         
         viewModel = FAQsViewModel()
-        viewModel?.controller = self
-        viewModel?.data.bind({ faqsData in
-            self.tableView.reloadData()
+        viewModel?.FetchFAQsData({ result, error, success, message in
+            
+            if success ?? false, error == nil {
+                self.tableView.reloadData()
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+
+            }
         })
         
     }
@@ -49,10 +54,10 @@ extension FaqViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if section == 0 {
-            return viewModel?.data.value?.result?.faqs.count ?? 0
+            return viewModel?.data?.result?.faqs.count ?? 0
 
         } else {
-            return viewModel?.data.value?.result?.others.count ?? 0
+            return viewModel?.data?.result?.others.count ?? 0
         }
     }
 
@@ -62,7 +67,7 @@ extension FaqViewController : UITableViewDelegate,UITableViewDataSource{
         {
             let cell = tableView.register(FaqTableViewCell.self, indexPath: indexPath)
             
-            let cellData = viewModel?.data.value?.result?.faqs[indexPath.row]
+            let cellData = viewModel?.data?.result?.faqs[indexPath.row]
             cell.config(data: cellData)
             
             cell.selectionStyle = .none
@@ -72,7 +77,7 @@ extension FaqViewController : UITableViewDelegate,UITableViewDataSource{
         {
             let cell = tableView.register(FaqTableViewCell.self, indexPath: indexPath)
             
-            let cellData = viewModel?.data.value?.result?.others[indexPath.row]
+            let cellData = viewModel?.data?.result?.others[indexPath.row]
             cell.config(data: cellData)
             
             cell.selectionStyle = .none
