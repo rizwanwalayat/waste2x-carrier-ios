@@ -53,7 +53,6 @@ extension CodeVerificationViewController
 //                        nextButton.makeEnable(value: true)
                         nextField .resignFirstResponder()
                         self.nextButtonCalled()
-                        self.checkCodeAndResetPassword()
                     }
                 }
                 
@@ -99,13 +98,12 @@ extension CodeVerificationViewController
     
     func nextButtonCalled()
     {
-        if isFieldsHasValidInput()
-        {
-            
-            self.verificationCode    = "\(firstTextField.text!)\(secondTextField.text!)\(thirdTextField.text!)\(fourthTextField.text!)"
+        if isFieldsHasValidInput() {
+            self.viewModel?.codeFromUser = "\(firstTextField.text!)\(secondTextField.text!)\(thirdTextField.text!)\(fourthTextField.text!)"
+            self.checkCodeAndResetPassword()
+
         }
-        else
-        {
+        else {
             self.alertview(title: "Error", message: "Please enter all fields")
         }
     }

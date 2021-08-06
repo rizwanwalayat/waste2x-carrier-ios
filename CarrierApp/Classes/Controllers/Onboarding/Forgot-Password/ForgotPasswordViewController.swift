@@ -17,7 +17,7 @@ class ForgotPasswordViewController: BaseViewController {
     @IBOutlet weak var resetButton           : UIButton!
     
     //MARK:- Variables
-    var forgotPasswordViewModel: ForgotPasswordViewModel?
+    var viewModel: ForgotPasswordVM?
     
     
     //MARK: - Lifecycle
@@ -29,7 +29,7 @@ class ForgotPasswordViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        forgotPasswordViewModel = ForgotPasswordViewModel()
+        viewModel = ForgotPasswordVM()
     }
     
     //MARK: - SetupView
@@ -45,35 +45,19 @@ class ForgotPasswordViewController: BaseViewController {
     @IBAction func resetButtonPressed(_ sender: Any) {
         if Utility.isTextFieldHasText(textField: phoneNoTextField)
         {
-            forgotPasswordViewModel?.forgotPassword(phoneNumber: phoneNoTextField.text ?? "", { result, error, status, message in
+            viewModel?.sendOTPCode(phoneNumber: phoneNoTextField.text ?? "", { result, error, status, message in
                 
-                if error != nil, status ?? false {
-                    self.showToast(message: error?.localizedDescription ?? message ?? "")
-                } else {
-                    let codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
-                    codeVC.enteredPhoneNumber = self.phoneNoTextField.text ?? ""
+                if status ?? false, error == nil {
+                    var codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
+                    let codeVM = CodeVerificationVM(phoneFromUser: self.phoneNoTextField.text ?? "", codeFromBackend: result as? String ?? "")
+                    codeVC.viewModel = codeVM
                     self.navigationController?.pushViewController(codeVC, animated: true)
+                } else {
+                    self.showToast(message: error?.localizedDescription ?? message ?? "")
                 }
             })
            
-            
-//            CodeVerification.verificationCode(phoneNumber: phoneNoTextField.text ?? "") { result, error, status,message in
-//                
-//                if error == nil {
-//                    
-//                }
-//                else {
-//                    
-//                    Utility.showAlertController(self, error!.localizedDescription)
-//                    
-//                }
-//            }
         }
-    }
-    @IBAction func backToLoginPressed(_ sender: Any) {
-    
-        self.navigationController?.popViewController(animated: true)
-        
     }
     
 }
@@ -110,35 +94,3 @@ extension ForgotPasswordViewController : UITextFieldDelegate {
 }
 
 
-
-
-//enum BiometricType {
-//    case none
-//    case touchID
-//    case faceID
-//}
-//
-//var biometricType: BiometricType {
-//    get {
-//        let context = LAContext()
-//        var error: NSError?
-//
-//        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-//            print(error?.localizedDescription ?? "")
-//            return .none
-//        }
-//
-//        if #available(iOS 11.0, *) {
-//            switch context.biometryType {
-//            case .none:
-//                return .none
-//            case .touchID:
-//                return .touchID
-//            case .faceID:
-//                return .faceID
-//            }
-//        } else {
-//            return  .touchID
-//        }
-//    }
-//}

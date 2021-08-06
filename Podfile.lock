@@ -60,6 +60,7 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - netfox (1.19.0)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - GooglePlaces
   - iOSDropDown
   - IQKeyboardManagerSwift
+  - netfox
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.4)
   - SDWebImage
@@ -97,6 +99,7 @@ SPEC REPOS:
     - iOSDropDown
     - IQKeyboardManagerSwift
     - nanopb
+    - netfox
     - NVActivityIndicatorView
     - ObjectMapper
     - PromisesObjC
@@ -117,12 +120,13 @@ SPEC CHECKSUMS:
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  netfox: efeec1d23406df6cd605212f09a40957bb5654eb
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
 
-PODFILE CHECKSUM: da626b6c372bdbc649bae83ed883272d1305e123
+PODFILE CHECKSUM: 4bd9a791fadf20f64e0b00f193de9ab2eafe5e44
 
 COCOAPODS: 1.10.1
