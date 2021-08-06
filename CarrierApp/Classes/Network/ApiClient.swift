@@ -107,6 +107,8 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         let parameters = params as [String : AnyObject]
         _ = sendRequest(APIRoutes.cities , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
     func resetPasswordApi(phone: String, code: String, password: String, _ completionBlock: @escaping APIClientCompletionHandler){
         let params = ["phone": phone, "code": code, "password": password] as [String:String]
         _ = sendRequest(APIRoutes.reset_password, parameters: params as [String: AnyObject], httpMethod: .post, headers: nil, completionBlock: completionBlock)
