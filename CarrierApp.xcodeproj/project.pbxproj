@@ -117,7 +117,6 @@
 		1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
-		1895403E26BBC23000702C38 /* LoadsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895403D26BBC23000702C38 /* LoadsModel.swift */; };
 		18A579B9269320070067952F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B8269320070067952F /* DataManager.swift */; };
 		18A579BB269320230067952F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BA269320230067952F /* Constants.swift */; };
 		18A579BE269321690067952F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BD269321690067952F /* ApiClient.swift */; };
@@ -126,6 +125,13 @@
 		18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579C3269321C40067952F /* FileTSAPIClient.swift */; };
 		18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */; };
 		18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */; };
+		18E1630826C0054D00DD2EED /* ReceiveableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630726C0054D00DD2EED /* ReceiveableViewModel.swift */; };
+		18E1630C26C0073F00DD2EED /* ContractsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630B26C0073F00DD2EED /* ContractsDataModel.swift */; };
+		18E1630E26C0075900DD2EED /* ReceivablesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630D26C0075900DD2EED /* ReceivablesDataModel.swift */; };
+		18E1631026C007C200DD2EED /* ReceivablesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630F26C007C200DD2EED /* ReceivablesResult.swift */; };
+		18E1631226C00A1C00DD2EED /* ContractsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631126C00A1C00DD2EED /* ContractsResult.swift */; };
+		18E1631426C00A8900DD2EED /* DispatchContractsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631326C00A8900DD2EED /* DispatchContractsModel.swift */; };
+		18E1631726C00BBE00DD2EED /* ContractsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631626C00BBE00DD2EED /* ContractsViewModel.swift */; };
 		9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */; };
 		9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */; };
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
@@ -276,7 +282,6 @@
 		1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
-		1895403D26BBC23000702C38 /* LoadsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadsModel.swift; sourceTree = "<group>"; };
 		18A579B8269320070067952F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		18A579BA269320230067952F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18A579BD269321690067952F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -286,6 +291,13 @@
 		18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJCenterFlowLayout.swift; sourceTree = "<group>"; };
 		18DDCCAA26A5B3FC00620564 /* CarrierApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarrierApp.entitlements; sourceTree = "<group>"; };
 		18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18E1630726C0054D00DD2EED /* ReceiveableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveableViewModel.swift; sourceTree = "<group>"; };
+		18E1630B26C0073F00DD2EED /* ContractsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsDataModel.swift; sourceTree = "<group>"; };
+		18E1630D26C0075900DD2EED /* ReceivablesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivablesDataModel.swift; sourceTree = "<group>"; };
+		18E1630F26C007C200DD2EED /* ReceivablesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivablesResult.swift; sourceTree = "<group>"; };
+		18E1631126C00A1C00DD2EED /* ContractsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsResult.swift; sourceTree = "<group>"; };
+		18E1631326C00A8900DD2EED /* DispatchContractsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchContractsModel.swift; sourceTree = "<group>"; };
+		18E1631626C00BBE00DD2EED /* ContractsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsViewModel.swift; sourceTree = "<group>"; };
 		30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarrierApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32353D33B65F658FE2977E9B /* Pods-CarrierApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarrierApp.debug.xcconfig"; path = "Target Support Files/Pods-CarrierApp/Pods-CarrierApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListTableViewCell.swift; sourceTree = "<group>"; };
@@ -374,8 +386,8 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1895403C26BBC21E00702C38 /* Loads */,
-				967A713B26BBCFC3002D72DD /* Observable.swift */,
+				18E1630A26C0069700DD2EED /* Contarcts */,
+				18E1630926C0068300DD2EED /* Receivables */,
 				04206C3B26BD729B006AB6A4 /* AvailabelLoads */,
 				045DDADE26BC144A00B3E232 /* FAQ's */,
 				183262722670A38F00F0CCBA /* Login */,
@@ -436,6 +448,7 @@
 				18A579B526931F940067952F /* DataManger */,
 				0067A2D225274C6E00CECA8C /* Application */,
 				0067A2CF25274C4800CECA8C /* Models */,
+				967A713B26BBCFC3002D72DD /* Observable.swift */,
 				0067A2D025274C5100CECA8C /* Controllers */,
 				0067A308252AFC5000CECA8C /* Extensions */,
 				00B01EA9252E0F4000BF0637 /* BaseClasses */,
@@ -582,10 +595,10 @@
 		045DDADE26BC144A00B3E232 /* FAQ's */ = {
 			isa = PBXGroup;
 			children = (
-				045DDADF26BC146F00B3E232 /* Faqs.swift */,
 				045DDAE226BC146F00B3E232 /* FAQsDataModel.swift */,
 				045DDAE026BC146F00B3E232 /* Others.swift */,
 				045DDAE126BC146F00B3E232 /* Result.swift */,
+				045DDADF26BC146F00B3E232 /* Faqs.swift */,
 			);
 			path = "FAQ's";
 			sourceTree = "<group>";
@@ -701,6 +714,7 @@
 		04D2421826B3CC8A00312E2E /* Receivables */ = {
 			isa = PBXGroup;
 			children = (
+				18E1630626C0052B00DD2EED /* ViewModel */,
 				04D2421926B3CCB600312E2E /* ReceivableListViewController.swift */,
 				04D2421A26B3CCB600312E2E /* ReceivableListViewController.xib */,
 				04D2422126B3D02600312E2E /* Cell */,
@@ -720,6 +734,7 @@
 		04D2422226B406D600312E2E /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
+				18E1631526C00BA500DD2EED /* ViewModel */,
 				04D2422326B4070200312E2E /* ContractsViewController.swift */,
 				04D2422426B4070200312E2E /* ContractsViewController.xib */,
 				04D2422726B4076F00312E2E /* Cell */,
@@ -824,14 +839,6 @@
 			path = Poppins;
 			sourceTree = "<group>";
 		};
-		1895403C26BBC21E00702C38 /* Loads */ = {
-			isa = PBXGroup;
-			children = (
-				1895403D26BBC23000702C38 /* LoadsModel.swift */,
-			);
-			path = Loads;
-			sourceTree = "<group>";
-		};
 		18A579B526931F940067952F /* DataManger */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +857,41 @@
 				18A579C3269321C40067952F /* FileTSAPIClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		18E1630626C0052B00DD2EED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18E1630726C0054D00DD2EED /* ReceiveableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18E1630926C0068300DD2EED /* Receivables */ = {
+			isa = PBXGroup;
+			children = (
+				18E1630D26C0075900DD2EED /* ReceivablesDataModel.swift */,
+				18E1630F26C007C200DD2EED /* ReceivablesResult.swift */,
+			);
+			path = Receivables;
+			sourceTree = "<group>";
+		};
+		18E1630A26C0069700DD2EED /* Contarcts */ = {
+			isa = PBXGroup;
+			children = (
+				18E1630B26C0073F00DD2EED /* ContractsDataModel.swift */,
+				18E1631126C00A1C00DD2EED /* ContractsResult.swift */,
+				18E1631326C00A8900DD2EED /* DispatchContractsModel.swift */,
+			);
+			path = Contarcts;
+			sourceTree = "<group>";
+		};
+		18E1631526C00BA500DD2EED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18E1631626C00BBE00DD2EED /* ContractsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3C7B8C44F7D76228E7CBDA5C /* Frameworks */ = {
@@ -1280,6 +1322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				965B354026BD837E009A7BFB /* ForgotPasswordVM.swift in Sources */,
+				18E1631426C00A8900DD2EED /* DispatchContractsModel.swift in Sources */,
 				967A713C26BBCFC3002D72DD /* Observable.swift in Sources */,
 				045DDAE626BC146F00B3E232 /* FAQsDataModel.swift in Sources */,
 				96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */,
@@ -1295,12 +1338,14 @@
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				04C3D36126B2C47A005FCF5A /* AvailableLoadsDetailViewController.swift in Sources */,
 				04ABB4C626BACB0A00C24153 /* ResultLoginUser.swift in Sources */,
+				18E1630826C0054D00DD2EED /* ReceiveableViewModel.swift in Sources */,
 				04206C4E26BD8608006AB6A4 /* CitiesDataModel.swift in Sources */,
 				04028FF426B419640053F41C /* LogoutViewController.swift in Sources */,
 				183262742670A3A500F0CCBA /* LoginUserDataModel.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
 				045DDAE526BC146F00B3E232 /* Result.swift in Sources */,
+				18E1631226C00A1C00DD2EED /* ContractsResult.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
 				96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */,
 				045DDAE326BC146F00B3E232 /* Faqs.swift in Sources */,
@@ -1310,7 +1355,6 @@
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
 				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
 				04206C4326BD72BF006AB6A4 /* CountriesDataModel.swift in Sources */,
-				96D1E9D526BC4B9600EA9D0D /* CodeVerificationVM.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
 				18A579BE269321690067952F /* ApiClient.swift in Sources */,
@@ -1329,6 +1373,7 @@
 				04206C3226BD388C006AB6A4 /* ContactViewController.swift in Sources */,
 				04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
+				18E1631726C00BBE00DD2EED /* ContractsViewModel.swift in Sources */,
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
 				967A713A26BBCD5E002D72DD /* LoginViewModel.swift in Sources */,
@@ -1350,7 +1395,9 @@
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				04206C3A26BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
+				18E1630C26C0073F00DD2EED /* ContractsDataModel.swift in Sources */,
 				0461744426BBBF290055DD3E /* FaqViewController.swift in Sources */,
+				18E1630E26C0075900DD2EED /* ReceivablesDataModel.swift in Sources */,
 				96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				0461744326BBBF290055DD3E /* FaqTableViewCell.swift in Sources */,
@@ -1359,6 +1406,7 @@
 				96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */,
 				9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */,
 				96E0FC1026BD7985007094DC /* ResetPasswordVM.swift in Sources */,
+				18E1631026C007C200DD2EED /* ReceivablesResult.swift in Sources */,
 				96AE407F26B84ABD008ABA66 /* DispatchesTrackingDetailsCell.swift in Sources */,
 				048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */,
 				9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */,
@@ -1378,7 +1426,6 @@
 				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,
 				04C3091A26B7E70F00BEC895 /* CreatePaymentViewController.swift in Sources */,
 				043498A726BBFD310046BD46 /* FAQsViewModel.swift in Sources */,
-				1895403E26BBC23000702C38 /* LoadsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

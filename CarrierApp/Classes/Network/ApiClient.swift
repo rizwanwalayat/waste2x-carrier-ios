@@ -113,9 +113,13 @@ class APIClient: APIClientHandler {
         let params = ["phone": phone, "code": code, "password": password] as [String:String]
         _ = sendRequest(APIRoutes.reset_password, parameters: params as [String: AnyObject], httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
-    func loads(pickCountry: String, pickState: String,pickCity: String,dropCountry: String,dropState: String,dropCity: String, _ completionBlock: @escaping APIClientCompletionHandler) {
-        let params = ["pick_country": pickCountry, "pick_state": pickState, "pick_city": pickCity, "drop_country": dropCountry, "drop_state": dropState, "drop_city": dropCity] as [String:String]
-        _ = sendRequest(APIRoutes.loads , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+    func ReceivablesApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.receivables , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    func ContractsApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 
 }
