@@ -12,7 +12,6 @@ class AvailableLoadsDetailViewController: BaseViewController {
 
     // MARK: - Outlet
     
-    
     @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var quotationNoLabel: UILabel!
     @IBOutlet weak var originDestinationHolderView: UIView!
@@ -33,6 +32,10 @@ class AvailableLoadsDetailViewController: BaseViewController {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var unitValueLabel: UILabel!
     @IBOutlet weak var acceptButton: UIButton!
+    
+    
+    // MARK: - Outlet
+    
     
     
     // MARK: - Controller's LifeCycle

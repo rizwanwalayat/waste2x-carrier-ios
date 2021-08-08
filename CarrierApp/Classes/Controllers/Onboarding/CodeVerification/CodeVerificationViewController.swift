@@ -26,52 +26,37 @@ class CodeVerificationViewController: BaseViewController {
     
     //MARK: - Variables
     let device = UIDevice()
-//    var phone = ""
     let model = UIDevice.modelName
     var viewModel: CodeVerificationVM?
-    var enteredPhoneNumber = ""
-    var verificationCode: String?
-    
+   
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setAttributedTextInLable(phoneNo: enteredPhoneNumber)
-//        nextButton.makeEnable(value: false)
-        viewModel = CodeVerificationVM()
-        phoneNumberTextField.text = enteredPhoneNumber
+
+        phoneNumberTextField.text = viewModel?.phoneFromUser
+        self.showToast(message: viewModel?.codeFromBackend ?? "No Code")
         firstTextField.becomeFirstResponder()
     }
 
     //MARK: - Actions
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-    
+
     func checkCodeAndResetPassword(){
-        viewModel?.verifyOTP(phoneNumber: enteredPhoneNumber, code: self.verificationCode ?? "", { result, error, status, message in
-            if status ?? false, error != nil {
-                let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
+        viewModel?.verifyOTP(phoneNumber: self.viewModel?.phoneFromUser ?? "", code: self.viewModel?.codeFromUser ?? "", { result, error, status, message in
+            if status ?? false, error == nil {
+                var resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
+                let resetPasswordVM = ResetPasswordVM(phoneFromUser: self.viewModel?.phoneFromUser ?? "", codeFromUser: self.viewModel?.codeFromUser ?? "")
+                resetPasswordVC.viewModel = resetPasswordVM
                 self.navigationController?.pushViewController(resetPasswordVC, animated: true)
             } else {
                 self.showToast(message: error?.localizedDescription ?? message ?? "")
-
             }
         })
-       
     }
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
-        let code = firstTextField.text! + secondTextField.text! + thirdTextField.text! + fourthTextField.text!
-        print(code)
-        let os = device.systemVersion
-        
-    }
     
     @IBAction func resendCodeButtonPressed(_ sender: Any) {
-        viewModel?.sendCodeAgain(phoneNumber: enteredPhoneNumber, { result, error, status, message in
+        viewModel?.sendOTPCode(phoneNumber: self.viewModel?.phoneFromUser ?? "", { result, error, status, message in
             self.showToast(message: error?.localizedDescription ?? message ?? "")
         })
     }

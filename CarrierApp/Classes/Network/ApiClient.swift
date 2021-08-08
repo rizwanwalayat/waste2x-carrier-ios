@@ -55,17 +55,6 @@ class APIClient: APIClientHandler {
         return date == nil ? "" : clientDateFormatter.string(from: date!)
     }
     
-    func jsonToString(json: AnyObject) -> String?{
-        do {
-            let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
-            let convertedString = String(data: data1, encoding: String.Encoding.utf8)
-            return convertedString ?? ""
-        } catch let myJSONError {
-            return myJSONError.localizedDescription
-        }
-        
-    }
-
     
     var isConnectedToInternet: Bool {
         return NetworkReachabilityManager()!.isReachable
@@ -84,8 +73,8 @@ class APIClient: APIClientHandler {
     // MARK: - Onboarding
     
     func login(number: String, password: String, _ completionBlock: @escaping APIClientCompletionHandler) {
-        let params = ["phone": number, "password": password] as [String:String]
-        _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+        let params = ["phone": number, "password": password] as [String : AnyObject]
+        _ = sendRequest(APIRoutes.login , parameters: params ,httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }
     func FaqApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
@@ -93,13 +82,36 @@ class APIClient: APIClientHandler {
     }
     
     func SendCodeApi(phone: String, _ completionBlock: @escaping APIClientCompletionHandler){
-        let params = ["phone": phone] as [String:String]
-        _ = sendRequest(APIRoutes.send_code, parameters: params as [String: AnyObject], httpMethod: .post, headers: nil, completionBlock: completionBlock)
+        let params = ["phone": phone] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.send_code, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     
     func verifyOTPApi(phone: String, code: String, _ completionBlock: @escaping APIClientCompletionHandler){
-        let params = ["phone": phone, "code": code] as [String:String]
-        _ = sendRequest(APIRoutes.send_code, parameters: params as [String: AnyObject], httpMethod: .post, headers: nil, completionBlock: completionBlock)
+        let params = ["phone": phone, "code": code] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.send_code, parameters: params, httpMethod: .post, headers: nil, completionBlock: completionBlock)
+    }
+    
+    func LoadsApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let parameters = params as [String : AnyObject]
+        _ = sendRequest(APIRoutes.loads , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func StatesApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let parameters = params as [String : AnyObject]
+        _ = sendRequest(APIRoutes.states , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func CitiesApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let parameters = params as [String : AnyObject]
+        _ = sendRequest(APIRoutes.cities , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func resetPasswordApi(phone: String, code: String, password: String, _ completionBlock: @escaping APIClientCompletionHandler){
+        let params = ["phone": phone, "code": code, "password": password] as [String:String]
+        _ = sendRequest(APIRoutes.reset_password, parameters: params as [String: AnyObject], httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     func loads(pickCountry: String, pickState: String,pickCity: String,dropCountry: String,dropState: String,dropCity: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["pick_country": pickCountry, "pick_state": pickState, "pick_city": pickCity, "drop_country": dropCountry, "drop_state": dropState, "drop_city": dropCity] as [String:String]

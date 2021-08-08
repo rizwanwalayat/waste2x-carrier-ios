@@ -223,6 +223,16 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
+        case 7:
+            
+            if selectionIndex != 5
+            {
+                self.hideSideMenu {
+                    let vc = ContactViewController(nibName: "ContactViewController", bundle: nil)
+                    Utility.setupRoot([self.fromVC!, vc])
+                }
+            }
+            
         case 8:
             
             let actionVc = LogoutViewController(nibName: "LogoutViewController", bundle: nil)
