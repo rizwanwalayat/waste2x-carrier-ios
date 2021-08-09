@@ -64,7 +64,7 @@ class AvailableLoadsDetailViewController: BaseViewController {
             
             if success ?? false, error == nil {
                 
-                self.showAlerts("Success", data?.message ?? "") {
+                self.showAlerts("Success", data?.message ?? "Quotation has been send successfully !") {
                     Utility.setupHomeAsRootViewController()
                 }
                 
