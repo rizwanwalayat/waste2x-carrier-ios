@@ -123,6 +123,8 @@
 		18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BF2693218F0067952F /* ApiClientHandler.swift */; };
 		18A579C2269321A60067952F /* ApiResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579C1269321A60067952F /* ApiResponseHandler.swift */; };
 		18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579C3269321C40067952F /* FileTSAPIClient.swift */; };
+		18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB558326C11CF800E51BB4 /* QuotationViewModel.swift */; };
+		18BB558726C11D5400E51BB4 /* QuotationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB558626C11D5400E51BB4 /* QuotationDataModel.swift */; };
 		18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */; };
 		18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */; };
 		18E1630826C0054D00DD2EED /* ReceiveableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630726C0054D00DD2EED /* ReceiveableViewModel.swift */; };
@@ -288,6 +290,8 @@
 		18A579BF2693218F0067952F /* ApiClientHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientHandler.swift; sourceTree = "<group>"; };
 		18A579C1269321A60067952F /* ApiResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseHandler.swift; sourceTree = "<group>"; };
 		18A579C3269321C40067952F /* FileTSAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTSAPIClient.swift; sourceTree = "<group>"; };
+		18BB558326C11CF800E51BB4 /* QuotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationViewModel.swift; sourceTree = "<group>"; };
+		18BB558626C11D5400E51BB4 /* QuotationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationDataModel.swift; sourceTree = "<group>"; };
 		18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJCenterFlowLayout.swift; sourceTree = "<group>"; };
 		18DDCCAA26A5B3FC00620564 /* CarrierApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarrierApp.entitlements; sourceTree = "<group>"; };
 		18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -386,6 +390,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18BB558526C11D3C00E51BB4 /* Quotation */,
 				967A713B26BBCFC3002D72DD /* Observable.swift */,
 				18E1630A26C0069700DD2EED /* Contarcts */,
 				18E1630926C0068300DD2EED /* Receivables */,
@@ -763,6 +768,7 @@
 		04DB591A26AED61700C88804 /* Quotations */ = {
 			isa = PBXGroup;
 			children = (
+				18BB558226C11CE400E51BB4 /* ViewModel */,
 				048B953926B2A5300013DAAD /* QuotationActionPopup */,
 				0480667F26B0304900DF4B1E /* QuotationDetail */,
 				0480667E26B0303600DF4B1E /* QuotationList */,
@@ -857,6 +863,22 @@
 				18A579C3269321C40067952F /* FileTSAPIClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		18BB558226C11CE400E51BB4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18BB558326C11CF800E51BB4 /* QuotationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18BB558526C11D3C00E51BB4 /* Quotation */ = {
+			isa = PBXGroup;
+			children = (
+				18BB558626C11D5400E51BB4 /* QuotationDataModel.swift */,
+			);
+			path = Quotation;
 			sourceTree = "<group>";
 		};
 		18E1630626C0052B00DD2EED /* ViewModel */ = {
@@ -1344,6 +1366,7 @@
 				183262742670A3A500F0CCBA /* LoginUserDataModel.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
+				18BB558726C11D5400E51BB4 /* QuotationDataModel.swift in Sources */,
 				045DDAE526BC146F00B3E232 /* Result.swift in Sources */,
 				18E1631226C00A1C00DD2EED /* ContractsResult.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
@@ -1386,6 +1409,7 @@
 				04206C4126BD72BF006AB6A4 /* AvailableLoadsResult.swift in Sources */,
 				96C44C3226B9862800ED5696 /* SettingsViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
+				18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
 				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,

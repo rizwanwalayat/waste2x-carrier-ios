@@ -33,14 +33,50 @@ class QuotationDetailViewController: BaseViewController {
     @IBOutlet weak var unitValueLabel: UILabel!
     @IBOutlet weak var acceptButton: UIButton!
     
+    //MARK: - Variables
+    var viewModel : QuotationViewModel?
+    var quoteNo = Int()
     
     // MARK: - Controller's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         quotationNoLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        self.quotationNoLabel.text = "Quote #\(quoteNo)"
+        viewModel = QuotationViewModel()
+        viewModel?.FetchQuotationDetailData(qoute: "\(quoteNo)", { result, error, success, message in
+            
+            if success ?? false, error == nil {
+                self.dataUpdate()
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+
+            }
+        })
+        
+    }
+    func dataUpdate() {
+        if let dataOfModel = viewModel?.detaildata?.result{
+            self.originAddressLabel.text = dataOfModel.origin
+            self.destinationAdressLabel.text = dataOfModel.destination
+            self.statusValueLabel.text = dataOfModel.status
+            self.priceValueLabel.text = "$\(dataOfModel.price)"
+            self.transporterValueLabel.text = dataOfModel.transporterName
+            self.CommodityValueLabel.text = dataOfModel.commodity
+            self.quantityValueLabel.text = "\(dataOfModel.quantity)"
+            self.unitValueLabel.text = dataOfModel.unit
+            
+        }
+        
+        
+        
+    }
+    
+    
 
     
     // MARK: - Actions
@@ -59,11 +95,31 @@ class QuotationDetailViewController: BaseViewController {
 extension QuotationDetailViewController: QuotationActionViewControllerDelegate
 {
     func quotationAccepted() {
-        print("accepted")
+        print("Accepted")
+        viewModel?.SendQuotationResponceData(responce: "Accepted", id: quoteNo){ result, error, success, message in
+            
+            if success ?? false, error == nil {
+                self.showToast(message: message )
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+
+            }
+        }
+        
     }
     
     func quotationRejected() {
-        print("rejected")
+        print("Rejected")
+        viewModel?.SendQuotationResponceData(responce: "Rejected", id: quoteNo){ result, error, success, message in
+            if success ?? false, error == nil {
+                self.showToast(message: message)
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+
+            }
+        }
     }
     
     
