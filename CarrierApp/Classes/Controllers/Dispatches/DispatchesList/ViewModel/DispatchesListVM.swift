@@ -11,26 +11,25 @@ import ObjectMapper
 
 typealias DispatchesListCompletionHandler = (_ data: DispatchesListModel?, _ error: Error?, _ status: Bool?, _ message: String) -> Void
 class DispatchesListVM: NSObject {
-    
-    var data:DispatchesListModel?
+    var data: DispatchesListModel?
     
     override init(){
         super.init()
     }
-    
+
     func fetchDispatchesData(_ completionhandler: @escaping DispatchesListCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.DispatchesListApiFunctionCall { result, error, status, message in
             Utility.hideLoading()
             
             let newResult = ["result": result]
-
-            if status ?? false, error == nil, let data = Mapper<DispatchesListModel>().map(JSON: newResult as [String: Any]) {
-                    self.data = data
-                    completionhandler(data, error, status, message)
-                } else {
-                    completionhandler(nil, error, status, message)
-                }
+            
+            if status, error == nil, let data = Mapper<DispatchesListModel>().map(JSON: newResult as [String: Any]) {
+                self.data = data
+                completionhandler(data, error, status, message)
+            } else {
+                completionhandler(nil, error, status, message)
+            }
             
         }
     }

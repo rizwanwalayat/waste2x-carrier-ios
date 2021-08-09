@@ -8,11 +8,17 @@
 
 import UIKit
 
+enum DispatchesStatus:String {
+    case scheduled = "Scheduled"
+    case in_transit = "In Transit"
+    case delivered = "Delivered"
+}
+
 class DispatchesListViewController: BaseViewController {
     
     // MARK: - Variables
     var dispatchesStatus = DispatchesStatus.scheduled
-    var dispatchesStatusArray = [DispatchesStatus.scheduled, DispatchesStatus.inTransit, DispatchesStatus.delivered]
+    var dispatchesStatusArray = [DispatchesStatus.scheduled, DispatchesStatus.in_transit, DispatchesStatus.delivered]
     var viewModel: DispatchesListVM?
     
     // MARK: - Outlets
@@ -50,49 +56,57 @@ class DispatchesListViewController: BaseViewController {
 extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dispatchesStatusArray.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        return viewModel?.data?.result?.array[section].count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        48
+        if let array = viewModel?.data?.result?.array[section], !array.isEmpty {
+            return 48
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 48))
-        view.backgroundColor = .clear
-        let image = UIImageView(frame: CGRect(x: 0, y: 24, width: 24, height: 24))
-        image.image = UIImage(named: "Schedule Icon")
-        view.addSubview(image)
-        let label = UILabel(frame: CGRect(x: image.frame.width + 16, y: 24, width: UIScreen.main.bounds.width - 46, height: 24))
-        label.font = UIFont.poppinFont(withSize: 16)
-        label.text = "Scheduled"
-        view.addSubview(label)
-        let status = dispatchesStatusArray[section]
-        switch status {
-        case .scheduled:
+        if let array = viewModel?.data?.result?.array[section], !array.isEmpty {
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 48))
+            view.backgroundColor = .clear
+            let image = UIImageView(frame: CGRect(x: 0, y: 24, width: 24, height: 24))
             image.image = UIImage(named: "Schedule Icon")
-            label.text = DispatchesStatus.scheduled.rawValue
-        case .inTransit:
-            image.image = UIImage(named: "In Transit Icon")
-            label.text = DispatchesStatus.inTransit.rawValue
-        case .delivered:
-            image.image = UIImage(named: "Delivered Icon")
-            label.text = DispatchesStatus.delivered.rawValue
-  
+            view.addSubview(image)
+            let label = UILabel(frame: CGRect(x: image.frame.width + 16, y: 24, width: UIScreen.main.bounds.width - 46, height: 24))
+            label.font = UIFont.poppinFont(withSize: 16)
+            label.text = "Scheduled"
+            view.addSubview(label)
+            
+            switch section {
+            case 0:
+                image.image = UIImage(named: "Schedule Icon")
+                label.text = DispatchesStatus.scheduled.rawValue
+            case 1:
+                image.image = UIImage(named: "In Transit Icon")
+                label.text = DispatchesStatus.in_transit.rawValue
+            case 2:
+                image.image = UIImage(named: "Delivered Icon")
+                label.text = DispatchesStatus.delivered.rawValue
+            default:
+                image.image = UIImage(named: "Schedule Icon")
+                label.text = DispatchesStatus.scheduled.rawValue
+            }
+            return view
+        } else {
+            return nil
         }
-        
-        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesListTableViewCell", for: indexPath) as! DispatchesListTableViewCell
-        
-        
-        cell.configCell(data: "", status: dispatchesStatusArray[indexPath.section])
+        let cellData = viewModel?.data?.result?.array[indexPath.section][indexPath.row]
+        cell.configCell(data: cellData!, status: dispatchesStatusArray[indexPath.section])
         
         return cell
     }
@@ -107,9 +121,3 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
     }
 }
 
-enum DispatchesStatus:String {
-    case scheduled = "Scheduled"
-    case inTransit = "In Transit"
-    case delivered = "Delivered"
-
-}

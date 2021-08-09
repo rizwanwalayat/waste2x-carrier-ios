@@ -48,7 +48,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dispatches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-Mv-qzE">
-                                    <rect key="frame" x="56" y="20" width="342" height="25.5"/>
+                                    <rect key="frame" x="155.5" y="20" width="103" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -57,11 +57,10 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="EXP-ur-Ddt" firstAttribute="centerY" secondItem="6iR-Mv-qzE" secondAttribute="centerY" id="9iF-6q-roj"/>
-                                <constraint firstAttribute="trailing" secondItem="6iR-Mv-qzE" secondAttribute="trailing" constant="16" id="S2c-Oq-ruA"/>
                                 <constraint firstAttribute="bottom" secondItem="6iR-Mv-qzE" secondAttribute="bottom" constant="40" id="TEN-Jr-tkF"/>
+                                <constraint firstItem="6iR-Mv-qzE" firstAttribute="centerX" secondItem="MCZ-mD-bhU" secondAttribute="centerX" id="aBl-iH-cMa"/>
                                 <constraint firstItem="EXP-ur-Ddt" firstAttribute="leading" secondItem="MCZ-mD-bhU" secondAttribute="leading" constant="16" id="era-l6-HRo"/>
                                 <constraint firstItem="6iR-Mv-qzE" firstAttribute="top" secondItem="MCZ-mD-bhU" secondAttribute="top" constant="20" id="fKr-4Q-y65"/>
-                                <constraint firstItem="6iR-Mv-qzE" firstAttribute="leading" secondItem="EXP-ur-Ddt" secondAttribute="trailing" constant="16" id="gIr-mT-Gtx"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -82,9 +81,9 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-lg-8QU">
                     <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
-                            <rect key="frame" x="20" y="20" width="374" height="774.5"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
+                            <rect key="frame" x="20" y="10" width="374" height="774.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="Q01-Sv-kMK"/>
@@ -95,9 +94,9 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="1tb-uv-QQ8" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="20" id="1Ae-aB-9PV"/>
-                        <constraint firstAttribute="bottom" secondItem="1tb-uv-QQ8" secondAttribute="bottom" id="IFh-aq-aJq"/>
+                        <constraint firstAttribute="bottom" secondItem="1tb-uv-QQ8" secondAttribute="bottom" constant="10" id="IFh-aq-aJq"/>
                         <constraint firstAttribute="trailing" secondItem="1tb-uv-QQ8" secondAttribute="trailing" constant="20" id="PpC-dm-Hvo"/>
-                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="20" id="Ub2-66-uQX"/>
+                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="10" id="Ub2-66-uQX"/>
                     </constraints>
                 </view>
             </subviews>
