@@ -19,8 +19,11 @@ typealias CitiesCompletionHandler = (_ data: CitiesDataModel?, _ error: Error?, 
 class AvailabelLoadsViewModel: NSObject {
     
     var data : AvailabelLoadsDataModel?
-    var statesData : StatesDataModel?
-    var citiesData : CitiesDataModel?
+    var statesPickupData : StatesDataModel?
+    var citiesPickupData : CitiesDataModel?
+    var statesDropOffData : StatesDataModel?
+    var citiesDropOffData : CitiesDataModel?
+    var loadsDetail : LoadsDataModel?
     
     override init() {
         super.init()
@@ -51,7 +54,7 @@ class AvailabelLoadsViewModel: NSObject {
         })
     }
     
-    func FetchStates(params: [String : Any], _ completionHandler: @escaping StatesCompletionHandler) {
+    func FetchStates(params: [String : Any], _ isPickup: Bool,  _ completionHandler: @escaping StatesCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.StatesApiFunctionCall(params, { result, error, status, message in
             
@@ -61,7 +64,7 @@ class AvailabelLoadsViewModel: NSObject {
                 let newResult = ["result" : result]
                 if let data = Mapper<StatesDataModel>().map(JSON: newResult as [String : Any]) {
                     
-                    self.statesData = data
+                    isPickup ? (self.statesPickupData = data) : (self.statesDropOffData = data)
                     completionHandler(data, error, status, message)
                     
                 } else {
@@ -75,7 +78,7 @@ class AvailabelLoadsViewModel: NSObject {
         })
     }
     
-    func FetchCities(params: [String : Any], _ completionHandler: @escaping CitiesCompletionHandler) {
+    func FetchCities(params: [String : Any], _ isPickup: Bool, _ completionHandler: @escaping CitiesCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.CitiesApiFunctionCall(params, { result, error, status, message in
             
@@ -85,7 +88,7 @@ class AvailabelLoadsViewModel: NSObject {
                 let newResult = ["result" : result]
                 if let data = Mapper<CitiesDataModel>().map(JSON: newResult as [String : Any]) {
                     
-                    self.citiesData = data
+                    isPickup ? (self.citiesPickupData = data) : (self.citiesDropOffData = data)
                     completionHandler(data, error, status, message)
                     
                 } else {
@@ -97,5 +100,11 @@ class AvailabelLoadsViewModel: NSObject {
                 completionHandler(nil, error, status, message)
             }
         })
+    }
+    
+    func setDetialData(_ atIndex : Int)
+    {
+        let loadsData = self.data?.result?.loads[atIndex]
+        self.loadsDetail = loadsData
     }
 }

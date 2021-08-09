@@ -16,7 +16,7 @@ class AvailableLoadsListViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    // MARK: - Outlet
+    // MARK: - Variables
     
     var viewModel : AvailabelLoadsViewModel?
     
@@ -46,12 +46,16 @@ extension AvailableLoadsListViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AvailableLoadsListTableViewCell", for: indexPath) as! AvailableLoadsListTableViewCell
-        cell.configureCell()
+        
+        guard let cellData = viewModel?.data?.result?.loads[indexPath.row] else {return cell}
+        cell.configureCell(cellData)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = AvailableLoadsDetailViewController(nibName: "AvailableLoadsDetailViewController", bundle: nil)
+        viewModel?.setDetialData(indexPath.row)
+        detailVC.viewModel = viewModel
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

@@ -110,8 +110,8 @@ class APIClient: APIClientHandler {
     }
     
     func resetPasswordApi(phone: String, code: String, password: String, _ completionBlock: @escaping APIClientCompletionHandler){
-        let params = ["phone": phone, "code": code, "password": password] as [String:String]
-        _ = sendRequest(APIRoutes.reset_password, parameters: params as [String: AnyObject], httpMethod: .post, headers: nil, completionBlock: completionBlock)
+        let params = ["phone": phone, "code": code, "password": password] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.reset_password, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     func ReceivablesApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
@@ -135,6 +135,14 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
+    func AvailableLoadsApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+    func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+        let parameters = params as [String : AnyObject]
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.create_quotation , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     func DispatchesListApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.dispatches , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)

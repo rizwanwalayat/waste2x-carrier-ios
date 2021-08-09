@@ -43,16 +43,15 @@ class AvailableLoadsViewController: BaseViewController{
         super.viewWillAppear(animated)
         
         viewModel = AvailabelLoadsViewModel()
-        self.fetchLoads()
+        self.fetchLoads(false)
     }
 
 
     // MARK: - Actions
     
     @IBAction func applyPressed(_ sender: Any) {
-        let vc = AvailableLoadsListViewController(nibName: "AvailableLoadsListViewController", bundle: nil)
-        vc.viewModel = viewModel
-        self.navigationController?.pushViewController(vc , animated: true)
+        
+        self.fetchLoads(true)
     }
     
     @IBAction func clearPressed(_ sender: Any) {
@@ -69,47 +68,62 @@ class AvailableLoadsViewController: BaseViewController{
         setupDropDownsData(pickupCountryTextField, countryNames, dataIds: countryIds) { selectedString, id in
             self.pickupCountryTextField.text = selectedString
             self.paramsData["pick_country"] = selectedString
-            self.fetchStates(id, self.pickupStateTextField)
+            self.fetchStates(id, self.pickupStateTextField, true)
         }
         
         
         setupDropDownsData(dropOffCountryTextField, countryNames, dataIds: countryIds) { selectedString, id in
             self.dropOffCountryTextField.text = selectedString
             self.paramsData["drop_country"] = selectedString
-            self.fetchStates(id, self.dropOffStateTextField)
+            self.fetchStates(id, self.dropOffStateTextField, false)
         }
         
     }
     
-    func setupDropDownStatesFields()
+    func setupDropDownStatesFieldsForPickup()
     {
         
-        guard let statesNames = viewModel?.statesData?.states?.map({ $0.name }) else {return}
-        guard let statesIds = viewModel?.statesData?.states?.map({ $0.id }) else {return}
+        guard let statesNames = viewModel?.statesPickupData?.states?.map({ $0.name }) else {return}
+        guard let statesIds = viewModel?.statesPickupData?.states?.map({ $0.id }) else {return}
         
         setupDropDownsData(pickupStateTextField, statesNames, dataIds: statesIds) { selectedString, id in
             self.pickupStateTextField.text = selectedString
             self.paramsData["pick_state"] = selectedString
-            self.fetchCities(5, self.pickupCityTextField)
+            self.fetchCities(id, self.pickupCityTextField, true)
         }
+        
+    }
+    
+    func setupDropDownStatesFieldsForDropoff()
+    {
+        
+        guard let statesNames = viewModel?.statesDropOffData?.states?.map({ $0.name }) else {return}
+        guard let statesIds = viewModel?.statesDropOffData?.states?.map({ $0.id }) else {return}
         
         setupDropDownsData(dropOffStateTextField, statesNames, dataIds: statesIds) { selectedString, id in
             self.dropOffStateTextField.text = selectedString
             self.paramsData["drop_state"] = selectedString
-            self.fetchCities(5, self.dropOffCityTextField)
+            self.fetchCities(id, self.dropOffCityTextField, false)
         }
     }
     
-    func setupDropdownCitiesFields()
+    func setupDropdownCitiesFieldsPickup()
     {
         
-        guard let citiesNames = viewModel?.citiesData?.citties?.map({ $0.name }) else {return}
-        guard let citiesIds = viewModel?.citiesData?.citties?.map({ $0.id }) else {return}
+        guard let citiesNames = viewModel?.citiesPickupData?.citties?.map({ $0.name }) else {return}
+        guard let citiesIds = viewModel?.citiesPickupData?.citties?.map({ $0.id }) else {return}
         
         setupDropDownsData(pickupCityTextField, citiesNames, dataIds: citiesIds) { selectedString, id in
             self.pickupCityTextField.text = selectedString
             self.paramsData["pick_city"] = selectedString
         }
+    }
+    
+    func setupDropdownCitiesFieldsDropoff()
+    {
+        
+        guard let citiesNames = viewModel?.citiesDropOffData?.citties?.map({ $0.name }) else {return}
+        guard let citiesIds = viewModel?.citiesDropOffData?.citties?.map({ $0.id }) else {return}
         
         setupDropDownsData(dropOffCityTextField, citiesNames, dataIds: citiesIds) { selectedString, id in
             self.dropOffCityTextField.text = selectedString
@@ -143,14 +157,19 @@ class AvailableLoadsViewController: BaseViewController{
     func clearAllFields()
     {
         self.pickupCountryTextField.text = ""
+        self.pickupCountryTextField.selectedIndex = nil
         self.pickupStateTextField.text = ""
+        self.pickupStateTextField.selectedIndex = nil
         self.pickupCityTextField.text = ""
+        self.pickupCityTextField.selectedIndex = nil
         self.dropOffCountryTextField.text = ""
+        self.dropOffCountryTextField.selectedIndex = nil
         self.dropOffStateTextField.text = ""
+        self.dropOffStateTextField.selectedIndex = nil
         self.dropOffCityTextField.text = ""
+        self.dropOffCityTextField.selectedIndex = nil
         self.paramsData.removeAll()
     }
-    
 }
 
 
@@ -158,9 +177,16 @@ class AvailableLoadsViewController: BaseViewController{
 
 extension AvailableLoadsViewController {
     
-    func fetchLoads()
+    func fetchLoads(_ isFilerApplied: Bool)
     {
         viewModel?.FetchLoads(params: paramsData, { data, error, success, message in
+            
+            if isFilerApplied{
+                let vc = AvailableLoadsListViewController(nibName: "AvailableLoadsListViewController", bundle: nil)
+                vc.viewModel = self.viewModel
+                self.navigationController?.pushViewController(vc , animated: true)
+                return
+            }
             
             if success ?? false, error == nil {
                 
@@ -172,35 +198,33 @@ extension AvailableLoadsViewController {
         })
     }
     
-    func fetchStates(_ id : Int, _ anchorView : DropDown)
+    func fetchStates(_ id : Int, _ anchorView : DropDown, _ isPickup: Bool)
     {
         
         let params = ["country_id": id]
-        viewModel?.FetchStates(params: params, { data, error, success, message in
+        viewModel?.FetchStates(params: params, isPickup, { data, error, success, message in
             
             if success ?? false, error == nil {
                 
-                self.setupDropDownStatesFields()
+                isPickup ? self.setupDropDownStatesFieldsForPickup() : self.setupDropDownStatesFieldsForDropoff()
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }
-            
         })
     }
     
-    func fetchCities(_ id : Int, _ anchorView : DropDown)
+    func fetchCities(_ id : Int, _ anchorView : DropDown, _ isPickup: Bool)
     {
         
         let params = ["state_id": id]
-        viewModel?.FetchCities(params: params, { data, error, success, message in
+        viewModel?.FetchCities(params: params, isPickup, { data, error, success, message in
             
             if success ?? false, error == nil {
                 
-                self.setupDropdownCitiesFields()
+                isPickup ? self.setupDropdownCitiesFieldsPickup() : self.setupDropdownCitiesFieldsDropoff()
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }
-            
         })
     }
 }
