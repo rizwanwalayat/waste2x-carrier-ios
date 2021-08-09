@@ -1,0 +1,36 @@
+//
+//  DispatchesListResult.swift
+//  CarrierApp
+//
+//  Created by Phaedra Solutions  on 09/08/2021.
+//  Copyright © 2021 codesrbit. All rights reserved.
+//
+
+import Foundation
+import ObjectMapper
+
+class DispatchesListResultItem: Mappable {
+    
+    var id: Int
+    var date_created: String
+    var pick_up: String
+    var drop_off: String
+    var dispatch_rep: String
+    
+    required init?(map: Map) {
+        id = -1
+        date_created = ""
+        pick_up = ""
+        drop_off = ""
+        dispatch_rep = ""
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        date_created <- map["date_created"]
+        pick_up <- map["pick_up"]
+        drop_off <- map["drop_off"]
+        dispatch_rep <- map["dispatches_rep"]
+    }
+    
+}

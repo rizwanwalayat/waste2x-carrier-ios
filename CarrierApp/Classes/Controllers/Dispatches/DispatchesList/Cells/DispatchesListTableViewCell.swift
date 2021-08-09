@@ -24,7 +24,7 @@ class DispatchesListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(_ status: DispatchesStatus)
+    func configCell(data: Any?, status: DispatchesStatus)
     {
         var statusColor: UIColor
         switch status {

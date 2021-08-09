@@ -9,11 +9,13 @@
 import UIKit
 
 class DispatchesListViewController: BaseViewController {
-
+    
+    // MARK: - Variables
     var dispatchesStatus = DispatchesStatus.scheduled
     var dispatchesStatusArray = [DispatchesStatus.scheduled, DispatchesStatus.inTransit, DispatchesStatus.delivered]
-    // MARK: - Outlets
+    var viewModel: DispatchesListVM?
     
+    // MARK: - Outlets
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableview : UITableView!
     
@@ -21,8 +23,19 @@ class DispatchesListViewController: BaseViewController {
     // MARK: - Controller's LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableviewHandlings()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel = DispatchesListVM()
+        viewModel?.fetchDispatchesData({ result, error, status, message in
+            
+            if status ?? false, error == nil {
+                self.tableview.reloadData()
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message)
+            }
+        })
     }
         
     func tableviewHandlings()
@@ -78,7 +91,8 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesListTableViewCell", for: indexPath) as! DispatchesListTableViewCell
         
-        cell.configCell(dispatchesStatusArray[indexPath.section])
+        
+        cell.configCell(data: "", status: dispatchesStatusArray[indexPath.section])
         
         return cell
     }

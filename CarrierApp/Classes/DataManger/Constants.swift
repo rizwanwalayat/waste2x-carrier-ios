@@ -29,6 +29,7 @@ struct APIRoutes {
     static var cities = "carriers/api/cities"
     static var receivables = "carriers/api/receivables"
     static var contracts = "carriers/api/contracts"
+    static var dispatches = "carriers/api/dispatches"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

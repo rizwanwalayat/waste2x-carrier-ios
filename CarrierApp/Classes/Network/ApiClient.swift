@@ -121,6 +121,10 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
+    func DispatchesListApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.dispatches , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
 
 }
 
