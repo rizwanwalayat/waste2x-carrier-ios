@@ -10,6 +10,11 @@ import UIKit
 
 class ReceivableListViewController: BaseViewController {
 
+    
+    //MARK: - Variables
+    
+    var viewModel : ReceiveableViewModel?
+    
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +29,23 @@ class ReceivableListViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+        viewModel = ReceiveableViewModel()
+        viewModel?.FetchReceiveableData({ result, error, success, message in
+            
+            if success ?? false, error == nil {
+                self.tableView.reloadData()
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+
+            }
+        })
+        
+    }
+    
 
 }
 
@@ -34,26 +56,41 @@ extension ReceivableListViewController: UITableViewDelegate, UITableViewDataSour
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-         3
+        viewModel?.data?.result.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceivableLIstTableViewCell", for: indexPath) as! ReceivableLIstTableViewCell
         
-        if indexPath.row == 0
-        {
+        let dataOfModel = viewModel?.data?.result[indexPath.row]
+        
+        if dataOfModel!.status == "Completed" {
             cell.config(.delivered)
+            cell.dispatchNoValueLabel.text = dataOfModel?.dispatchId
+            cell.currencyValueLabel.text = dataOfModel?.currency
+            cell.outstandingAmountValueLabel.text = dataOfModel?.outstandingAmount
+            cell.totalAmountValueLabel.text = dataOfModel?.total
+            cell.receivedAmountValueLabel.text = dataOfModel?.receivedAmount
+            
         }
-        
-        else if indexPath.row == 1
-        {
-            cell.config(.inTransit)
-        }
-        
-        else if indexPath.row == 2
-        {
+        else if dataOfModel!.status == "Draft" {
             cell.config(.scheduled)
+            cell.dispatchNoValueLabel.text = dataOfModel?.dispatchId
+            cell.currencyValueLabel.text = dataOfModel?.currency
+            cell.outstandingAmountValueLabel.text = dataOfModel?.outstandingAmount
+            cell.totalAmountValueLabel.text = dataOfModel?.total
+            cell.receivedAmountValueLabel.text = dataOfModel?.receivedAmount
+            
+        }
+        else if dataOfModel!.status == "In Transit" {
+            cell.config(.inTransit)
+            cell.currencyValueLabel.text = dataOfModel?.currency
+            cell.dispatchNoValueLabel.text = dataOfModel?.dispatchId
+            cell.outstandingAmountValueLabel.text = dataOfModel?.outstandingAmount
+            cell.totalAmountValueLabel.text = dataOfModel?.total
+            cell.receivedAmountValueLabel.text = dataOfModel?.receivedAmount
+            
         }
         
         return cell
