@@ -63,33 +63,26 @@ extension ReceivableListViewController: UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceivableLIstTableViewCell", for: indexPath) as! ReceivableLIstTableViewCell
         
-        let dataOfModel = viewModel?.data?.result[indexPath.row]
-        
-        if dataOfModel!.status == "Completed" {
-            cell.config(.delivered)
-            cell.dispatchNoValueLabel.text = dataOfModel?.dispatchId
-            cell.currencyValueLabel.text = dataOfModel?.currency
-            cell.outstandingAmountValueLabel.text = dataOfModel?.outstandingAmount
-            cell.totalAmountValueLabel.text = dataOfModel?.total
-            cell.receivedAmountValueLabel.text = dataOfModel?.receivedAmount
+        if let dataOfModel = viewModel?.data?.result[indexPath.row] {
             
-        }
-        else if dataOfModel!.status == "Draft" {
-            cell.config(.scheduled)
-            cell.dispatchNoValueLabel.text = dataOfModel?.dispatchId
-            cell.currencyValueLabel.text = dataOfModel?.currency
-            cell.outstandingAmountValueLabel.text = dataOfModel?.outstandingAmount
-            cell.totalAmountValueLabel.text = dataOfModel?.total
-            cell.receivedAmountValueLabel.text = dataOfModel?.receivedAmount
-            
-        }
-        else if dataOfModel!.status == "In Transit" {
-            cell.config(.inTransit)
-            cell.currencyValueLabel.text = dataOfModel?.currency
-            cell.dispatchNoValueLabel.text = dataOfModel?.dispatchId
-            cell.outstandingAmountValueLabel.text = dataOfModel?.outstandingAmount
-            cell.totalAmountValueLabel.text = dataOfModel?.total
-            cell.receivedAmountValueLabel.text = dataOfModel?.receivedAmount
+            if dataOfModel.status == "Completed" {
+                cell.config(.delivered)
+                
+            }
+            else if dataOfModel.status == "In Transit" {
+                cell.config(.inTransit)
+                
+            }
+            else {
+                cell.config(.scheduled)
+                
+            }
+            cell.dispatchNoValueLabel.text = dataOfModel.dispatchId
+            cell.currencyValueLabel.text = dataOfModel.currency
+            cell.outstandingAmountValueLabel.text = dataOfModel.outstandingAmount
+            cell.totalAmountValueLabel.text = dataOfModel.total
+            cell.receivedAmountValueLabel.text = dataOfModel.receivedAmount
+                
             
         }
         

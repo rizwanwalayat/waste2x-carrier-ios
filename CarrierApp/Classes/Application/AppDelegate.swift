@@ -49,7 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
 
         // [END register_for_notifications]
-        Utility.loginRootViewController()
+        if DataManager.shared.fetchAuthToken() == ""{
+            Utility.loginRootViewController()
+        }
+        else{
+            Utility.setupHomeAsRootViewController()
+        }
+        
         
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
