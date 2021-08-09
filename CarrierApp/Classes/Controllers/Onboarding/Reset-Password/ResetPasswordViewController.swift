@@ -45,10 +45,6 @@ class ResetPasswordViewController: BaseViewController {
         })
     }
     
-    @IBAction func textFieldValueChanged(_ sender: UITextField){
-//        resetPasswordButton.makeEnable(value: checkPasswords(newPassword: newPasswordTextField, confirmPassword: confirmPasswordTextField))
-    }
-    
     
     // MARK: - Functions
     func checkPasswords(newPassword: UITextField, confirmPassword: UITextField) -> Bool {
