@@ -99,6 +99,17 @@ class BaseViewController: UIViewController {
         return nameAttrString
     }
     
+    func showAlerts(_ title: String, _ message: String, _ completionHandler: @escaping() -> ())
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { action in
+            
+            completionHandler()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func backPressed(_ sender: UIButton){
         if let navigationController = self.navigationController {
             navigationController.popViewController(animated: true)
@@ -114,4 +125,5 @@ class BaseViewController: UIViewController {
         sideMenuVC.fromVC = self
         self.present(sideMenuVC, animated: false, completion: nil)
     }
+    
 }

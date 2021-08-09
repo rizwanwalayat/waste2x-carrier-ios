@@ -19,42 +19,61 @@ class AvailableLoadsDetailViewController: BaseViewController {
     @IBOutlet weak var originAddressLabel: UILabel!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var destinationAdressLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var statusValueLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var priceValueLabel: UILabel!
-    @IBOutlet weak var transporterLabel: UILabel!
-    @IBOutlet weak var transporterValueLabel: UILabel!
-    @IBOutlet weak var CommodityLabel: UILabel!
-    @IBOutlet weak var CommodityValueLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var quantityValueLabel: UILabel!
-    @IBOutlet weak var unitLabel: UILabel!
-    @IBOutlet weak var unitValueLabel: UILabel!
+    @IBOutlet weak var vehicleTypeLabel: UILabel!
+    @IBOutlet weak var vehicleTypeValueLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var distanceValueLabel: UILabel!
     @IBOutlet weak var acceptButton: UIButton!
-    
+    @IBOutlet weak var provideQuotationLabel: UILabel!
+    @IBOutlet weak var provideQuotationTextField: UITextField!
     
     // MARK: - Outlet
     
     
+    var viewModel : AvailabelLoadsViewModel?
+    var detailVM: AvailabelLoadsDetailViewModel?
     
     // MARK: - Controller's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        acceptButton.makeEnable(value: false)
+        dataPopulate()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
 
-        self.navigationController?.navigationBar.isHidden = true
+        detailVM = AvailabelLoadsDetailViewModel()
     }
 
     
     // MARK: - Actions
     
     @IBAction func acceptButtonPressed(_ sender: Any) {
+        
+        guard let id = viewModel?.loadsDetail?.id else {return }
+        guard let price = provideQuotationTextField.text else {return }
+        let params : [String : Any] = [ "price": price,
+                                       "post_id": id]
+        
+        detailVM?.sendQuotationRequest(params: params, { data, error, success, message in
+            
+            if success ?? false, error == nil {
+                
+                self.showAlerts("Success", data?.message ?? "") {
+                    Utility.setupHomeAsRootViewController()
+                }
+                
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+            }
+            
+        })
+        
     }
     
 
@@ -69,5 +88,33 @@ extension AvailableLoadsDetailViewController: UITextFieldDelegate {
         if textField.isEmpty {
             Utility.selectTextField(textField.superview!, isSelected: false)
         }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        if textField.text!.count > 0 {
+            
+            acceptButton.makeEnable(value: true)
+        }
+        else
+        {
+            acceptButton.makeEnable(value: false)
+        }
+    }
+}
+
+
+extension AvailableLoadsDetailViewController{
+    
+    
+    func dataPopulate()
+    {
+        let orderNo = viewModel?.loadsDetail?.id ?? 0
+        quotationNoLabel.setAttributedTextInLable("Order", "1C2439", 16, " #\(orderNo)", "1C2439", 16)
+        originAddressLabel.text = viewModel?.loadsDetail?.pick_up ?? "-"
+        destinationAdressLabel.text = viewModel?.loadsDetail?.drop_off ?? "-"
+        quantityValueLabel.text = "\(viewModel?.loadsDetail?.quantity ?? 0)"
+        vehicleTypeValueLabel.text = viewModel?.loadsDetail?.vehicle_type ?? "-"
+        distanceValueLabel.text = viewModel?.loadsDetail?.distance ?? "-"
     }
 }

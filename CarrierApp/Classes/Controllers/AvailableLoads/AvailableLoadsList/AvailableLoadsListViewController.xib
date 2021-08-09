@@ -41,9 +41,10 @@
                                         <constraint firstAttribute="height" constant="24" id="Nv4-QH-bSy"/>
                                         <constraint firstAttribute="width" secondItem="65Z-cW-sia" secondAttribute="height" multiplier="1:1" id="Wy3-hC-pzX"/>
                                     </constraints>
-                                    <state key="normal" image="Sidemenu"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="BackButton"/>
                                     <connections>
-                                        <action selector="menuPressed:" destination="-1" eventType="touchUpInside" id="6fs-op-XhG"/>
+                                        <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="Lke-ZT-V7r"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Loads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZ0-Yj-eDx">
@@ -113,8 +114,8 @@
         </view>
     </objects>
     <resources>
+        <image name="BackButton" width="9" height="15"/>
         <image name="NavBar Header" width="375" height="142"/>
-        <image name="Sidemenu" width="27" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
