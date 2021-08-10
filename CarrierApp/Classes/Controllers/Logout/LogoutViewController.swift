@@ -37,6 +37,9 @@ class LogoutViewController: BaseViewController {
         })
     }
     
+    func logoutRemoveToken(){
+        DataManager.shared.removeAuthToken()
+    }
     
     func hidePopup(_ isAccepted : Bool)
     {
@@ -61,7 +64,7 @@ class LogoutViewController: BaseViewController {
         
     }
     @IBAction func confirmPressed(_ sender: Any) {
-        
+        logoutRemoveToken()
         hidePopup(true)
         
     }
