@@ -16,7 +16,8 @@ class QuotationListViewController: BaseViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var tableview : UITableView!
+    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     
     // MARK: - Controller's LifeCycle
@@ -33,8 +34,9 @@ class QuotationListViewController: BaseViewController {
         viewModel?.FetchQuotationData({ result, error, success, message in
             
             if success ?? false, error == nil {
-                self.tableview.reloadData()
+                self.checkData()
             } else {
+                self.showTable(false)
                 self.showToast(message: error?.localizedDescription ?? message )
 
             }
@@ -44,9 +46,27 @@ class QuotationListViewController: BaseViewController {
         
     func tableviewHandlings()
     {
-        tableview.register(UINib(nibName: "QuotationsTableViewCell", bundle: nil), forCellReuseIdentifier: "QuotationsTableViewCell")
-        tableview.rowHeight = UITableView.automaticDimension
-        tableview.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(UINib(nibName: "QuotationsTableViewCell", bundle: nil), forCellReuseIdentifier: "QuotationsTableViewCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+    }
+    
+    func showTable(_ flag: Bool){
+        if flag {
+            tableView.isHidden = false
+            noDataLabel.isHidden = true
+        } else {
+            tableView.isHidden = true
+            noDataLabel.isHidden = false
+        }
+    }
+    func checkData(){
+        if let count = viewModel?.data?.result.count, count > 0 {
+            self.tableView.reloadData()
+            showTable(true)
+        } else {
+            showTable(false)
+        }
     }
 
 }
@@ -58,7 +78,7 @@ extension QuotationListViewController : UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "QuotationsTableViewCell", for: indexPath) as! QuotationsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuotationsTableViewCell", for: indexPath) as! QuotationsTableViewCell
         if let dataOfModel = viewModel?.data?.result[indexPath.row] {
             if dataOfModel.status == "Contract Sent"{
                 cell.configCell(.accepted)
