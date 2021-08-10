@@ -132,14 +132,10 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.quotationsResponce, parameters: params as [String: AnyObject], httpMethod: .post, headers: headers, completionBlock: completionBlock)
     }
     func ContractsApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-        
-        
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
-        _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
-    }
+    
     func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         let parameters = params as [String : AnyObject]
@@ -150,11 +146,6 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.dispatches , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
         
-    func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
-        _ = sendRequest(APIRoutes.create_quotation , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
-    }
-    
     func PaymentApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let params = [String : AnyObject]()
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
