@@ -11,7 +11,6 @@ import SDWebImage
 
 class BaseViewController: UIViewController {
 
-
     
     @IBOutlet weak var baseHolderView: UIView!
     

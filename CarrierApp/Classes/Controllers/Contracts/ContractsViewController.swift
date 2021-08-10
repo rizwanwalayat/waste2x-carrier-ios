@@ -17,6 +17,7 @@ class ContractsViewController: BaseViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     
     // MARK: - Controller's Lifecycle
@@ -33,16 +34,33 @@ class ContractsViewController: BaseViewController {
         
         viewModel = ContractsViewModel()
         viewModel?.FetchContractsData({ result, error, success, message in
-            
+                        
             if success ?? false, error == nil {
-                self.tableView.reloadData()
+                self.checkData()
             } else {
+                self.showTable(false)
                 self.showToast(message: error?.localizedDescription ?? message )
-
             }
         })
-        
     }
+    func showTable(_ flag: Bool){
+        if flag {
+            tableView.isHidden = false
+            noDataLabel.isHidden = true
+        } else {
+            tableView.isHidden = true
+            noDataLabel.isHidden = false
+        }
+    }
+    func checkData(){
+        if let count = viewModel?.data?.result?.dispatchContracts.count, count > 0 {
+            self.tableView.reloadData()
+            showTable(true)
+        } else {
+            showTable(false)
+        }
+    }
+    
 }
 
 // MARK: - Tableview Extenstions

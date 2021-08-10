@@ -39,7 +39,7 @@ class AvailableLoadsListTableViewCell: UITableViewCell {
         pickupCityLabel.text = cellData.pick_up
         dropOffCityLabel.text = cellData.drop_off
         vehicalValueLabel.text = cellData.vehicle_type
-        quantityLabel.text = String(cellData.quantity)
+        quantityValueLabel.text = String(cellData.quantity)
         actionsValueLabel.text = "-"
         
     }

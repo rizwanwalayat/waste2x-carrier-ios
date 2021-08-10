@@ -4,11 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
@@ -17,7 +21,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuotationListViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
                 <outlet property="baseHolderView" destination="IMZ-lg-8QU" id="W1P-eU-l4M"/>
-                <outlet property="tableview" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
+                <outlet property="noDataLabel" destination="EhO-y5-YGB" id="rQw-vU-9aj"/>
+                <outlet property="tableView" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
                 <outlet property="titleLabel" destination="6iR-Mv-qzE" id="pX7-J4-8jd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xfd-B3-bjY"/>
             </connections>
@@ -28,16 +33,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-yg-uCy">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="csg-88-Ae5">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCZ-mD-bhU">
-                            <rect key="frame" x="0.0" y="44" width="414" height="85.5"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="81"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXP-ur-Ddt">
-                                    <rect key="frame" x="16" y="21" width="24" height="24"/>
+                                    <rect key="frame" x="16" y="18.5" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="EXP-ur-Ddt" secondAttribute="height" multiplier="1:1" id="eUl-HJ-9yk"/>
                                         <constraint firstAttribute="height" constant="24" id="o7R-5i-hAa"/>
@@ -48,7 +53,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quotations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-Mv-qzE">
-                                    <rect key="frame" x="56" y="20" width="342" height="25.5"/>
+                                    <rect key="frame" x="56" y="20" width="342" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -80,10 +85,10 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-lg-8QU">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
-                            <rect key="frame" x="20" y="20" width="374" height="774.5"/>
+                            <rect key="frame" x="20" y="20" width="374" height="779"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -91,12 +96,21 @@
                                 <outlet property="delegate" destination="-1" id="PMZ-he-dyV"/>
                             </connections>
                         </tableView>
+                        <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Quotations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-y5-YGB" userLabel="No Data Label">
+                            <rect key="frame" x="142" y="388" width="130" height="23.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="20"/>
+                            <color key="textColor" name="secondaryText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="1tb-uv-QQ8" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="20" id="1Ae-aB-9PV"/>
                         <constraint firstAttribute="bottom" secondItem="1tb-uv-QQ8" secondAttribute="bottom" id="IFh-aq-aJq"/>
+                        <constraint firstItem="EhO-y5-YGB" firstAttribute="centerY" secondItem="IMZ-lg-8QU" secondAttribute="centerY" id="PkG-Ml-ncn"/>
                         <constraint firstAttribute="trailing" secondItem="1tb-uv-QQ8" secondAttribute="trailing" constant="20" id="PpC-dm-Hvo"/>
+                        <constraint firstItem="EhO-y5-YGB" firstAttribute="centerX" secondItem="IMZ-lg-8QU" secondAttribute="centerX" id="UaY-fB-wex"/>
                         <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="20" id="Ub2-66-uQX"/>
                     </constraints>
                 </view>
@@ -119,6 +133,9 @@
     <resources>
         <image name="NavBar Header" width="375" height="142"/>
         <image name="Sidemenu" width="27" height="20"/>
+        <namedColor name="secondaryText">
+            <color red="0.45100000500679016" green="0.45100000500679016" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
