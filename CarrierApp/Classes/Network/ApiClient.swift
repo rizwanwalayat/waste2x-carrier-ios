@@ -14,7 +14,7 @@ class Connectivity {
 let APIClientDefaultTimeOut = 40.0
 
 class APIClient: APIClientHandler {
-//    let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+    //    let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
     
     fileprivate var clientDateFormatter: DateFormatter
     var isConnectedToNetwork: Bool?
@@ -135,21 +135,18 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
-    func AvailableLoadsApiFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let parameters = params as [String : AnyObject]
+    func AvailableLoadsApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let parameters = params as [String : AnyObject]
         _ = sendRequest(APIRoutes.create_quotation , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
-
     func DispatchesListApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.dispatches , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
-        
-    func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
-        _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
-    }
-
-
 }
+

@@ -24,6 +24,10 @@ extension DataManager
     {
         UserDefaults.standard.set(token, forKey: "auth_token")
     }
+    
+    func removeAuthToken(){
+        UserDefaults.standard.removeObject(forKey: "auth_token")
+    }
 }
 
 // MARK: - Methods for get values
