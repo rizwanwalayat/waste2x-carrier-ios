@@ -6,7 +6,9 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>webcredentials:</string>
+		<string>applinks:enmass-cache-programme.appspot.com</string>
+		<string>applinks:cache-admin-panel-production.appspot.com</string>
+		<string>applinks:app.enmassenergy.com</string>
 	</array>
 </dict>
 </plist>

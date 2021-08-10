@@ -33,7 +33,7 @@ class Global {
 //    var newsModel : NewsModel?
 //    var NewsListModell : [NewsResult]?
     var newsApiCheck = true
-//    var paymentModel : PaymentModel?
+    var paymentModel : PaymentModel?
     var jump  =  0
     var latlngCheck = true
     var phoneNumber = ""

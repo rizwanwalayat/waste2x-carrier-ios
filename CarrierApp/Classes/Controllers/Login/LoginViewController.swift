@@ -46,7 +46,6 @@ class LoginViewController: BaseViewController {
         loginViewModel?.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "", { result, error, status, message in
             
             if error != nil {
-                //Utility.showAlertController(self, error?.localizedDescription ?? message ?? "")
                 self.showToast(message: error?.localizedDescription ?? message ?? "")
                 return
             }
@@ -54,6 +53,8 @@ class LoginViewController: BaseViewController {
             if (status ?? false)
             {
                 DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
+                DataManager.shared.savePhoneNumber(self.phoneNoTextField.text ?? "")
+                
                 Utility.setupHomeAsRootViewController()
             }
             else

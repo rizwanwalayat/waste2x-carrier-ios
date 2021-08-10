@@ -119,6 +119,8 @@
 		1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
+		188D007E26C272F00076B5CE /* PaymentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D007D26C272F00076B5CE /* PaymentDataModel.swift */; };
+		188D008026C273190076B5CE /* CreatePayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D007F26C273190076B5CE /* CreatePayment.swift */; };
 		18A579B9269320070067952F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B8269320070067952F /* DataManager.swift */; };
 		18A579BB269320230067952F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BA269320230067952F /* Constants.swift */; };
 		18A579BE269321690067952F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BD269321690067952F /* ApiClient.swift */; };
@@ -292,6 +294,8 @@
 		1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		188D007D26C272F00076B5CE /* PaymentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataModel.swift; sourceTree = "<group>"; };
+		188D007F26C273190076B5CE /* CreatePayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePayment.swift; sourceTree = "<group>"; };
 		18A579B8269320070067952F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		18A579BA269320230067952F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18A579BD269321690067952F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				188D007C26C272E40076B5CE /* Payments */,
 				18BB558526C11D3C00E51BB4 /* Quotation */,
 				967A713B26BBCFC3002D72DD /* Observable.swift */,
 				9672B23726C118CB00E8E72F /* Dispatches */,
@@ -872,6 +877,15 @@
 				18397E162660FF54003DE30C /* Poppins-MediumItalic.ttf */,
 			);
 			path = Poppins;
+			sourceTree = "<group>";
+		};
+		188D007C26C272E40076B5CE /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				188D007D26C272F00076B5CE /* PaymentDataModel.swift */,
+				188D007F26C273190076B5CE /* CreatePayment.swift */,
+			);
+			path = Payments;
 			sourceTree = "<group>";
 		};
 		18A579B526931F940067952F /* DataManger */ = {
@@ -1420,6 +1434,7 @@
 				045DDAE526BC146F00B3E232 /* Result.swift in Sources */,
 				18E1631226C00A1C00DD2EED /* ContractsResult.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
+				188D008026C273190076B5CE /* CreatePayment.swift in Sources */,
 				96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */,
 				045DDAE326BC146F00B3E232 /* Faqs.swift in Sources */,
 				04206C4926BD83C3006AB6A4 /* StatesResult.swift in Sources */,
@@ -1467,6 +1482,7 @@
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
 				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
+				188D007E26C272F00076B5CE /* PaymentDataModel.swift in Sources */,
 				18A579BB269320230067952F /* Constants.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,

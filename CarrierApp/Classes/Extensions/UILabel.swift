@@ -81,6 +81,19 @@ extension UILabel {
         nameAttrString.append(activityAttrString)
         self.attributedText = nameAttrString
     }
+    func setAttributedTextInLable(text1:String,text2 :String,size:Int) -> NSMutableAttributedString
+    {
+        let firstTitle       = UIFont(name: "Poppins", size: CGFloat(size)) ?? UIFont.systemFont(ofSize: 14)
+        let activityAttribute   = [ NSAttributedString.Key.font: firstTitle, NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.31, green: 0.31, blue: 0.31, alpha: 0.9)]
+        let nameAttrString      = NSMutableAttributedString(string: text1, attributes: activityAttribute)
+        
+        let secondTitle            = UIFont(name: "Poppins-Bold", size: CGFloat(size)) ?? UIFont.systemFont(ofSize: 14)
+        let nameAttribute       = [ NSAttributedString.Key.font: secondTitle, NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.31, green: 0.31, blue: 0.31, alpha: 1.0)]
+        let activityAttrString  = NSAttributedString(string: text2, attributes: nameAttribute)
+        
+        nameAttrString.append(activityAttrString)
+        return nameAttrString
+    }
     
     var vissibleTextLength: Int {
         let font: UIFont = self.font

@@ -59,6 +59,8 @@ class AvailableLoadsViewController: BaseViewController{
         clearAllFields()
     }
     
+
+    
     
     func setupDropdownCountryFields()
     {
