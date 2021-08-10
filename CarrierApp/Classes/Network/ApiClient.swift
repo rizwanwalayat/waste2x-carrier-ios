@@ -135,18 +135,21 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
-    func AvailableLoadsApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-    func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
-        _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
-    }
+    func AvailableLoadsApiFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
         let parameters = params as [String : AnyObject]
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.create_quotation , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+
     func DispatchesListApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.dispatches , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
+        
+    func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+
 
 }
-
