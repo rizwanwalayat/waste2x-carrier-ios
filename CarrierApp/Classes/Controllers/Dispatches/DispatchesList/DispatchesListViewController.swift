@@ -17,14 +17,17 @@ enum DispatchesStatus:String {
 class DispatchesListViewController: BaseViewController {
     
     // MARK: - Variables
-    var dispatchesStatus = DispatchesStatus.scheduled
+    var selectedTab = 0
     var dispatchesStatusArray = [DispatchesStatus.scheduled, DispatchesStatus.in_transit, DispatchesStatus.delivered]
     var viewModel: DispatchesListVM?
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var tableview : UITableView!
-    
+    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var scheduledTab: UIButton!
+    @IBOutlet weak var inTransitTab: UIButton!
+    @IBOutlet weak var deliveredTab: UIButton!
     
     // MARK: - Controller's LifeCycle
     override func viewDidLoad() {
@@ -37,7 +40,7 @@ class DispatchesListViewController: BaseViewController {
         viewModel?.fetchDispatchesData({ result, error, status, message in
             
             if status ?? false, error == nil {
-                self.tableview.reloadData()
+                self.checkData()
             } else {
                 self.showToast(message: error?.localizedDescription ?? message)
             }
@@ -46,59 +49,66 @@ class DispatchesListViewController: BaseViewController {
     
     func tableviewHandlings()
     {
-        tableview.register(UINib(nibName: "DispatchesListTableViewCell", bundle: nil), forCellReuseIdentifier: "DispatchesListTableViewCell")
-        tableview.rowHeight = UITableView.automaticDimension
-        tableview.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(UINib(nibName: "DispatchesListTableViewCell", bundle: nil), forCellReuseIdentifier: "DispatchesListTableViewCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+    }
+    func checkData(){
+        if let count = viewModel?.data?.result?.array[selectedTab].count, count > 0 {
+            self.tableView.reloadData()
+            showTable(true)
+        } else {
+            showTable(false)
+        }
     }
     
+    func showTable(_ flag: Bool){
+        if flag {
+            tableView.isHidden = false
+            noDataLabel.isHidden = true
+        } else {
+            tableView.isHidden = true
+            noDataLabel.text = "No \(dispatchesStatusArray[selectedTab]) Dispatches"
+            noDataLabel.isHidden = false
+        }
+    }
+    
+    func unSelectTabs(){
+        scheduledTab.isSelected = false
+        scheduledTab.backgroundColor = .clear
+        inTransitTab.isSelected = false
+        inTransitTab.backgroundColor = .clear
+        deliveredTab.isSelected = false
+        deliveredTab.backgroundColor = .clear
+    }
+    
+    // MARK: - IBOutlets
+    @IBAction func tabPressed(_ sender: UIButton) {
+        unSelectTabs()
+        sender.isSelected = true
+        sender.backgroundColor = .white
+    
+        selectedTab = sender.tag
+        checkData()
+        
+    }
 }
 
 extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.data?.result?.array[section].count ?? 0
+        return viewModel?.data?.result?.array[selectedTab].count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 48
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 48))
-        view.backgroundColor = .clear
-        let image = UIImageView(frame: CGRect(x: 0, y: 24, width: 24, height: 24))
-        image.image = UIImage(named: "Schedule Icon")
-        view.addSubview(image)
-        let label = UILabel(frame: CGRect(x: image.frame.width + 16, y: 24, width: UIScreen.main.bounds.width - 46, height: 24))
-        label.font = UIFont.poppinFont(withSize: 16)
-        label.text = "Scheduled"
-        view.addSubview(label)
-        
-        switch section {
-        case 0:
-            image.image = UIImage(named: "Schedule Icon")
-            label.text = DispatchesStatus.scheduled.rawValue
-        case 1:
-            image.image = UIImage(named: "In Transit Icon")
-            label.text = DispatchesStatus.in_transit.rawValue
-        case 2:
-            image.image = UIImage(named: "Delivered Icon")
-            label.text = DispatchesStatus.delivered.rawValue
-        default:
-            image.image = UIImage(named: "Schedule Icon")
-            label.text = DispatchesStatus.scheduled.rawValue
-        }
-        return view
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesListTableViewCell", for: indexPath) as! DispatchesListTableViewCell
-        let cellData = viewModel?.data?.result?.array[indexPath.section][indexPath.row]
-        cell.configCell(data: cellData!, status: dispatchesStatusArray[indexPath.section])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesListTableViewCell", for: indexPath) as! DispatchesListTableViewCell
+        let cellData = viewModel?.data?.result?.array[selectedTab][indexPath.row]
+        cell.configCell(data: cellData!, status: dispatchesStatusArray[selectedTab])
         return cell
     }
     

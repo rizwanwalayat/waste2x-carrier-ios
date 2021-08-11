@@ -28,7 +28,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ou7-ze-3WS" userLabel="Content Inner View">
-                        <rect key="frame" x="0.0" y="16" width="342" height="195"/>
+                        <rect key="frame" x="0.0" y="0.0" width="342" height="195"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y7y-1v-SQZ">
                                 <rect key="frame" x="16" y="8" width="288" height="171"/>
@@ -157,9 +157,9 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Ou7-ze-3WS" secondAttribute="bottom" id="DJx-jW-8hd"/>
+                    <constraint firstAttribute="bottom" secondItem="Ou7-ze-3WS" secondAttribute="bottom" constant="16" id="DJx-jW-8hd"/>
                     <constraint firstAttribute="trailing" secondItem="Ou7-ze-3WS" secondAttribute="trailing" id="DT0-tz-GoM"/>
-                    <constraint firstItem="Ou7-ze-3WS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="TtO-tb-l5F"/>
+                    <constraint firstItem="Ou7-ze-3WS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TtO-tb-l5F"/>
                     <constraint firstItem="Ou7-ze-3WS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ySW-FH-tSw"/>
                 </constraints>
             </tableViewCellContentView>

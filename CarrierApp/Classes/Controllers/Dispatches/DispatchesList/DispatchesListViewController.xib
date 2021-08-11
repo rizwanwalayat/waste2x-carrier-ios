@@ -4,11 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
@@ -17,7 +21,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DispatchesListViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
                 <outlet property="baseHolderView" destination="IMZ-lg-8QU" id="RaL-NY-fWL"/>
-                <outlet property="tableview" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
+                <outlet property="deliveredTab" destination="Bv1-FN-QXR" id="q5c-k7-Kve"/>
+                <outlet property="inTransitTab" destination="Zex-bB-KiX" id="Zcz-x1-x1w"/>
+                <outlet property="noDataLabel" destination="MNZ-S4-Boj" id="Fue-ug-5Yj"/>
+                <outlet property="scheduledTab" destination="c6N-0I-RHf" id="I50-O0-zCo"/>
+                <outlet property="tableView" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
                 <outlet property="titleLabel" destination="6iR-Mv-qzE" id="pX7-J4-8jd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xfd-B3-bjY"/>
             </connections>
@@ -28,16 +36,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-yg-uCy">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="csg-88-Ae5">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCZ-mD-bhU">
-                            <rect key="frame" x="0.0" y="44" width="414" height="85.5"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="81"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXP-ur-Ddt">
-                                    <rect key="frame" x="16" y="21" width="24" height="24"/>
+                                    <rect key="frame" x="16" y="18.5" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="EXP-ur-Ddt" secondAttribute="height" multiplier="1:1" id="eUl-HJ-9yk"/>
                                         <constraint firstAttribute="height" constant="24" id="o7R-5i-hAa"/>
@@ -48,7 +56,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dispatches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-Mv-qzE">
-                                    <rect key="frame" x="155.5" y="20" width="103" height="25.5"/>
+                                    <rect key="frame" x="162" y="20" width="90.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -79,10 +87,100 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-lg-8QU">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
-                            <rect key="frame" x="20" y="10" width="374" height="774.5"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZx-mo-sCY" userLabel="Tab View">
+                            <rect key="frame" x="16" y="16" width="382" height="38"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vUy-Ma-s03">
+                                    <rect key="frame" x="1" y="1" width="380" height="36"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6N-0I-RHf">
+                                            <rect key="frame" x="0.0" y="0.0" width="126.5" height="36"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="Scheduled" image="Schedule Icon Inactive">
+                                                <color key="titleColor" name="tabUnselectedGrey"/>
+                                            </state>
+                                            <state key="selected" title="Scheduled" image="Schedule Icon">
+                                                <color key="titleColor" name="tabSelectedBlack"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="ElU-Iv-8LU"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zex-bB-KiX">
+                                            <rect key="frame" x="126.5" y="0.0" width="127" height="36"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                            <color key="tintColor" name="tabUnselectedGrey"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="In Transit" image="In Transit Icon Inactive">
+                                                <color key="titleColor" name="tabUnselectedGrey"/>
+                                            </state>
+                                            <state key="selected" title="In Transit" image="In Transit Icon">
+                                                <color key="titleColor" name="tabSelectedBlack"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="inR-bd-BMB"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bv1-FN-QXR">
+                                            <rect key="frame" x="253.5" y="0.0" width="126.5" height="36"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="Delivered" image="Delivered Icon Inactive">
+                                                <color key="titleColor" name="tabUnselectedGrey"/>
+                                            </state>
+                                            <state key="selected" title="Delivered" image="Delivered Icon">
+                                                <color key="titleColor" name="tabSelectedBlack"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="H40-gl-usR"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" name="innerBorderColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="vUy-Ma-s03" secondAttribute="bottom" constant="1" id="8CT-vd-HQt"/>
+                                <constraint firstAttribute="trailing" secondItem="vUy-Ma-s03" secondAttribute="trailing" constant="1" id="9Oi-0Q-EnX"/>
+                                <constraint firstAttribute="height" constant="38" id="Llj-3V-AVY"/>
+                                <constraint firstItem="vUy-Ma-s03" firstAttribute="leading" secondItem="YZx-mo-sCY" secondAttribute="leading" constant="1" id="TDm-Br-ufM"/>
+                                <constraint firstItem="vUy-Ma-s03" firstAttribute="top" secondItem="YZx-mo-sCY" secondAttribute="top" constant="1" id="sQY-Cl-3U8"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNZ-S4-Boj" userLabel="No Data Label">
+                            <rect key="frame" x="170.5" y="388" width="73.5" height="23.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="20"/>
+                            <color key="textColor" name="secondaryText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
+                            <rect key="frame" x="20" y="79" width="374" height="710"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -95,8 +193,13 @@
                     <constraints>
                         <constraint firstItem="1tb-uv-QQ8" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="20" id="1Ae-aB-9PV"/>
                         <constraint firstAttribute="bottom" secondItem="1tb-uv-QQ8" secondAttribute="bottom" constant="10" id="IFh-aq-aJq"/>
+                        <constraint firstItem="YZx-mo-sCY" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="16" id="K46-Pc-vdT"/>
+                        <constraint firstItem="YZx-mo-sCY" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="16" id="MGV-kc-uuH"/>
+                        <constraint firstAttribute="trailing" secondItem="YZx-mo-sCY" secondAttribute="trailing" constant="16" id="P9i-Gj-7zY"/>
                         <constraint firstAttribute="trailing" secondItem="1tb-uv-QQ8" secondAttribute="trailing" constant="20" id="PpC-dm-Hvo"/>
-                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="10" id="Ub2-66-uQX"/>
+                        <constraint firstItem="MNZ-S4-Boj" firstAttribute="centerX" secondItem="IMZ-lg-8QU" secondAttribute="centerX" id="acQ-li-Xad"/>
+                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="YZx-mo-sCY" secondAttribute="bottom" constant="25" id="syR-FM-iBv"/>
+                        <constraint firstItem="MNZ-S4-Boj" firstAttribute="centerY" secondItem="IMZ-lg-8QU" secondAttribute="centerY" id="xt5-nT-x1B"/>
                     </constraints>
                 </view>
             </subviews>
@@ -116,8 +219,26 @@
         </view>
     </objects>
     <resources>
+        <image name="Delivered Icon" width="20" height="20"/>
+        <image name="Delivered Icon Inactive" width="20" height="20"/>
+        <image name="In Transit Icon" width="20" height="20"/>
+        <image name="In Transit Icon Inactive" width="20" height="20"/>
         <image name="NavBar Header" width="375" height="142"/>
+        <image name="Schedule Icon" width="20" height="20"/>
+        <image name="Schedule Icon Inactive" width="20" height="20"/>
         <image name="Sidemenu" width="27" height="20"/>
+        <namedColor name="innerBorderColor">
+            <color red="0.90200001001358032" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryText">
+            <color red="0.45100000500679016" green="0.45100000500679016" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tabSelectedBlack">
+            <color red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tabUnselectedGrey">
+            <color red="0.72549019607843135" green="0.71764705882352942" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
