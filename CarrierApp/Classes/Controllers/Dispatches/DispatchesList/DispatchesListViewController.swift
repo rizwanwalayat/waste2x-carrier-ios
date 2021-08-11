@@ -68,7 +68,7 @@ class DispatchesListViewController: BaseViewController {
             noDataLabel.isHidden = true
         } else {
             tableView.isHidden = true
-            noDataLabel.text = "No \(dispatchesStatusArray[selectedTab]) Dispatches"
+            noDataLabel.text = "No \(dispatchesStatusArray[selectedTab].rawValue) Dispatches"
             noDataLabel.isHidden = false
         }
     }
