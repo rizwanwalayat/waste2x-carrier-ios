@@ -59,7 +59,7 @@ class DispatchesTrackingStatusCell: BaseTableViewCell {
             statusSignImageView.image = UIImage(named: acceptedImageViewString)
             statusValueLabel.textColor = UIColor(hexString: acceptedColorCode)
             
-        case .inTransit:
+        case .in_transit:
         
             statusSignHolderView.backgroundColor = UIColor(hexString: rejectedColorCode, alpha: 0.1)
             statusSignImageView.image = UIImage(named: rejectedImageViewString)

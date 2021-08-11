@@ -119,6 +119,8 @@
 		1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
+		188D007E26C272F00076B5CE /* PaymentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D007D26C272F00076B5CE /* PaymentDataModel.swift */; };
+		188D008026C273190076B5CE /* CreatePayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D007F26C273190076B5CE /* CreatePayment.swift */; };
 		18A579B9269320070067952F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B8269320070067952F /* DataManager.swift */; };
 		18A579BB269320230067952F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BA269320230067952F /* Constants.swift */; };
 		18A579BE269321690067952F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BD269321690067952F /* ApiClient.swift */; };
@@ -140,6 +142,10 @@
 		9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */; };
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
 		965B354026BD837E009A7BFB /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B353F26BD837E009A7BFB /* ForgotPasswordVM.swift */; };
+		9672B23926C118F100E8E72F /* DispatchesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23826C118F100E8E72F /* DispatchesListModel.swift */; };
+		9672B23B26C11AE000E8E72F /* DispatchesListResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */; };
+		9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */; };
+		9672B24126C1349B00E8E72F /* DispatchesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B24026C1349B00E8E72F /* DispatchesListVM.swift */; };
 		9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */; };
 		9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */; };
 		9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */; };
@@ -288,6 +294,8 @@
 		1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		188D007D26C272F00076B5CE /* PaymentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataModel.swift; sourceTree = "<group>"; };
+		188D007F26C273190076B5CE /* CreatePayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePayment.swift; sourceTree = "<group>"; };
 		18A579B8269320070067952F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		18A579BA269320230067952F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18A579BD269321690067952F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -313,6 +321,10 @@
 		9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListViewController.swift; sourceTree = "<group>"; };
 		9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListViewController.xib; sourceTree = "<group>"; };
 		965B353F26BD837E009A7BFB /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
+		9672B23826C118F100E8E72F /* DispatchesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListModel.swift; sourceTree = "<group>"; };
+		9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResultItem.swift; sourceTree = "<group>"; };
+		9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResult.swift; sourceTree = "<group>"; };
+		9672B24026C1349B00E8E72F /* DispatchesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListVM.swift; sourceTree = "<group>"; };
 		9674908E26B28EF8001C4A62 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		9674908F26B28EF8001C4A62 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		9674909426B2ED1B001C4A62 /* DispatchesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListTableViewCell.swift; sourceTree = "<group>"; };
@@ -394,8 +406,9 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				188D007C26C272E40076B5CE /* Payments */,
 				18BB558526C11D3C00E51BB4 /* Quotation */,
-				967A713B26BBCFC3002D72DD /* Observable.swift */,
+				9672B23726C118CB00E8E72F /* Dispatches */,
 				18E1630A26C0069700DD2EED /* Contarcts */,
 				18E1630926C0068300DD2EED /* Receivables */,
 				04206C3B26BD729B006AB6A4 /* AvailabelLoads */,
@@ -458,6 +471,7 @@
 				18A579B526931F940067952F /* DataManger */,
 				0067A2D225274C6E00CECA8C /* Application */,
 				0067A2CF25274C4800CECA8C /* Models */,
+				967A713B26BBCFC3002D72DD /* Observable.swift */,
 				0067A2D025274C5100CECA8C /* Controllers */,
 				0067A308252AFC5000CECA8C /* Extensions */,
 				00B01EA9252E0F4000BF0637 /* BaseClasses */,
@@ -865,6 +879,15 @@
 			path = Poppins;
 			sourceTree = "<group>";
 		};
+		188D007C26C272E40076B5CE /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				188D007D26C272F00076B5CE /* PaymentDataModel.swift */,
+				188D007F26C273190076B5CE /* CreatePayment.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
 		18A579B526931F940067952F /* DataManger */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +993,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9672B23726C118CB00E8E72F /* Dispatches */ = {
+			isa = PBXGroup;
+			children = (
+				9672B23826C118F100E8E72F /* DispatchesListModel.swift */,
+				9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */,
+				9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */,
+			);
+			path = Dispatches;
+			sourceTree = "<group>";
+		};
+		9672B23F26C1344B00E8E72F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9672B24026C1349B00E8E72F /* DispatchesListVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9674908D26B28EF8001C4A62 /* Reset-Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -1003,6 +1044,7 @@
 		9674909826B320C6001C4A62 /* DispatchesList */ = {
 			isa = PBXGroup;
 			children = (
+				9672B23F26C1344B00E8E72F /* ViewModel */,
 				9674909A26B32165001C4A62 /* DispatchesListViewController.swift */,
 				9674909926B32165001C4A62 /* DispatchesListViewController.xib */,
 				9674909326B2EAC0001C4A62 /* Cells */,
@@ -1392,6 +1434,7 @@
 				045DDAE526BC146F00B3E232 /* Result.swift in Sources */,
 				18E1631226C00A1C00DD2EED /* ContractsResult.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
+				188D008026C273190076B5CE /* CreatePayment.swift in Sources */,
 				96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */,
 				045DDAE326BC146F00B3E232 /* Faqs.swift in Sources */,
 				04206C4926BD83C3006AB6A4 /* StatesResult.swift in Sources */,
@@ -1410,6 +1453,7 @@
 				18A579C2269321A60067952F /* ApiResponseHandler.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				04D2422A26B4078200312E2E /* ContractsTableViewCell.swift in Sources */,
+				9672B24126C1349B00E8E72F /* DispatchesListVM.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				04D2422526B4070200312E2E /* ContractsViewController.swift in Sources */,
 				9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */,
@@ -1423,9 +1467,11 @@
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
 				967A713A26BBCD5E002D72DD /* LoginViewModel.swift in Sources */,
+				9672B23B26C11AE000E8E72F /* DispatchesListResultItem.swift in Sources */,
 				96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
+				9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */,
 				049C052426B0022200A81023 /* MainTabbarController.swift in Sources */,
 				18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */,
 				048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */,
@@ -1436,9 +1482,11 @@
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
 				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
+				188D007E26C272F00076B5CE /* PaymentDataModel.swift in Sources */,
 				18A579BB269320230067952F /* Constants.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
+				9672B23926C118F100E8E72F /* DispatchesListModel.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				04206C3A26BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,

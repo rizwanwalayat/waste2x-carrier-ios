@@ -24,6 +24,15 @@ extension DataManager
     {
         UserDefaults.standard.set(token, forKey: "auth_token")
     }
+    
+    func removeAuthToken(){
+        UserDefaults.standard.removeObject(forKey: "auth_token")
+    }
+    func savePhoneNumber(_ token : String)
+    {
+        UserDefaults.standard.set(token, forKey: "phone_number")
+    }
+    
 }
 
 // MARK: - Methods for get values
@@ -39,4 +48,14 @@ extension DataManager
         }
         return token
     }
+    func fetchPhoneNumber() -> String
+    {
+        var token = ""
+
+        if UserDefaults.standard.string(forKey: "phone_number") != nil {
+            token = UserDefaults.standard.string(forKey: "phone_number")!
+        }
+        return token
+    }
+    
 }

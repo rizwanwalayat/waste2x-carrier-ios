@@ -24,15 +24,12 @@ class PaymentViewController: BaseViewController {
     }
     
     @IBAction func connectStripeAccount(_ sender: Any) {
-        //Utility.homeViewController()
-//        CreatePaymentModel.CreatePaymentApiFunction{ result, error, status,message in
-//            if let url = URL(string: "\(result!.result)") {
-//                UIApplication.shared.open(url)
-//            }
-//        }
-        
-        let detailVC = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        Utility.setupHomeAsRootViewController()
+        CreatePaymentModel.CreatePaymentApiFunction { result, error, status,message in
+            if let url = URL(string: "\(result!.result)") {
+                UIApplication.shared.open(url)
+            }
+        }
     }
     
     

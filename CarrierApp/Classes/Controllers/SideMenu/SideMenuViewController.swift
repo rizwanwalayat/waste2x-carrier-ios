@@ -33,7 +33,7 @@ class SideMenuViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        phoneNumberLabel.text =  DataManager.shared.fetchPhoneNumber()
         leadingConstOfScrollView.constant    = -270
         mainShadowView.alpha                 = 0
         customMethodsForSideMenu()
@@ -208,8 +208,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             if selectionIndex != 5
             {
                 self.hideSideMenu {
-                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    Utility.setupRoot([vc])
+                    self.paymentApi()
                 }
             }
             
@@ -260,4 +259,23 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
     
+}
+
+extension SideMenuViewController{
+    
+    
+    func paymentApi(){
+        PaymentModel.paymentApiFunction{ result, error, status,message in
+            Global.shared.paymentModel = result
+            if Global.shared.paymentModel?.result?.details_submitted == true {
+                let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
+                Utility.setupRoot([vc])
+            }
+            else{
+                
+                let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                Utility.setupRoot([vc])
+            }
+        }
+    }
 }

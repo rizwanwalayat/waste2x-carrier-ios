@@ -6,7 +6,7 @@ import ObjectMapper
 class LoadsDataModel : Mappable {
 	var id = -1
 	var vehicle_type = ""
-	var quantity = -1
+    var quantity = -1.0
 	var pick_up = ""
 	var drop_off = ""
 	var distance = ""

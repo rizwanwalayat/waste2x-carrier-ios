@@ -8,12 +8,20 @@
 
 import UIKit
 
-class DispatchesListViewController: BaseViewController {
+enum DispatchesStatus:String {
+    case scheduled = "Scheduled"
+    case in_transit = "In Transit"
+    case delivered = "Delivered"
+}
 
-    var dispatchesStatus = DispatchesStatus.scheduled
-    var dispatchesStatusArray = [DispatchesStatus.scheduled, DispatchesStatus.inTransit, DispatchesStatus.delivered]
-    // MARK: - Outlets
+class DispatchesListViewController: BaseViewController {
     
+    // MARK: - Variables
+    var dispatchesStatus = DispatchesStatus.scheduled
+    var dispatchesStatusArray = [DispatchesStatus.scheduled, DispatchesStatus.in_transit, DispatchesStatus.delivered]
+    var viewModel: DispatchesListVM?
+    
+    // MARK: - Outlets
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableview : UITableView!
     
@@ -21,31 +29,42 @@ class DispatchesListViewController: BaseViewController {
     // MARK: - Controller's LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableviewHandlings()
     }
-        
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel = DispatchesListVM()
+        viewModel?.fetchDispatchesData({ result, error, status, message in
+            
+            if status ?? false, error == nil {
+                self.tableview.reloadData()
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message)
+            }
+        })
+    }
+    
     func tableviewHandlings()
     {
         tableview.register(UINib(nibName: "DispatchesListTableViewCell", bundle: nil), forCellReuseIdentifier: "DispatchesListTableViewCell")
         tableview.rowHeight = UITableView.automaticDimension
         tableview.estimatedRowHeight = UITableView.automaticDimension
     }
-
+    
 }
 
 extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dispatchesStatusArray.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        return viewModel?.data?.result?.array[section].count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        48
+            return 48
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -58,30 +77,31 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
         label.font = UIFont.poppinFont(withSize: 16)
         label.text = "Scheduled"
         view.addSubview(label)
-        let status = dispatchesStatusArray[section]
-        switch status {
-        case .scheduled:
+        
+        switch section {
+        case 0:
             image.image = UIImage(named: "Schedule Icon")
             label.text = DispatchesStatus.scheduled.rawValue
-        case .inTransit:
+        case 1:
             image.image = UIImage(named: "In Transit Icon")
-            label.text = DispatchesStatus.inTransit.rawValue
-        case .delivered:
+            label.text = DispatchesStatus.in_transit.rawValue
+        case 2:
             image.image = UIImage(named: "Delivered Icon")
             label.text = DispatchesStatus.delivered.rawValue
-  
+        default:
+            image.image = UIImage(named: "Schedule Icon")
+            label.text = DispatchesStatus.scheduled.rawValue
         }
-        
         return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesListTableViewCell", for: indexPath) as! DispatchesListTableViewCell
-        
-        cell.configCell(dispatchesStatusArray[indexPath.section])
-        
+        let cellData = viewModel?.data?.result?.array[indexPath.section][indexPath.row]
+        cell.configCell(data: cellData!, status: dispatchesStatusArray[indexPath.section])
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
@@ -93,9 +113,3 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
     }
 }
 
-enum DispatchesStatus:String {
-    case scheduled = "Scheduled"
-    case inTransit = "In Transit"
-    case delivered = "Delivered"
-
-}

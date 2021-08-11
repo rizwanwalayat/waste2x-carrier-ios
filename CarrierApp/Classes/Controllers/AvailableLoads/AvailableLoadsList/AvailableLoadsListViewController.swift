@@ -25,8 +25,6 @@ class AvailableLoadsListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         tableViewSetup()
     }
 
