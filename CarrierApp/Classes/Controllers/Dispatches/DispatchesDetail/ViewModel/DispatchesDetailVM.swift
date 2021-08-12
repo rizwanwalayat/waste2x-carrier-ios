@@ -1,0 +1,37 @@
+//
+//  DispatchesTrackingVM.swift
+//  CarrierApp
+//
+//  Created by Phaedra Solutions  on 12/08/2021.
+//  Copyright © 2021 codesrbit. All rights reserved.
+//
+
+import Foundation
+import ObjectMapper
+
+typealias DispatchesDetailCompletionHandler = (_ data: DispatchesDetailModel?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
+
+class DispatchesDetailVM: NSObject {
+    var data: DispatchesDetailModel?
+    var id = Int()
+
+    override init(){
+        super.init()
+    }
+    
+    func FetchDispatchesDetailData(_ completionHandler: @escaping DispatchesDetailCompletionHandler){
+        Utility.showLoading()
+        APIClient.shared.DispatchesDetailApiFunctionCall(dispatch_id: "\(id)") { result, error, status, message in
+            Utility.hideLoading()
+            let newResult = ["result": result]
+
+            if status, error == nil, let data = Mapper<DispatchesDetailModel>().map(JSON: newResult as [String : Any]) {
+                    completionHandler(data, nil, status, message)
+            } else {
+                completionHandler(nil, error, status, message)
+            }
+        }
+        
+    }
+}
+

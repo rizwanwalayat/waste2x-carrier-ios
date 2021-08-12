@@ -156,6 +156,11 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.createPaymentUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
+    func DispatchesDetailApiFunctionCall(dispatch_id: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = ["dispatch_id": dispatch_id] as [String: AnyObject]
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.dispatchesDetail , parameters: params , httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
 
 
 }

@@ -8,27 +8,29 @@
 
 import UIKit
 
-class DispatchesTrackingViewController: BaseViewController {
+class DispatchesDetailViewController: BaseViewController {
 
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableview : UITableView!
-    
+    //MARK: - Variables
+    var viewModel: DispatchesDetailVM?
     
     // MARK: - Controller's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         tableviewHandlings()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+//        viewModel.
+    }
     func tableviewHandlings()
     {
-        tableview.register(UINib(nibName: "DispatchesTrackingStatusCell", bundle: nil), forCellReuseIdentifier: "DispatchesTrackingStatusCell")
-        tableview.register(UINib(nibName: "DispatchesTrackingDetailsCell", bundle: nil), forCellReuseIdentifier: "DispatchesTrackingDetailsCell")
+        tableview.register(UINib(nibName: "DispatchesDetailStatusCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailStatusCell")
+        tableview.register(UINib(nibName: "DispatchesDetailPickDropCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailPickDropCell")
 
         tableview.rowHeight = UITableView.automaticDimension
         tableview.estimatedRowHeight = UITableView.automaticDimension
@@ -44,7 +46,7 @@ class DispatchesTrackingViewController: BaseViewController {
     }
 }
 
-extension DispatchesTrackingViewController : UITableViewDelegate, UITableViewDataSource
+extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         3
@@ -54,17 +56,22 @@ extension DispatchesTrackingViewController : UITableViewDelegate, UITableViewDat
         
         switch indexPath.row {
         case 0:
-            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingStatusCell", for: indexPath) as! DispatchesTrackingStatusCell
+            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailStatusCell", for: indexPath) as! DispatchesDetailStatusCell
              cell.trackOrderBtn.addTarget(self, action: #selector(trackOrderBtnPressed(_:)), for: .touchUpInside)
              cell.viewOrderDetailBtn.addTarget(self, action: #selector(viewOrderDetailBtnPressed(_:)), for: .touchUpInside)
+            let cellData = viewModel?.data?.result?.details
+            let status = viewModel?.data?.result?.dispatchStatus
+            cell.configCell(data: cellData!, status: status ?? .scheduled)
              return cell
         case 1:
-            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingDetailsCell", for: indexPath) as! DispatchesTrackingDetailsCell
-            cell.configCell(DispatchesDeliveryType.pickup)
+            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
+            let cellData = viewModel?.data?.result?.pickup
+            cell.configCell(data: cellData!, status: DispatchesDeliveryType.pickup)
             return cell
         case 2:
-            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesTrackingDetailsCell", for: indexPath) as! DispatchesTrackingDetailsCell
-            cell.configCell(DispatchesDeliveryType.delivery)
+            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
+            let cellData = viewModel?.data?.result?.delivery
+            cell.configCell(data: cellData!, status: DispatchesDeliveryType.delivery)
             return cell
         default:
             return UITableViewCell()
@@ -75,8 +82,4 @@ extension DispatchesTrackingViewController : UITableViewDelegate, UITableViewDat
         UITableView.automaticDimension
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let detailVC = DispatchesTrackingStatusCell(nibName: "DispatchesTrackingStatusCell", bundle: nil)
-//        self.navigationController?.pushViewController(detailVC, animated: true)
-//    }
 }

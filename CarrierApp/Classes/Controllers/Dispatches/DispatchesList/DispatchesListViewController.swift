@@ -118,7 +118,10 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = DispatchesTrackingViewController(nibName: "DispatchesTrackingViewController", bundle: nil)
+        let detailVC = DispatchesDetailViewController(nibName: "DispatchesDetailViewController", bundle: nil)
+        let detailVM = DispatchesDetailVM()
+        detailVM.id = viewModel?.data?.result?.array[selectedTab][indexPath.row].id ?? 0
+        detailVC.viewModel = detailVM
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

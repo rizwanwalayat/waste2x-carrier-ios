@@ -13,10 +13,16 @@ enum DispatchesDeliveryType: String {
     case delivery = "Delivery"
 }
 
-class DispatchesTrackingDetailsCell: BaseTableViewCell {
+class DispatchesDetailPickDropCell: BaseTableViewCell {
 
     @IBOutlet weak var DeliveryIcon: UIImageView!
     @IBOutlet weak var DeliveryLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var commodityLabel: UILabel!
+    @IBOutlet weak var arrivalLabel: UILabel!
+    @IBOutlet weak var departureLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,7 +34,7 @@ class DispatchesTrackingDetailsCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(_ status: DispatchesDeliveryType)
+    func configCell(data: DispatchesDetailPickDropModel, status: DispatchesDeliveryType)
     {
         switch status {
         case .pickup:
@@ -38,5 +44,11 @@ class DispatchesTrackingDetailsCell: BaseTableViewCell {
             DeliveryIcon.image = UIImage(named: "Drop Off Icon with Bg Big")
             DeliveryLabel.text = "Delivery"
         }
+        
+        locationLabel.text = data.location
+        commodityLabel.text = data.commodity
+        arrivalLabel.text = data.arrival
+        departureLabel.text = data.departure
+        
     }
 }
