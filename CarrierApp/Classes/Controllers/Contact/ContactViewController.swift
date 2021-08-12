@@ -44,8 +44,8 @@ extension ContactViewController : UITableViewDelegate,UITableViewDataSource{
         
         if indexPath.row == 0
         {
-            //let vc = ChatMessagesViewController(nibName: "ChatMessagesViewController", bundle: nil)
-            //self.navigationController?.pushViewController(vc, animated: true)
+            let vc = ChatMessagesViewController(nibName: "ChatMessagesViewController", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         if indexPath.row == 1{
             

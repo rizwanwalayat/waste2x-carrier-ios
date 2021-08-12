@@ -69,7 +69,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dispatches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-Mv-qzE">
-                                    <rect key="frame" x="56" y="16" width="342" height="21"/>
+                                    <rect key="frame" x="162" y="16" width="90.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" name="selectedText"/>
                                     <nil key="highlightedColor"/>
@@ -77,8 +77,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="6iR-Mv-qzE" firstAttribute="leading" secondItem="EXP-ur-Ddt" secondAttribute="trailing" constant="16" id="4KX-Nx-oec"/>
-                                <constraint firstAttribute="trailing" secondItem="6iR-Mv-qzE" secondAttribute="trailing" constant="16" id="5bu-1L-9tU"/>
+                                <constraint firstItem="6iR-Mv-qzE" firstAttribute="centerX" secondItem="MCZ-mD-bhU" secondAttribute="centerX" id="0sB-jQ-kZ2"/>
                                 <constraint firstItem="EXP-ur-Ddt" firstAttribute="centerY" secondItem="6iR-Mv-qzE" secondAttribute="centerY" id="9iF-6q-roj"/>
                                 <constraint firstAttribute="bottom" secondItem="6iR-Mv-qzE" secondAttribute="bottom" constant="16" id="TEN-Jr-tkF"/>
                                 <constraint firstItem="EXP-ur-Ddt" firstAttribute="leading" secondItem="MCZ-mD-bhU" secondAttribute="leading" constant="16" id="era-l6-HRo"/>

@@ -12,16 +12,23 @@ import TwilioChatClient
 class MessagesTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var mainHolderview : UIView!
+    @IBOutlet weak var senderContentView: UIView!
+    @IBOutlet weak var senderMessagesview : UIView!
     @IBOutlet weak var messageLabel : UILabel!
     @IBOutlet weak var timeLabel : UILabel!
-    @IBOutlet weak var receiverHolderView: UIView!
+    @IBOutlet weak var receiverContentView: UIView!
+    @IBOutlet weak var receiverMessagesView: UIView!
     @IBOutlet weak var receiverTimeLabel: UILabel!
     @IBOutlet weak var receiverMessageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let sMaxRoundValue = CGFloat(20.0)
+        let rMaxRoundValue = CGFloat(20.0)
+        senderMessagesview.roundCornersTopAndBottomRightView(sMaxRoundValue)
+        receiverMessagesView.roundCornersTopAndBottomRightView(rMaxRoundValue)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,25 +40,27 @@ class MessagesTableViewCell: UITableViewCell {
     
     func messagesHandling(_ cellData : TCHMessage)
     {
-        receiverHolderView.isHidden = true
-        mainHolderview.isHidden = true
+        senderContentView.isHidden = true
+        receiverContentView.isHidden = true
         messageLabel.text = cellData.body
         timeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
         receiverMessageLabel.text = cellData.body
         receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
+        
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
-//        if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased(), let phone = DataManager.shared.getUser()?.result?.phone.trimmingCharacters(in: .whitespaces).uppercased() {
-//            
-//            let authorPhone = author.split(separator: "=").last ?? ""
-//            if authorPhone == phone
-//            {
-//                mainHolderview.isHidden = false
-//            }
-//            else
-//            {
-//                receiverHolderView.isHidden = false
-//            }
-//        }
+        if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased() {
+            
+            let phone = DataManager.shared.`fetchPhoneNumber`().trimmingCharacters(in: .whitespaces).uppercased()
+            let authorPhone = author.split(separator: "=").last ?? ""
+            if authorPhone == phone
+            {
+                senderContentView.isHidden = false
+            }
+            else
+            {
+                receiverContentView.isHidden = false
+            }
+        }
     }
     
     func timeStampStringToTimeReturn(_ timeStamp : String) -> String?

@@ -157,6 +157,14 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.createPaymentUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 
+    func fetchTwillioAccessToken(_ completionBlock: @escaping APIClientCompletionHandler)
+    {
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        
+        let phone = DataManager.shared.fetchPhoneNumber()
+        let url = "carriers/fetch_twilio_access_token/=\(phone)"
+        _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
 
 }
 

@@ -70,7 +70,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4Q-yI-osm">
-                                    <rect key="frame" x="56" y="20" width="342" height="21"/>
+                                    <rect key="frame" x="157" y="20" width="100.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -80,10 +80,9 @@
                             <constraints>
                                 <constraint firstItem="1RG-7M-tf1" firstAttribute="centerY" secondItem="f4Q-yI-osm" secondAttribute="centerY" id="F4q-wZ-bwy"/>
                                 <constraint firstAttribute="bottom" secondItem="f4Q-yI-osm" secondAttribute="bottom" constant="40" id="Og2-r0-0fk"/>
+                                <constraint firstItem="f4Q-yI-osm" firstAttribute="centerX" secondItem="Fp4-ES-G8Q" secondAttribute="centerX" id="b17-J3-UIE"/>
                                 <constraint firstItem="1RG-7M-tf1" firstAttribute="leading" secondItem="Fp4-ES-G8Q" secondAttribute="leading" constant="16" id="ipz-gX-2hg"/>
-                                <constraint firstItem="f4Q-yI-osm" firstAttribute="leading" secondItem="1RG-7M-tf1" secondAttribute="trailing" constant="16" id="qaw-ng-ctg"/>
                                 <constraint firstItem="f4Q-yI-osm" firstAttribute="top" secondItem="Fp4-ES-G8Q" secondAttribute="top" constant="20" id="upS-ma-w5J"/>
-                                <constraint firstAttribute="trailing" secondItem="f4Q-yI-osm" secondAttribute="trailing" constant="16" id="yGb-8g-OXh"/>
                             </constraints>
                         </view>
                     </subviews>

@@ -52,7 +52,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03g-5m-K18">
-                                    <rect key="frame" x="56" y="20" width="356" height="21"/>
+                                    <rect key="frame" x="178.33333333333334" y="20" width="71.333333333333343" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -60,12 +60,11 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="03g-5m-K18" firstAttribute="centerX" secondItem="pT7-MA-kW3" secondAttribute="centerX" id="IZl-r1-XtD"/>
                                 <constraint firstItem="03g-5m-K18" firstAttribute="top" secondItem="pT7-MA-kW3" secondAttribute="top" constant="20" id="NSn-1R-d8D"/>
                                 <constraint firstItem="kg9-Bk-HKz" firstAttribute="centerY" secondItem="03g-5m-K18" secondAttribute="centerY" id="Xam-zd-c8O"/>
                                 <constraint firstItem="kg9-Bk-HKz" firstAttribute="leading" secondItem="pT7-MA-kW3" secondAttribute="leading" constant="16" id="Xqg-eY-aaf"/>
                                 <constraint firstAttribute="bottom" secondItem="03g-5m-K18" secondAttribute="bottom" constant="40" id="qdS-rQ-cvY"/>
-                                <constraint firstAttribute="trailing" secondItem="03g-5m-K18" secondAttribute="trailing" constant="16" id="wKo-Gv-qgv"/>
-                                <constraint firstItem="03g-5m-K18" firstAttribute="leading" secondItem="kg9-Bk-HKz" secondAttribute="trailing" constant="16" id="xgJ-N6-6zJ"/>
                             </constraints>
                         </view>
                     </subviews>
