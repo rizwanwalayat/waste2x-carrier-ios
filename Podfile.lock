@@ -70,6 +70,7 @@ PODS:
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
   - StepIndicator (1.0.8)
+  - TwilioChatClient (2.6.6)
 
 DEPENDENCIES:
   - Alamofire (~> 4.2)
@@ -83,6 +84,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.4)
   - SDWebImage
   - StepIndicator (~> 1.0.8)
+  - TwilioChatClient (~> 2.6.6)
 
 SPEC REPOS:
   trunk:
@@ -105,6 +107,7 @@ SPEC REPOS:
     - PromisesObjC
     - SDWebImage
     - StepIndicator
+    - TwilioChatClient
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -126,7 +129,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
+  TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
 
-PODFILE CHECKSUM: 4bd9a791fadf20f64e0b00f193de9ab2eafe5e44
+PODFILE CHECKSUM: 796fde23e579df486500a39ae7c5163d0199bc38
 
 COCOAPODS: 1.10.1

@@ -16,5 +16,6 @@ target 'CarrierApp' do
   pod 'StepIndicator', '~> 1.0.8'
   pod 'SDWebImage'
   pod 'iOSDropDown'
+  pod 'TwilioChatClient', '~> 2.6.6'
   
 end
