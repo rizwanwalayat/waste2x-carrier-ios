@@ -52,7 +52,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receivables" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOL-jh-r2Q">
-                                    <rect key="frame" x="54" y="20" width="344" height="25.5"/>
+                                    <rect key="frame" x="151.5" y="20" width="111" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -61,11 +61,10 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ZOL-jh-r2Q" firstAttribute="top" secondItem="pFh-dj-UPv" secondAttribute="top" constant="20" id="Cde-44-rZb"/>
+                                <constraint firstItem="ZOL-jh-r2Q" firstAttribute="centerX" secondItem="pFh-dj-UPv" secondAttribute="centerX" id="K8u-Ug-b92"/>
                                 <constraint firstAttribute="bottom" secondItem="ZOL-jh-r2Q" secondAttribute="bottom" constant="40" id="Sn7-7R-sJr"/>
-                                <constraint firstItem="ZOL-jh-r2Q" firstAttribute="leading" secondItem="c89-J8-oOY" secondAttribute="trailing" constant="16" id="Veo-jX-VWV"/>
                                 <constraint firstItem="c89-J8-oOY" firstAttribute="leading" secondItem="pFh-dj-UPv" secondAttribute="leading" constant="16" id="byk-dK-ghV"/>
                                 <constraint firstItem="c89-J8-oOY" firstAttribute="centerY" secondItem="ZOL-jh-r2Q" secondAttribute="centerY" id="n2P-JG-CsM"/>
-                                <constraint firstAttribute="trailing" secondItem="ZOL-jh-r2Q" secondAttribute="trailing" constant="16" id="psO-uG-Sb2"/>
                             </constraints>
                         </view>
                     </subviews>

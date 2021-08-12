@@ -27,7 +27,7 @@ class ChatMessagesViewController: BaseViewController {
     
     var textFildPlaceholder = UIColor(hexString: "9F9F9F")
     var placeHolderText = "Write message"
-    //var refreshControl = UIRefreshControl()
+    var viewModel : MessagesViewModel?
     
     
     //MARK: - LifeCycle
@@ -38,7 +38,6 @@ class ChatMessagesViewController: BaseViewController {
         enterMessageTextView.text       = placeHolderText
         enterMessageTextView.textColor  = textFildPlaceholder
         tableViewsIntegrations()
-        (TwillioChatDataModel.shared.client == nil) ? (loginToTwillio()) : (TwillioChatDataModel.shared.delegate = self)
         
         NotificationCenter.default.addObserver(self,
                selector: #selector(self.keyboardNotification(notification:)),
@@ -48,6 +47,32 @@ class ChatMessagesViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel = MessagesViewModel()
+        
+        if TwillioChatDataModel.shared.client == nil {
+            
+            self.viewModel?.fetchTwillioAccessToken({ data, error, success, message in
+                if data != nil && (success ?? false) {
+                    
+                    guard let accessToken = data?.result?.access_token else {
+                        self.showToast(message: "Token not fetched")
+                        Utility.hideLoading()
+                        return
+                    }
+                    
+                    TwillioChatDataModel.shared.delegate = self
+                    TwillioChatDataModel.shared.loginToTwillio(with:  accessToken)
+                    
+                } else {
+                    Utility.hideLoading()
+                    self.showToast(message: error?.localizedDescription ?? message)
+                }
+            })
+        }
+        else
+        {
+            TwillioChatDataModel.shared.delegate = self
+        }
         
         IQKeyboardManager.shared.enable = false
         IQKeyboardManager.shared.enableAutoToolbar = false
@@ -136,77 +161,14 @@ class ChatMessagesViewController: BaseViewController {
             completion: nil)
     }
     
-}
-
-
-extension ChatMessagesViewController : UITextViewDelegate
-{
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == textFildPlaceholder {
-            textView.text = nil
-            textView.textColor = UIColor.black
+    func scrollToBottomMessage()
+    {
+        if TwillioChatDataModel.shared.messages.count == 0 {
+            return
         }
+        
+        let bottomMessageIndex = IndexPath(row: 0,
+                                           section: 0)
+        tableViewMessages.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
     }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = placeHolderText
-            textView.textColor = textFildPlaceholder
-        }
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-        
-        view.layoutIfNeeded()
-        let sizeToFitIn = CGSize(width: self.enterMessageTextView.bounds.size.width, height: CGFloat(100))
-        let newSize = self.enterMessageTextView.sizeThatFits(sizeToFitIn)
-        
-        if newSize.height < 25
-        {
-            self.constHeightMessagesTextView.constant = 25
-        }
-        else if newSize.height > 100
-        {
-            self.constHeightMessagesTextView.constant = 100
-        }
-        else
-        {
-            self.constHeightMessagesTextView.constant = newSize.height
-        }
-        
-        UIView.animate(withDuration: 1.0, animations: {
-             self.view.layoutIfNeeded()
-        })
-    }
-}
-
-
-extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSource
-{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return TwillioChatDataModel.shared.messages.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesTableViewCell", for: indexPath) as! MessagesTableViewCell
-        
-        let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
-        let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
-        
-        cell.messagesHandling(message)
-        /// code for pagination
-        if indexPath.row == TwillioChatDataModel.shared.messages.count - 1
-        {
-            if TwillioChatDataModel.shared.messages.count >= TwillioChatDataModel.shared.messagesPageCount
-            {
-                TwillioChatDataModel.shared.fetchMoreMesseges()
-            }
-        }
-        
-        return cell
-    }
-    
-    
 }

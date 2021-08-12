@@ -25,7 +25,7 @@
                 <outlet property="inTransitTab" destination="Zex-bB-KiX" id="Zcz-x1-x1w"/>
                 <outlet property="noDataLabel" destination="MNZ-S4-Boj" id="Fue-ug-5Yj"/>
                 <outlet property="scheduledTab" destination="c6N-0I-RHf" id="I50-O0-zCo"/>
-                <outlet property="tableView" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
+                <outlet property="tableView" destination="m1T-JN-NcH" id="iaL-Fx-Zqd"/>
                 <outlet property="titleLabel" destination="6iR-Mv-qzE" id="pX7-J4-8jd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xfd-B3-bjY"/>
             </connections>
@@ -179,26 +179,26 @@
                             <color key="textColor" name="secondaryText"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
-                            <rect key="frame" x="20" y="79" width="374" height="710"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m1T-JN-NcH">
+                            <rect key="frame" x="20" y="79" width="374" height="720"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <outlet property="dataSource" destination="-1" id="Q01-Sv-kMK"/>
-                                <outlet property="delegate" destination="-1" id="PMZ-he-dyV"/>
+                                <outlet property="dataSource" destination="-1" id="0Lp-4k-EAB"/>
+                                <outlet property="delegate" destination="-1" id="Vev-G8-0wp"/>
                             </connections>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="20" id="1Ae-aB-9PV"/>
-                        <constraint firstAttribute="bottom" secondItem="1tb-uv-QQ8" secondAttribute="bottom" constant="10" id="IFh-aq-aJq"/>
+                        <constraint firstAttribute="trailing" secondItem="m1T-JN-NcH" secondAttribute="trailing" constant="20" id="Ii4-3s-xgd"/>
+                        <constraint firstItem="m1T-JN-NcH" firstAttribute="top" secondItem="YZx-mo-sCY" secondAttribute="bottom" constant="25" id="JWN-JB-82k"/>
                         <constraint firstItem="YZx-mo-sCY" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="16" id="K46-Pc-vdT"/>
                         <constraint firstItem="YZx-mo-sCY" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="16" id="MGV-kc-uuH"/>
                         <constraint firstAttribute="trailing" secondItem="YZx-mo-sCY" secondAttribute="trailing" constant="16" id="P9i-Gj-7zY"/>
-                        <constraint firstAttribute="trailing" secondItem="1tb-uv-QQ8" secondAttribute="trailing" constant="20" id="PpC-dm-Hvo"/>
+                        <constraint firstAttribute="bottom" secondItem="m1T-JN-NcH" secondAttribute="bottom" id="TND-rv-aZb"/>
                         <constraint firstItem="MNZ-S4-Boj" firstAttribute="centerX" secondItem="IMZ-lg-8QU" secondAttribute="centerX" id="acQ-li-Xad"/>
-                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="YZx-mo-sCY" secondAttribute="bottom" constant="25" id="syR-FM-iBv"/>
+                        <constraint firstItem="m1T-JN-NcH" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="20" id="chB-6O-VUR"/>
                         <constraint firstItem="MNZ-S4-Boj" firstAttribute="centerY" secondItem="IMZ-lg-8QU" secondAttribute="centerY" id="xt5-nT-x1B"/>
                     </constraints>
                 </view>

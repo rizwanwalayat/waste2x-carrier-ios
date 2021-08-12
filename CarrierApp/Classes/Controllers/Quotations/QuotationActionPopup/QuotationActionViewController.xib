@@ -35,16 +35,16 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfN-8k-w0Z">
-                    <rect key="frame" x="32.5" y="334.5" width="349" height="227"/>
+                    <rect key="frame" x="32.5" y="338" width="349" height="220"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to accept this revised quotation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS0-3R-ihG">
-                            <rect key="frame" x="25" y="25" width="299" height="42"/>
+                            <rect key="frame" x="25" y="25" width="299" height="35"/>
                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                             <color key="textColor" red="0.10980392156862745" green="0.14117647058823529" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spg-xX-hsG">
-                            <rect key="frame" x="25" y="91" width="299" height="52"/>
+                            <rect key="frame" x="25" y="84" width="299" height="52"/>
                             <color key="backgroundColor" name="themeColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="ge8-XM-DOo"/>
@@ -63,7 +63,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hce-5Y-DHh">
-                            <rect key="frame" x="25" y="159" width="299" height="52"/>
+                            <rect key="frame" x="25" y="152" width="299" height="52"/>
                             <color key="backgroundColor" red="0.16500000655651093" green="0.49000000953674316" blue="0.60399997234344482" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="6fh-Vc-6gG"/>

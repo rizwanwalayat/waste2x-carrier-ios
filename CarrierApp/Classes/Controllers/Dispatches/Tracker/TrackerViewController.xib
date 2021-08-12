@@ -60,7 +60,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-15-N0R">
-                                    <rect key="frame" x="56" y="0.0" width="342" height="21"/>
+                                    <rect key="frame" x="160" y="0.0" width="94.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -68,9 +68,8 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="Yzy-15-N0R" firstAttribute="leading" secondItem="Oot-9k-zgh" secondAttribute="trailing" constant="16" id="LMe-Tk-SQ2"/>
-                                <constraint firstAttribute="trailing" secondItem="Yzy-15-N0R" secondAttribute="trailing" constant="16" id="Skv-SZ-qLa"/>
                                 <constraint firstItem="Oot-9k-zgh" firstAttribute="leading" secondItem="yqm-tj-jFy" secondAttribute="leading" constant="16" id="TsR-nT-QIm"/>
+                                <constraint firstItem="Yzy-15-N0R" firstAttribute="centerX" secondItem="yqm-tj-jFy" secondAttribute="centerX" id="Ut5-ga-YLO"/>
                                 <constraint firstItem="Oot-9k-zgh" firstAttribute="centerY" secondItem="Yzy-15-N0R" secondAttribute="centerY" id="fXh-Ff-3HP"/>
                                 <constraint firstItem="Yzy-15-N0R" firstAttribute="top" secondItem="yqm-tj-jFy" secondAttribute="top" id="suM-QX-qx9"/>
                                 <constraint firstAttribute="bottom" secondItem="Yzy-15-N0R" secondAttribute="bottom" constant="40" id="xdj-1Z-a56"/>

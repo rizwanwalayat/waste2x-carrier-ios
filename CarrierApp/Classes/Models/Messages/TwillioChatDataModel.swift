@@ -33,6 +33,8 @@ class TwillioChatDataModel: NSObject {
     {
         TwilioChatClient.chatClient(withToken: token, properties: nil,
                                     delegate: self) { (result, chatClient) in
+            
+            Utility.hideLoading()
             self.client = chatClient
         }
     }
@@ -57,19 +59,27 @@ class TwillioChatDataModel: NSObject {
             return
         }
         
-//        let phoneNo = DataManager.shared.getUser()?.result?.phone ?? ""
-//        channelsList.channel(withSidOrUniqueName: phoneNo, completion: { (result, channel) in
-//            completion(result, channel)
-//        })
+        let phoneNo = DataManager.shared.fetchPhoneNumber()
+        channelsList.channel(withSidOrUniqueName: phoneNo, completion: { (result, channel) in
+            completion(result, channel)
+        })
     }
     
     private func joinChannel(_ channel: TCHChannel) {
         self.channel = channel
         if channel.status == .joined {
             print("Current user already exists in channel")
+            
+            self.delegate?.connectCompleted()
+            self.fetchLastMessages()
+            
         } else {
             channel.join(completion: { result in
                 print("Result of channel join: \(result.resultText ?? "No Result")")
+                if result.isSuccessful(){
+                    self.delegate?.connectCompleted()
+                    self.fetchLastMessages()
+                }
             })
         }
     }
@@ -80,18 +90,18 @@ class TwillioChatDataModel: NSObject {
             return
         }
         
-        //let phoneNo = DataManager.shared.getUser()?.result?.phone ?? ""
-//        let options: [String: Any] = [
-//            TCHChannelOptionUniqueName: phoneNo
-//            ]
-//        channelsList.createChannel(options: options, completion: { channelResult, channel in
-//            if channelResult.isSuccessful() {
-//                print("Channel created.")
-//            } else {
-//                print("Channel NOT created.")
-//            }
-//            completion(channelResult.isSuccessful(), channel)
-//        })
+        let phoneNo = DataManager.shared.fetchPhoneNumber()
+        let options: [String: Any] = [
+            TCHChannelOptionUniqueName: phoneNo
+            ]
+        channelsList.createChannel(options: options, completion: { channelResult, channel in
+            if channelResult.isSuccessful() {
+                print("Channel created.")
+            } else {
+                print("Channel NOT created.")
+            }
+            completion(channelResult.isSuccessful(), channel)
+        })
     }
     
     func shutdown() {
@@ -155,8 +165,6 @@ extension TwillioChatDataModel : TwilioChatClientDelegate
                         }
                     }
                 }
-                self.delegate?.connectCompleted()
-                self.fetchLastMessages()
             }
             
         case .failed:

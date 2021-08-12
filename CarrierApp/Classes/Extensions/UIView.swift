@@ -403,6 +403,13 @@ extension UIView {
         layer.masksToBounds = true
     }
     
+    func roundCornersTopAndBottomRightView(_ radius: CGFloat)
+    {
+        layer.cornerRadius = radius
+        layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        layer.masksToBounds = true
+    }
+    
     func hide() {
         self.isHidden = true
     }

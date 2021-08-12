@@ -91,7 +91,8 @@
 		04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB591B26AED6A500C88804 /* QuotationListViewController.swift */; };
 		04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */; };
 		04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */; };
-		04F6FD0F26C3D542006D1A80 /* ChatMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0926C3D542006D1A80 /* ChatMessagesViewModel.swift */; };
+		04EFF03A26C4E89000551B9A /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF03926C4E89000551B9A /* MessagesViewModel.swift */; };
+		04F6FD0F26C3D542006D1A80 /* ChatMessagesExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0926C3D542006D1A80 /* ChatMessagesExtenstions.swift */; };
 		04F6FD1026C3D542006D1A80 /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */; };
 		04F6FD1126C3D542006D1A80 /* ChatMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F6FD0B26C3D542006D1A80 /* ChatMessagesViewController.xib */; };
 		04F6FD1226C3D542006D1A80 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0D26C3D542006D1A80 /* MessagesTableViewCell.swift */; };
@@ -275,7 +276,8 @@
 		04DB591B26AED6A500C88804 /* QuotationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationListViewController.swift; sourceTree = "<group>"; };
 		04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsTableViewCell.swift; sourceTree = "<group>"; };
 		04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationsTableViewCell.xib; sourceTree = "<group>"; };
-		04F6FD0926C3D542006D1A80 /* ChatMessagesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewModel.swift; sourceTree = "<group>"; };
+		04EFF03926C4E89000551B9A /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		04F6FD0926C3D542006D1A80 /* ChatMessagesExtenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesExtenstions.swift; sourceTree = "<group>"; };
 		04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
 		04F6FD0B26C3D542006D1A80 /* ChatMessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessagesViewController.xib; sourceTree = "<group>"; };
 		04F6FD0D26C3D542006D1A80 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
@@ -442,7 +444,6 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				04F6FD0726C3D542006D1A80 /* Messages */,
 				04206C2E26BD388C006AB6A4 /* Contact */,
 				0461743B26BBBF290055DD3E /* Faq */,
 				96C44C2E26B9862800ED5696 /* Settings */,
@@ -568,6 +569,7 @@
 			children = (
 				04206C2F26BD388C006AB6A4 /* ContactViewController.xib */,
 				04206C3026BD388C006AB6A4 /* ContactViewController.swift */,
+				04F6FD0726C3D542006D1A80 /* Messages */,
 				04206C3326BD3D52006AB6A4 /* Cell */,
 			);
 			path = Contact;
@@ -844,6 +846,7 @@
 		04F6FD0726C3D542006D1A80 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				04F6FD0926C3D542006D1A80 /* ChatMessagesExtenstions.swift */,
 				04F6FD0826C3D542006D1A80 /* ViewModel */,
 				04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */,
 				04F6FD0B26C3D542006D1A80 /* ChatMessagesViewController.xib */,
@@ -855,7 +858,7 @@
 		04F6FD0826C3D542006D1A80 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				04F6FD0926C3D542006D1A80 /* ChatMessagesViewModel.swift */,
+				04EFF03926C4E89000551B9A /* MessagesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1530,7 +1533,7 @@
 				969FB4DF26B4743600C77CE0 /* DispatchesDetailStatusCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
-				04F6FD0F26C3D542006D1A80 /* ChatMessagesViewModel.swift in Sources */,
+				04F6FD0F26C3D542006D1A80 /* ChatMessagesExtenstions.swift in Sources */,
 				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
 				04206C4326BD72BF006AB6A4 /* CountriesDataModel.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
@@ -1574,6 +1577,7 @@
 				18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
+				04EFF03A26C4E89000551B9A /* MessagesViewModel.swift in Sources */,
 				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
 				188D007E26C272F00076B5CE /* PaymentDataModel.swift in Sources */,
 				18A579BB269320230067952F /* Constants.swift in Sources */,
