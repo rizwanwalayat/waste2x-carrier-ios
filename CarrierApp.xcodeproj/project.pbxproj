@@ -91,6 +91,14 @@
 		04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB591B26AED6A500C88804 /* QuotationListViewController.swift */; };
 		04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */; };
 		04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */; };
+		04F6FD0F26C3D542006D1A80 /* ChatMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0926C3D542006D1A80 /* ChatMessagesViewModel.swift */; };
+		04F6FD1026C3D542006D1A80 /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */; };
+		04F6FD1126C3D542006D1A80 /* ChatMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F6FD0B26C3D542006D1A80 /* ChatMessagesViewController.xib */; };
+		04F6FD1226C3D542006D1A80 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0D26C3D542006D1A80 /* MessagesTableViewCell.swift */; };
+		04F6FD1326C3D542006D1A80 /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F6FD0E26C3D542006D1A80 /* MessagesTableViewCell.xib */; };
+		04F6FD1826C3DB4C006D1A80 /* TwillioChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD1526C3DB4C006D1A80 /* TwillioChatDataModel.swift */; };
+		04F6FD1926C3DB4D006D1A80 /* MessagesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD1626C3DB4C006D1A80 /* MessagesResult.swift */; };
+		04F6FD1A26C3DB4D006D1A80 /* MessagesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD1726C3DB4C006D1A80 /* MessagesDataModel.swift */; };
 		181025282657E36500DEBF7D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025252657E36500DEBF7D /* Global.swift */; };
 		181025292657E36500DEBF7D /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025262657E36500DEBF7D /* GCD.swift */; };
 		1810252A2657E36500DEBF7D /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025272657E36500DEBF7D /* Extentions.swift */; };
@@ -265,6 +273,14 @@
 		04DB591B26AED6A500C88804 /* QuotationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationListViewController.swift; sourceTree = "<group>"; };
 		04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsTableViewCell.swift; sourceTree = "<group>"; };
 		04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationsTableViewCell.xib; sourceTree = "<group>"; };
+		04F6FD0926C3D542006D1A80 /* ChatMessagesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewModel.swift; sourceTree = "<group>"; };
+		04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
+		04F6FD0B26C3D542006D1A80 /* ChatMessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessagesViewController.xib; sourceTree = "<group>"; };
+		04F6FD0D26C3D542006D1A80 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		04F6FD0E26C3D542006D1A80 /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
+		04F6FD1526C3DB4C006D1A80 /* TwillioChatDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwillioChatDataModel.swift; sourceTree = "<group>"; };
+		04F6FD1626C3DB4C006D1A80 /* MessagesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesResult.swift; sourceTree = "<group>"; };
+		04F6FD1726C3DB4C006D1A80 /* MessagesDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesDataModel.swift; sourceTree = "<group>"; };
 		11BEA7310526AE8D123D02F8 /* Pods-CarrierApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarrierApp.release.xcconfig"; path = "Target Support Files/Pods-CarrierApp/Pods-CarrierApp.release.xcconfig"; sourceTree = "<group>"; };
 		181025252657E36500DEBF7D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		181025262657E36500DEBF7D /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
@@ -406,6 +422,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04F6FD1426C3DB4C006D1A80 /* Messages */,
 				188D007C26C272E40076B5CE /* Payments */,
 				18BB558526C11D3C00E51BB4 /* Quotation */,
 				9672B23726C118CB00E8E72F /* Dispatches */,
@@ -421,6 +438,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04F6FD0726C3D542006D1A80 /* Messages */,
 				04206C2E26BD388C006AB6A4 /* Contact */,
 				0461743B26BBBF290055DD3E /* Faq */,
 				96C44C2E26B9862800ED5696 /* Settings */,
@@ -817,6 +835,44 @@
 				04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		04F6FD0726C3D542006D1A80 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				04F6FD0826C3D542006D1A80 /* ViewModel */,
+				04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */,
+				04F6FD0B26C3D542006D1A80 /* ChatMessagesViewController.xib */,
+				04F6FD0C26C3D542006D1A80 /* CustomCell */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		04F6FD0826C3D542006D1A80 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04F6FD0926C3D542006D1A80 /* ChatMessagesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04F6FD0C26C3D542006D1A80 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				04F6FD0D26C3D542006D1A80 /* MessagesTableViewCell.swift */,
+				04F6FD0E26C3D542006D1A80 /* MessagesTableViewCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		04F6FD1426C3DB4C006D1A80 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				04F6FD1526C3DB4C006D1A80 /* TwillioChatDataModel.swift */,
+				04F6FD1626C3DB4C006D1A80 /* MessagesResult.swift */,
+				04F6FD1726C3DB4C006D1A80 /* MessagesDataModel.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 		183262722670A38F00F0CCBA /* Login */ = {
@@ -1280,6 +1336,7 @@
 				04206C3126BD388C006AB6A4 /* ContactViewController.xib in Resources */,
 				96C44C3126B9862800ED5696 /* SettingsViewController.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
+				04F6FD1126C3D542006D1A80 /* ChatMessagesViewController.xib in Resources */,
 				04C3091926B7E70F00BEC895 /* PaymentViewController.xib in Resources */,
 				9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */,
 				96C44C2D26B952BD00ED5696 /* DispatchesOrderDetail.xib in Resources */,
@@ -1301,6 +1358,7 @@
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
+				04F6FD1326C3D542006D1A80 /* MessagesTableViewCell.xib in Resources */,
 				9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */,
 				048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */,
 				969FB4E226B4743600C77CE0 /* DispatchesTrackingViewController.xib in Resources */,
@@ -1421,6 +1479,7 @@
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				0480668226B0306700DF4B1E /* QuotationDetailViewController.swift in Sources */,
+				04F6FD1926C3DB4D006D1A80 /* MessagesResult.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				04C3D36126B2C47A005FCF5A /* AvailableLoadsDetailViewController.swift in Sources */,
 				04ABB4C626BACB0A00C24153 /* ResultLoginUser.swift in Sources */,
@@ -1441,6 +1500,7 @@
 				969FB4DF26B4743600C77CE0 /* DispatchesTrackingStatusCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
+				04F6FD0F26C3D542006D1A80 /* ChatMessagesViewModel.swift in Sources */,
 				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
 				04206C4326BD72BF006AB6A4 /* CountriesDataModel.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
@@ -1457,6 +1517,7 @@
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				04D2422526B4070200312E2E /* ContractsViewController.swift in Sources */,
 				9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */,
+				04F6FD1226C3D542006D1A80 /* MessagesTableViewCell.swift in Sources */,
 				0455470026C13A1D00781C83 /* AvailableLoadsDetailsVM.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				04C3D36026B2C45C005FCF5A /* AvailableLoadsListViewController.swift in Sources */,
@@ -1476,6 +1537,7 @@
 				18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */,
 				048B797F26B1337800189054 /* AvailableLoadsViewController.swift in Sources */,
 				04206C4126BD72BF006AB6A4 /* AvailableLoadsResult.swift in Sources */,
+				04F6FD1826C3DB4C006D1A80 /* TwillioChatDataModel.swift in Sources */,
 				96C44C3226B9862800ED5696 /* SettingsViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */,
@@ -1486,6 +1548,7 @@
 				18A579BB269320230067952F /* Constants.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
+				04F6FD1026C3D542006D1A80 /* ChatMessagesViewController.swift in Sources */,
 				9672B23926C118F100E8E72F /* DispatchesListModel.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				04206C3A26BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift in Sources */,
@@ -1507,6 +1570,7 @@
 				048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */,
 				9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
+				04F6FD1A26C3DB4D006D1A80 /* MessagesDataModel.swift in Sources */,
 				04D2421B26B3CCB600312E2E /* ReceivableListViewController.swift in Sources */,
 				04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
