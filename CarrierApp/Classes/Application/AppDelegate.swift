@@ -59,9 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
-        //GMSAutocompleteViewControllerHandling()
-        //initializeLocationManager()
-//        loginToTwillio()
         return true
     }
 
@@ -80,30 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         
     }
-    
-    // code for load all messages
-//    func loginToTwillio()
-//    {
-//        MessagesDataModel.fetchTwillioAccessToken() { dataResponse, error, success, message  in
-//
-//            if dataResponse != nil {
-//
-//                if let isSuccess = success {
-//
-//                    if isSuccess {
-//
-//                        if let token = dataResponse?.result?.access_token {
-//
-//                            TwillioChatDataModel.shared.loginToTwillio(with: token)
-//
-//                        }
-//                    }
-//                }
-//
-//            }
-//        }
-//    }
-    
+        
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
 
         if let messageID = userInfo[gcmMessageIDKey] {

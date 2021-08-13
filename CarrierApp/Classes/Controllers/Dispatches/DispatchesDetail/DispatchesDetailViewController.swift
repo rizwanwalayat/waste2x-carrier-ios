@@ -50,6 +50,7 @@ class DispatchesDetailViewController: BaseViewController {
     }
     @objc func viewOrderDetailBtnPressed(_ sender: UIButton){
         let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
+        orderDetailVC.viewModel = self.viewModel
         self.navigationController?.pushViewController(orderDetailVC, animated: true)
     }
 }

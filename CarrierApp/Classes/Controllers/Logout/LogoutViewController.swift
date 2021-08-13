@@ -38,6 +38,7 @@ class LogoutViewController: BaseViewController {
     }
     
     func logoutRemoveToken(){
+        Global.shared.sidemenuLastSlectedIndex = 0
         DataManager.shared.removeAuthToken()
     }
     
