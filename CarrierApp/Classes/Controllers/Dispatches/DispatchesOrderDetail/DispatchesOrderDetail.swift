@@ -15,23 +15,29 @@ class DispatchesOrderDetail: BaseViewController {
     @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var quotationNoLabel: UILabel!
     @IBOutlet weak var originDestinationHolderView: UIView!
-    @IBOutlet weak var originLabel: UILabel!
-    @IBOutlet weak var originAddressLabel: UILabel!
-    @IBOutlet weak var destinationLabel: UILabel!
-    @IBOutlet weak var destinationAdressLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var statusValueLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var priceValueLabel: UILabel!
-    @IBOutlet weak var transporterLabel: UILabel!
-    @IBOutlet weak var transporterValueLabel: UILabel!
-    @IBOutlet weak var CommodityLabel: UILabel!
-    @IBOutlet weak var CommodityValueLabel: UILabel!
-    @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var quantityValueLabel: UILabel!
-    @IBOutlet weak var unitLabel: UILabel!
-    @IBOutlet weak var unitValueLabel: UILabel!
-    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var commodityLabel: UILabel!
+    @IBOutlet weak var commodityValueLabel: UILabel!
+    @IBOutlet weak var packageLabel: UILabel!
+    @IBOutlet weak var packageValueLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var weightValueLabel: UILabel!
+    @IBOutlet weak var dimensionsLabel: UILabel!
+    @IBOutlet weak var DimensionsValueLabel: UILabel!
+    @IBOutlet weak var shipperLabel: UILabel!
+    @IBOutlet weak var shipperValueLabel: UILabel!
+    @IBOutlet weak var consigneeLabel: UILabel!
+    @IBOutlet weak var consigneeValueLabel: UILabel!
+    @IBOutlet weak var pickupLabel: UILabel!
+    @IBOutlet weak var pickupValueLabel: UILabel!
+    @IBOutlet weak var deliveryLabel: UILabel!
+    @IBOutlet weak var deliveryValueLabel: UILabel!
+    @IBOutlet weak var refNumberLabel: UILabel!
+    @IBOutlet weak var refNumberValueLabel: UILabel!
+    
+    
+    // MARK: - Variables
+    
+    var viewModel: DispatchesDetailVM?
     
     
     // MARK: - Controller's LifeCycle
@@ -39,6 +45,7 @@ class DispatchesOrderDetail: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        populateControllersData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,23 +54,17 @@ class DispatchesOrderDetail: BaseViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
 
-    
-    // MARK: - Actions
-    
-    @IBAction func acceptButtonPressed(_ sender: Any) {
-    }
-    
-
-}
-
-extension DispatchesOrderDetail: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        Utility.selectTextField(textField.superview!, isSelected: true)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.isEmpty {
-            Utility.selectTextField(textField.superview!, isSelected: false)
-        }
+    func populateControllersData()
+    {
+        quotationNoLabel.text = viewModel?.data?.result?.shipment?.order_id ?? "-"
+        commodityValueLabel.text = viewModel?.data?.result?.shipment?.commodity ?? "-"
+        packageValueLabel.text = viewModel?.data?.result?.shipment?.packages ?? "-"
+        weightValueLabel.text = viewModel?.data?.result?.shipment?.weight ?? "-"
+        DimensionsValueLabel.text = viewModel?.data?.result?.shipment?.dimensions ?? "-"
+        shipperValueLabel.text = viewModel?.data?.result?.shipment?.shipper ?? "-"
+        consigneeValueLabel.text = viewModel?.data?.result?.shipment?.consignee ?? "-"
+        pickupValueLabel.text = viewModel?.data?.result?.shipment?.pickup ?? "-"
+        deliveryValueLabel.text = viewModel?.data?.result?.shipment?.delivery ?? "-"
+        refNumberValueLabel.text = viewModel?.data?.result?.shipment?.ref_number ?? "-"
     }
 }

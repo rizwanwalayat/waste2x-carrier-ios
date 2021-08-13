@@ -17,27 +17,12 @@ class Global {
         return Static.instance
     }
     
-    var currentNavigationController = BaseNavigationViewController()
-    var currentStoryBoard = ""
-    var currentController = ""
-    var didRecievedNotiFication = Bool()
-    var is_new_user = true
     var current_lat : Double = 71
     var current_lng : Double = 35
     var location = CLLocation()
     var fireBaseToken = ""
-    var apiCurve = false
-    var faqApiCheck = true
-//    var faqModel : FaqModel?
-//    var faqListModel : [FaqResult]?
-//    var newsModel : NewsModel?
-//    var NewsListModell : [NewsResult]?
-    var newsApiCheck = true
     var paymentModel : PaymentModel?
-    var jump  =  0
-    var latlngCheck = true
-    var phoneNumber = ""
-    var nootification = false
+    var sidemenuLastSlectedIndex = 0
     
     
     

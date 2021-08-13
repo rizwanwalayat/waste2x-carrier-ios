@@ -71,6 +71,8 @@ class AvailableLoadsViewController: BaseViewController{
             self.pickupCountryTextField.text = selectedString
             self.paramsData["pick_country"] = selectedString
             self.fetchStates(id, self.pickupStateTextField, true)
+            self.pickupStateTextField.text = ""
+            self.pickupCityTextField.text = ""
         }
         
         
@@ -78,42 +80,61 @@ class AvailableLoadsViewController: BaseViewController{
             self.dropOffCountryTextField.text = selectedString
             self.paramsData["drop_country"] = selectedString
             self.fetchStates(id, self.dropOffStateTextField, false)
+            self.dropOffStateTextField.text = ""
+            self.dropOffCityTextField.text = ""
         }
         
     }
     
-    func setupDropDownStatesFieldsForPickup()
+    func setupDropDownStatesFieldsForPickup(_ isSetNil : Bool)
     {
         
-        guard let statesNames = viewModel?.statesPickupData?.states?.map({ $0.name }) else {return}
-        guard let statesIds = viewModel?.statesPickupData?.states?.map({ $0.id }) else {return}
+        guard var statesNames = viewModel?.statesPickupData?.states?.map({ $0.name }) else {return}
+        guard var statesIds = viewModel?.statesPickupData?.states?.map({ $0.id }) else {return}
+        
+        if isSetNil {
+            statesNames = []
+            statesIds = []
+        }
         
         setupDropDownsData(pickupStateTextField, statesNames, dataIds: statesIds) { selectedString, id in
             self.pickupStateTextField.text = selectedString
             self.paramsData["pick_state"] = selectedString
             self.fetchCities(id, self.pickupCityTextField, true)
+            self.pickupCityTextField.text = ""
         }
         
     }
     
-    func setupDropDownStatesFieldsForDropoff()
+    func setupDropDownStatesFieldsForDropoff(_ isSetNil : Bool)
     {
         
-        guard let statesNames = viewModel?.statesDropOffData?.states?.map({ $0.name }) else {return}
-        guard let statesIds = viewModel?.statesDropOffData?.states?.map({ $0.id }) else {return}
+        guard var statesNames = viewModel?.statesDropOffData?.states?.map({ $0.name }) else {return}
+        guard var statesIds = viewModel?.statesDropOffData?.states?.map({ $0.id }) else {return}
+        
+        if isSetNil {
+            statesNames = []
+            statesIds = []
+        }
         
         setupDropDownsData(dropOffStateTextField, statesNames, dataIds: statesIds) { selectedString, id in
             self.dropOffStateTextField.text = selectedString
             self.paramsData["drop_state"] = selectedString
             self.fetchCities(id, self.dropOffCityTextField, false)
+            self.dropOffCityTextField.text = ""
         }
     }
     
-    func setupDropdownCitiesFieldsPickup()
+    func setupDropdownCitiesFieldsPickup(_ isSetNil : Bool)
     {
         
-        guard let citiesNames = viewModel?.citiesPickupData?.citties?.map({ $0.name }) else {return}
-        guard let citiesIds = viewModel?.citiesPickupData?.citties?.map({ $0.id }) else {return}
+        guard var citiesNames = viewModel?.citiesPickupData?.citties?.map({ $0.name }) else {return}
+        guard var citiesIds = viewModel?.citiesPickupData?.citties?.map({ $0.id }) else {return}
+        
+        if isSetNil {
+            citiesNames = []
+            citiesIds = []
+        }
         
         setupDropDownsData(pickupCityTextField, citiesNames, dataIds: citiesIds) { selectedString, id in
             self.pickupCityTextField.text = selectedString
@@ -121,12 +142,16 @@ class AvailableLoadsViewController: BaseViewController{
         }
     }
     
-    func setupDropdownCitiesFieldsDropoff()
+    func setupDropdownCitiesFieldsDropoff(_ isSetNil : Bool)
     {
         
-        guard let citiesNames = viewModel?.citiesDropOffData?.citties?.map({ $0.name }) else {return}
-        guard let citiesIds = viewModel?.citiesDropOffData?.citties?.map({ $0.id }) else {return}
+        guard var citiesNames = viewModel?.citiesDropOffData?.citties?.map({ $0.name }) else {return}
+        guard var citiesIds = viewModel?.citiesDropOffData?.citties?.map({ $0.id }) else {return}
         
+        if isSetNil {
+            citiesNames = []
+            citiesIds = []
+        }
         setupDropDownsData(dropOffCityTextField, citiesNames, dataIds: citiesIds) { selectedString, id in
             self.dropOffCityTextField.text = selectedString
             self.paramsData["drop_city"] = selectedString
@@ -203,12 +228,14 @@ extension AvailableLoadsViewController {
     func fetchStates(_ id : Int, _ anchorView : DropDown, _ isPickup: Bool)
     {
         
+        isPickup ? self.setupDropdownCitiesFieldsPickup(true) : self.setupDropdownCitiesFieldsDropoff(true)
+        
         let params = ["country_id": id]
         viewModel?.FetchStates(params: params, isPickup, { data, error, success, message in
             
             if success ?? false, error == nil {
                 
-                isPickup ? self.setupDropDownStatesFieldsForPickup() : self.setupDropDownStatesFieldsForDropoff()
+                isPickup ? self.setupDropDownStatesFieldsForPickup(false) : self.setupDropDownStatesFieldsForDropoff(false)
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }
@@ -217,13 +244,13 @@ extension AvailableLoadsViewController {
     
     func fetchCities(_ id : Int, _ anchorView : DropDown, _ isPickup: Bool)
     {
-        
+        isPickup ? self.setupDropdownCitiesFieldsPickup(true) : self.setupDropdownCitiesFieldsDropoff(true)
         let params = ["state_id": id]
         viewModel?.FetchCities(params: params, isPickup, { data, error, success, message in
             
             if success ?? false, error == nil {
                 
-                isPickup ? self.setupDropdownCitiesFieldsPickup() : self.setupDropdownCitiesFieldsDropoff()
+                isPickup ? self.setupDropdownCitiesFieldsPickup(false) : self.setupDropdownCitiesFieldsDropoff(false)
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }

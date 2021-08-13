@@ -36,6 +36,7 @@ class SideMenuViewController: BaseViewController {
         phoneNumberLabel.text =  DataManager.shared.fetchPhoneNumber()
         leadingConstOfScrollView.constant    = -270
         mainShadowView.alpha                 = 0
+        self.selectionIndex = Global.shared.sidemenuLastSlectedIndex
         customMethodsForSideMenu()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -149,6 +150,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        var isNeedToUpdateValue = true
         switch indexPath.row {
         case 0:
                     
@@ -214,8 +216,9 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             
         case 6:
             
-            if selectionIndex != 5
+            if selectionIndex != 6
             {
+                isNeedToUpdateValue = false
                 self.hideSideMenu {
                     let vc = FaqViewController(nibName: "FaqViewController", bundle: nil)
                     Utility.setupRoot([self.fromVC!, vc])
@@ -224,8 +227,9 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             
         case 7:
             
-            if selectionIndex != 5
+            if selectionIndex != 7
             {
+                isNeedToUpdateValue = false
                 self.hideSideMenu {
                     let vc = ContactViewController(nibName: "ContactViewController", bundle: nil)
                     Utility.setupRoot([self.fromVC!, vc])
@@ -250,7 +254,11 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             break
         }
         
-        self.selectionIndex = indexPath.row
+        if isNeedToUpdateValue{
+            
+            self.selectionIndex = indexPath.row
+            Global.shared.sidemenuLastSlectedIndex = indexPath.row
+        }
         self.tableView.reloadData()
     }
     
