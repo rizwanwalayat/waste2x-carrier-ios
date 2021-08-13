@@ -16,7 +16,7 @@ class DispatchesListTableViewCell: UITableViewCell {
     @IBOutlet weak var dispatchRepLabel: UILabel!
     @IBOutlet weak var pickUpLabel: UILabel!
     @IBOutlet weak var deliveryLabel: UILabel!
-    
+    @IBOutlet weak var dispatchIDLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -36,6 +36,7 @@ class DispatchesListTableViewCell: UITableViewCell {
         dispatchRepLabel.text = data.dispatch_rep
         pickUpLabel.text = data.pick_up
         deliveryLabel.text = data.drop_off
+        dispatchIDLabel.text = "\(data.id)"
         
         var statusColor: UIColor
         

@@ -30,6 +30,6 @@ class DispatchesListResult: Mappable {
     func postMapping(){
         array.insert(scheduled, at: 0)
         array.insert(in_transit, at: 1)
-        array.insert(delivered, at: 1)
+        array.insert(delivered, at: 2)
     }
 }
