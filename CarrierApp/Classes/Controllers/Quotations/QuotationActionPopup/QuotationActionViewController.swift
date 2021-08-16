@@ -68,12 +68,23 @@ class QuotationActionViewController: UIViewController {
             self.dismiss(animated: false, completion: nil)
         }
     }
+    func hidePopupWithoutAction()
+    {
+        holderViews.alpha = 1
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+            
+            self.holderViews.alpha = 0
+            self.holderViews.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+
+        })
+        self.dismiss(animated: false, completion: nil)
+    }
     
     // MARK: - Actions
 
     @IBAction func backgroundButton(_ sender: Any) {
         
-        hidePopup(false)
+        hidePopupWithoutAction()
     }
     
     @IBAction func acceptPressed(_ sender: Any) {

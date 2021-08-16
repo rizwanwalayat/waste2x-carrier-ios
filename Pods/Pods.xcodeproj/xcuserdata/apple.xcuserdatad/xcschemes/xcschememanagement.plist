@@ -130,6 +130,11 @@
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
+		<key>TwilioChatClient.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
 		<key>iOSDropDown.xcscheme</key>
 		<dict>
 			<key>isShown</key>
