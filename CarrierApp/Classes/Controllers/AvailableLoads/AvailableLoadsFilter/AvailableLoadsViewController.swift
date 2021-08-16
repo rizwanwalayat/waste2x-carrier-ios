@@ -51,7 +51,7 @@ class AvailableLoadsViewController: BaseViewController{
     
     @IBAction func applyPressed(_ sender: Any) {
         
-        self.fetchLoads(true)
+        self.isAvailableForApplyFilter()
     }
     
     @IBAction func clearPressed(_ sender: Any) {
@@ -83,16 +83,14 @@ class AvailableLoadsViewController: BaseViewController{
             self.dropOffStateTextField.text = ""
             self.dropOffCityTextField.text = ""
         }
-        
     }
     
-    func setupDropDownStatesFieldsForPickup(_ isSetNil : Bool)
+    func setupDropDownStatesFieldsForPickup(_ is_set_nil : Bool)
     {
-        
         guard var statesNames = viewModel?.statesPickupData?.states?.map({ $0.name }) else {return}
         guard var statesIds = viewModel?.statesPickupData?.states?.map({ $0.id }) else {return}
         
-        if isSetNil {
+        if is_set_nil {
             statesNames = []
             statesIds = []
         }
@@ -103,16 +101,14 @@ class AvailableLoadsViewController: BaseViewController{
             self.fetchCities(id, self.pickupCityTextField, true)
             self.pickupCityTextField.text = ""
         }
-        
     }
     
-    func setupDropDownStatesFieldsForDropoff(_ isSetNil : Bool)
+    func setupDropDownStatesFieldsForDropoff(_ is_set_nil : Bool)
     {
-        
         guard var statesNames = viewModel?.statesDropOffData?.states?.map({ $0.name }) else {return}
         guard var statesIds = viewModel?.statesDropOffData?.states?.map({ $0.id }) else {return}
         
-        if isSetNil {
+        if is_set_nil {
             statesNames = []
             statesIds = []
         }
@@ -125,13 +121,13 @@ class AvailableLoadsViewController: BaseViewController{
         }
     }
     
-    func setupDropdownCitiesFieldsPickup(_ isSetNil : Bool)
+    func setupDropdownCitiesFieldsPickup(_ is_set_nil : Bool)
     {
         
         guard var citiesNames = viewModel?.citiesPickupData?.citties?.map({ $0.name }) else {return}
         guard var citiesIds = viewModel?.citiesPickupData?.citties?.map({ $0.id }) else {return}
         
-        if isSetNil {
+        if is_set_nil {
             citiesNames = []
             citiesIds = []
         }
@@ -142,13 +138,13 @@ class AvailableLoadsViewController: BaseViewController{
         }
     }
     
-    func setupDropdownCitiesFieldsDropoff(_ isSetNil : Bool)
+    func setupDropdownCitiesFieldsDropoff(_ is_set_nil : Bool)
     {
         
         guard var citiesNames = viewModel?.citiesDropOffData?.citties?.map({ $0.name }) else {return}
         guard var citiesIds = viewModel?.citiesDropOffData?.citties?.map({ $0.id }) else {return}
         
-        if isSetNil {
+        if is_set_nil {
             citiesNames = []
             citiesIds = []
         }
@@ -197,6 +193,18 @@ class AvailableLoadsViewController: BaseViewController{
         self.dropOffCityTextField.selectedIndex = nil
         self.paramsData.removeAll()
     }
+    
+    func isAvailableForApplyFilter()
+    {
+        if pickupCountryTextField.text!.count > 0 || dropOffCountryTextField.text!.count > 0
+        {
+            self.fetchLoads(true)
+        }
+        else
+        {
+            self.showToast(message: "Please select at-least one filter")
+        }
+    }
 }
 
 
@@ -204,11 +212,11 @@ class AvailableLoadsViewController: BaseViewController{
 
 extension AvailableLoadsViewController {
     
-    func fetchLoads(_ isFilerApplied: Bool)
+    func fetchLoads(_ is_filer_applied: Bool)
     {
         viewModel?.FetchLoads(params: paramsData, { data, error, success, message in
             
-            if isFilerApplied{
+            if is_filer_applied{
                 let vc = AvailableLoadsListViewController(nibName: "AvailableLoadsListViewController", bundle: nil)
                 vc.viewModel = self.viewModel
                 self.navigationController?.pushViewController(vc , animated: true)
