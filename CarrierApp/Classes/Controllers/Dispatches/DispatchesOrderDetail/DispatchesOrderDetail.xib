@@ -22,13 +22,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DispatchesOrderDetail" customModule="CarrierApp" customModuleProvider="target">
             <connections>
+                <outlet property="DimensionsValueLabel" destination="Rb1-jv-XOq" id="T1A-7U-Grn"/>
                 <outlet property="baseHolderView" destination="NR9-O7-asr" id="3iS-ex-3B7"/>
+                <outlet property="commodityLabel" destination="V9I-1c-tUd" id="Zab-lB-JDH"/>
+                <outlet property="commodityValueLabel" destination="9BZ-p3-6bc" id="iDt-JF-qE1"/>
+                <outlet property="consigneeLabel" destination="bR4-EY-mbQ" id="3nP-rg-xtV"/>
+                <outlet property="consigneeValueLabel" destination="ql3-yu-XMx" id="bpR-U3-TYr"/>
+                <outlet property="deliveryLabel" destination="Qa2-Oa-nKe" id="fJ3-V1-vmn"/>
+                <outlet property="deliveryValueLabel" destination="lpK-ea-7Ey" id="F1a-oJ-vd4"/>
+                <outlet property="dimensionsLabel" destination="pLE-6t-Qg0" id="Mr4-JK-8S3"/>
                 <outlet property="mainHolderView" destination="ZqW-cm-HY2" id="Ffa-Zh-74e"/>
-                <outlet property="originAddressLabel" destination="9BZ-p3-6bc" id="Gh8-Hz-71u"/>
                 <outlet property="originDestinationHolderView" destination="3vb-M8-glB" id="YOB-B2-NDk"/>
-                <outlet property="originLabel" destination="V9I-1c-tUd" id="Veu-cx-wIc"/>
+                <outlet property="packageLabel" destination="oy2-rL-lJT" id="hnO-Bw-cyf"/>
+                <outlet property="packageValueLabel" destination="VJ7-I3-0ab" id="JBH-It-27o"/>
+                <outlet property="pickupLabel" destination="x58-kt-7rJ" id="hh4-8Q-UMS"/>
+                <outlet property="pickupValueLabel" destination="aZT-mF-WcQ" id="aPa-Gq-0Nb"/>
                 <outlet property="quotationNoLabel" destination="QdQ-Qm-gsk" id="mEm-AO-m1U"/>
+                <outlet property="refNumberLabel" destination="GjG-rf-Z00" id="ZB5-XH-qgw"/>
+                <outlet property="refNumberValueLabel" destination="D5t-h5-KSq" id="hc1-BJ-lJH"/>
+                <outlet property="shipperLabel" destination="GXn-Mi-3qZ" id="ttF-E8-OZi"/>
+                <outlet property="shipperValueLabel" destination="077-ut-Ivd" id="G3A-TL-5Xl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightLabel" destination="XId-gP-QUc" id="NJJ-ya-Wcw"/>
+                <outlet property="weightValueLabel" destination="rmp-Fy-cMS" id="XAk-iI-pMq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -14,7 +14,7 @@ class AvailableLoadsListViewController: BaseViewController {
     // MARK: - Outelts
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var noLoadsLabel: UILabel!
     
     // MARK: - Variables
     
@@ -26,6 +26,8 @@ class AvailableLoadsListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
+        
+        (viewModel?.data?.result?.loads.count == 0) ?( noLoadsLabel.isHidden = false) : (noLoadsLabel.isHidden = true)
     }
 
 

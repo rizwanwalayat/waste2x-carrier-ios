@@ -45,6 +45,12 @@ class ResetPasswordViewController: BaseViewController {
         })
     }
     
+    @IBAction func fledValueChanged(_ sender: Any) {
+        
+        print(newPasswordTextField.text!, confirmPasswordTextField.text!)
+        resetPasswordButton.makeEnable(value: checkPasswords(newPassword: newPasswordTextField, confirmPassword: confirmPasswordTextField))
+    }
+    
     
     // MARK: - Functions
     func checkPasswords(newPassword: UITextField, confirmPassword: UITextField) -> Bool {
@@ -55,11 +61,11 @@ class ResetPasswordViewController: BaseViewController {
 
 extension ResetPasswordViewController : UITextFieldDelegate {
     
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-    
-    print(newPasswordTextField.text!, confirmPasswordTextField.text!)
-        resetPasswordButton.makeEnable(value: checkPasswords(newPassword: newPasswordTextField, confirmPassword: confirmPasswordTextField))
-    }
+//    func textFieldDidChangeSelection(_ textField: UITextField) {
+//
+//    print(newPasswordTextField.text!, confirmPasswordTextField.text!)
+//        resetPasswordButton.makeEnable(value: checkPasswords(newPassword: newPasswordTextField, confirmPassword: confirmPasswordTextField))
+//    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         Utility.selectTextField(textField.superview!, isSelected: true)

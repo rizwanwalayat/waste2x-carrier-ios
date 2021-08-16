@@ -34,7 +34,7 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(data: DispatchesDetailPickDropModel, status: DispatchesDeliveryType)
+    func configCell(data: DispatchesDetailPickDropModel?, status: DispatchesDeliveryType)
     {
         switch status {
         case .pickup:
@@ -45,10 +45,10 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
             DeliveryLabel.text = "Delivery"
         }
         
-        locationLabel.text = data.location
-        commodityLabel.text = data.commodity
-        arrivalLabel.text = data.arrival
-        departureLabel.text = data.departure
+        locationLabel.text = data?.location
+        commodityLabel.text = data?.commodity
+        arrivalLabel.text = data?.arrival
+        departureLabel.text = data?.departure
         
     }
 }

@@ -26,7 +26,8 @@ class DispatchesDetailVM: NSObject {
             let newResult = ["result": result]
 
             if status, error == nil, let data = Mapper<DispatchesDetailModel>().map(JSON: newResult as [String : Any]) {
-                    completionHandler(data, nil, status, message)
+                self.data = data
+                completionHandler(data, nil, status, message)
             } else {
                 completionHandler(nil, error, status, message)
             }

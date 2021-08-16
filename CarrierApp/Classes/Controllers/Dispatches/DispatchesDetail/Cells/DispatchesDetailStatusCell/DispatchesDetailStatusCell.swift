@@ -43,20 +43,28 @@ class DispatchesDetailStatusCell: BaseTableViewCell {
     }
     
     
-    func configCell(data: DispatchesDetailDetailsModel, status: DispatchesStatus)
+    func configCell(data: DispatchesDetailDetailsModel?, status: DispatchesStatus)
     {
-        vehicleTypeLabel.text = data.vehicle_type
-        regNoLabel.text = data.reg_number
-        dateCreatedValueLabel.text = data.created_at
+        vehicleTypeLabel.text = data?.vehicle_type
+        regNoLabel.text = data?.reg_number
+        dateCreatedValueLabel.text = data?.created_at
+        dispatchIDLabel.text = "#\(data?.dispatch_id ?? 0)"
+        deliveredTimeLabel.text = status == .delivered ? data?.delivery_time : ""
 //        dispatchStatusLabel.text = 
         
         switch status {
         case .scheduled:
             coloredStatusView.backgroundColor = redScheduled
+            dispatchStatusLabel.text = DispatchesStatus.scheduled.rawValue
+            dispatchStatusLabel.textColor = redScheduled
         case .in_transit:
             coloredStatusView.backgroundColor = yellowTransit
+            dispatchStatusLabel.text = DispatchesStatus.in_transit.rawValue
+            dispatchStatusLabel.textColor = yellowTransit
         case .delivered:
             coloredStatusView.backgroundColor = greenDelivered
+            dispatchStatusLabel.text = DispatchesStatus.delivered.rawValue
+            dispatchStatusLabel.textColor = greenDelivered
         }
     }
 }

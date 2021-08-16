@@ -16,6 +16,7 @@ class DispatchesDetailViewController: BaseViewController {
     @IBOutlet weak var tableview : UITableView!
     //MARK: - Variables
     var viewModel: DispatchesDetailVM?
+    var isDataLoaded: Bool = false
     
     // MARK: - Controller's LifeCycle
     
@@ -25,7 +26,14 @@ class DispatchesDetailViewController: BaseViewController {
         tableviewHandlings()
     }
     override func viewWillAppear(_ animated: Bool) {
-//        viewModel.
+        viewModel?.FetchDispatchesDetailData({ data, error, status, message in
+            if (status ?? false), error == nil {
+                self.isDataLoaded = true
+                self.tableview.reloadData()
+            } else {
+                
+            }
+        })
     }
     func tableviewHandlings()
     {
@@ -42,6 +50,7 @@ class DispatchesDetailViewController: BaseViewController {
     }
     @objc func viewOrderDetailBtnPressed(_ sender: UIButton){
         let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
+        orderDetailVC.viewModel = self.viewModel
         self.navigationController?.pushViewController(orderDetailVC, animated: true)
     }
 }
@@ -49,7 +58,7 @@ class DispatchesDetailViewController: BaseViewController {
 extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        isDataLoaded ? 3 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,17 +70,17 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
              cell.viewOrderDetailBtn.addTarget(self, action: #selector(viewOrderDetailBtnPressed(_:)), for: .touchUpInside)
             let cellData = viewModel?.data?.result?.details
             let status = viewModel?.data?.result?.dispatchStatus
-            cell.configCell(data: cellData!, status: status ?? .scheduled)
+            cell.configCell(data: cellData, status: status ?? .scheduled)
              return cell
         case 1:
             let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
             let cellData = viewModel?.data?.result?.pickup
-            cell.configCell(data: cellData!, status: DispatchesDeliveryType.pickup)
+            cell.configCell(data: cellData, status: DispatchesDeliveryType.pickup)
             return cell
         case 2:
             let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
             let cellData = viewModel?.data?.result?.delivery
-            cell.configCell(data: cellData!, status: DispatchesDeliveryType.delivery)
+            cell.configCell(data: cellData, status: DispatchesDeliveryType.delivery)
             return cell
         default:
             return UITableViewCell()

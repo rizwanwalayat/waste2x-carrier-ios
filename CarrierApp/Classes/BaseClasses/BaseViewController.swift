@@ -14,6 +14,8 @@ class BaseViewController: UIViewController {
     
     @IBOutlet weak var baseHolderView: UIView!
     
+    var sideMenuLastSelectedIndex = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

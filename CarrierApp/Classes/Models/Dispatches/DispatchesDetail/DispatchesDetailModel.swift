@@ -50,6 +50,8 @@ class DispatchDetailResultModel: Mappable {
         switch status {
         case "Scheduled":
             dispatchStatus = .scheduled
+        case "Draft":
+            dispatchStatus = .scheduled
         case "Completed":
             dispatchStatus = .delivered
         case "In Transit":
@@ -78,9 +80,9 @@ class DispatchesDetailPickDropModel: Mappable {
 }
 
 class DispatchesDetailDetailsModel: Mappable {
-    var dispatch_id = ""
+    var dispatch_id = -1
     var dispatch_rep = ""
-    var dispatch_time = ""
+    var delivery_time = ""
     var vehicle_type = ""
     var reg_number = ""
     var created_at = ""
@@ -92,7 +94,7 @@ class DispatchesDetailDetailsModel: Mappable {
     func mapping(map: Map) {
         dispatch_id <- map["dispatch_id"]
         dispatch_rep <- map["dispatch_rep"]
-        dispatch_time <- map["dispatch_time"]
+        delivery_time <- map["delivery_time"]
         vehicle_type <- map["vehicle_type"]
         reg_number <- map["reg_number"]
         created_at <- map["created_at"]
