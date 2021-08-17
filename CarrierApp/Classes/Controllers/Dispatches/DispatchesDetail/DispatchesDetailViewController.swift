@@ -46,6 +46,9 @@ class DispatchesDetailViewController: BaseViewController {
 
     @objc func trackOrderBtnPressed(_ sender: UIButton){
         let trackerVC = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+        let trackerVM = TrackerVM()
+        trackerVM.data = viewModel?.data
+        trackerVC.viewModel = trackerVM
         self.navigationController?.pushViewController(trackerVC, animated: true)
     }
     @objc func viewOrderDetailBtnPressed(_ sender: UIButton){

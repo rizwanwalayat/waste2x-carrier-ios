@@ -38,6 +38,8 @@ struct APIRoutes {
     static var createPaymentUrl = "payment_method/api_create_stripe"
     static var dispatchesDetail = "carriers/api/dispatch/detail"
 
+    static var polyLineUrl = ""
+
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

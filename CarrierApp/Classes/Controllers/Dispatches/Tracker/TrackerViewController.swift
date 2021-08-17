@@ -14,26 +14,29 @@ class TrackerViewController: BaseViewController {
 //MARK: - Variables
     
     var locationManager = CLLocationManager()
-    var currentLocation = ""
-    var endingLocation = ""
+    var pickupLocation = ""
+    var deliveryLocation = ""
     var currentLat = Double()
     var currentLon = Double()
-    var destinationLat = Double()
-    var destinationLng = Double()
+   
     var timer = Timer()
     var trackID = 1
-    
-    
+    var viewModel:TrackerVM?
+    var pickupLat = Double()
+    var pickupLng = Double()
+    var deliveryLat = Double()
+    var deliveryLng = Double()
     
     //MARK: - Outlets
     
+    @IBOutlet weak var dispatchRepLabel: UILabel!
     @IBOutlet weak var kmLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var deliveryLocationLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var pickupLocationLabel: UILabel!
     
     
     //MARK: - Controller's Life cycel
@@ -43,7 +46,7 @@ class TrackerViewController: BaseViewController {
 
 //        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
 
-        locationLabel.setAttributedTextInLable("From", "6C6C6C", 10, "Isale, Bujumbura Rural, Burundi", "6C6C6C", 10)
+        pickupLocationLabel.setAttributedTextInLable("From", "6C6C6C", 10, "Isale, Bujumbura Rural, Burundi", "6C6C6C", 10)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -51,11 +54,27 @@ class TrackerViewController: BaseViewController {
         mainView.roundCornersTopView(36)    
         mapView.roundCornersTopView(36)
         initializeTheLocationManager()
-        
+        loadMap()
+        dispatchRepLabel.text = viewModel?.data?.result?.details?.dispatch_rep ?? "Dispatch Rep"
+        deliveryLocationLabel.text = viewModel?.data?.result?.delivery?.location ?? "Delivery Location"
+        pickupLocationLabel.text = viewModel?.data?.result?.pickup?.location ?? "Pickup Location"
     }
 
     
     //MARK: - Functions
+
+    func loadMap(){
+        pickupLat = viewModel?.data?.result?.pickup?.latitude ?? 0.00
+        pickupLng = viewModel?.data?.result?.pickup?.longitude ?? 0.00
+        deliveryLat = viewModel?.data?.result?.delivery?.latitude ?? 0.00
+        deliveryLng = viewModel?.data?.result?.delivery?.longitude ?? 0.00
+        pickupLocation = "\(self.pickupLat),\(self.pickupLng)"
+        deliveryLocation = "\(self.deliveryLat),\(self.deliveryLng)"
+
+        markerUpdate(s_lat: pickupLng, s_lon: pickupLng, d_lat: deliveryLat, d_lon: deliveryLng)
+        fetchGoogleMapData(Starting: pickupLocation, Ending: deliveryLocation)
+        
+    }
     
     func initializeTheLocationManager() {
             locationManager.delegate = self
@@ -87,6 +106,41 @@ class TrackerViewController: BaseViewController {
             }
     }
 
+    func fetchGoogleMapData(Starting : String,Ending : String)
+    {   mapView.clear()
+        print(Starting,Ending)
+        APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(Starting)&destination=\(Ending)&mode=driving&key=\(googleAPIKey)"
+        print(APIRoutes.polyLineUrl)
+        PolyLineAPIModel.PolyLineAPICall { jsonData, error, status, message in
+            if jsonData?.routes != nil{
+                
+                
+            for item in jsonData!.routes {
+                self.deliveryLocationLabel.text = item.legs[0].end_address
+                self.timeLabel.text = item.legs[0].duration?.text
+                self.kmLabel.text = item.legs[0].distance?.text
+                let points = item.overviewPolyline?.points
+                let path = GMSPath.init(fromEncodedPath: points ?? "")
+                let polyline = GMSPolyline.init(path: path)
+                polyline.strokeColor = UIColor(named: "lineColor")!
+                polyline.strokeWidth = 5
+                polyline.geodesic = true
+                polyline.map = self.mapView
+                DispatchQueue.main.async {
+                    let bounds = GMSCoordinateBounds(path: path!)
+                    self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+                }
+            }
+//                let cam = GMSCameraPosition(latitude: self.deliveryLat, longitude: self.deliveryLng, zoom: 10)
+                
+               
+                
+            }
+            
+        }
+
+    }
+    
     
     //MARK: - IBOutlets
     
@@ -103,9 +157,9 @@ class TrackerViewController: BaseViewController {
 
 extension TrackerViewController:CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("lcoation delegate call")
+        print("location delegate call")
         
-        self.locationManager.stopUpdatingLocation()
+//        self.locationManager.stopUpdatingLocation()
 
     }
     
