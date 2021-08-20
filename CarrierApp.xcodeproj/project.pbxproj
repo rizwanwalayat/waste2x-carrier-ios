@@ -188,6 +188,8 @@
 		96DE174F26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174B26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib */; };
 		96E0EA8A26CBE571008E0329 /* TrackerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EA8926CBE571008E0329 /* TrackerVM.swift */; };
 		96E0EA8D26CBE807008E0329 /* PolyLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EA8C26CBE807008E0329 /* PolyLineModel.swift */; };
+		96E0EA8F26CFD94E008E0329 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EA8E26CFD94E008E0329 /* LocationManager.swift */; };
+		96E0EA9126CFDEC1008E0329 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EA9026CFDEC1008E0329 /* NotificationName.swift */; };
 		96E0FC1026BD7985007094DC /* ResetPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0FC0F26BD7985007094DC /* ResetPasswordVM.swift */; };
 		96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0FC1126BD799D007094DC /* CodeVerificationVM.swift */; };
 		B15E6762F9E144B246EE40F4 /* Pods_CarrierApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */; };
@@ -381,6 +383,8 @@
 		96DE174B26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuItemsTableViewCell.xib; sourceTree = "<group>"; };
 		96E0EA8926CBE571008E0329 /* TrackerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerVM.swift; sourceTree = "<group>"; };
 		96E0EA8C26CBE807008E0329 /* PolyLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolyLineModel.swift; sourceTree = "<group>"; };
+		96E0EA8E26CFD94E008E0329 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		96E0EA9026CFDEC1008E0329 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		96E0FC0F26BD7985007094DC /* ResetPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVM.swift; sourceTree = "<group>"; };
 		96E0FC1126BD799D007094DC /* CodeVerificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -489,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				0067A2E22529D2CD00CECA8C /* Utility.swift */,
+				96E0EA8E26CFD94E008E0329 /* LocationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				0428F1C5265BC9EC007C51EE /* UINavigationController.swift */,
 				04C2361B2669224600A27B78 /* Array.swift */,
 				041242AA266A05AE00EB1A3F /* DateExtenstion.swift */,
+				96E0EA9026CFDEC1008E0329 /* NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1599,6 +1605,7 @@
 				18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
+				96E0EA8F26CFD94E008E0329 /* LocationManager.swift in Sources */,
 				96E0EA8A26CBE571008E0329 /* TrackerVM.swift in Sources */,
 				04EFF03A26C4E89000551B9A /* MessagesViewModel.swift in Sources */,
 				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
@@ -1608,6 +1615,7 @@
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				04F6FD1026C3D542006D1A80 /* ChatMessagesViewController.swift in Sources */,
 				9672B23926C118F100E8E72F /* DispatchesListModel.swift in Sources */,
+				96E0EA9126CFDEC1008E0329 /* NotificationName.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				04206C3A26BD6C8D006AB6A4 /* AvailableLoadsFilterVM.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,

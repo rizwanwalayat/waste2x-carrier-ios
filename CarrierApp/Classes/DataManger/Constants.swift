@@ -41,6 +41,7 @@ struct APIRoutes {
     static var polyLineUrl = ""
 
 }
+
 struct FireBaseVariables {
     static var fireBaseToken = ""
 }

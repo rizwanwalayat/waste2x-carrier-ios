@@ -35,13 +35,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ef-wq-isu">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2z0-DS-agO">
-                            <rect key="frame" x="0.0" y="44" width="414" height="53"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tu0-up-Uii">
-                                    <rect key="frame" x="30" y="15.5" width="22" height="22"/>
+                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="tu0-up-Uii" secondAttribute="height" multiplier="1:1" id="5Ua-Rk-p01"/>
                                         <constraint firstAttribute="height" constant="22" id="lgM-V5-a2U"/>
@@ -52,7 +52,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVZ-HE-OTD">
-                                    <rect key="frame" x="172" y="16" width="70" height="21"/>
+                                    <rect key="frame" x="168" y="16" width="78.5" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSY-0C-5Uv" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oy8-Gr-bea">

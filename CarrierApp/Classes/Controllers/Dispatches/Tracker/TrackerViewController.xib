@@ -40,16 +40,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xf-CT-Iv8">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="117.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-d9-wpg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="117.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqm-tj-jFy">
-                            <rect key="frame" x="0.0" y="56.5" width="414" height="61"/>
+                            <rect key="frame" x="0.0" y="56.5" width="414" height="65.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oot-9k-zgh">
-                                    <rect key="frame" x="16" y="-1.5" width="24" height="24"/>
+                                    <rect key="frame" x="16" y="1" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Oot-9k-zgh" secondAttribute="height" multiplier="1:1" id="6qo-r8-Zi2"/>
                                         <constraint firstAttribute="height" constant="24" id="tZM-XV-aVq"/>
@@ -61,7 +61,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-15-N0R">
-                                    <rect key="frame" x="160" y="0.0" width="94.5" height="21"/>
+                                    <rect key="frame" x="153.5" y="0.0" width="107.5" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -92,21 +92,21 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-uf-7zd" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="89.5" width="414" height="806.5"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kN-sf-AdF" userLabel="BottomView">
-                    <rect key="frame" x="0.0" y="726.5" width="414" height="169.5"/>
+                    <rect key="frame" x="0.0" y="716" width="414" height="180"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Truck" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-zL-SXv">
-                            <rect key="frame" x="15" y="25.5" width="98.5" height="119"/>
+                            <rect key="frame" x="15" y="30.5" width="98.5" height="119"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="119" id="7Qw-ke-PZ9"/>
                                 <constraint firstAttribute="width" constant="98.5" id="ah0-d1-FRa"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="259-vP-nEL">
-                            <rect key="frame" x="123.5" y="10" width="280.5" height="134.5"/>
+                            <rect key="frame" x="123.5" y="10" width="280.5" height="145"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9BG-aF-3pf">
                                     <rect key="frame" x="0.0" y="0.0" width="280.5" height="15"/>
@@ -127,13 +127,13 @@
                                     </subviews>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Delivering to the Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIn-Wt-hhL">
-                                    <rect key="frame" x="0.0" y="24" width="137" height="14"/>
+                                    <rect key="frame" x="0.0" y="24" width="151.5" height="17"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drv-Jl-BiX">
-                                    <rect key="frame" x="0.0" y="47" width="176" height="37.5"/>
+                                    <rect key="frame" x="0.0" y="50" width="196" height="45"/>
                                     <string key="text">Google - Mountain View,
 California, United State</string>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -141,7 +141,7 @@ California, United State</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jvh-aH-TVf">
-                                    <rect key="frame" x="0.0" y="93.5" width="280.5" height="12"/>
+                                    <rect key="frame" x="0.0" y="104" width="280.5" height="12"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location Icon" translatesAutoresizingMaskIntoConstraints="NO" id="dPQ-2f-LWw">
                                             <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
@@ -159,7 +159,7 @@ California, United State</string>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dTV-ig-Zex">
-                                    <rect key="frame" x="0.0" y="114.5" width="280.5" height="20"/>
+                                    <rect key="frame" x="0.0" y="125" width="280.5" height="20"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Distance Icon" translatesAutoresizingMaskIntoConstraints="NO" id="QT4-ud-giF">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>

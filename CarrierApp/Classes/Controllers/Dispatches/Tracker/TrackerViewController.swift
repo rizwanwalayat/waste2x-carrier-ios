@@ -13,9 +13,9 @@ class TrackerViewController: BaseViewController {
     
 //MARK: - Variables
     
-    var locationManager = CLLocationManager()
     var pickupLocation = ""
     var deliveryLocation = ""
+    var currentLocation = ""
     var currentLat = Double()
     var currentLon = Double()
    
@@ -48,47 +48,52 @@ class TrackerViewController: BaseViewController {
 
         pickupLocationLabel.setAttributedTextInLable("From", "6C6C6C", 10, "Isale, Bujumbura Rural, Burundi", "6C6C6C", 10)
         
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         mainView.roundCornersTopView(36)    
         mapView.roundCornersTopView(36)
-        initializeTheLocationManager()
         loadMap()
         dispatchRepLabel.text = viewModel?.data?.result?.details?.dispatch_rep ?? "Dispatch Rep"
         deliveryLocationLabel.text = viewModel?.data?.result?.delivery?.location ?? "Delivery Location"
         pickupLocationLabel.text = viewModel?.data?.result?.pickup?.location ?? "Pickup Location"
+        NotificationCenter.default.addObserver(self, selector: #selector(loadMap), name: .didReceiveLocation, object: nil)
     }
 
     
     //MARK: - Functions
 
-    func loadMap(){
+    
+    @objc func loadMap(){
         pickupLat = viewModel?.data?.result?.pickup?.latitude ?? 0.00
         pickupLng = viewModel?.data?.result?.pickup?.longitude ?? 0.00
         deliveryLat = viewModel?.data?.result?.delivery?.latitude ?? 0.00
         deliveryLng = viewModel?.data?.result?.delivery?.longitude ?? 0.00
         pickupLocation = "\(self.pickupLat),\(self.pickupLng)"
         deliveryLocation = "\(self.deliveryLat),\(self.deliveryLng)"
+        
+        if let location = LocationManager.shared.currentLocation {
+            currentLat = location.latitude
+            currentLon = location.longitude
+            currentLocation = "\(currentLat),\(currentLon)"
+            fetchGoogleMapData(Current: currentLocation, Pickup: pickupLocation, DropOff: deliveryLocation)
+        } else {
+            fetchGoogleMapData(Current: nil, Pickup: pickupLocation, DropOff: deliveryLocation)
 
-        markerUpdate(s_lat: pickupLng, s_lon: pickupLng, d_lat: deliveryLat, d_lon: deliveryLng)
-        fetchGoogleMapData(Starting: pickupLocation, Ending: deliveryLocation)
-        
-    }
-    
-    func initializeTheLocationManager() {
-            locationManager.delegate = self
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-        
         }
+        
+        
+        markerUpdate(s_lat: pickupLat, s_lon: pickupLng, d_lat: deliveryLat, d_lon: deliveryLng)
+    }
+        
     func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
 
         // MARK: Marker for source location
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
-        marker.title = "Starting"
-        marker.icon = UIImage (named: "startmark")
+        marker.title = "Pickup"
+        marker.icon = UIImage (named: "Location Next")
         
                 
                 
@@ -106,20 +111,26 @@ class TrackerViewController: BaseViewController {
             }
     }
 
-    func fetchGoogleMapData(Starting : String,Ending : String)
-    {   mapView.clear()
-        print(Starting,Ending)
-        APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(Starting)&destination=\(Ending)&mode=driving&key=\(googleAPIKey)"
+    func fetchGoogleMapData(Current : String?, Pickup: String, DropOff : String) {
+        
+        mapView.clear()
+        print(Pickup,DropOff)
+        if Current != nil {
+            APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(Current!)&destination=\(DropOff)&mode=driving&waypoints=\(Pickup)&key=\(googleAPIKey)"
+        } else {
+            APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(Pickup)&destination=\(DropOff)&mode=driving&key=\(googleAPIKey)"
+        }
+        
         print(APIRoutes.polyLineUrl)
         PolyLineAPIModel.PolyLineAPICall { jsonData, error, status, message in
             if jsonData?.routes != nil{
+                let item = jsonData!.routes.first
                 
-                
-            for item in jsonData!.routes {
-                self.deliveryLocationLabel.text = item.legs[0].end_address
-                self.timeLabel.text = item.legs[0].duration?.text
-                self.kmLabel.text = item.legs[0].distance?.text
-                let points = item.overviewPolyline?.points
+//            for item in jsonData!.routes {
+                self.deliveryLocationLabel.text = item?.legs[0].end_address
+                self.timeLabel.text = item?.legs[0].duration?.text
+                self.kmLabel.text = item?.legs[0].distance?.text
+                let points = item?.overviewPolyline?.points
                 let path = GMSPath.init(fromEncodedPath: points ?? "")
                 let polyline = GMSPolyline.init(path: path)
                 polyline.strokeColor = UIColor(named: "lineColor")!
@@ -130,15 +141,11 @@ class TrackerViewController: BaseViewController {
                     let bounds = GMSCoordinateBounds(path: path!)
                     self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
                 }
-            }
+//            }
 //                let cam = GMSCameraPosition(latitude: self.deliveryLat, longitude: self.deliveryLng, zoom: 10)
                 
-               
-                
             }
-            
         }
-
     }
     
     
@@ -149,21 +156,8 @@ class TrackerViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
-    
 }
 
-//MARK: - MapView
 
-extension TrackerViewController:CLLocationManagerDelegate{
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("location delegate call")
-        
-//        self.locationManager.stopUpdatingLocation()
-
-    }
-    
-    
-}
 
 
