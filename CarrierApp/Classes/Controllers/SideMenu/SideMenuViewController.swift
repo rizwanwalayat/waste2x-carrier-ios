@@ -159,7 +159,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
-                    Utility.setupRoot([vc])
+                    Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
                 
             }
@@ -171,7 +171,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = QuotationListViewController(nibName: "QuotationListViewController", bundle: nil)
-                    Utility.setupRoot([vc])
+                    Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
             }
             
@@ -182,7 +182,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
-                    Utility.setupRoot([vc])
+                    Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
             }
         case 3:
@@ -191,7 +191,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = ReceivableListViewController(nibName: "ReceivableListViewController", bundle: nil)
-                    Utility.setupRoot([vc])
+                    Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
             }
             
@@ -201,7 +201,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = ContractsViewController(nibName: "ContractsViewController", bundle: nil)
-                    Utility.setupRoot([vc])
+                    Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
             }
             
@@ -221,7 +221,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 isNeedToUpdateValue = false
                 self.hideSideMenu {
                     let vc = FaqViewController(nibName: "FaqViewController", bundle: nil)
-                    Utility.setupRoot([self.fromVC!, vc])
+                    Utility.setupRoot([self.fromVC!, vc], navgationController: self.fromVC!.navigationController)
                 }
             }
             
@@ -232,7 +232,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 isNeedToUpdateValue = false
                 self.hideSideMenu {
                     let vc = ContactViewController(nibName: "ContactViewController", bundle: nil)
-                    Utility.setupRoot([self.fromVC!, vc])
+                    Utility.setupRoot([self.fromVC!, vc], navgationController: self.fromVC!.navigationController)
                 }
             }
             
@@ -244,7 +244,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 self.hideSideMenu {
                     let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-                    Utility.setupRoot([vc])
+                    Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
             }
             self.present(actionVc, animated: false, completion: nil)
@@ -277,12 +277,12 @@ extension SideMenuViewController{
             Global.shared.paymentModel = result
             if Global.shared.paymentModel?.result?.details_submitted == true {
                 let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
-                Utility.setupRoot([vc])
+                Utility.setupRoot([self.fromVC!, vc], navgationController: self.fromVC!.navigationController)
             }
             else{
                 
                 let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                Utility.setupRoot([vc])
+                Utility.setupRoot([self.fromVC!, vc], navgationController: self.fromVC!.navigationController)
             }
         }
     }

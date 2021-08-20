@@ -24,7 +24,9 @@ class PaymentViewController: BaseViewController {
     }
     
     @IBAction func connectStripeAccount(_ sender: Any) {
-        Utility.setupHomeAsRootViewController()
+       // Utility.setupHomeAsRootViewController()
+        let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
+        Utility.setupRoot([vc], navgationController: self.navigationController)
         CreatePaymentModel.CreatePaymentApiFunction { result, error, status,message in
             if let url = URL(string: "\(result!.result)") {
                 UIApplication.shared.open(url)

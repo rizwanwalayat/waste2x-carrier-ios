@@ -46,9 +46,10 @@
                                         <constraint firstAttribute="height" constant="24" id="CRR-m9-Kdx"/>
                                         <constraint firstAttribute="width" secondItem="2wH-Zj-HR7" secondAttribute="height" multiplier="1:1" id="vxY-2W-HFD"/>
                                     </constraints>
-                                    <state key="normal" image="Sidemenu"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="BackButton"/>
                                     <connections>
-                                        <action selector="menuPressed:" destination="-1" eventType="touchUpInside" id="4lL-uG-AQp"/>
+                                        <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="Ycm-e3-aSe"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M9-jh-FDJ">
@@ -268,9 +269,9 @@ already exist</string>
     </objects>
     <resources>
         <image name="Account Icon" width="13" height="16"/>
+        <image name="BackButton" width="9" height="15"/>
         <image name="Email Icon" width="16" height="14.5"/>
         <image name="NavBar Header" width="375" height="142"/>
         <image name="Payment Connected" width="186.5" height="200"/>
-        <image name="Sidemenu" width="27" height="20"/>
     </resources>
 </document>

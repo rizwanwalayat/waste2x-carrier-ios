@@ -55,12 +55,12 @@ extension ChatMessagesViewController : TwillioChatDataModelDelegate
 {
     func failedToConnect() {
         
-        self.showToast(message: "Twillio Client Faild to connect ... !")
+        //self.showToast(message: "Twillio Client Faild to connect ... !")
     }
     
     func connectCompleted() {
         
-        self.showToast(message: "Connected ... !")
+        //self.showToast(message: "Connected ... !")
     }
     
     func reloadAllMessages() {
