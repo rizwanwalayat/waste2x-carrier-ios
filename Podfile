@@ -17,5 +17,5 @@ target 'CarrierApp' do
   pod 'SDWebImage'
   pod 'iOSDropDown'
   pod 'TwilioChatClient', '~> 2.6.6'
-  
+  pod 'Firebase/Database'
 end

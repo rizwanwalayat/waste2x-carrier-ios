@@ -171,5 +171,9 @@ class APIClient: APIClientHandler {
         _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 
+    func googleLocationPolyLineAPi( _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = [String:AnyObject]()
+        rawRequest(url: APIRoutes.polyLineUrl, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
+    }
 }
 

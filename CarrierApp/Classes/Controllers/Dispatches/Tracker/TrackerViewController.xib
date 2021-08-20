@@ -23,12 +23,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackerViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
-                <outlet property="addressLabel" destination="drv-Jl-BiX" id="D4l-qA-8t7"/>
                 <outlet property="bottomConst" destination="t6P-z0-zf9" id="29C-3S-Y20"/>
+                <outlet property="deliveryLocationLabel" destination="drv-Jl-BiX" id="D4l-qA-8t7"/>
+                <outlet property="dispatchRepLabel" destination="pKZ-6g-6TP" id="OwF-6Z-fVG"/>
                 <outlet property="kmLabel" destination="8fk-yb-PKc" id="7EU-K8-8pi"/>
-                <outlet property="locationLabel" destination="JBN-vy-35m" id="vnN-97-bd4"/>
                 <outlet property="mainView" destination="0kN-sf-AdF" id="Opv-eW-vr0"/>
                 <outlet property="mapView" destination="aWY-uf-7zd" id="1DH-Yt-HoK"/>
+                <outlet property="pickupLocationLabel" destination="JBN-vy-35m" id="vnN-97-bd4"/>
                 <outlet property="timeLabel" destination="Jbv-Xu-O7f" id="QDB-y9-G9i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

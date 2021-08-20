@@ -186,6 +186,8 @@
 		96DE174D26A01FE3007FCD9C /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */; };
 		96DE174E26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */; };
 		96DE174F26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DE174B26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib */; };
+		96E0EA8A26CBE571008E0329 /* TrackerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EA8926CBE571008E0329 /* TrackerVM.swift */; };
+		96E0EA8D26CBE807008E0329 /* PolyLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EA8C26CBE807008E0329 /* PolyLineModel.swift */; };
 		96E0FC1026BD7985007094DC /* ResetPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0FC0F26BD7985007094DC /* ResetPasswordVM.swift */; };
 		96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0FC1126BD799D007094DC /* CodeVerificationVM.swift */; };
 		B15E6762F9E144B246EE40F4 /* Pods_CarrierApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */; };
@@ -377,6 +379,8 @@
 		96DE174826A01FE3007FCD9C /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		96DE174A26A01FE3007FCD9C /* SideMenuItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuItemsTableViewCell.swift; sourceTree = "<group>"; };
 		96DE174B26A01FE3007FCD9C /* SideMenuItemsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuItemsTableViewCell.xib; sourceTree = "<group>"; };
+		96E0EA8926CBE571008E0329 /* TrackerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerVM.swift; sourceTree = "<group>"; };
+		96E0EA8C26CBE807008E0329 /* PolyLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolyLineModel.swift; sourceTree = "<group>"; };
 		96E0FC0F26BD7985007094DC /* ResetPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVM.swift; sourceTree = "<group>"; };
 		96E0FC1126BD799D007094DC /* CodeVerificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -428,6 +432,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				96E0EA8B26CBE7F8008E0329 /* Tracking */,
 				967A713B26BBCFC3002D72DD /* Observable.swift */,
 				04F6FD1426C3DB4C006D1A80 /* Messages */,
 				188D007C26C272E40076B5CE /* Payments */,
@@ -759,6 +764,7 @@
 		04C3091C26B81BB400BEC895 /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				96E0EA8826CBE550008E0329 /* ViewModel */,
 				04C3091D26B81BB400BEC895 /* TrackerViewController.swift */,
 				04C3091E26B81BB400BEC895 /* TrackerViewController.xib */,
 			);
@@ -1275,6 +1281,22 @@
 			path = tableView;
 			sourceTree = "<group>";
 		};
+		96E0EA8826CBE550008E0329 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96E0EA8926CBE571008E0329 /* TrackerVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		96E0EA8B26CBE7F8008E0329 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				96E0EA8C26CBE807008E0329 /* PolyLineModel.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
 		96E0FC0B26BD790E007094DC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1577,6 +1599,7 @@
 				18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
+				96E0EA8A26CBE571008E0329 /* TrackerVM.swift in Sources */,
 				04EFF03A26C4E89000551B9A /* MessagesViewModel.swift in Sources */,
 				9674909626B2ED1B001C4A62 /* DispatchesListTableViewCell.swift in Sources */,
 				188D007E26C272F00076B5CE /* PaymentDataModel.swift in Sources */,
@@ -1590,6 +1613,7 @@
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				18E1630C26C0073F00DD2EED /* ContractsDataModel.swift in Sources */,
 				0461744426BBBF290055DD3E /* FaqViewController.swift in Sources */,
+				96E0EA8D26CBE807008E0329 /* PolyLineModel.swift in Sources */,
 				18E1630E26C0075900DD2EED /* ReceivablesDataModel.swift in Sources */,
 				96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,

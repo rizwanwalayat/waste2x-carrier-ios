@@ -67,6 +67,9 @@ class DispatchesDetailPickDropModel: Mappable {
     var commodity = ""
     var arrival = ""
     var departure = ""
+    var latitude:Double = 0.00
+    var longitude:Double = 0.00
+
     
     required init?(map: Map) {
     }
@@ -76,6 +79,8 @@ class DispatchesDetailPickDropModel: Mappable {
         commodity <- map["commodity"]
         arrival <- map["arrival"]
         departure <- map["departure"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
     }
 }
 
