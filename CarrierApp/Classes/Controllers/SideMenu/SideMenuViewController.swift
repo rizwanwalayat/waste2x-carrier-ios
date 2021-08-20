@@ -178,7 +178,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         case 2:
             
             // Dispatches controller shows
-            if selectionIndex != 1 {
+            if selectionIndex != 2 {
                 
                 self.hideSideMenu {
                     let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
@@ -209,6 +209,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             
             if selectionIndex != 5
             {
+                isNeedToUpdateValue = false
                 self.hideSideMenu {
                     self.paymentApi()
                 }

@@ -99,6 +99,7 @@ class ChatMessagesViewController: BaseViewController {
         if enterMessageTextView.text == "" || enterMessageTextView.text == placeHolderText
         {
             self.enterMessageTextView.resignFirstResponder()
+            self.showToast(message: "Please enter text first")
             return
         }
         

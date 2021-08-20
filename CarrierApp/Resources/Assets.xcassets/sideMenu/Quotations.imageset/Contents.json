@@ -1,16 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Quotation Icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Vector (Stroke)@2x.png",
+      "filename" : "Quotation Icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Vector (Stroke)@3x.png",
+      "filename" : "Quotation Icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
