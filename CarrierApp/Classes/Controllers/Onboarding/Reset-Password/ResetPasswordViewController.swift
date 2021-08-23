@@ -12,9 +12,9 @@ import UIKit
 class ResetPasswordViewController: BaseViewController {
     
     //MARK:- IBOutlets
-    @IBOutlet weak var newPasswordTextField     : UITextField!
+    @IBOutlet weak var newPasswordTextField : UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var resetPasswordButton           : UIButton!
+    @IBOutlet weak var resetPasswordButton : UIButton!
     
     //MARK:- Variables
     var viewModel: ResetPasswordVM?

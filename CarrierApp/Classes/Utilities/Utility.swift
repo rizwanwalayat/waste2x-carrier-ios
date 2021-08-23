@@ -29,7 +29,7 @@ struct NetworkingConnection {
     class func loginRootViewController () {
         let loginViewController = LoginViewController()
         let navigationController = BaseNavigationViewController()
-        navigationController.viewControllers = [loginViewController]
+        navigationController.setViewControllers([loginViewController], animated: true)//viewControllers = [loginViewController]
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
         kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
@@ -39,7 +39,7 @@ struct NetworkingConnection {
         
         let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
         let navigationController = BaseNavigationViewController()
-        navigationController.viewControllers = [vc]
+        navigationController.setViewControllers([vc], animated: true)//viewControllers = [vc]
         navigationController.navigationBar.isHidden = true
         navigationController.navigationBar.barStyle = .black
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
@@ -47,14 +47,13 @@ struct NetworkingConnection {
         kApplicationWindow?.makeKeyAndVisible()
     }
     
-    class func setupRoot(_ controller : [UIViewController])
+    class func setupRoot(_ controller : [UIViewController], navgationController: UINavigationController?)
     {
-        let navigationController = BaseNavigationViewController()
-        navigationController.viewControllers = controller
-        navigationController.navigationBar.isHidden = true
-        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-        kApplicationWindow?.rootViewController = navigationController
-        kApplicationWindow?.makeKeyAndVisible()
+        navgationController?.setViewControllers(controller, animated: true)//viewControllers = controller
+        navgationController?.navigationBar.isHidden = true
+//        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
+//        kApplicationWindow?.rootViewController = navigationController
+//        kApplicationWindow?.makeKeyAndVisible()
     }
 
     

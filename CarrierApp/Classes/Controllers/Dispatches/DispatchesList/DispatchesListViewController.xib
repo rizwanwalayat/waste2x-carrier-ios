@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
@@ -172,10 +175,10 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNZ-S4-Boj" userLabel="No Data Label">
-                            <rect key="frame" x="170.5" y="388" width="73.5" height="23.5"/>
+                        <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Dispatches Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNZ-S4-Boj" userLabel="No Data Label">
+                            <rect key="frame" x="125.5" y="391" width="163" height="17.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                             <color key="textColor" name="secondaryText"/>
                             <nil key="highlightedColor"/>
                         </label>
