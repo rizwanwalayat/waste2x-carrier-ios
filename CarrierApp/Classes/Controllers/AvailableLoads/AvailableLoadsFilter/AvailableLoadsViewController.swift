@@ -30,13 +30,14 @@ class AvailableLoadsViewController: BaseViewController{
     
     var viewModel : AvailabelLoadsViewModel?
     var paramsData = [String : Any]()
-    
+    var placeholderTextCode = "A1A4B2"
     
     // MARK: - Controllers LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        textFieldPlaceHolderAdjustment()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +61,21 @@ class AvailableLoadsViewController: BaseViewController{
     }
     
 
-    
+    func textFieldPlaceHolderAdjustment()
+    {
+        pickupCountryTextField.attributedPlaceholder = NSAttributedString(string: "Country",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: placeholderTextCode)])
+        pickupStateTextField.attributedPlaceholder = NSAttributedString(string: "State",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: placeholderTextCode)])
+        pickupCityTextField.attributedPlaceholder = NSAttributedString(string: "City",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: placeholderTextCode)])
+        dropOffStateTextField.attributedPlaceholder = NSAttributedString(string: "Country",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: placeholderTextCode)])
+        dropOffCityTextField.attributedPlaceholder = NSAttributedString(string: "State",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: placeholderTextCode)])
+        dropOffCountryTextField.attributedPlaceholder = NSAttributedString(string: "City",
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: placeholderTextCode)])
+    }
     
     func setupDropdownCountryFields()
     {

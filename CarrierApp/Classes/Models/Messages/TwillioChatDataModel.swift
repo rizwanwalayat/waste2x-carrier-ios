@@ -91,9 +91,11 @@ class TwillioChatDataModel: NSObject {
         }
         
         let phoneNo = DataManager.shared.fetchPhoneNumber()
+    
         let options: [String: Any] = [
-            TCHChannelOptionUniqueName: phoneNo
-            ]
+            TCHChannelOptionUniqueName: phoneNo,
+            TCHChannelOptionType: app_name
+        ]
         channelsList.createChannel(options: options, completion: { channelResult, channel in
             if channelResult.isSuccessful() {
                 print("Channel created.")

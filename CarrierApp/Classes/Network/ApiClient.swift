@@ -167,7 +167,7 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         
         let phone = DataManager.shared.fetchPhoneNumber()
-        let url = "carriers/fetch_twilio_access_token/=\(phone)"
+        let url = "carriers/fetch_twilio_access_token/\(phone)"
         _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 
@@ -176,4 +176,3 @@ class APIClient: APIClientHandler {
         rawRequest(url: APIRoutes.polyLineUrl, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
     }
 }
-

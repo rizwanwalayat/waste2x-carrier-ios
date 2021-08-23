@@ -92,9 +92,9 @@ extension AvailableLoadsDetailViewController: UITextFieldDelegate {
         }
     }
     
-    func textFieldDidChangeSelection(_ textField: UITextField) {
+    @IBAction func textFieldValueChanged(_ sender: UITextField){
         
-        if textField.text!.count > 0 {
+        if provideQuotationTextField.text!.count > 0 {
             
             acceptButton.makeEnable(value: true)
         }
