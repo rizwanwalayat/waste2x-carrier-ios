@@ -175,5 +175,11 @@ class APIClient: APIClientHandler {
         let params = [String:AnyObject]()
         rawRequest(url: APIRoutes.polyLineUrl, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
     }
+    
+    func DispatchActionsApiFunctionCall(dispatch_id: String, action: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = ["dispatch_id": dispatch_id, "action": action ] as [String: AnyObject]
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        _ = sendRequest(APIRoutes.dispatchActions , parameters: params , httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
 }
 

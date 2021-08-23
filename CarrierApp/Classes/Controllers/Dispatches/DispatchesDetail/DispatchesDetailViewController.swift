@@ -13,7 +13,7 @@ class DispatchesDetailViewController: BaseViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var tableview : UITableView!
+    @IBOutlet weak var tableView : UITableView!
     //MARK: - Variables
     var viewModel: DispatchesDetailVM?
     var isDataLoaded: Bool = false
@@ -29,19 +29,19 @@ class DispatchesDetailViewController: BaseViewController {
         viewModel?.FetchDispatchesDetailData({ data, error, status, message in
             if (status ?? false), error == nil {
                 self.isDataLoaded = true
-                self.tableview.reloadData()
+                self.tableView.reloadData()
             } else {
-                
+                self.showToast(message: error?.localizedDescription ?? message )
             }
         })
     }
     func tableviewHandlings()
     {
-        tableview.register(UINib(nibName: "DispatchesDetailStatusCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailStatusCell")
-        tableview.register(UINib(nibName: "DispatchesDetailPickDropCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailPickDropCell")
+        tableView.register(UINib(nibName: "DispatchesDetailStatusCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailStatusCell")
+        tableView.register(UINib(nibName: "DispatchesDetailPickDropCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailPickDropCell")
 
-        tableview.rowHeight = UITableView.automaticDimension
-        tableview.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
 
     @objc func trackOrderBtnPressed(_ sender: UIButton){
@@ -56,6 +56,7 @@ class DispatchesDetailViewController: BaseViewController {
         orderDetailVC.viewModel = self.viewModel
         self.navigationController?.pushViewController(orderDetailVC, animated: true)
     }
+    
 }
 
 extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataSource
@@ -68,20 +69,23 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
         
         switch indexPath.row {
         case 0:
-            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailStatusCell", for: indexPath) as! DispatchesDetailStatusCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailStatusCell", for: indexPath) as! DispatchesDetailStatusCell
              cell.trackOrderBtn.addTarget(self, action: #selector(trackOrderBtnPressed(_:)), for: .touchUpInside)
              cell.viewOrderDetailBtn.addTarget(self, action: #selector(viewOrderDetailBtnPressed(_:)), for: .touchUpInside)
+            
             let cellData = viewModel?.data?.result?.details
             let status = viewModel?.data?.result?.dispatchStatus
             cell.configCell(data: cellData, status: status ?? .scheduled)
              return cell
         case 1:
-            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
+            cell.delegate = self
             let cellData = viewModel?.data?.result?.pickup
             cell.configCell(data: cellData, status: DispatchesDeliveryType.pickup)
             return cell
         case 2:
-            let cell = tableview.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
+            cell.delegate = self
             let cellData = viewModel?.data?.result?.delivery
             cell.configCell(data: cellData, status: DispatchesDeliveryType.delivery)
             return cell
@@ -93,5 +97,21 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
+}
+
+//MARK: - Protocol
+
+extension DispatchesDetailViewController: DispatchesDetailDelegate {
+    func sendDisptachAction(action: DispatchesActionsType) {
+        viewModel?.sendDispatchAction(action: action, { data, error, status, message in
+            if status ?? false, error == nil {
+                self.tableView.reloadData()
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+            }
+        })
+    }
+    
     
 }

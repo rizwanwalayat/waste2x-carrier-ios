@@ -193,6 +193,9 @@
                                                                 <real key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="departedPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dQ1-Td-GKu"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saK-zH-KEB">
                                                         <rect key="frame" x="123" y="0.0" width="115" height="39"/>
@@ -210,6 +213,9 @@
                                                                 <real key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="arrivedPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RtZ-8o-ikY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -279,8 +285,11 @@
                 <outlet property="DeliveryIcon" destination="85K-fN-ssv" id="oEm-wu-v6L"/>
                 <outlet property="DeliveryLabel" destination="ovJ-Kw-BvW" id="EoG-9H-bJ1"/>
                 <outlet property="arrivalLabel" destination="u4j-W8-fnH" id="Wx9-cF-z05"/>
+                <outlet property="arrivedBtn" destination="saK-zH-KEB" id="E2X-Op-tL1"/>
                 <outlet property="commodityLabel" destination="DhM-BV-fjc" id="LUh-Eg-pRR"/>
+                <outlet property="departedBtn" destination="iVq-Qf-J1A" id="vEd-Fk-VMJ"/>
                 <outlet property="departureLabel" destination="dvR-Ed-IE3" id="dBd-cI-umK"/>
+                <outlet property="imageUploadBtn" destination="Y9e-Dm-UdP" id="iST-kK-amJ"/>
                 <outlet property="locationLabel" destination="KeT-kp-lEm" id="nUA-SQ-7DL"/>
             </connections>
             <point key="canvasLocation" x="89.855072463768124" y="138.61607142857142"/>

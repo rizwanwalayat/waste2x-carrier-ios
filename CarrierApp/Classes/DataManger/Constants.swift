@@ -37,8 +37,9 @@ struct APIRoutes {
     static var paymentUrl = "carriers/api/payments"
     static var createPaymentUrl = "payment_method/api_create_stripe"
     static var dispatchesDetail = "carriers/api/dispatch/detail"
-
     static var polyLineUrl = ""
+    static var dispatchActions = "carriers/api/dispatch_actions"
+
 
 }
 

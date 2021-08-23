@@ -18,7 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DispatchesDetailViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
                 <outlet property="baseHolderView" destination="IMZ-lg-8QU" id="qYk-zy-AD1"/>
-                <outlet property="tableview" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
+                <outlet property="tableView" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
                 <outlet property="titleLabel" destination="6iR-Mv-qzE" id="pX7-J4-8jd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xfd-B3-bjY"/>
             </connections>
@@ -29,10 +29,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-lg-8QU" userLabel="Main Content View">
-                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
-                            <rect key="frame" x="20" y="0.0" width="374" height="799"/>
+                            <rect key="frame" x="20" y="0.0" width="374" height="794.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="50"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,13 +51,13 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-yg-uCy" userLabel="Header View">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCZ-mD-bhU" userLabel="Header Inner View">
-                            <rect key="frame" x="0.0" y="44" width="414" height="53"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXP-ur-Ddt">
-                                    <rect key="frame" x="16" y="14.5" width="24" height="24"/>
+                                    <rect key="frame" x="16" y="17" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="EXP-ur-Ddt" secondAttribute="height" multiplier="1:1" id="eUl-HJ-9yk"/>
                                         <constraint firstAttribute="height" constant="24" id="o7R-5i-hAa"/>
@@ -69,7 +69,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dispatches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-Mv-qzE">
-                                    <rect key="frame" x="162" y="16" width="90.5" height="21"/>
+                                    <rect key="frame" x="155.5" y="16" width="103" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" name="selectedText"/>
                                     <nil key="highlightedColor"/>

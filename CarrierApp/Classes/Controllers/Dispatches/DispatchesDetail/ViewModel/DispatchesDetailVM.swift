@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 typealias DispatchesDetailCompletionHandler = (_ data: DispatchesDetailModel?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
+typealias DispatchActionCompletionHandler = (_ data: Any?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
 
 class DispatchesDetailVM: NSObject {
     var data: DispatchesDetailModel?
@@ -32,7 +33,16 @@ class DispatchesDetailVM: NSObject {
                 completionHandler(nil, error, status, message)
             }
         }
-        
+    }
+    
+    func sendDispatchAction(action: DispatchesActionsType, _ completionHandler: @escaping DispatchActionCompletionHandler){
+        Utility.showLoading()
+        APIClient.shared.DispatchActionsApiFunctionCall(dispatch_id: "\(id)", action: action.rawValue) { result, error, status, message in
+            Utility.hideLoading()
+            if status, error == nil {
+                completionHandler(result, error, status, message)
+            }
+        }
     }
 }
 
