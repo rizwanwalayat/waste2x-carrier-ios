@@ -96,9 +96,10 @@ class ChatMessagesViewController: BaseViewController {
     
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         
+        //self.enterMessageTextView.resignFirstResponder()
+        
         if enterMessageTextView.text == "" || enterMessageTextView.text == placeHolderText
         {
-            self.enterMessageTextView.resignFirstResponder()
             self.showToast(message: "Please enter text first")
             return
         }
@@ -115,13 +116,11 @@ class ChatMessagesViewController: BaseViewController {
                 if result!.isSuccessful() {
                     
                     self.enterMessageTextView.text = ""
-                    self.enterMessageTextView.resignFirstResponder()
                     self.constHeightMessagesTextView.constant = 34.0
                     self.view.layoutIfNeeded()
                 }
             } else {
                 
-                self.enterMessageTextView.resignFirstResponder()
                 self.showToast(message: "Unable to send message")
             }
         }
