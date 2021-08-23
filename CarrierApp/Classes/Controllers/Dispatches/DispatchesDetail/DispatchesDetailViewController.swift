@@ -26,6 +26,10 @@ class DispatchesDetailViewController: BaseViewController {
         tableviewHandlings()
     }
     override func viewWillAppear(_ animated: Bool) {
+        loadDispatchesDetails()
+    }
+    
+    func loadDispatchesDetails() {
         viewModel?.FetchDispatchesDetailData({ data, error, status, message in
             if (status ?? false), error == nil {
                 self.isDataLoaded = true
@@ -35,6 +39,7 @@ class DispatchesDetailViewController: BaseViewController {
             }
         })
     }
+    
     func tableviewHandlings()
     {
         tableView.register(UINib(nibName: "DispatchesDetailStatusCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailStatusCell")
@@ -82,12 +87,18 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
             cell.delegate = self
             let cellData = viewModel?.data?.result?.pickup
             cell.configCell(data: cellData, status: DispatchesDeliveryType.pickup)
+            cell.arrivedBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.departure))
+            cell.imageUploadBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.arrival))
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
             cell.delegate = self
             let cellData = viewModel?.data?.result?.delivery
             cell.configCell(data: cellData, status: DispatchesDeliveryType.delivery)
+            cell.departedBtn.makeEnable(value: Utility.isTextFieldHasText(textField: viewModel?.data?.result?.pickup?.arrival ?? ""))
+            cell.arrivedBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.departure))
+            cell.imageUploadBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.arrival))
+
             return cell
         default:
             return UITableViewCell()
@@ -106,7 +117,7 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate {
     func sendDisptachAction(action: DispatchesActionsType) {
         viewModel?.sendDispatchAction(action: action, { data, error, status, message in
             if status ?? false, error == nil {
-                self.tableView.reloadData()
+                self.loadDispatchesDetails()
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }
