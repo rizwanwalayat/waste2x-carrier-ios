@@ -24,7 +24,7 @@ class DispatchesDetailViewController: BaseViewController {
         super.viewDidLoad()
 
         tableviewHandlings()
-        locationPermissionHandlings()
+//        locationPermissionHandlings()
     }
     override func viewWillAppear(_ animated: Bool) {
         loadDispatchesDetails()
@@ -123,6 +123,10 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
 
 extension DispatchesDetailViewController: DispatchesDetailDelegate {
     func sendDisptachAction(action: DispatchesActionsType) {
+        if action == .departedToPickup {
+            LocationManager.shared.startUpdatingLocation()
+        }
+
         viewModel?.sendDispatchAction(action: action, { data, error, status, message in
             if status ?? false, error == nil {
                 self.loadDispatchesDetails()
