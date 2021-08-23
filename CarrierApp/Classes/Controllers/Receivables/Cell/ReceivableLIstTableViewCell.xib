@@ -27,7 +27,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbD-VT-nKa">
-                        <rect key="frame" x="0.0" y="0.0" width="327" height="223"/>
+                        <rect key="frame" x="0.0" y="16" width="327" height="223"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-HG-Xja">
                                 <rect key="frame" x="0.0" y="219" width="327" height="4"/>
@@ -243,8 +243,8 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="LbD-VT-nKa" secondAttribute="bottom" constant="16" id="CJv-D4-41h"/>
-                    <constraint firstItem="LbD-VT-nKa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TXT-c0-wEj"/>
+                    <constraint firstAttribute="bottom" secondItem="LbD-VT-nKa" secondAttribute="bottom" id="CJv-D4-41h"/>
+                    <constraint firstItem="LbD-VT-nKa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="TXT-c0-wEj"/>
                     <constraint firstItem="LbD-VT-nKa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="USo-uN-x0u"/>
                     <constraint firstAttribute="trailing" secondItem="LbD-VT-nKa" secondAttribute="trailing" id="bhk-iM-Gh9"/>
                 </constraints>

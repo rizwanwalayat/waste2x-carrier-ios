@@ -11,7 +11,7 @@ import UIKit
 var kApplicationWindow = Utility.getAppDelegate()!.window
 var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 
-
+var app_name = "CarrierApp"
 
 
 struct APIRoutes {
