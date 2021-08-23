@@ -19,13 +19,16 @@ class TrackerViewController: BaseViewController {
     var currentLat = Double()
     var currentLon = Double()
    
-    var timer = Timer()
     var trackID = 1
     var viewModel:TrackerVM?
     var pickupLat = Double()
     var pickupLng = Double()
     var deliveryLat = Double()
     var deliveryLng = Double()
+    
+    /// for timer
+    var counter = 29
+    var timer = Timer()
     
     //MARK: - Outlets
     
@@ -44,8 +47,6 @@ class TrackerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-
         pickupLocationLabel.setAttributedTextInLable("From", "6C6C6C", 10, "Isale, Bujumbura Rural, Burundi", "6C6C6C", 10)
         
         
@@ -54,63 +55,47 @@ class TrackerViewController: BaseViewController {
         super .viewWillAppear(animated)
         mainView.roundCornersTopView(36)    
         mapView.roundCornersTopView(36)
-        loadMap()
+        timerHandligs()
         dispatchRepLabel.text = viewModel?.data?.result?.details?.dispatch_rep ?? "Dispatch Rep"
         deliveryLocationLabel.text = viewModel?.data?.result?.delivery?.location ?? "Delivery Location"
         pickupLocationLabel.text = viewModel?.data?.result?.pickup?.location ?? "Pickup Location"
-        NotificationCenter.default.addObserver(self, selector: #selector(loadMap), name: .didReceiveLocation, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(loadMap), name: .didReceiveLocation, object: nil)
     }
 
     
     //MARK: - Functions
 
+    func timerHandligs()
+    {
+        self.timer.invalidate()
+        self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
+    }
     
-    @objc func loadMap(){
-        pickupLat = viewModel?.data?.result?.pickup?.latitude ?? 0.00
-        pickupLng = viewModel?.data?.result?.pickup?.longitude ?? 0.00
-        deliveryLat = viewModel?.data?.result?.delivery?.latitude ?? 0.00
-        deliveryLng = viewModel?.data?.result?.delivery?.longitude ?? 0.00
-        pickupLocation = "\(self.pickupLat),\(self.pickupLng)"
-        deliveryLocation = "\(self.deliveryLat),\(self.deliveryLng)"
+    @objc func timerAction( _ timer : Timer) {
+        counter += 1
         
-        if let location = LocationManager.shared.currentLocation {
-            currentLat = location.latitude
-            currentLon = location.longitude
-            currentLocation = "\(currentLat),\(currentLon)"
-            fetchGoogleMapData(Current: currentLocation, Pickup: pickupLocation, DropOff: deliveryLocation)
-        } else {
-            fetchGoogleMapData(Current: nil, Pickup: pickupLocation, DropOff: deliveryLocation)
-
+        if counter == 30
+        {
+            timer.invalidate()
+            counter = 0
+            loadMap()
         }
-        
-        
-        markerUpdate(s_lat: pickupLat, s_lon: pickupLng, d_lat: deliveryLat, d_lon: deliveryLng)
     }
+    
+    //MARK: - IBOutlets
+    
+    @IBAction func backAction(_ sender: Any) {
         
-    func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
-
-        // MARK: Marker for source location
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
-        marker.title = "Pickup"
-        marker.icon = UIImage (named: "Location Next")
-        
-                
-                
-        // MARK: Marker for destination location
-        let marker1 = GMSMarker()
-        marker1.position = CLLocationCoordinate2D(latitude: d_lat, longitude: d_lon)
-        marker1.title = "Ending"
-        marker1.icon = UIImage (named: "endmark")
-        
-        
-        DispatchQueue.main.async {
-            marker.map = self.mapView
-            marker1.map = self.mapView
-            
-            }
+        self.navigationController?.popViewController(animated: true)
     }
+    
+}
 
+
+// MARK: - Maps Related
+extension TrackerViewController
+{
+    
     func fetchGoogleMapData(Current : String?, Pickup: String, DropOff : String) {
         
         mapView.clear()
@@ -148,16 +133,52 @@ class TrackerViewController: BaseViewController {
         }
     }
     
-    
-    //MARK: - IBOutlets
-    
-    @IBAction func backAction(_ sender: Any) {
+    @objc func loadMap(){
+        pickupLat = viewModel?.data?.result?.pickup?.latitude ?? 0.00
+        pickupLng = viewModel?.data?.result?.pickup?.longitude ?? 0.00
+        deliveryLat = viewModel?.data?.result?.delivery?.latitude ?? 0.00
+        deliveryLng = viewModel?.data?.result?.delivery?.longitude ?? 0.00
+        pickupLocation = "\(self.pickupLat),\(self.pickupLng)"
+        deliveryLocation = "\(self.deliveryLat),\(self.deliveryLng)"
+        if let location = LocationManager.shared.currentLocation {
+            currentLat = location.latitude
+            currentLon = location.longitude
+            currentLocation = "\(currentLat),\(currentLon)"
+            fetchGoogleMapData(Current: currentLocation, Pickup: pickupLocation, DropOff: deliveryLocation)
+        } else {
+            fetchGoogleMapData(Current: nil, Pickup: pickupLocation, DropOff: deliveryLocation)
+            
+        }
         
-        self.navigationController?.popViewController(animated: true)
+        
+        markerUpdate(s_lat: pickupLat, s_lon: pickupLng, d_lat: deliveryLat, d_lon: deliveryLng)
     }
     
+        
+    func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
+        
+        // MARK: Marker for source location
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
+        marker.title = "Pickup"
+        marker.icon = UIImage (named: "Location Next")
+        
+        
+        
+        // MARK: Marker for destination location
+        let marker1 = GMSMarker()
+        marker1.position = CLLocationCoordinate2D(latitude: d_lat, longitude: d_lon)
+        marker1.title = "Ending"
+        marker1.icon = UIImage (named: "endmark")
+        
+        
+        DispatchQueue.main.async {
+            marker.map = self.mapView
+            marker1.map = self.mapView
+            
+        }
+    }
 }
-
 
 
 

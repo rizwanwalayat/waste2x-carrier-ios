@@ -37,7 +37,6 @@ class SideMenuViewController: BaseViewController {
         leadingConstOfScrollView.constant    = -270
         mainShadowView.alpha                 = 0
         self.selectionIndex = Global.shared.sidemenuLastSlectedIndex
-        customMethodsForSideMenu()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -46,7 +45,7 @@ class SideMenuViewController: BaseViewController {
         headerView.layer.masksToBounds = true
         phoneNoHolderView.layer.cornerRadius = 20
         phoneNoHolderView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
-        
+        customMethodsForSideMenu()
     }
     
     override func viewDidAppear(_ animated: Bool) {

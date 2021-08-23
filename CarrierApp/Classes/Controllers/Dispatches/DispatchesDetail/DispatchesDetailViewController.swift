@@ -24,6 +24,7 @@ class DispatchesDetailViewController: BaseViewController {
         super.viewDidLoad()
 
         tableviewHandlings()
+        locationPermissionHandlings()
     }
     override func viewWillAppear(_ animated: Bool) {
         viewModel?.FetchDispatchesDetailData({ data, error, status, message in
@@ -55,6 +56,13 @@ class DispatchesDetailViewController: BaseViewController {
         let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
         orderDetailVC.viewModel = self.viewModel
         self.navigationController?.pushViewController(orderDetailVC, animated: true)
+    }
+    
+    private func locationPermissionHandlings()
+    {
+        if !isLocationServicesEnabled(){
+            alertForAccesLocationMandatory()
+        }
     }
     
 }

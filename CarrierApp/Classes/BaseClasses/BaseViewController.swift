@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import GoogleMaps
 
 class BaseViewController: UIViewController {
 
@@ -108,6 +109,46 @@ class BaseViewController: UIViewController {
             completionHandler()
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func isLocationServicesEnabled() -> Bool {
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                return false
+            case .authorizedAlways, .authorizedWhenInUse:
+                return true
+            @unknown default:
+                return false
+            }
+        }
+        
+        return false
+    }
+    
+    func alertForAccesLocationMandatory()
+    {
+        /// for
+        let alertCont = UIAlertController(title: "Error", message: "Please allow app to access your current location", preferredStyle: .alert)
+
+        alertCont.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (action) in
+            if URL(string: UIApplication.openSettingsURLString) != nil {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+                } else {
+                    if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.openURL(appSettings)
+                    }
+                }
+            }
+        }))
+
+        alertCont.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+
+            self.navigationController?.popViewController(animated: true)
+        }))
+
+        self.present(alertCont, animated: true, completion: nil)
     }
     
     
