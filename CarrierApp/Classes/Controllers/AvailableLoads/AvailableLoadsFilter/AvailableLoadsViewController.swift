@@ -207,6 +207,11 @@ class AvailableLoadsViewController: BaseViewController{
         self.dropOffCityTextField.text = ""
         self.dropOffCityTextField.selectedIndex = nil
         self.paramsData.removeAll()
+        
+        self.setupDropdownCitiesFieldsDropoff(true)
+        self.setupDropdownCitiesFieldsPickup(true)
+        self.setupDropDownStatesFieldsForDropoff(true)
+        self.setupDropDownStatesFieldsForPickup(true)
     }
     
     func isAvailableForApplyFilter()

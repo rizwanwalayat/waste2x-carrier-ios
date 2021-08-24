@@ -13,22 +13,12 @@ class TrackerViewController: BaseViewController {
     
 //MARK: - Variables
     
-    var pickupLocation = ""
-    var deliveryLocation = ""
-    var currentLocation = ""
-    var currentLat = Double()
-    var currentLon = Double()
    
     var trackID = 1
     var viewModel:TrackerVM?
-    var pickupLat = Double()
-    var pickupLng = Double()
-    var deliveryLat = Double()
-    var deliveryLng = Double()
     var deliveryType = DispatchesDeliveryType.none
     
     /// for timer
-    var counter = 29
     var timer = Timer()
     
     //MARK: - Outlets
@@ -69,18 +59,12 @@ class TrackerViewController: BaseViewController {
     func timerHandligs()
     {
         self.timer.invalidate()
-        self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
     }
     
     @objc func timerAction( _ timer : Timer) {
-        counter += 1
         
-        if counter == 30
-        {
-            timer.invalidate()
-            counter = 0
-            loadMap()
-        }
+        loadMap()
     }
     
     //MARK: - IBOutlets
@@ -97,15 +81,13 @@ class TrackerViewController: BaseViewController {
 extension TrackerViewController
 {
     
-    func fetchGoogleMapData(Current : String?, Pickup: String, DropOff : String) {
+    func fetchGoogleMapData(origin: String, destination : String) {
         
         mapView.clear()
-        print(Pickup,DropOff)
-        if Current != nil {
-            APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(Current!)&destination=\(DropOff)&mode=driving&waypoints=\(Pickup)&key=\(googleAPIKey)"
-        } else {
-            APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(Pickup)&destination=\(DropOff)&mode=driving&key=\(googleAPIKey)"
-        }
+        
+       
+        APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(googleAPIKey)"
+        
         
         print(APIRoutes.polyLineUrl)
         PolyLineAPIModel.PolyLineAPICall { jsonData, error, status, message in
@@ -135,24 +117,35 @@ extension TrackerViewController
     }
     
     @objc func loadMap(){
-        pickupLat = viewModel?.data?.result?.pickup?.latitude ?? 0.00
-        pickupLng = viewModel?.data?.result?.pickup?.longitude ?? 0.00
-        deliveryLat = viewModel?.data?.result?.delivery?.latitude ?? 0.00
-        deliveryLng = viewModel?.data?.result?.delivery?.longitude ?? 0.00
-        pickupLocation = "\(self.pickupLat),\(self.pickupLng)"
-        deliveryLocation = "\(self.deliveryLat),\(self.deliveryLng)"
+        let pickupLat = viewModel?.data?.result?.pickup?.latitude ?? 0.00
+        let pickupLng = viewModel?.data?.result?.pickup?.longitude ?? 0.00
+        let deliveryLat = viewModel?.data?.result?.delivery?.latitude ?? 0.00
+        let deliveryLng = viewModel?.data?.result?.delivery?.longitude ?? 0.00
+        
         if let location = LocationManager.shared.currentLocation {
-            currentLat = location.latitude
-            currentLon = location.longitude
-            currentLocation = "\(currentLat),\(currentLon)"
-            fetchGoogleMapData(Current: currentLocation, Pickup: pickupLocation, DropOff: deliveryLocation)
-        } else {
-            fetchGoogleMapData(Current: nil, Pickup: pickupLocation, DropOff: deliveryLocation)
+            let currentLat = location.latitude
+            let currentLon = location.longitude
             
+            let sLat = currentLat
+            let sLon = currentLon
+            var dLat = pickupLat
+            var dLon = pickupLng
+            
+            if deliveryType == .delivery
+            {
+                dLat = deliveryLat
+                dLon = deliveryLng
+            }
+            
+            let originLocation = "\(sLat),\(sLon)"
+            let destinationLocation = "\(dLat),\(dLon)"
+            
+            fetchGoogleMapData(origin: originLocation, destination: destinationLocation)
+            
+            
+            self.markerUpdate(s_lat: sLat, s_lon: sLon, d_lat: dLat, d_lon: dLon)
         }
         
-        
-        markerUpdate(s_lat: pickupLat, s_lon: pickupLng, d_lat: deliveryLat, d_lon: deliveryLng)
     }
     
         
