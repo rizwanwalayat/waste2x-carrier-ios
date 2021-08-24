@@ -11,13 +11,17 @@ import UIKit
 enum DispatchesDeliveryType: String {
     case pickup = "Pickup"
     case delivery = "Delivery"
+    case none = ""
 }
 
 enum DispatchesActionsType: String {
     case departedToPickup = "Departed To Pickup"
     case pickupArrived = "Pickup Arrived"
+    case pickupImage = "PICK_UP"
     case departedToDeliver = "Departed To Deliver"
     case delivered = "Delivered"
+    case deliveryImage = "DROP_OFF"
+    case none = ""
 }
 
 protocol DispatchesDetailDelegate: AnyObject {
@@ -61,6 +65,8 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
         case .delivery:
             DeliveryIcon.image = UIImage(named: "Drop Off Icon with Bg Big")
             DeliveryLabel.text = "Delivery"
+        case .none:
+            print("")
         }
         
         locationLabel.text = data?.location
@@ -68,25 +74,25 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
         arrivalLabel.text = data?.arrival
         departureLabel.text = data?.departure
     }
-    
-    
-    //MARK: - Actions
-    @IBAction func departedPressed(_ sender: Any) {
-        switch status {
-        case .pickup:
-            delegate?.sendDisptachAction(action: .departedToPickup)
-        case .delivery:
-            delegate?.sendDisptachAction(action: .departedToDeliver)
-        }
-    }
-    
-    @IBAction func arrivedPressed(_ sender: Any) {
-        switch status {
-        case .pickup:
-            delegate?.sendDisptachAction(action: .pickupArrived)
-        case .delivery:
-            delegate?.sendDisptachAction(action: .delivered)
-        }
-    }
+
+
+//    //MARK: - Actions
+//    @IBAction func departedPressed(_ sender: Any) {
+//        switch status {
+//        case .pickup:
+//            delegate?.sendDisptachAction(action: .departedToPickup)
+//        case .delivery:
+//            delegate?.sendDisptachAction(action: .departedToDeliver)
+//        }
+//    }
+//
+//    @IBAction func arrivedPressed(_ sender: Any) {
+//        switch status {
+//        case .pickup:
+//            delegate?.sendDisptachAction(action: .pickupArrived)
+//        case .delivery:
+//            delegate?.sendDisptachAction(action: .delivered)
+//        }
+//    }
     
 }

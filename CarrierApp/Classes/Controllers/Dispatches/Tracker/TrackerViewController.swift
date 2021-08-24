@@ -25,6 +25,7 @@ class TrackerViewController: BaseViewController {
     var pickupLng = Double()
     var deliveryLat = Double()
     var deliveryLng = Double()
+    var deliveryType = DispatchesDeliveryType.none
     
     /// for timer
     var counter = 29

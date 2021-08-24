@@ -48,7 +48,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func requestUserPermissionsAndStartUpdatingLocation()
     {
         self.manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
+       // manager.startUpdatingLocation()
     }
     /**************************************************/
     // MARK: Control Mechanisms

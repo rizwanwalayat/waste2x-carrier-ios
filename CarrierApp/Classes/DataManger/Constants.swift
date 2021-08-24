@@ -39,7 +39,7 @@ struct APIRoutes {
     static var dispatchesDetail = "carriers/api/dispatch/detail"
     static var polyLineUrl = ""
     static var dispatchActions = "carriers/api/dispatch_actions"
-
+    static var postImage = baseUrl + "carriers/api/pod_upload"
 
 }
 

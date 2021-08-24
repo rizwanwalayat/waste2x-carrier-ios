@@ -23,7 +23,7 @@ class Global {
     var fireBaseToken = ""
     var paymentModel : PaymentModel?
     var sidemenuLastSlectedIndex = 0
-    
+    var isSwitchButtonOn = false
     
     
     func convertLocationToAddress(location: CLLocation, _ completionHandler: ((Bool, String?) -> Void)?)

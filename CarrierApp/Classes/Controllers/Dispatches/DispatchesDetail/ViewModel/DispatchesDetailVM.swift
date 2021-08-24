@@ -44,5 +44,21 @@ class DispatchesDetailVM: NSObject {
             }
         }
     }
+    
+    func uploadImageToServer(_ params : [String: Any], _ completionHandler: @escaping DispatchActionCompletionHandler){
+        
+        var parameters = params
+        parameters["dispatch_id"] = id
+        Utility.showLoading()
+        APIClient.shared.saveDispatchesImage(params: parameters) { result, error, success, message in
+            
+            Utility.hideLoading()
+            if success, error == nil {
+                completionHandler(result, error, success, message)
+            }
+        }
+    }
+    
+    
 }
 

@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var demo: Bool = true
 //    var weaterCalldelegate:WeatherCallDelegate?
     var locationManager = CLLocationManager()
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
         NFX.sharedInstance().start()
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
@@ -59,6 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
+        
+        LocationManager.shared.requestUserPermissionsAndStartUpdatingLocation()
         return true
     }
 

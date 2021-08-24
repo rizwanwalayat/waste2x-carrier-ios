@@ -193,9 +193,6 @@
                                                                 <real key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="departedPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dQ1-Td-GKu"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saK-zH-KEB">
                                                         <rect key="frame" x="123" y="0.0" width="115" height="39"/>
@@ -213,9 +210,6 @@
                                                                 <real key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="arrivedPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RtZ-8o-ikY"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

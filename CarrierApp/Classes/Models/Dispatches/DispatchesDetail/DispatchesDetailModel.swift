@@ -67,6 +67,7 @@ class DispatchesDetailPickDropModel: Mappable {
     var commodity = ""
     var arrival = ""
     var departure = ""
+    var isImage = false
     var latitude:Double = 0.00
     var longitude:Double = 0.00
 
@@ -81,6 +82,7 @@ class DispatchesDetailPickDropModel: Mappable {
         departure <- map["departure"]
         latitude <- map["latitude"]
         longitude <- map["longitude"]
+        isImage <- map["image"]
     }
 }
 

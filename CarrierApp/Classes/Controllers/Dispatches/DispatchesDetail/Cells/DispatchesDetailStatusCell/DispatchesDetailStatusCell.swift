@@ -19,7 +19,7 @@ class DispatchesDetailStatusCell: BaseTableViewCell {
     @IBOutlet weak var dispatchStatusLabel: UILabel!
     @IBOutlet weak var dispatchIDLabel: UILabel!
     @IBOutlet weak var deliveredTimeLabel: UILabel!
-    
+    @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var coloredStatusView: UIView!
     @IBOutlet weak var viewOrderDetailBtn: UIButton!
     @IBOutlet weak var trackOrderBtn: UIButton!

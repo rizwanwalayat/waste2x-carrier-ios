@@ -14,9 +14,13 @@ class DispatchesDetailViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableView : UITableView!
+    
     //MARK: - Variables
+    
     var viewModel: DispatchesDetailVM?
     var isDataLoaded: Bool = false
+    var selectedState = DispatchesActionsType.departedToPickup
+    var deliveryType = DispatchesDeliveryType.none
     
     // MARK: - Controller's LifeCycle
     
@@ -24,24 +28,25 @@ class DispatchesDetailViewController: BaseViewController {
         super.viewDidLoad()
 
         tableviewHandlings()
-//        locationPermissionHandlings()
+        locationPermissionHandlings()
     }
     override func viewWillAppear(_ animated: Bool) {
         loadDispatchesDetails()
     }
     
-    func loadDispatchesDetails() {
+    private func loadDispatchesDetails() {
         viewModel?.FetchDispatchesDetailData({ data, error, status, message in
             if (status ?? false), error == nil {
                 self.isDataLoaded = true
                 self.tableView.reloadData()
+                self.dataPopulateHandlings()
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }
         })
     }
     
-    func tableviewHandlings()
+    private func tableviewHandlings()
     {
         tableView.register(UINib(nibName: "DispatchesDetailStatusCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailStatusCell")
         tableView.register(UINib(nibName: "DispatchesDetailPickDropCell", bundle: nil), forCellReuseIdentifier: "DispatchesDetailPickDropCell")
@@ -49,25 +54,108 @@ class DispatchesDetailViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
     }
-
-    @objc func trackOrderBtnPressed(_ sender: UIButton){
-        let trackerVC = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
-        let trackerVM = TrackerVM()
-        trackerVM.data = viewModel?.data
-        trackerVC.viewModel = trackerVM
-        self.navigationController?.pushViewController(trackerVC, animated: true)
-    }
-    @objc func viewOrderDetailBtnPressed(_ sender: UIButton){
-        let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
-        orderDetailVC.viewModel = self.viewModel
-        self.navigationController?.pushViewController(orderDetailVC, animated: true)
-    }
     
     private func locationPermissionHandlings()
     {
         if !isLocationServicesEnabled(){
             alertForAccesLocationMandatory()
         }
+    }
+    
+    private func dataPopulateHandlings()
+    {
+        if viewModel?.data?.result?.dispatchStatus == .in_transit{
+            
+            locationUpdateAndSwitchHandlings(false)
+        }
+        
+        
+        if viewModel?.data?.result?.pickup?.isImage ?? false {
+            selectedState = .none
+            deliveryType = .none
+            locationUpdateAndSwitchHandlings(true)
+            
+        }
+        else if !Utility.isBlankString(text: viewModel?.data?.result?.delivery?.arrival ?? "") {
+            selectedState = .deliveryImage
+            deliveryType = .delivery
+        }
+        
+        else if !Utility.isBlankString(text: viewModel?.data?.result?.delivery?.departure ?? "") {
+            selectedState = .delivered
+            deliveryType = .delivery
+        }
+        else if viewModel?.data?.result?.pickup?.isImage ?? false {
+            selectedState = .departedToDeliver
+            deliveryType = .none
+        }
+        else if !Utility.isBlankString(text: viewModel?.data?.result?.pickup?.arrival ?? "") {
+            selectedState = .pickupImage
+            deliveryType = .pickup
+        }
+        else if !Utility.isBlankString(text: viewModel?.data?.result?.pickup?.departure ?? "") {
+            selectedState = .pickupArrived
+            deliveryType = .pickup
+        }
+        
+        
+        self.tableView.reloadData()
+    }
+    
+    func sendDisptachAction(action: DispatchesActionsType) {
+
+        viewModel?.sendDispatchAction(action: action, { data, error, status, message in
+            if status ?? false, error == nil
+            {
+                self.loadDispatchesDetails()
+                
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+            }
+        })
+    }
+    
+    private func sendImage(_ params: [String: Any])
+    {
+        viewModel?.uploadImageToServer(params, { data, error, status, message in
+            
+            if status ?? false, error == nil
+            {
+                
+                self.showToast(message: "Image uploaded successfully" )
+                self.loadDispatchesDetails()
+                
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+            }
+            
+        })
+    }
+    
+    fileprivate func locationUpdateAndSwitchHandlings(_ isOff : Bool)
+    {
+        LocationManager.shared.startUpdatingLocation()
+        if !Global.shared.isSwitchButtonOn {
+            
+            Global.shared.isSwitchButtonOn = true
+            let indexPath = IndexPath(item: 0, section: 0)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        if isOff {
+            
+            LocationManager.shared.stopUpdatingLocation()
+            Global.shared.isSwitchButtonOn = false
+            let indexPath = IndexPath(item: 0, section: 0)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    @objc override func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
+        
+        let params : [String : Any] = ["image": selectedImage,
+                      "receipt_type": selectedState.rawValue]
+        sendImage(params)
     }
     
 }
@@ -83,33 +171,61 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailStatusCell", for: indexPath) as! DispatchesDetailStatusCell
+            
+            // actions button handlings
              cell.trackOrderBtn.addTarget(self, action: #selector(trackOrderBtnPressed(_:)), for: .touchUpInside)
              cell.viewOrderDetailBtn.addTarget(self, action: #selector(viewOrderDetailBtnPressed(_:)), for: .touchUpInside)
+            cell.switchButton.isOn = Global.shared.isSwitchButtonOn
+            cell.trackOrderBtn.makeEnable(value: deliveryType != .none)
             
+            // data Handlings
             let cellData = viewModel?.data?.result?.details
             let status = viewModel?.data?.result?.dispatchStatus
             cell.configCell(data: cellData, status: status ?? .scheduled)
              return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
-            cell.delegate = self
-            let cellData = viewModel?.data?.result?.pickup
-            cell.configCell(data: cellData, status: DispatchesDeliveryType.pickup)
-            cell.arrivedBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.departure))
-            cell.imageUploadBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.arrival))
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
-            cell.delegate = self
-            let cellData = viewModel?.data?.result?.delivery
-            cell.configCell(data: cellData, status: DispatchesDeliveryType.delivery)
-            cell.departedBtn.makeEnable(value: Utility.isTextFieldHasText(textField: viewModel?.data?.result?.pickup?.arrival ?? ""))
-            cell.arrivedBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.departure))
-            cell.imageUploadBtn.makeEnable(value: Utility.isTextFieldHasText(textField: cellData?.arrival))
-
-            return cell
+            
         default:
-            return UITableViewCell()
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailPickDropCell", for: indexPath) as! DispatchesDetailPickDropCell
+            
+            // cell's button handlings
+            cell.departedBtn.tag = indexPath.row
+            cell.arrivedBtn.tag = indexPath.row
+            cell.imageUploadBtn.tag = indexPath.row
+            cell.departedBtn.addTarget(self, action: #selector(departedPressed(_:)), for: .touchUpInside)
+            cell.arrivedBtn.addTarget(self, action: #selector(arrivalPressed(_:)), for: .touchUpInside)
+            cell.imageUploadBtn.addTarget(self, action: #selector(camImagePressed(_:)), for: .touchUpInside)
+            
+            cell.departedBtn.makeEnable(value: false)
+            cell.arrivedBtn.makeEnable(value: false)
+            cell.imageUploadBtn.makeEnable(value: false)
+            
+            
+            // cell's data handling
+            
+            if indexPath.row == 1 {
+                
+                let cellData = viewModel?.data?.result?.pickup
+                cell.configCell(data: cellData, status: DispatchesDeliveryType.pickup)
+                
+                cell.departedBtn.makeEnable(value: selectedState == .departedToPickup)
+                cell.arrivedBtn.makeEnable(value: selectedState == .pickupArrived)
+                cell.imageUploadBtn.makeEnable(value: selectedState == .pickupImage)
+                
+            }
+            else if indexPath.row == 2
+            {
+                cell.departedBtn.makeEnable(value: selectedState == .departedToDeliver)
+                cell.arrivedBtn.makeEnable(value: selectedState == .delivered)
+                cell.imageUploadBtn.makeEnable(value: selectedState == .deliveryImage)
+                
+                let cellData = viewModel?.data?.result?.delivery
+                cell.configCell(data: cellData, status: DispatchesDeliveryType.delivery)
+            }
+            
+            
+            return cell
+            
         }
     }
     
@@ -119,22 +235,61 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
     
 }
 
-//MARK: - Protocol
+//MARK: - Cells Actions
 
-extension DispatchesDetailViewController: DispatchesDetailDelegate {
-    func sendDisptachAction(action: DispatchesActionsType) {
-        if action == .departedToPickup {
-            LocationManager.shared.startUpdatingLocation()
-        }
-
-        viewModel?.sendDispatchAction(action: action, { data, error, status, message in
-            if status ?? false, error == nil {
-                self.loadDispatchesDetails()
-            } else {
-                self.showToast(message: error?.localizedDescription ?? message )
-            }
-        })
+extension DispatchesDetailViewController: DispatchesDetailDelegate
+{
+    @objc func trackOrderBtnPressed(_ sender: UIButton){
+        
+        let trackerVC = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+        let trackerVM = TrackerVM()
+        trackerVM.data = viewModel?.data
+        trackerVC.viewModel = trackerVM
+        trackerVC.deliveryType = deliveryType
+        self.navigationController?.pushViewController(trackerVC, animated: true)
     }
     
+    @objc func viewOrderDetailBtnPressed(_ sender: UIButton){
+        let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
+        orderDetailVC.viewModel = self.viewModel
+        self.navigationController?.pushViewController(orderDetailVC, animated: true)
+    }
     
+    @objc func departedPressed(_ sender: UIButton)
+    {
+        if sender.tag == 1 && selectedState == .departedToPickup {
+            
+            locationUpdateAndSwitchHandlings(false)
+            sendDisptachAction(action: .departedToPickup)
+        }
+        if sender.tag == 2 && selectedState == .departedToDeliver{
+            
+            sendDisptachAction(action: .departedToDeliver)
+        }
+
+    }
+
+    @objc func arrivalPressed(_ sender: UIButton)
+    {
+        if sender.tag == 1 && selectedState == .pickupArrived{
+            
+            sendDisptachAction(action: .pickupArrived)
+        }
+        if sender.tag == 2 && selectedState == .delivered {
+            
+            sendDisptachAction(action: .delivered)
+        }
+    }
+
+    @objc func camImagePressed(_ sender: UIButton)
+    {
+        if sender.tag == 1 && selectedState == .pickupImage{
+            
+            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+            
+        }
+        if sender.tag == 2 && selectedState == .deliveryImage{
+            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+        }
+    }
 }

@@ -181,4 +181,11 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
         _ = sendRequest(APIRoutes.dispatchActions , parameters: params , httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
+    
+    func saveDispatchesImage(params : [String: Any],_ completionBlock: @escaping APIClientCompletionHandler) {
+
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let parameters = params as [String : AnyObject]
+        sendRequestUsingMultipart(APIRoutes.postImage, parameters: parameters, headers: headers, completionBlock: completionBlock)
+    }
 }
