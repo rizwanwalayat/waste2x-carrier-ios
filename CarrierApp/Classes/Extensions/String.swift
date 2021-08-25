@@ -52,4 +52,11 @@ extension String {
         return date
     }
     
+    func appendDollarSign() -> String {
+        if Utility.isBlankString(text: self) {
+           let price = "$\(self)"
+            return price
+        }
+        return self
+    }
 }

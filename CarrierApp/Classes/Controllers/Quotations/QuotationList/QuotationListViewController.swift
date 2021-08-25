@@ -89,7 +89,7 @@ extension QuotationListViewController : UITableViewDelegate, UITableViewDataSour
             cell.TransporterValueLabel.text = dataOfModel.transporterName
             cell.quotationLabel.text =  "Quote #\(dataOfModel.id)"
             cell.postLabel.text = "post #\(dataOfModel.loadId)"
-            cell.priceValueLabel.text = "\(dataOfModel.price)"
+            cell.priceValueLabel.text = "\(dataOfModel.price)".appendDollarSign()
             cell.TransporterValueLabel.text = dataOfModel.transporterName
         }
         
