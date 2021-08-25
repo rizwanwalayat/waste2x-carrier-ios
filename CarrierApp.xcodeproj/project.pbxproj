@@ -1330,10 +1330,9 @@
 				0067A2B425274C0900CECA8C /* Sources */,
 				0067A2B525274C0900CECA8C /* Frameworks */,
 				0067A2B625274C0900CECA8C /* Resources */,
-				1163EE37254AAA2E00D47148 /* ShellScript */,
 				0DD95401B9E121B9B8359637 /* [CP] Embed Pods Frameworks */,
 				67F03BE3C4044BEABD55C89C /* [CP] Copy Pods Resources */,
-				04C914A226D634FD0031CE58 /* ShellScript */,
+				04802A7726D68053003C9677 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1447,7 +1446,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04C914A226D634FD0031CE58 /* ShellScript */ = {
+		04802A7726D68053003C9677 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1462,7 +1461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nz \n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\" \n";
 		};
 		0DD95401B9E121B9B8359637 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1480,23 +1479,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarrierApp/Pods-CarrierApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		1163EE37254AAA2E00D47148 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		676A531BD3EDB569E2AF4A7A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
