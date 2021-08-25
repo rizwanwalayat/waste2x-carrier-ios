@@ -88,7 +88,7 @@ class APIClient: APIClientHandler {
     
     func verifyOTPApi(phone: String, code: String, _ completionBlock: @escaping APIClientCompletionHandler){
         let params = ["phone": phone, "code": code] as [String: AnyObject]
-        _ = sendRequest(APIRoutes.send_code, parameters: params, httpMethod: .post, headers: nil, completionBlock: completionBlock)
+        _ = sendRequest(APIRoutes.verify_otp, parameters: params, httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     
     func LoadsApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {

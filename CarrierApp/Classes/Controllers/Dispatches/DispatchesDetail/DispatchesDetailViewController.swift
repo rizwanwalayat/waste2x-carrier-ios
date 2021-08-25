@@ -73,7 +73,7 @@ class DispatchesDetailViewController: BaseViewController {
         }
         
         
-        if viewModel?.data?.result?.pickup?.isImage ?? false {
+        if viewModel?.data?.result?.delivery?.isImage ?? false {
             selectedState = .none
             deliveryType = .none
             locationUpdateAndSwitchHandlings(true)
