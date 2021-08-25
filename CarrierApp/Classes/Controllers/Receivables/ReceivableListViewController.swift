@@ -98,9 +98,9 @@ extension ReceivableListViewController: UITableViewDelegate, UITableViewDataSour
             }
             cell.dispatchNoValueLabel.text = dataOfModel.dispatchId
             cell.currencyValueLabel.text = dataOfModel.currency
-            cell.outstandingAmountValueLabel.text = dataOfModel.outstandingAmount
-            cell.totalAmountValueLabel.text = dataOfModel.total
-            cell.receivedAmountValueLabel.text = dataOfModel.receivedAmount
+            cell.outstandingAmountValueLabel.text = dataOfModel.outstandingAmount.appendDollarSign()
+            cell.totalAmountValueLabel.text = dataOfModel.total.appendDollarSign()
+            cell.receivedAmountValueLabel.text = dataOfModel.receivedAmount.appendDollarSign()
                 
             
         }

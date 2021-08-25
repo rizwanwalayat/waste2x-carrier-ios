@@ -22,7 +22,7 @@ class DispatchesDetailStatusCell: BaseTableViewCell {
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var coloredStatusView: UIView!
     @IBOutlet weak var viewOrderDetailBtn: UIButton!
-    @IBOutlet weak var trackOrderBtn: UIButton!
+    @IBOutlet weak var getDirectionsBtn: UIButton!
     
     
     // MARK: - Variables
