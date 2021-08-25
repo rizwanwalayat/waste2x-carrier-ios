@@ -50,7 +50,6 @@ class TrackerViewController: BaseViewController {
         dispatchRepLabel.text = viewModel?.data?.result?.details?.dispatch_rep ?? "Dispatch Rep"
         deliveryLocationLabel.text = viewModel?.data?.result?.delivery?.location ?? "Delivery Location"
         pickupLocationLabel.text = viewModel?.data?.result?.pickup?.location ?? "Pickup Location"
-        //NotificationCenter.default.addObserver(self, selector: #selector(loadMap), name: .didReceiveLocation, object: nil)
     }
 
     

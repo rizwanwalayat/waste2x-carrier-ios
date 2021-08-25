@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DispatchesDetailViewController: BaseViewController {
 
@@ -32,6 +33,8 @@ class DispatchesDetailViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         loadDispatchesDetails()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(locationDataUpdated), name: .didReceiveLocation, object: nil)
     }
     
     private func loadDispatchesDetails() {
@@ -135,6 +138,7 @@ class DispatchesDetailViewController: BaseViewController {
     fileprivate func locationUpdateAndSwitchHandlings(_ isOff : Bool)
     {
         LocationManager.shared.startUpdatingLocation()
+        
         if !Global.shared.isSwitchButtonOn {
             
             Global.shared.isSwitchButtonOn = true
@@ -148,6 +152,7 @@ class DispatchesDetailViewController: BaseViewController {
             Global.shared.isSwitchButtonOn = false
             let indexPath = IndexPath(item: 0, section: 0)
             tableView.reloadRows(at: [indexPath], with: .automatic)
+            NotificationCenter.default.removeObserver(self, name: .didReceiveLocation, object: nil)
         }
     }
     
@@ -291,5 +296,16 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
         if sender.tag == 2 && selectedState == .deliveryImage{
             ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
         }
+    }
+}
+
+extension DispatchesDetailViewController
+{
+    
+    @objc func locationDataUpdated()
+    {
+        var ref: DatabaseReference!
+        ref = Database.database().reference().child("dispatch_id")
+        
     }
 }
