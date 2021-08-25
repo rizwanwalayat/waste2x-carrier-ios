@@ -22,6 +22,7 @@ class DispatchesDetailViewController: BaseViewController {
     var isDataLoaded: Bool = false
     var selectedState = DispatchesActionsType.departedToPickup
     var deliveryType = DispatchesDeliveryType.none
+    var isSwitchButtonOn = false
     
     // MARK: - Controller's LifeCycle
     
@@ -33,8 +34,6 @@ class DispatchesDetailViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         loadDispatchesDetails()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(locationDataUpdated), name: .didReceiveLocation, object: nil)
     }
     
     private func loadDispatchesDetails() {
@@ -139,20 +138,20 @@ class DispatchesDetailViewController: BaseViewController {
     {
         LocationManager.shared.startUpdatingLocation()
         
-        if !Global.shared.isSwitchButtonOn {
-            
-            Global.shared.isSwitchButtonOn = true
-            let indexPath = IndexPath(item: 0, section: 0)
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-        }
-        
         if isOff {
             
             LocationManager.shared.stopUpdatingLocation()
-            Global.shared.isSwitchButtonOn = false
+            isSwitchButtonOn = false
             let indexPath = IndexPath(item: 0, section: 0)
             tableView.reloadRows(at: [indexPath], with: .automatic)
             NotificationCenter.default.removeObserver(self, name: .didReceiveLocation, object: nil)
+        }
+        else if !isSwitchButtonOn {
+            
+            isSwitchButtonOn = true
+            let indexPath = IndexPath(item: 0, section: 0)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            NotificationCenter.default.addObserver(self, selector: #selector(locationDataUpdated), name: .didReceiveLocation, object: nil)
         }
     }
     
@@ -305,7 +304,16 @@ extension DispatchesDetailViewController
     @objc func locationDataUpdated()
     {
         var ref: DatabaseReference!
-        ref = Database.database().reference().child("dispatch_id")
+        ref = Database.database().reference().child("dispatch_id/\(viewModel?.id ?? 0)")
+        ref.getData { error, data in
+            if error == nil{
+                
+                //MARK: - For fireBase Location Again
+                
+                let lastChildData = data.children.allObjects
+                print(lastChildData)
+            }
+        }
         
     }
 }
