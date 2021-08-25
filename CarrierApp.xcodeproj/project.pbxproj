@@ -1333,6 +1333,7 @@
 				1163EE37254AAA2E00D47148 /* ShellScript */,
 				0DD95401B9E121B9B8359637 /* [CP] Embed Pods Frameworks */,
 				67F03BE3C4044BEABD55C89C /* [CP] Copy Pods Resources */,
+				04C914A226D634FD0031CE58 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1446,6 +1447,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04C914A226D634FD0031CE58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nz \n";
+		};
 		0DD95401B9E121B9B8359637 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1794,6 +1812,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0.4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = "$(SRCROOT)/CarrierApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -1819,6 +1838,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0.4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = "$(SRCROOT)/CarrierApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

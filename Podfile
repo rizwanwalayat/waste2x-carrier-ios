@@ -18,4 +18,6 @@ target 'CarrierApp' do
   pod 'iOSDropDown'
   pod 'TwilioChatClient', '~> 2.6.6'
   pod 'Firebase/Database'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
 end
