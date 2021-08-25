@@ -83,7 +83,7 @@ extension ContractsViewController: UITableViewDelegate, UITableViewDataSource
             else if dataOfModel.isSigned == false{
                 cell.configCell(.NO)
             }
-            cell.priceValueLabel.text = String(dataOfModel.price)
+            cell.priceValueLabel.text = "\(dataOfModel.price)".appendDollarSign()
             cell.numberLabel.text = "#\(dataOfModel.id)"
             cell.loadPostValueLabel.text = String(dataOfModel.loadId)
             cell.TransporterValueLabel.text = dataOfModel.transporterName

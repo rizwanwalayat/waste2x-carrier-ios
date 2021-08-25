@@ -89,7 +89,7 @@ class DispatchesDetailViewController: BaseViewController {
         }
         else if viewModel?.data?.result?.pickup?.isImage ?? false {
             selectedState = .departedToDeliver
-            deliveryType = .none
+            deliveryType = .delivery
         }
         else if !Utility.isBlankString(text: viewModel?.data?.result?.pickup?.arrival ?? "") {
             selectedState = .pickupImage
@@ -177,10 +177,10 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
             let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesDetailStatusCell", for: indexPath) as! DispatchesDetailStatusCell
             
             // actions button handlings
-             cell.trackOrderBtn.addTarget(self, action: #selector(trackOrderBtnPressed(_:)), for: .touchUpInside)
+             cell.getDirectionsBtn.addTarget(self, action: #selector(getDirectionsBtnPressed(_:)), for: .touchUpInside)
              cell.viewOrderDetailBtn.addTarget(self, action: #selector(viewOrderDetailBtnPressed(_:)), for: .touchUpInside)
-            cell.switchButton.isOn = Global.shared.isSwitchButtonOn
-            cell.trackOrderBtn.makeEnable(value: deliveryType != .none)
+            cell.switchButton.isOn = isSwitchButtonOn
+            cell.getDirectionsBtn.makeEnable(value: deliveryType != .none)
             
             // data Handlings
             let cellData = viewModel?.data?.result?.details
@@ -243,7 +243,7 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
 
 extension DispatchesDetailViewController: DispatchesDetailDelegate
 {
-    @objc func trackOrderBtnPressed(_ sender: UIButton){
+    @objc func getDirectionsBtnPressed(_ sender: UIButton){
         
         let trackerVC = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
         let trackerVM = TrackerVM()

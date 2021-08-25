@@ -53,9 +53,8 @@ extension String {
     }
     
     func appendDollarSign() -> String {
-        if Utility.isBlankString(text: self) {
-           let price = "$\(self)"
-            return price
+        if !Utility.isBlankString(text: self) {
+           return "$\(self)"
         }
         return self
     }

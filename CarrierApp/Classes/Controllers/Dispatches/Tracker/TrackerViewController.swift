@@ -8,18 +8,21 @@
 
 import UIKit
 import GoogleMaps
+import FirebaseDatabase
+
 
 class TrackerViewController: BaseViewController {
     
 //MARK: - Variables
     
-   
     var trackID = 1
     var viewModel:TrackerVM?
     var deliveryType = DispatchesDeliveryType.none
-    
+    let dataBase = Database.database().reference().child("dispatch_id")
+
     /// for timer
     var timer = Timer()
+    var counter = 1
     
     //MARK: - Outlets
     
@@ -46,7 +49,8 @@ class TrackerViewController: BaseViewController {
         super .viewWillAppear(animated)
         mainView.roundCornersTopView(36)    
         mapView.roundCornersTopView(36)
-        timerHandligs()
+        loadMap()
+        startTimer()
         dispatchRepLabel.text = viewModel?.data?.result?.details?.dispatch_rep ?? "Dispatch Rep"
         deliveryLocationLabel.text = viewModel?.data?.result?.delivery?.location ?? "Delivery Location"
         pickupLocationLabel.text = viewModel?.data?.result?.pickup?.location ?? "Pickup Location"
@@ -55,15 +59,19 @@ class TrackerViewController: BaseViewController {
     
     //MARK: - Functions
 
-    func timerHandligs()
+    func startTimer()
     {
         self.timer.invalidate()
-        self.timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
     }
     
     @objc func timerAction( _ timer : Timer) {
-        
-        loadMap()
+        counter += 1
+        //updateFirebaseDatabase()
+        if counter >= 10 {
+            counter = 0
+            loadMap()
+        }
     }
     
     //MARK: - IBOutlets
@@ -169,6 +177,15 @@ extension TrackerViewController
             marker.map = self.mapView
             marker1.map = self.mapView
             
+        }
+    }
+    
+    
+    func updateFirebaseDatabase(dispatchID: Int){
+        if let location = LocationManager.shared.currentLocation {
+            let lat = location.latitude
+            let lon = location.longitude
+            dataBase.child("\(dispatchID)").setValue(["lat": lat, "lon": lon])
         }
     }
 }

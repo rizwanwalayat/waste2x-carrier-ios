@@ -64,7 +64,7 @@ class QuotationDetailViewController: BaseViewController {
             self.originAddressLabel.text = dataOfModel.origin
             self.destinationAdressLabel.text = dataOfModel.destination
             self.statusValueLabel.text = dataOfModel.status
-            self.priceValueLabel.text = "$\(dataOfModel.price)"
+            self.priceValueLabel.text = "\(dataOfModel.price)".appendDollarSign()
             self.transporterValueLabel.text = dataOfModel.transporterName
             self.CommodityValueLabel.text = dataOfModel.commodity
             self.quantityValueLabel.text = "\(dataOfModel.quantity)"

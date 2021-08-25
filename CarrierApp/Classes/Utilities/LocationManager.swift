@@ -36,7 +36,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private(set) var currentLocation: CLLocationCoordinate2D!
     private(set) var currentHeading: CLHeading!
-    
+
     var authorizationChangeHandler : ((CLAuthorizationStatus)->Void)?
     
     private override init() {
@@ -121,6 +121,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         return true
     }
     
-    /**************************************************/
     
+    /**************************************************/
+
 }

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -254,9 +252,9 @@
                 <outlet property="deliveredTimeLabel" destination="ghp-Fc-hrN" id="XUR-nS-XdL"/>
                 <outlet property="dispatchIDLabel" destination="luP-Xv-BLk" id="oaM-oK-Seo"/>
                 <outlet property="dispatchStatusLabel" destination="pw8-6W-8Pf" id="Utr-yw-VmY"/>
+                <outlet property="getDirectionsBtn" destination="irz-p4-dDa" id="QFE-HI-KLo"/>
                 <outlet property="regNoLabel" destination="1e0-cC-SVN" id="eR9-Sp-1yr"/>
                 <outlet property="switchButton" destination="ZxC-nv-ah9" id="l8P-0k-3TG"/>
-                <outlet property="trackOrderBtn" destination="irz-p4-dDa" id="QFE-HI-KLo"/>
                 <outlet property="vehicleTypeLabel" destination="D5v-Za-27O" id="y7f-Ds-06U"/>
                 <outlet property="viewOrderDetailBtn" destination="8SN-h1-Ipy" id="vmB-6F-J59"/>
             </connections>
