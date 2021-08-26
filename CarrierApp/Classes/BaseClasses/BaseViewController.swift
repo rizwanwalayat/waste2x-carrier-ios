@@ -140,6 +140,7 @@ class BaseViewController: UIViewController {
                         UIApplication.shared.openURL(appSettings)
                     }
                 }
+                self.navigationController?.popViewController(animated: true)
             }
         }))
 
