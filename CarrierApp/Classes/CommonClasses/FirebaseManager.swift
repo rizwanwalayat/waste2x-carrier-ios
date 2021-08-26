@@ -13,8 +13,7 @@ class FirebaseManager: NSObject {
     
     static let shared = FirebaseManager()
     var timer = Timer()
-    var counter = 1
-    var dispatchID = 0
+    var dispatchID = -1
     let dataBase = Database.database().reference().child("dispatch_id")
     
     private override init() {
@@ -31,12 +30,13 @@ class FirebaseManager: NSObject {
         if let location = LocationManager.shared.currentLocation {
             let lat = location.latitude
             let lon = location.longitude
-            dataBase.child("\(dispatchID)").child("\(Date().dateToString("yyyy-MM-dd HH:mm:ss A"))").setValue(["lat": lat, "lon": lon])
-
+            let timestamp = Date().dateToString("yyyy-MM-dd HH:mm:ss")
+            dataBase.child("\(dispatchID)").child("\(timestamp)").setValue(["lat": lat, "lon": lon])
         }
     }
     
     func stopUpdatingLocation(){
+        dispatchID = -1
         self.timer.invalidate()
     }
 }

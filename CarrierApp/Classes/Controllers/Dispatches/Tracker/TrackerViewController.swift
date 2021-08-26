@@ -12,12 +12,12 @@ import GoogleMaps
 
 class TrackerViewController: BaseViewController {
     
-//MARK: - Variables
+    //MARK: - Variables
     
     var trackID = 1
     var viewModel:TrackerVM?
     var deliveryType = DispatchesDeliveryType.none
-
+    
     /// for timer
     var timer = Timer()
     
@@ -37,7 +37,7 @@ class TrackerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         pickupLocationLabel.setAttributedTextInLable("From", "6C6C6C", 10, "Isale, Bujumbura Rural, Burundi", "6C6C6C", 10)
         
         
@@ -52,7 +52,7 @@ class TrackerViewController: BaseViewController {
         deliveryLocationLabel.text = viewModel?.data?.result?.delivery?.location ?? "Delivery Location"
         pickupLocationLabel.text = viewModel?.data?.result?.pickup?.location ?? "Pickup Location"
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -60,7 +60,7 @@ class TrackerViewController: BaseViewController {
     }
     
     //MARK: - Functions
-
+    
     func startTimer()
     {
         self.timer.invalidate()
@@ -91,7 +91,7 @@ extension TrackerViewController
         
         //mapView.clear()
         
-       
+        
         APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(googleAPIKey)"
         
         
@@ -100,7 +100,7 @@ extension TrackerViewController
             if jsonData?.routes != nil{
                 let item = jsonData!.routes.first
                 
-//            for item in jsonData!.routes {
+                //            for item in jsonData!.routes {
                 self.deliveryLocationLabel.text = item?.legs[0].end_address
                 self.timeLabel.text = item?.legs[0].duration?.text
                 self.kmLabel.text = item?.legs[0].distance?.text
@@ -111,12 +111,16 @@ extension TrackerViewController
                 polyline.strokeWidth = 5
                 polyline.geodesic = true
                 polyline.map = self.mapView
-                DispatchQueue.main.async {
-                    let bounds = GMSCoordinateBounds(path: path!)
-                    self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
-                }
-//            }
 //                let cam = GMSCameraPosition(latitude: self.deliveryLat, longitude: self.deliveryLng, zoom: 10)
+                
+                DispatchQueue.main.async {
+//                    self.mapView.animate(to: cam)
+                    
+                                        let bounds = GMSCoordinateBounds(path: path!)
+                                        self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+                }
+                //            }
+                //                let cam = GMSCameraPosition(latitude: self.deliveryLat, longitude: self.deliveryLng, zoom: 10)
                 
             }
         }
@@ -154,7 +158,7 @@ extension TrackerViewController
         
     }
     
-        
+    
     func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
         
         // MARK: Marker for source location
