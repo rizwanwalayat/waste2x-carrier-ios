@@ -8,7 +8,6 @@
 
 import UIKit
 import GoogleMaps
-import FirebaseDatabase
 
 
 class TrackerViewController: BaseViewController {
@@ -18,7 +17,6 @@ class TrackerViewController: BaseViewController {
     var trackID = 1
     var viewModel:TrackerVM?
     var deliveryType = DispatchesDeliveryType.none
-    let dataBase = Database.database().reference().child("dispatch_id")
 
     /// for timer
     var timer = Timer()
@@ -67,7 +65,6 @@ class TrackerViewController: BaseViewController {
     
     @objc func timerAction( _ timer : Timer) {
         counter += 1
-        //updateFirebaseDatabase()
         if counter >= 10 {
             counter = 0
             loadMap()
@@ -181,13 +178,7 @@ extension TrackerViewController
     }
     
     
-    func updateFirebaseDatabase(dispatchID: Int){
-        if let location = LocationManager.shared.currentLocation {
-            let lat = location.latitude
-            let lon = location.longitude
-            dataBase.child("\(dispatchID)").setValue(["lat": lat, "lon": lon])
-        }
-    }
+    
 }
 
 

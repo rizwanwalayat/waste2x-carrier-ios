@@ -151,6 +151,7 @@
 		9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */; };
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
 		965B354026BD837E009A7BFB /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B353F26BD837E009A7BFB /* ForgotPasswordVM.swift */; };
+		966F8EFE26D787E300E9A27D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F8EFD26D787E300E9A27D /* FirebaseManager.swift */; };
 		9672B23926C118F100E8E72F /* DispatchesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23826C118F100E8E72F /* DispatchesListModel.swift */; };
 		9672B23B26C11AE000E8E72F /* DispatchesListResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */; };
 		9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */; };
@@ -345,6 +346,7 @@
 		9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListViewController.swift; sourceTree = "<group>"; };
 		9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListViewController.xib; sourceTree = "<group>"; };
 		965B353F26BD837E009A7BFB /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
+		966F8EFD26D787E300E9A27D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		9672B23826C118F100E8E72F /* DispatchesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListModel.swift; sourceTree = "<group>"; };
 		9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResultItem.swift; sourceTree = "<group>"; };
 		9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResult.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 		048C09E5265E223E003E301F /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
+				966F8EFD26D787E300E9A27D /* FirebaseManager.swift */,
 				96E0EA8E26CFD94E008E0329 /* LocationManager.swift */,
 				048C09E6265E2265003E301F /* ImagePickerVC.swift */,
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
@@ -1592,6 +1595,7 @@
 				967A713A26BBCD5E002D72DD /* LoginViewModel.swift in Sources */,
 				9672B23B26C11AE000E8E72F /* DispatchesListResultItem.swift in Sources */,
 				96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */,
+				966F8EFE26D787E300E9A27D /* FirebaseManager.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */,
