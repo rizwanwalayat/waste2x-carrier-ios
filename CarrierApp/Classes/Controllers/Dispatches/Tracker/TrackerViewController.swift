@@ -22,7 +22,6 @@ class TrackerViewController: BaseViewController {
 
     /// for timer
     var timer = Timer()
-    var counter = 1
     
     //MARK: - Outlets
     
@@ -56,22 +55,24 @@ class TrackerViewController: BaseViewController {
         pickupLocationLabel.text = viewModel?.data?.result?.pickup?.location ?? "Pickup Location"
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.timer.invalidate()
+    }
     
     //MARK: - Functions
 
     func startTimer()
     {
         self.timer.invalidate()
-        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
     }
     
     @objc func timerAction( _ timer : Timer) {
-        counter += 1
-        //updateFirebaseDatabase()
-        if counter >= 10 {
-            counter = 0
-            loadMap()
-        }
+        
+        loadMap()
+        
     }
     
     //MARK: - IBOutlets
@@ -90,7 +91,7 @@ extension TrackerViewController
     
     func fetchGoogleMapData(origin: String, destination : String) {
         
-        mapView.clear()
+        //mapView.clear()
         
        
         APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(googleAPIKey)"
@@ -162,7 +163,7 @@ extension TrackerViewController
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
         marker.title = "Pickup"
-        marker.icon = UIImage (named: "Location Next")
+        marker.icon = UIImage (named: "currentLocation")
         
         
         
@@ -177,15 +178,6 @@ extension TrackerViewController
             marker.map = self.mapView
             marker1.map = self.mapView
             
-        }
-    }
-    
-    
-    func updateFirebaseDatabase(dispatchID: Int){
-        if let location = LocationManager.shared.currentLocation {
-            let lat = location.latitude
-            let lon = location.longitude
-            dataBase.child("\(dispatchID)").setValue(["lat": lat, "lon": lon])
         }
     }
 }

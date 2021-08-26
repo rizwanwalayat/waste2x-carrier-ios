@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-next-location-30.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "currentLocation.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
