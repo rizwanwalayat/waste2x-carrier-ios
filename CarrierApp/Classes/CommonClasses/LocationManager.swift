@@ -87,7 +87,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         if let location = locations.last
         {
             currentLocation = location.coordinate
-            NotificationCenter.default.post(name: .didReceiveLocation, object: currentLocation)
         }
     }
     
@@ -120,8 +119,4 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
         return true
     }
-    
-    
-    /**************************************************/
-
 }

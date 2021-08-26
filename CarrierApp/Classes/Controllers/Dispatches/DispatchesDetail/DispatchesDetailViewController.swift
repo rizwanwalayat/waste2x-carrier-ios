@@ -144,14 +144,12 @@ class DispatchesDetailViewController: BaseViewController {
             isSwitchButtonOn = false
             let indexPath = IndexPath(item: 0, section: 0)
             tableView.reloadRows(at: [indexPath], with: .automatic)
-            NotificationCenter.default.removeObserver(self, name: .didReceiveLocation, object: nil)
         }
         else if !isSwitchButtonOn {
             
             isSwitchButtonOn = true
             let indexPath = IndexPath(item: 0, section: 0)
             tableView.reloadRows(at: [indexPath], with: .automatic)
-            NotificationCenter.default.addObserver(self, selector: #selector(locationDataUpdated), name: .didReceiveLocation, object: nil)
         }
     }
     
