@@ -26,11 +26,6 @@ class QuotationsTableViewCell: UITableViewCell {
     
     // MARK: - Variables
     
-    var rejectedColorCode = "E74C3C"
-    var acceptedColorCode = "8BC46C"
-    var rejectedImageViewString = "Reject-status"
-    var acceptedImageViewString = "accept-Status"
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -49,25 +44,6 @@ class QuotationsTableViewCell: UITableViewCell {
         quotationLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
         postLabel.setAttributedTextInLable("Post", "525A64", 10, " #2", "1C2439", 14)
         statusValueLabel.text = status.rawValue
-        
-        switch status {
-        case .accepted:
-            
-            statusSignHolderView.backgroundColor = UIColor(hexString: acceptedColorCode, alpha: 0.1)
-            statusSignImageView.image = UIImage(named: acceptedImageViewString)
-            statusValueLabel.textColor = UIColor(hexString: acceptedColorCode)
-            
-        case .rejected:
-        
-            statusSignHolderView.backgroundColor = UIColor(hexString: rejectedColorCode, alpha: 0.1)
-            statusSignImageView.image = UIImage(named: rejectedImageViewString)
-            statusValueLabel.textColor = UIColor(hexString: rejectedColorCode)
-
-        }
+        statusValueLabel.textColor = UIColor(hexString: status.statusCode)
     }
-}
-
-enum QuotationsStatusess: String {
-    case accepted = "Accepted"
-    case rejected = "Revise"
 }

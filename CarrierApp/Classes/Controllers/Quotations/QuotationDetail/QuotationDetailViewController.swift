@@ -42,6 +42,7 @@ class QuotationDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.acceptButton.makeEnable(value: false)
         quotationNoLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -63,13 +64,23 @@ class QuotationDetailViewController: BaseViewController {
         if let dataOfModel = viewModel?.detaildata?.result{
             self.originAddressLabel.text = dataOfModel.origin
             self.destinationAdressLabel.text = dataOfModel.destination
-            self.statusValueLabel.text = dataOfModel.status
             self.priceValueLabel.text = "\(dataOfModel.price)".appendDollarSign()
             self.transporterValueLabel.text = dataOfModel.transporterName
             self.CommodityValueLabel.text = dataOfModel.commodity
             self.quantityValueLabel.text = "\(dataOfModel.quantity)"
             self.unitValueLabel.text = dataOfModel.unit
             
+            self.statusValueLabel.text = dataOfModel.quotationStatus.rawValue
+            self.statusValueLabel.textColor = UIColor(hexString: dataOfModel.quotationStatus.statusCode)
+            
+            if dataOfModel.quotationStatus == .pending || dataOfModel.quotationStatus == .revise{
+                
+                self.acceptButton.makeEnable(value: true)
+            }
+            else
+            {
+                self.acceptButton.makeEnable(value: false)
+            }
         }
         
         
@@ -95,7 +106,7 @@ class QuotationDetailViewController: BaseViewController {
 extension QuotationDetailViewController: QuotationActionViewControllerDelegate
 {
     func quotationAccepted() {
-        print("Accepted")
+        
         viewModel?.SendQuotationResponceData(responce: "Accepted", id: quoteNo){ result, error, success, message in
             
             if success ?? false, error == nil {

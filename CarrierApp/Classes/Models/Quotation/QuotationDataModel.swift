@@ -13,8 +13,7 @@ class QuotationDataModel : Mappable {
     var success = false
     var status_code = -1
     var message = ""
-    var result = [DispatchResult]()
-
+    var result : QuotationListResult?
     
     required init?(map: Map) {
 
@@ -27,9 +26,32 @@ class QuotationDataModel : Mappable {
         message <- map["message"]
         result <- map["result"]
     }
-
 }
-class DispatchResult : Mappable {
+
+class QuotationListResult : Mappable {
+    var pending : [QuotationStatusResult]?
+    var revise : [QuotationStatusResult]?
+    var contract_sent : [QuotationStatusResult]?
+    var contract_signed : [QuotationStatusResult]?
+    var accepted : [QuotationStatusResult]?
+    var rejected : [QuotationStatusResult]?
+
+    required init?(map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+
+        pending <- map["pending"]
+        revise <- map["revise"]
+        contract_sent <- map["contract_sent"]
+        contract_signed <- map["contract_signed"]
+        accepted <- map["accepted"]
+        rejected <- map["rejected"]
+    }
+}
+
+class QuotationStatusResult : Mappable {
     
     var id = -1
     var loadId = -1
@@ -37,6 +59,7 @@ class DispatchResult : Mappable {
     var status = ""
     var isSigned = Bool()
     var transporterName = ""
+    var quotationStatus = QuotationsStatusess.pending
 
     required init?(map: Map) {
 
@@ -48,9 +71,61 @@ class DispatchResult : Mappable {
         price <- map["price"]
         status <- map["status"]
         transporterName <- map["transporter_name"]
+        postMapping()
     }
-
+    
+    func postMapping () {
+        switch status {
+        case "Accepted":
+            quotationStatus = .accepted
+        case "Rejected":
+            quotationStatus = .rejected
+        case "Revise":
+            quotationStatus = .revise
+        case "Pending":
+            quotationStatus = .pending
+        case "Contract Sent":
+            quotationStatus = .contract_sent
+        case "Contract Signed":
+            quotationStatus = .contract_signed
+        default:
+            quotationStatus = .none
+        }
+    }
 }
+
+enum QuotationsStatusess: String {
+    case accepted = "Accepted"
+    case rejected = "Rejected"
+    case revise = "Revise"
+    case pending = "Pending"
+    case contract_sent = "Contract Sent"
+    case contract_signed = "Contract Signed"
+    case none = ""
+    
+    var statusCode : String {
+        switch self {
+        
+        case .accepted:
+            return "8BC46C"
+        case .rejected:
+            return "E74C3C"
+        case .revise:
+            return "FC9805"
+        case .pending:
+            return "FC9805"
+        case .contract_sent:
+            return "FBC707"
+        case .contract_signed:
+            return "FBC707"
+        case .none:
+            return ""
+        }
+    }
+}
+
+// MARK:- is for quotation Detail
+
 class QuotationDetailDataModel : Mappable {
     var success = false
     var status_code = -1
@@ -82,6 +157,7 @@ class QuotationDetailResult : Mappable {
     var destination = ""
     var quantity = -1.0
     var unit = ""
+    var quotationStatus = QuotationsStatusess.pending
 
     required init?(map: Map) {
 
@@ -97,9 +173,31 @@ class QuotationDetailResult : Mappable {
         destination <- map["destination"]
         quantity <- map["quantity"]
         unit <- map["unit"]
+        postMapping()
     }
 
+    func postMapping () {
+        switch status {
+        case "Accepted":
+            quotationStatus = .accepted
+        case "Rejected":
+            quotationStatus = .rejected
+        case "Revise":
+            quotationStatus = .revise
+        case "Pending":
+            quotationStatus = .pending
+        case "Contract Sent":
+            quotationStatus = .contract_sent
+        case "Contract Signed":
+            quotationStatus = .contract_signed
+        default:
+            quotationStatus = .none
+        }
+    }
+    
 }
+
+// MARK: - isForQuotationResponse
 class QuotationResponceDataModel : Mappable {
     var success = false
     var message = ""
