@@ -23,10 +23,9 @@ class PolyLineAPIModel : Mappable {
     }
     
     class func PolyLineAPICall(_ completion: @escaping PolyLineCompletionHandler) {
-        Utility.showLoading()
+        
         APIClient.shared.googleLocationPolyLineAPi{ result, error, status,message in
             
-            Utility.hideLoading()
             if error == nil {
                 if let data = Mapper<PolyLineAPIModel>().map(JSON: result as! [String : Any]) {
                     completion(data, nil, status,message)
