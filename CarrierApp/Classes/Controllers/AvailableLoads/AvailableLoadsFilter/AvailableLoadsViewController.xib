@@ -52,9 +52,9 @@
                             <rect key="frame" x="0.0" y="44" width="414" height="81"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGK-s9-CFJ">
-                                    <rect key="frame" x="16" y="19.5" width="22" height="22"/>
+                                    <rect key="frame" x="16" y="14.5" width="32" height="32"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="22" id="8gR-Rx-vJX"/>
+                                        <constraint firstAttribute="height" constant="32" id="8gR-Rx-vJX"/>
                                         <constraint firstAttribute="width" secondItem="nGK-s9-CFJ" secondAttribute="height" multiplier="1:1" id="a63-O5-7rR"/>
                                     </constraints>
                                     <state key="normal" image="Sidemenu"/>

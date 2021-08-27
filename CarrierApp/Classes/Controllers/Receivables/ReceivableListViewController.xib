@@ -41,10 +41,10 @@
                             <rect key="frame" x="0.0" y="44" width="414" height="81"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c89-J8-oOY">
-                                    <rect key="frame" x="16" y="19.5" width="22" height="22"/>
+                                    <rect key="frame" x="16" y="14.5" width="32" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="c89-J8-oOY" secondAttribute="height" multiplier="1:1" id="BdO-uL-qb2"/>
-                                        <constraint firstAttribute="height" constant="22" id="Ocp-lW-njM"/>
+                                        <constraint firstAttribute="height" constant="32" id="Ocp-lW-njM"/>
                                     </constraints>
                                     <state key="normal" image="Sidemenu"/>
                                     <connections>
