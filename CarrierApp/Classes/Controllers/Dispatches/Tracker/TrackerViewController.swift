@@ -37,11 +37,9 @@ class TrackerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         pickupLocationLabel.setAttributedTextInLable("From", "6C6C6C", 10, "Isale, Bujumbura Rural, Burundi", "6C6C6C", 10)
-        
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         mainView.roundCornersTopView(36)    
@@ -64,64 +62,54 @@ class TrackerViewController: BaseViewController {
     func startTimer()
     {
         self.timer.invalidate()
-        self.timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
     }
     
     @objc func timerAction( _ timer : Timer) {
-        
         loadMap()
-        
     }
     
     //MARK: - IBOutlets
     
     @IBAction func backAction(_ sender: Any) {
-        
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
-
 
 // MARK: - Maps Related
 extension TrackerViewController
 {
-    
-    func fetchGoogleMapData(origin: String, destination : String) {
+    func fetchGoogleMapData(sLat: Double, sLon: Double, dLat: Double, dLon: Double) {
+//        mapView.clear()
         
-        //mapView.clear()
-        
-        
+        let origin = "\(sLat),\(sLon)"
+        let destination = "\(dLat),\(dLon)"
         APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(googleAPIKey)"
-        
-        
         print(APIRoutes.polyLineUrl)
         PolyLineAPIModel.PolyLineAPICall { jsonData, error, status, message in
+    
             if jsonData?.routes != nil{
-                let item = jsonData!.routes.first
-                
-                //            for item in jsonData!.routes {
-                self.deliveryLocationLabel.text = item?.legs[0].end_address
-                self.timeLabel.text = item?.legs[0].duration?.text
-                self.kmLabel.text = item?.legs[0].distance?.text
-                let points = item?.overviewPolyline?.points
-                let path = GMSPath.init(fromEncodedPath: points ?? "")
-                let polyline = GMSPolyline.init(path: path)
-                polyline.strokeColor = UIColor(named: "lineColor")!
-                polyline.strokeWidth = 5
-                polyline.geodesic = true
-                polyline.map = self.mapView
-//                let cam = GMSCameraPosition(latitude: self.deliveryLat, longitude: self.deliveryLng, zoom: 10)
-                
-                DispatchQueue.main.async {
-//                    self.mapView.animate(to: cam)
+                if let item = jsonData!.routes.first {
+                    self.deliveryLocationLabel.text = item.legs[0].end_address
+                    self.timeLabel.text = item.legs[0].duration?.text
+                    self.kmLabel.text = item.legs[0].distance?.text
+                    let points = item.overviewPolyline?.points
+                    let path = GMSPath.init(fromEncodedPath: points ?? "")
+                    let polyline = GMSPolyline.init(path: path)
+                    polyline.strokeColor = UIColor(named: "lineColor")!
+                    polyline.strokeWidth = 5
+                    polyline.geodesic = true
+                    polyline.map = self.mapView
                     
-                                        let bounds = GMSCoordinateBounds(path: path!)
-                                        self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+                    DispatchQueue.main.async {
+                        let cam = GMSCameraPosition(latitude: sLat, longitude: sLon, zoom: 15)
+                        self.mapView.animate(to: cam)
+
+//                     Zoom for complete Path
+//                        let bounds = GMSCoordinateBounds(path: path!)
+//                        self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+                    }
                 }
-                //            }
-                //                let cam = GMSCameraPosition(latitude: self.deliveryLat, longitude: self.deliveryLng, zoom: 10)
-                
             }
         }
     }
@@ -141,23 +129,16 @@ extension TrackerViewController
             var dLat = pickupLat
             var dLon = pickupLng
             
-            if deliveryType == .delivery
-            {
+            if deliveryType == .delivery {
                 dLat = deliveryLat
                 dLon = deliveryLng
             }
             
-            let originLocation = "\(sLat),\(sLon)"
-            let destinationLocation = "\(dLat),\(dLon)"
-            
-            fetchGoogleMapData(origin: originLocation, destination: destinationLocation)
-            
+            fetchGoogleMapData(sLat:sLat, sLon:sLon, dLat: dLat, dLon: dLon)
             
             self.markerUpdate(s_lat: sLat, s_lon: sLon, d_lat: dLat, d_lon: dLon)
         }
-        
     }
-    
     
     func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
         

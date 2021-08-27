@@ -152,6 +152,8 @@
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
 		965B354026BD837E009A7BFB /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B353F26BD837E009A7BFB /* ForgotPasswordVM.swift */; };
 		966F8EFE26D787E300E9A27D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F8EFD26D787E300E9A27D /* FirebaseManager.swift */; };
+		966F8F0026D8EC9700E9A27D /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 966F8EFF26D8EC9600E9A27D /* Loader.json */; };
+		966F8F0226D8EE5E00E9A27D /* LoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F8F0126D8EE5E00E9A27D /* LoaderAnimation.swift */; };
 		9672B23926C118F100E8E72F /* DispatchesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23826C118F100E8E72F /* DispatchesListModel.swift */; };
 		9672B23B26C11AE000E8E72F /* DispatchesListResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */; };
 		9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */; };
@@ -347,6 +349,8 @@
 		9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListViewController.xib; sourceTree = "<group>"; };
 		965B353F26BD837E009A7BFB /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
 		966F8EFD26D787E300E9A27D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		966F8EFF26D8EC9600E9A27D /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
+		966F8F0126D8EE5E00E9A27D /* LoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimation.swift; sourceTree = "<group>"; };
 		9672B23826C118F100E8E72F /* DispatchesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListModel.swift; sourceTree = "<group>"; };
 		9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResultItem.swift; sourceTree = "<group>"; };
 		9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResult.swift; sourceTree = "<group>"; };
@@ -518,6 +522,7 @@
 		0067A306252AF82500CECA8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				966F8EFF26D8EC9600E9A27D /* Loader.json */,
 				18397E032660FF47003DE30C /* Foonts */,
 				0067A33A252B91BA00CECA8C /* Assets.xcassets */,
 			);
@@ -755,6 +760,7 @@
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
 				04D4FB5326B00C3C00F8C9F6 /* CustomHeader */,
 				047E83D2268338DC006A0F18 /* LocationPicker */,
+				966F8F0126D8EE5E00E9A27D /* LoaderAnimation.swift */,
 			);
 			path = CommonClasses;
 			sourceTree = "<group>";
@@ -1424,6 +1430,7 @@
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				04F6FD1326C3D542006D1A80 /* MessagesTableViewCell.xib in Resources */,
 				9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */,
+				966F8F0026D8EC9700E9A27D /* Loader.json in Resources */,
 				048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */,
 				969FB4E226B4743600C77CE0 /* DispatchesDetailViewController.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
@@ -1580,6 +1587,7 @@
 				9672B24126C1349B00E8E72F /* DispatchesListVM.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				04D2422526B4070200312E2E /* ContractsViewController.swift in Sources */,
+				966F8F0226D8EE5E00E9A27D /* LoaderAnimation.swift in Sources */,
 				9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */,
 				04F6FD1226C3D542006D1A80 /* MessagesTableViewCell.swift in Sources */,
 				0455470026C13A1D00781C83 /* AvailableLoadsDetailsVM.swift in Sources */,

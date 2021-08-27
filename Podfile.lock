@@ -112,6 +112,7 @@ PODS:
   - iOSDropDown (0.3.4)
   - IQKeyboardManagerSwift (6.5.6)
   - leveldb-library (1.22.1)
+  - lottie-ios (3.2.3)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -139,6 +140,7 @@ DEPENDENCIES:
   - GooglePlaces
   - iOSDropDown
   - IQKeyboardManagerSwift
+  - lottie-ios
   - netfox
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.4)
@@ -165,6 +167,7 @@ SPEC REPOS:
     - iOSDropDown
     - IQKeyboardManagerSwift
     - leveldb-library
+    - lottie-ios
     - nanopb
     - netfox
     - NVActivityIndicatorView
@@ -192,6 +195,7 @@ SPEC CHECKSUMS:
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   netfox: efeec1d23406df6cd605212f09a40957bb5654eb
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
@@ -201,6 +205,6 @@ SPEC CHECKSUMS:
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
   TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
 
-PODFILE CHECKSUM: 7104266acf22f82da4ee380630f05b140a7e1c97
+PODFILE CHECKSUM: fabd73ab9b403b5fe3122b54ea3301cae2c89bb5
 
 COCOAPODS: 1.11.0.rc.1

@@ -20,4 +20,5 @@ target 'CarrierApp' do
   pod 'Firebase/Database'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
+  pod 'lottie-ios'
 end
