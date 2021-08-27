@@ -13,6 +13,9 @@
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
         </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
@@ -20,8 +23,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuotationListViewController" customModule="CarrierApp" customModuleProvider="target">
             <connections>
+                <outlet property="acceptedTab" destination="VTP-ip-l38" id="Igl-Dk-ToB"/>
                 <outlet property="baseHolderView" destination="IMZ-lg-8QU" id="W1P-eU-l4M"/>
+                <outlet property="inProcessTab" destination="5VT-oi-Ft8" id="ELa-yf-tTo"/>
                 <outlet property="noDataLabel" destination="EhO-y5-YGB" id="rQw-vU-9aj"/>
+                <outlet property="pendingTab" destination="ZVh-pp-shV" id="SUl-Sr-oNz"/>
                 <outlet property="tableView" destination="1tb-uv-QQ8" id="Dqe-Ob-MAX"/>
                 <outlet property="titleLabel" destination="6iR-Mv-qzE" id="pX7-J4-8jd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xfd-B3-bjY"/>
@@ -33,16 +39,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zc-yg-uCy">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="csg-88-Ae5">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCZ-mD-bhU">
-                            <rect key="frame" x="0.0" y="44" width="414" height="81"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="85.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXP-ur-Ddt">
-                                    <rect key="frame" x="16" y="18.5" width="24" height="24"/>
+                                    <rect key="frame" x="16" y="21" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="EXP-ur-Ddt" secondAttribute="height" multiplier="1:1" id="eUl-HJ-9yk"/>
                                         <constraint firstAttribute="height" constant="24" id="o7R-5i-hAa"/>
@@ -53,7 +59,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quotations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-Mv-qzE">
-                                    <rect key="frame" x="163" y="20" width="88.5" height="21"/>
+                                    <rect key="frame" x="156" y="20" width="102" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -84,10 +90,93 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-lg-8QU">
-                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZh-HC-6MQ" userLabel="Tab View">
+                            <rect key="frame" x="16" y="16" width="382" height="38"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jfL-J0-OWI">
+                                    <rect key="frame" x="1" y="1" width="380" height="36"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVh-pp-shV">
+                                            <rect key="frame" x="0.0" y="0.0" width="126.5" height="36"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="Pending" image="pending-unselected">
+                                                <color key="titleColor" name="tabUnselectedGrey"/>
+                                            </state>
+                                            <state key="selected" image="pending-selected">
+                                                <color key="titleColor" name="tabSelectedBlack"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="gNV-nI-tkZ"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VT-oi-Ft8">
+                                            <rect key="frame" x="126.5" y="0.0" width="127" height="36"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                            <color key="tintColor" name="tabUnselectedGrey"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="In Process" image="inProcess-unselected">
+                                                <color key="titleColor" name="tabUnselectedGrey"/>
+                                            </state>
+                                            <state key="selected" image="inProcess-selected">
+                                                <color key="titleColor" name="tabSelectedBlack"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="E7S-Vj-QR1"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-ip-l38">
+                                            <rect key="frame" x="253.5" y="0.0" width="126.5" height="36"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="Completed" image="completed-unselected">
+                                                <color key="titleColor" name="tabUnselectedGrey"/>
+                                            </state>
+                                            <state key="selected" image="completed-selected">
+                                                <color key="titleColor" name="tabSelectedBlack"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="IUr-GN-ouo"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" name="innerBorderColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="jfL-J0-OWI" secondAttribute="trailing" constant="1" id="8JK-Z8-Ud0"/>
+                                <constraint firstItem="jfL-J0-OWI" firstAttribute="leading" secondItem="QZh-HC-6MQ" secondAttribute="leading" constant="1" id="VVm-rf-8WE"/>
+                                <constraint firstAttribute="bottom" secondItem="jfL-J0-OWI" secondAttribute="bottom" constant="1" id="ZWC-ft-Bb8"/>
+                                <constraint firstAttribute="height" constant="38" id="lfz-3M-RDG"/>
+                                <constraint firstItem="jfL-J0-OWI" firstAttribute="top" secondItem="QZh-HC-6MQ" secondAttribute="top" constant="1" id="pmj-Pp-aRX"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-uv-QQ8">
-                            <rect key="frame" x="20" y="20" width="374" height="779"/>
+                            <rect key="frame" x="20" y="79" width="374" height="715.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -96,7 +185,7 @@
                             </connections>
                         </tableView>
                         <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Quotations Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-y5-YGB" userLabel="No Data Label">
-                            <rect key="frame" x="126.5" y="391" width="161.5" height="17.5"/>
+                            <rect key="frame" x="115.5" y="387" width="183" height="21"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                             <color key="textColor" name="secondaryText"/>
@@ -106,11 +195,14 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="1tb-uv-QQ8" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="20" id="1Ae-aB-9PV"/>
+                        <constraint firstItem="QZh-HC-6MQ" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="16" id="Fzh-7a-FhC"/>
                         <constraint firstAttribute="bottom" secondItem="1tb-uv-QQ8" secondAttribute="bottom" id="IFh-aq-aJq"/>
                         <constraint firstItem="EhO-y5-YGB" firstAttribute="centerY" secondItem="IMZ-lg-8QU" secondAttribute="centerY" id="PkG-Ml-ncn"/>
                         <constraint firstAttribute="trailing" secondItem="1tb-uv-QQ8" secondAttribute="trailing" constant="20" id="PpC-dm-Hvo"/>
+                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="QZh-HC-6MQ" secondAttribute="bottom" constant="25" id="SIB-hd-DzR"/>
                         <constraint firstItem="EhO-y5-YGB" firstAttribute="centerX" secondItem="IMZ-lg-8QU" secondAttribute="centerX" id="UaY-fB-wex"/>
-                        <constraint firstItem="1tb-uv-QQ8" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" constant="20" id="Ub2-66-uQX"/>
+                        <constraint firstItem="QZh-HC-6MQ" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" constant="16" id="in1-mp-s7u"/>
+                        <constraint firstAttribute="trailing" secondItem="QZh-HC-6MQ" secondAttribute="trailing" constant="16" id="slD-wc-jab"/>
                     </constraints>
                 </view>
             </subviews>
@@ -132,8 +224,23 @@
     <resources>
         <image name="NavBar Header" width="375" height="142"/>
         <image name="Sidemenu" width="27" height="20"/>
+        <image name="completed-selected" width="17" height="17"/>
+        <image name="completed-unselected" width="17" height="17"/>
+        <image name="inProcess-selected" width="18" height="18"/>
+        <image name="inProcess-unselected" width="18" height="18"/>
+        <image name="pending-selected" width="17" height="17"/>
+        <image name="pending-unselected" width="17" height="17"/>
+        <namedColor name="innerBorderColor">
+            <color red="0.90200001001358032" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="secondaryText">
             <color red="0.45100000500679016" green="0.45100000500679016" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tabSelectedBlack">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tabUnselectedGrey">
+            <color red="0.72500002384185791" green="0.71799999475479126" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

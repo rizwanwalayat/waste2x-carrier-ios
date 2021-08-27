@@ -13,11 +13,19 @@ class QuotationListViewController: BaseViewController {
     //MARK: - Variables
     
     var viewModel : QuotationViewModel?
+    var selectedTab = 0
+    var dataShowArray = [QuotationStatusResult]()
+    var currentTabSelect = ""
+    
+    
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var pendingTab: UIButton!
+    @IBOutlet weak var inProcessTab: UIButton!
+    @IBOutlet weak var acceptedTab: UIButton!
     
     
     // MARK: - Controller's LifeCycle
@@ -58,15 +66,51 @@ class QuotationListViewController: BaseViewController {
         } else {
             tableView.isHidden = true
             noDataLabel.isHidden = false
+            noDataLabel.text = "No \(currentTabSelect) Quotations Available"
         }
     }
-    func checkData(){
-        if let count = viewModel?.data?.result.count, count > 0 {
+    func checkData()
+    {
+        if selectedTab == 0 {
+            dataShowArray = (viewModel?.data?.result?.pending ?? []) + (viewModel?.data?.result?.revise ?? [])
+            currentTabSelect = "Pending"
+        }
+        else if selectedTab == 1 {
+            
+            dataShowArray = (viewModel?.data?.result?.contract_sent ?? []) + (viewModel?.data?.result?.contract_signed ?? [])
+            currentTabSelect = "In Process"
+        }
+        else if selectedTab == 2 {
+            
+            dataShowArray = (viewModel?.data?.result?.accepted ?? []) + (viewModel?.data?.result?.rejected ?? [])
+            currentTabSelect = "Completed"
+        }
+        
+        let count = dataShowArray.count
+        if count > 0 {
             self.tableView.reloadData()
             showTable(true)
         } else {
             showTable(false)
         }
+    }
+    
+    func unSelectTabs(){
+        pendingTab.isSelected = false
+        pendingTab.backgroundColor = .clear
+        inProcessTab.isSelected = false
+        inProcessTab.backgroundColor = .clear
+        acceptedTab.isSelected = false
+        acceptedTab.backgroundColor = .clear
+    }
+    
+    // MARK: - Action
+    @IBAction func tabPressed(_ sender: UIButton) {
+        unSelectTabs()
+        sender.isSelected = true
+        sender.backgroundColor = .white
+        selectedTab = sender.tag
+        checkData()
     }
 
 }
@@ -74,24 +118,21 @@ class QuotationListViewController: BaseViewController {
 extension QuotationListViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.data?.result.count ?? 0
+        dataShowArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuotationsTableViewCell", for: indexPath) as! QuotationsTableViewCell
-        if let dataOfModel = viewModel?.data?.result[indexPath.row] {
-            if dataOfModel.status == "Contract Sent"{
-                cell.configCell(.accepted)
-            }
-            else{
-                cell.configCell(.rejected)
-            }
-            cell.TransporterValueLabel.text = dataOfModel.transporterName
-            cell.quotationLabel.text =  "Quote #\(dataOfModel.id)"
-            cell.postLabel.text = "post #\(dataOfModel.loadId)"
-            cell.priceValueLabel.text = "\(dataOfModel.price)".appendDollarSign()
-            cell.TransporterValueLabel.text = dataOfModel.transporterName
-        }
+        let dataOfModel = dataShowArray[indexPath.row]
+        
+        cell.configCell(dataOfModel.quotationStatus)
+        
+        cell.TransporterValueLabel.text = dataOfModel.transporterName
+        cell.quotationLabel.text =  "Quote #\(dataOfModel.id)"
+        cell.postLabel.text = "post #\(dataOfModel.loadId)"
+        cell.priceValueLabel.text = "\(dataOfModel.price)".appendDollarSign()
+        cell.TransporterValueLabel.text = dataOfModel.transporterName
+        
         
         return cell
     }
@@ -103,7 +144,7 @@ extension QuotationListViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailVC = QuotationDetailViewController(nibName: "QuotationDetailViewController", bundle: nil)
-        detailVC.quoteNo = viewModel?.data?.result[indexPath.row].id ?? 00
+        detailVC.quoteNo = dataShowArray[indexPath.row].id
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
