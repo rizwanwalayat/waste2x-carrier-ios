@@ -68,14 +68,14 @@ class DispatchesDetailViewController: BaseViewController {
     {
         if viewModel?.data?.result?.dispatchStatus == .in_transit{
             
-            locationUpdateAndSwitchHandlings(false)
+            locationUpdateAndSwitchHandlings(true)
         }
         
         
         if viewModel?.data?.result?.delivery?.isImage ?? false {
             selectedState = .none
             deliveryType = .none
-            locationUpdateAndSwitchHandlings(true)
+            locationUpdateAndSwitchHandlings(false)
             
         }
         else if !Utility.isBlankString(text: viewModel?.data?.result?.delivery?.arrival ?? "") {
@@ -123,33 +123,32 @@ class DispatchesDetailViewController: BaseViewController {
             
             if status ?? false, error == nil
             {
-                
                 self.showToast(message: "Image uploaded successfully" )
                 self.loadDispatchesDetails()
                 
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }
-            
         })
     }
     
-    fileprivate func locationUpdateAndSwitchHandlings(_ isOff : Bool)
-    {
-        LocationManager.shared.startUpdatingLocation()
+    fileprivate func locationUpdateAndSwitchHandlings(_ flag : Bool) {
         
-        if isOff {
+        if !flag {
+            stopUpdatingLocation()
             
-            LocationManager.shared.stopUpdatingLocation()
             isSwitchButtonOn = false
             let indexPath = IndexPath(item: 0, section: 0)
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
-        else if !isSwitchButtonOn {
+        else {
+            startUpdatingLocation()
             
-            isSwitchButtonOn = true
-            let indexPath = IndexPath(item: 0, section: 0)
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+            if !isSwitchButtonOn {
+                isSwitchButtonOn = true
+                let indexPath = IndexPath(item: 0, section: 0)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
     }
     
@@ -261,7 +260,7 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
     {
         if sender.tag == 1 && selectedState == .departedToPickup {
             
-            locationUpdateAndSwitchHandlings(false)
+            locationUpdateAndSwitchHandlings(true)
             sendDisptachAction(action: .departedToPickup)
         }
         if sender.tag == 2 && selectedState == .departedToDeliver{
@@ -312,6 +311,15 @@ extension DispatchesDetailViewController
                 print(lastChildData)
             }
         }
-        
+    }
+    
+    func startUpdatingLocation() {
+        LocationManager.shared.startUpdatingLocation()
+        FirebaseManager.shared.startUpdatingLocation(dispatchID: viewModel?.id ?? -1 )
+    }
+    
+    func stopUpdatingLocation() {
+        LocationManager.shared.stopUpdatingLocation()
+        FirebaseManager.shared.stopUpdatingLocation()
     }
 }
