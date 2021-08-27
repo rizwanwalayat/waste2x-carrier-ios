@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0067A2B725274C0900CECA8C"
-               BuildableName = "CarrierApp.app"
+               BuildableName = "EnMass Transit.app"
                BlueprintName = "CarrierApp"
                ReferencedContainer = "container:CarrierApp.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0067A2B725274C0900CECA8C"
-            BuildableName = "CarrierApp.app"
+            BuildableName = "EnMass Transit.app"
             BlueprintName = "CarrierApp"
             ReferencedContainer = "container:CarrierApp.xcodeproj">
          </BuildableReference>
@@ -68,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0067A2B725274C0900CECA8C"
-            BuildableName = "CarrierApp.app"
+            BuildableName = "EnMass Transit.app"
             BlueprintName = "CarrierApp"
             ReferencedContainer = "container:CarrierApp.xcodeproj">
          </BuildableReference>

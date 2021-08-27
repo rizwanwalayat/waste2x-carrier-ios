@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FaqViewController" customModule="CarrierApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FaqViewController" customModule="EnMass_Transit" customModuleProvider="target">
             <connections>
                 <outlet property="baseHolderView" destination="FpN-gt-qF7" id="0S7-XL-0YJ"/>
                 <outlet property="tableView" destination="zaN-ds-4o4" id="gn8-iV-INb"/>
@@ -27,13 +27,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-SP-e1g">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="172.66666666666666"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="177.33333333333334"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-gt-qF7">
-                    <rect key="frame" x="0.0" y="144.66666666666669" width="375" height="667.33333333333326"/>
+                    <rect key="frame" x="0.0" y="149.33333333333331" width="375" height="662.66666666666674"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-ds-4o4">
-                            <rect key="frame" x="15" y="0.0" width="345" height="667.33333333333337"/>
+                            <rect key="frame" x="15" y="0.0" width="345" height="662.66666666666663"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -51,21 +51,19 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-Sl-OEe">
-                    <rect key="frame" x="0.0" y="44" width="375" height="128.66666666666666"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="133.33333333333334"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-Z1-8Nb">
-                            <rect key="frame" x="56" y="19.999999999999996" width="153" height="50.666666666666657"/>
-                            <string key="text">Frequently 
-Asked Questions</string>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="FAQs" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-Z1-8Nb">
+                            <rect key="frame" x="64" y="50" width="46.666666666666657" height="25.333333333333329"/>
                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAJ-oW-sL9">
-                            <rect key="frame" x="16" y="33.333333333333329" width="24" height="24"/>
+                            <rect key="frame" x="16" y="46.666666666666671" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="SAJ-oW-sL9" secondAttribute="height" multiplier="1:1" id="4qz-nu-1NO"/>
-                                <constraint firstAttribute="height" constant="24" id="tqq-Fk-atz"/>
+                                <constraint firstAttribute="height" constant="32" id="tqq-Fk-atz"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="BackButton"/>
@@ -79,12 +77,12 @@ Asked Questions</string>
                         <constraint firstItem="SAJ-oW-sL9" firstAttribute="centerY" secondItem="uIq-Z1-8Nb" secondAttribute="centerY" id="FK8-XD-ZaU"/>
                         <constraint firstAttribute="bottom" secondItem="uIq-Z1-8Nb" secondAttribute="bottom" constant="58" id="Wxu-y6-eTP"/>
                         <constraint firstItem="uIq-Z1-8Nb" firstAttribute="leading" secondItem="SAJ-oW-sL9" secondAttribute="trailing" constant="16" id="b3V-mo-4x7"/>
-                        <constraint firstItem="uIq-Z1-8Nb" firstAttribute="top" secondItem="ctp-Sl-OEe" secondAttribute="top" constant="20" id="bYH-o9-OKl"/>
+                        <constraint firstItem="uIq-Z1-8Nb" firstAttribute="top" secondItem="ctp-Sl-OEe" secondAttribute="top" constant="50" id="bYH-o9-OKl"/>
                         <constraint firstItem="SAJ-oW-sL9" firstAttribute="leading" secondItem="ctp-Sl-OEe" secondAttribute="leading" constant="16" id="slg-T8-Qfn"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" image="FAQ's" translatesAutoresizingMaskIntoConstraints="NO" id="ADF-5s-9lS">
-                    <rect key="frame" x="267" y="54" width="70" height="140"/>
+                    <rect key="frame" x="267" y="59" width="70" height="140"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="140" id="Cqb-ul-hIP"/>
                         <constraint firstAttribute="width" secondItem="ADF-5s-9lS" secondAttribute="height" multiplier="1:2" id="MIH-SF-ERz"/>
@@ -95,7 +93,7 @@ Asked Questions</string>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ADF-5s-9lS" secondAttribute="trailing" constant="38" id="BoA-n4-zCN"/>
-                <constraint firstItem="ADF-5s-9lS" firstAttribute="top" secondItem="uIq-Z1-8Nb" secondAttribute="top" constant="-10" id="CxP-Oe-VOt"/>
+                <constraint firstItem="ADF-5s-9lS" firstAttribute="top" secondItem="uIq-Z1-8Nb" secondAttribute="top" constant="-35" id="CxP-Oe-VOt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FpN-gt-qF7" secondAttribute="trailing" id="E9U-c5-5yZ"/>
                 <constraint firstItem="1yx-SP-e1g" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="Ebe-5c-t7O"/>
                 <constraint firstItem="1yx-SP-e1g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JFd-uh-ogQ"/>

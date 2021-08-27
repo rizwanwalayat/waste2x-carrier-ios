@@ -23,6 +23,7 @@ class PolyLineAPIModel : Mappable {
     }
     
     class func PolyLineAPICall(_ completion: @escaping PolyLineCompletionHandler) {
+        
         APIClient.shared.googleLocationPolyLineAPi{ result, error, status,message in
             
             if error == nil {
