@@ -167,8 +167,10 @@ class ChatMessagesViewController: BaseViewController {
             return
         }
         
-        let bottomMessageIndex = IndexPath(row: 0,
-                                           section: 0)
-        tableViewMessages.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
+        DispatchQueue.main.async {
+            let bottomMessageIndex = IndexPath(row: 0,
+                                               section: 0)
+            self.tableViewMessages.scrollToRow(at: bottomMessageIndex, at: .top, animated: true)
+        }
     }
 }

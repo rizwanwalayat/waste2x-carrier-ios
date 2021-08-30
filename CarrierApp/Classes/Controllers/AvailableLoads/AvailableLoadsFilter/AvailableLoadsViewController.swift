@@ -38,13 +38,13 @@ class AvailableLoadsViewController: BaseViewController{
         super.viewDidLoad()
 
         textFieldPlaceHolderAdjustment()
+        viewModel = AvailabelLoadsViewModel()
+        self.fetchLoads(false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel = AvailabelLoadsViewModel()
-        self.fetchLoads(false)
     }
 
 
