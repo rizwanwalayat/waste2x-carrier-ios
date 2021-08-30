@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuViewController" customModule="CarrierApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuViewController" customModule="EnMass_Transit" customModuleProvider="target">
             <connections>
                 <outlet property="headerView" destination="GtQ-aR-c50" id="bMt-NV-JXf"/>
                 <outlet property="leadingConstOfScrollView" destination="h6s-HQ-RVb" id="d2W-OS-TWc"/>
@@ -60,23 +60,23 @@
                     <rect key="frame" x="0.0" y="0.0" width="270" height="230.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-VP-XJY">
-                            <rect key="frame" x="30.5" y="74" width="209.5" height="48.5"/>
+                            <rect key="frame" x="40" y="74" width="190.5" height="48.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Carries Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dyo-yv-a5A">
-                                    <rect key="frame" x="0.0" y="0.0" width="35" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="dyo-yv-a5A" secondAttribute="height" multiplier="1:2" id="D35-UZ-OAY"/>
-                                        <constraint firstAttribute="width" constant="35" id="qmY-ea-tzd"/>
+                                        <constraint firstAttribute="width" secondItem="dyo-yv-a5A" secondAttribute="height" multiplier="1:1" id="D35-UZ-OAY"/>
+                                        <constraint firstAttribute="width" constant="60" id="qmY-ea-tzd"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="CARRIERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ1-PO-Zci">
-                                    <rect key="frame" x="51" y="0.0" width="158.5" height="37.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="EnMass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ1-PO-Zci">
+                                    <rect key="frame" x="76" y="0.0" width="114.5" height="37.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="32"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="App by Enmass Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozS-Sr-HBQ">
-                                    <rect key="frame" x="51" y="34.5" width="158.5" height="14"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Transit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozS-Sr-HBQ">
+                                    <rect key="frame" x="76" y="34.5" width="114.5" height="14"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.46000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -179,7 +179,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Carries Logo" width="40" height="70"/>
+        <image name="Carries Logo" width="567" height="567"/>
         <image name="phone" width="13" height="13"/>
         <namedColor name="themeColor">
             <color red="0.16500000655651093" green="0.49000000953674316" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

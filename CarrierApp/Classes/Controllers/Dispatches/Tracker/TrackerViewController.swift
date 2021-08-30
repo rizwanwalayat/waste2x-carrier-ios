@@ -156,7 +156,7 @@ extension TrackerViewController
         let marker1 = GMSMarker()
         marker1.position = CLLocationCoordinate2D(latitude: d_lat, longitude: d_lon)
         marker1.title = "Ending"
-        marker1.icon = UIImage (named: "endmark")
+        marker1.icon = UIImage (named: "location-destination")
         
         
         DispatchQueue.main.async {
