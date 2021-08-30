@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Carries Logo.png",
+      "filename" : "Enmass@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Carries Logo@2x.png",
+      "filename" : "Enmass@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Carries Logo@3x.png",
+      "filename" : "Enmass@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
