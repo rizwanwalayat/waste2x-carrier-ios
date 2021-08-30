@@ -178,7 +178,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-Sj-WAg">
-                                            <rect key="frame" x="125" y="425" width="125" height="32"/>
+                                            <rect key="frame" x="130" y="425" width="115" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="X1v-Uy-D13"/>
                                             </constraints>
