@@ -80,7 +80,7 @@ class TrackerViewController: BaseViewController {
 extension TrackerViewController
 {
     func fetchGoogleMapData(sLat: Double, sLon: Double, dLat: Double, dLon: Double) {
-//        mapView.clear()
+        mapView.clear()
         
         let origin = "\(sLat),\(sLon)"
         let destination = "\(dLat),\(dLon)"
@@ -146,8 +146,10 @@ extension TrackerViewController
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
         marker.title = "Pickup"
-        marker.icon = UIImage (named: "currentLocation")
-        
+        marker.icon = UIImage (named: "location-track-truck")
+        let  heading:Double = LocationManager.shared.currentHeading?.trueHeading ?? 0.0
+        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        marker.rotation = heading
         
         
         // MARK: Marker for destination location
@@ -160,7 +162,6 @@ extension TrackerViewController
         DispatchQueue.main.async {
             marker.map = self.mapView
             marker1.map = self.mapView
-            
         }
     }
 }

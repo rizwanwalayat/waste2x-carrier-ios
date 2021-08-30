@@ -35,7 +35,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }(CLLocationManager())
     
     private(set) var currentLocation: CLLocationCoordinate2D!
-    private(set) var currentHeading: CLHeading!
+    private(set) var currentHeading: CLHeading?
 
     var authorizationChangeHandler : ((CLAuthorizationStatus)->Void)?
     
@@ -48,7 +48,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func requestUserPermissionsAndStartUpdatingLocation()
     {
         self.manager.requestWhenInUseAuthorization()
-       // manager.startUpdatingLocation()
+        manager.startUpdatingLocation()
+        manager.startUpdatingHeading()
     }
     /**************************************************/
     // MARK: Control Mechanisms
