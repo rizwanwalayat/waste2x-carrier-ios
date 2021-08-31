@@ -44,6 +44,7 @@
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
 		0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C5265BC9EC007C51EE /* UINavigationController.swift */; };
 		043498A726BBFD310046BD46 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043498A626BBFD310046BD46 /* FAQsViewModel.swift */; };
+		043A477226DE2434007109B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043A477126DE2434007109B4 /* GoogleService-Info.plist */; };
 		0455470026C13A1D00781C83 /* AvailableLoadsDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045546FF26C13A1D00781C83 /* AvailableLoadsDetailsVM.swift */; };
 		0455470326C15D6E00781C83 /* SendQuotationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455470226C15D6E00781C83 /* SendQuotationDataModel.swift */; };
 		045DDAE326BC146F00B3E232 /* Faqs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DDADF26BC146F00B3E232 /* Faqs.swift */; };
@@ -139,7 +140,6 @@
 		18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB558326C11CF800E51BB4 /* QuotationViewModel.swift */; };
 		18BB558726C11D5400E51BB4 /* QuotationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB558626C11D5400E51BB4 /* QuotationDataModel.swift */; };
 		18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */; };
-		18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */; };
 		18E1630826C0054D00DD2EED /* ReceiveableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630726C0054D00DD2EED /* ReceiveableViewModel.swift */; };
 		18E1630C26C0073F00DD2EED /* ContractsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630B26C0073F00DD2EED /* ContractsDataModel.swift */; };
 		18E1630E26C0075900DD2EED /* ReceivablesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1630D26C0075900DD2EED /* ReceivablesDataModel.swift */; };
@@ -238,6 +238,7 @@
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		0428F1C5265BC9EC007C51EE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		043498A626BBFD310046BD46 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
+		043A477126DE2434007109B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		045546FF26C13A1D00781C83 /* AvailableLoadsDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsDetailsVM.swift; sourceTree = "<group>"; };
 		0455470226C15D6E00781C83 /* SendQuotationDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendQuotationDataModel.swift; sourceTree = "<group>"; };
 		045DDADF26BC146F00B3E232 /* Faqs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Faqs.swift; sourceTree = "<group>"; };
@@ -333,7 +334,6 @@
 		18BB558626C11D5400E51BB4 /* QuotationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationDataModel.swift; sourceTree = "<group>"; };
 		18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJCenterFlowLayout.swift; sourceTree = "<group>"; };
 		18DDCCAA26A5B3FC00620564 /* CarrierApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarrierApp.entitlements; sourceTree = "<group>"; };
-		18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18E1630726C0054D00DD2EED /* ReceiveableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveableViewModel.swift; sourceTree = "<group>"; };
 		18E1630B26C0073F00DD2EED /* ContractsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsDataModel.swift; sourceTree = "<group>"; };
 		18E1630D26C0075900DD2EED /* ReceivablesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivablesDataModel.swift; sourceTree = "<group>"; };
@@ -434,7 +434,7 @@
 				0067A306252AF82500CECA8C /* Resources */,
 				0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */,
 				0067A2C925274C0B00CECA8C /* Info.plist */,
-				18DDCCAB26A5B99D00620564 /* GoogleService-Info.plist */,
+				043A477126DE2434007109B4 /* GoogleService-Info.plist */,
 			);
 			path = CarrierApp;
 			sourceTree = "<group>";
@@ -1407,6 +1407,7 @@
 				96C44C3126B9862800ED5696 /* SettingsViewController.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				04F6FD1126C3D542006D1A80 /* ChatMessagesViewController.xib in Resources */,
+				043A477226DE2434007109B4 /* GoogleService-Info.plist in Resources */,
 				04C3091926B7E70F00BEC895 /* PaymentViewController.xib in Resources */,
 				9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */,
 				96C44C2D26B952BD00ED5696 /* DispatchesOrderDetail.xib in Resources */,
@@ -1421,7 +1422,6 @@
 				048B798026B1337800189054 /* AvailableLoadsViewController.xib in Resources */,
 				04C3092026B81BB400BEC895 /* TrackerViewController.xib in Resources */,
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
-				18DDCCAC26A5B99D00620564 /* GoogleService-Info.plist in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				96AE408026B84ABD008ABA66 /* DispatchesDetailPickDropCell.xib in Resources */,
 				04206C3626BD3D63006AB6A4 /* ContactTableViewCell.xib in Resources */,
@@ -1815,7 +1815,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.Carrier;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit;
 				PRODUCT_NAME = "EnMass Transit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1841,7 +1841,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.Carrier;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit;
 				PRODUCT_NAME = "EnMass Transit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
