@@ -16,12 +16,14 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var baseHolderView: UIView!
     
     var sideMenuLastSelectedIndex = -1
+    var onboardingEstimatedSpcing : CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         baseHolderView?.roundCornersTopView(36)
         baseHolderView?.backgroundColor = UIColor(hexString: "F0F2F4")
+        onboardingEstimatedSpcing = ScreenSize.SCREEN_HEIGHT * 0.0178571429 // estimated muliplyer of spacing
     }
     
     override func viewDidAppear(_ animated: Bool) {

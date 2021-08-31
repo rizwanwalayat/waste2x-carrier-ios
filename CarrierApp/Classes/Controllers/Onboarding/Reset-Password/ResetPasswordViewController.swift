@@ -12,6 +12,7 @@ import UIKit
 class ResetPasswordViewController: BaseViewController {
     
     //MARK:- IBOutlets
+    @IBOutlet weak var stackView : UIStackView!
     @IBOutlet weak var newPasswordTextField : UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var resetPasswordButton : UIButton!
@@ -29,6 +30,7 @@ class ResetPasswordViewController: BaseViewController {
     
     //MARK: - SetupView
     func setupView() {
+        stackView.spacing = onboardingEstimatedSpcing
         resetPasswordButton.makeEnable(value: false)
     }
     

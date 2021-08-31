@@ -23,6 +23,7 @@
                 <outlet property="loginButton" destination="Ls1-Bi-pNd" id="GEf-o6-asd"/>
                 <outlet property="passwordTextField" destination="kvs-TZ-TcJ" id="woH-ym-elx"/>
                 <outlet property="phoneNoTextField" destination="jft-uV-ElE" id="EWh-k5-Ori"/>
+                <outlet property="stackView" destination="nhw-Mr-MA5" id="W45-O1-91Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -174,7 +175,7 @@
                                                     <rect key="frame" x="0.0" y="238" width="374" height="74"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-Sj-WAg">
-                                                            <rect key="frame" x="0.0" y="45" width="374" height="29"/>
+                                                            <rect key="frame" x="0.0" y="42" width="374" height="32"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                             <state key="normal" title="Forgot Password?">
                                                                 <color key="titleColor" name="themeColor"/>

@@ -13,8 +13,9 @@ class ForgotPasswordViewController: BaseViewController {
     
     //MARK:- IBOutlets
 
+    @IBOutlet weak var stackView            : UIStackView!
     @IBOutlet weak var phoneNoTextField     : UITextField!
-    @IBOutlet weak var resetButton           : UIButton!
+    @IBOutlet weak var resetButton          : UIButton!
     
     //MARK:- Variables
     var viewModel: ForgotPasswordVM?
@@ -34,6 +35,7 @@ class ForgotPasswordViewController: BaseViewController {
     
     //MARK: - SetupView
     func setupView() {
+        stackView.spacing = onboardingEstimatedSpcing
         resetButton.makeEnable(value: false)
     }
     

@@ -12,11 +12,11 @@ import UIKit
 class LoginViewController: BaseViewController {
     
     //MARK:- IBOutlets
-    @IBOutlet weak var enterYourPhoneLabel  : UILabel!
-    @IBOutlet weak var weWillSendYouLabel   : UILabel!
+    @IBOutlet weak var stackView            : UIStackView!
     @IBOutlet weak var phoneNoTextField     : UITextField!
     @IBOutlet weak var passwordTextField    : UITextField!
     @IBOutlet weak var loginButton          : UIButton!
+    
     
     //MARK:- Variables
     
@@ -29,7 +29,7 @@ class LoginViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = true
         phoneNoTextField.text = "+17734777019"
         passwordTextField.text = "123456"
-        //loginButton.makeEnable(value: false)
+        stackView.spacing = onboardingEstimatedSpcing
     }
     
     
