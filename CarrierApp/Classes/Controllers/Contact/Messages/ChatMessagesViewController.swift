@@ -98,7 +98,7 @@ class ChatMessagesViewController: BaseViewController {
         
         //self.enterMessageTextView.resignFirstResponder()
         
-        if enterMessageTextView.text == "" || enterMessageTextView.text == placeHolderText
+        if enterMessageTextView.text.trimmingCharacters(in: .whitespacesAndNewlines) == "" || enterMessageTextView.text == placeHolderText
         {
             self.showToast(message: "Please enter text first")
             return
@@ -106,7 +106,7 @@ class ChatMessagesViewController: BaseViewController {
         
         self.sendbutton.isHidden = true
         self.sendIndicator.startAnimating()
-        TwillioChatDataModel.shared.sendMessage(enterMessageTextView.text!) { result, message in
+        TwillioChatDataModel.shared.sendMessage(enterMessageTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { result, message in
             
             self.sendbutton.isHidden = false
             self.sendIndicator.stopAnimating()

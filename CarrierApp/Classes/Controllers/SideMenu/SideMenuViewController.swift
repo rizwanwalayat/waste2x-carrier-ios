@@ -238,6 +238,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             
         case 8:
             
+            isNeedToUpdateValue = false
             let actionVc = LogoutViewController(nibName: "LogoutViewController", bundle: nil)
             actionVc.modalPresentationStyle = .overFullScreen
             actionVc.confirmButtonPressed = {
