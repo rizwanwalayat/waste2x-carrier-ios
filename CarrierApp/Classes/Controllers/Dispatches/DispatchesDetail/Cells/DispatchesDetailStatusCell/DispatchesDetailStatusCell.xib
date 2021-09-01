@@ -208,7 +208,7 @@
                                     <constraint firstAttribute="height" constant="56" id="iSi-E3-xxn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
-                                <state key="normal" title="Track you order"/>
+                                <state key="normal" title="Get direction"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="4"/>

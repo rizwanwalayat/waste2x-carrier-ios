@@ -57,9 +57,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="270" height="236"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-VP-XJY">
-                            <rect key="frame" x="18" y="74" width="242" height="75"/>
+                            <rect key="frame" x="14" y="74" width="242" height="75"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="logoSiderMenu" translatesAutoresizingMaskIntoConstraints="NO" id="ohU-zv-KcT">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="logoSiderMenu" translatesAutoresizingMaskIntoConstraints="NO" id="ohU-zv-KcT">
                                     <rect key="frame" x="0.0" y="0.0" width="242" height="75"/>
                                 </imageView>
                             </subviews>
@@ -67,13 +67,12 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ohU-zv-KcT" secondAttribute="trailing" id="DsK-xd-IkW"/>
                                 <constraint firstItem="ohU-zv-KcT" firstAttribute="top" secondItem="EaX-VP-XJY" secondAttribute="top" id="Qbd-wG-MCV"/>
-                                <constraint firstAttribute="width" secondItem="EaX-VP-XJY" secondAttribute="height" multiplier="242:75" id="XVj-fL-k0h"/>
                                 <constraint firstAttribute="bottom" secondItem="ohU-zv-KcT" secondAttribute="bottom" id="YqR-L7-jfc"/>
                                 <constraint firstItem="ohU-zv-KcT" firstAttribute="leading" secondItem="EaX-VP-XJY" secondAttribute="leading" id="rZH-Se-XXk"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5d-gl-jrS">
-                            <rect key="frame" x="16" y="158" width="238" height="62"/>
+                            <rect key="frame" x="14" y="158" width="242" height="62"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="J6H-Nh-b81">
                                     <rect key="frame" x="20" y="16" width="13" height="13"/>
@@ -83,13 +82,13 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwK-zz-cTq">
-                                    <rect key="frame" x="37" y="15" width="197" height="15.5"/>
+                                    <rect key="frame" x="37" y="15" width="201" height="15.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+923116166521" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU0-xs-9dF">
-                                    <rect key="frame" x="20" y="32.5" width="214" height="15.5"/>
+                                    <rect key="frame" x="20" y="32.5" width="218" height="15.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -111,12 +110,13 @@
                     </subviews>
                     <color key="backgroundColor" name="themeColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="I5d-gl-jrS" secondAttribute="trailing" constant="16" id="0YS-FM-jjM"/>
+                        <constraint firstItem="EaX-VP-XJY" firstAttribute="centerX" secondItem="GtQ-aR-c50" secondAttribute="centerX" id="3tv-qr-13K"/>
                         <constraint firstAttribute="width" constant="270" id="6eP-es-d5O"/>
+                        <constraint firstItem="I5d-gl-jrS" firstAttribute="centerX" secondItem="GtQ-aR-c50" secondAttribute="centerX" id="8hW-Iq-Om8"/>
                         <constraint firstAttribute="bottom" secondItem="I5d-gl-jrS" secondAttribute="bottom" constant="16" id="Dzo-Vj-X5f"/>
                         <constraint firstItem="I5d-gl-jrS" firstAttribute="top" secondItem="EaX-VP-XJY" secondAttribute="bottom" constant="9" id="V7x-zO-BFn"/>
-                        <constraint firstItem="EaX-VP-XJY" firstAttribute="leading" secondItem="GtQ-aR-c50" secondAttribute="leading" constant="18" id="lD4-Dg-vUc"/>
-                        <constraint firstItem="I5d-gl-jrS" firstAttribute="leading" secondItem="GtQ-aR-c50" secondAttribute="leading" constant="16" id="seK-O6-GoT"/>
+                        <constraint firstItem="I5d-gl-jrS" firstAttribute="trailing" secondItem="EaX-VP-XJY" secondAttribute="trailing" id="dRv-ZW-Mbs"/>
+                        <constraint firstItem="I5d-gl-jrS" firstAttribute="leading" secondItem="EaX-VP-XJY" secondAttribute="leading" id="s5t-Nc-aqT"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
