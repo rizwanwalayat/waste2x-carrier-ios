@@ -53,7 +53,8 @@ class LoginViewController: BaseViewController {
     //MARK: - IBActions
     @IBAction func loginBtnPressed(_ sender: Any)
     {
-        loginViewModel?.login(phoneNumber: phoneNoTextField.text ?? "", password: passwordTextField.text ?? "", { result, error, status, message in
+        let completePhoneNo = "\(countryDialCodeLbl.text ?? "")\(phoneNoTextField.text ?? "")"
+        loginViewModel?.login(phoneNumber: completePhoneNo, password: passwordTextField.text ?? "", { result, error, status, message in
             
             if error != nil {
                 self.showToast(message: error?.localizedDescription ?? message ?? "")
@@ -63,7 +64,7 @@ class LoginViewController: BaseViewController {
             if (status ?? false)
             {
                 DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
-                DataManager.shared.savePhoneNumber(self.phoneNoTextField.text ?? "")
+                DataManager.shared.savePhoneNumber(completePhoneNo)
                 
                 let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
                 Utility.setupRoot([vc], navgationController: self.navigationController)
@@ -122,20 +123,18 @@ extension LoginViewController : UITextFieldDelegate {
 extension LoginViewController: ADCountryPickerDelegate {
     func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String, dialCode: String) {
         picker.dismiss(animated: true, completion: nil)
-        let flagImage = picker.getFlag(countryCode: code)
-        countryIconImgView.image = flagImage
+        if let flagImage = picker.getFlag(countryCode: code){
+            countryIconImgView.image = flagImage
+        }
+        else if code == "US" {
+            countryIconImgView.image = UIImage(named: "US Flag Local")
+        }
         countryDialCodeLbl.text = dialCode
     }
     
     func setupCountryPicker(){
-        
-//        countryCodeView.animateBorderColor(toColor: UIColor.appColor, duration: 0.1)
-        
         picker.delegate = self
         picker.showCallingCodes = true
         picker.defaultCountryCode = "US"
-//        let flagImage = picker.getFlag(countryCode: "US")
-//        countryIconImgView.image = UIImage(named: "US")
-
     }
 }
