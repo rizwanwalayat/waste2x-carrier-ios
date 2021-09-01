@@ -16,6 +16,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var phoneNoTextField     : UITextField!
     @IBOutlet weak var passwordTextField    : UITextField!
     @IBOutlet weak var loginButton          : UIButton!
+    @IBOutlet weak var countryIconImgView   : UIImageView!
+    @IBOutlet weak var countryDialCodeLbl   : UILabel!
     
     
     //MARK:- Variables
@@ -30,6 +32,7 @@ class LoginViewController: BaseViewController {
         phoneNoTextField.text = "+17734777019"
         passwordTextField.text = "123456"
         stackView.spacing = onboardingEstimatedSpcing
+        Utility.selectTextField(countryIconImgView.superview!, isSelected: true)
     }
     
     
@@ -70,6 +73,11 @@ class LoginViewController: BaseViewController {
         let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
         self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
+    
+    @IBAction func pickupCountryButton(_ sender: Any) {
+        
+    }
+    
     
 }
 extension LoginViewController : UITextFieldDelegate {
