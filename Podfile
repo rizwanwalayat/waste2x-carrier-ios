@@ -21,5 +21,5 @@ target 'CarrierApp' do
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
   pod 'lottie-ios'
-  pod 'ADCountryPicker'
+  pod "Columbus"
 end

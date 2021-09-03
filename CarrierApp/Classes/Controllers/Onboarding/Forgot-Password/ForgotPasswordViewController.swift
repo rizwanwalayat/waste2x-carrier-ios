@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ADCountryPicker
+import Columbus
 
 //import LocalAuthentication
 
@@ -24,13 +24,11 @@ class ForgotPasswordViewController: BaseViewController {
     
     //MARK:- Variables
     var viewModel: ForgotPasswordVM?
-    var picker = ADCountryPicker()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupCountryPicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +69,15 @@ class ForgotPasswordViewController: BaseViewController {
     
     @IBAction func selectCountryBtnPressed(_ sender: Any) {
       
-        self.present(picker, animated: true, completion: nil)
+        let countryPicker = CountryPickerViewController(config: CountryPickerConfig(),
+                                                        initialCountryCode: "US") { (country) in
+            
+            self.dismiss(animated: true) {
+                self.countryIconImgView.image = country.flagIcon
+                self.countryDialCodeLbl.text = "+\(country.dialingCode)"
+            }
+        }
+        present(countryPicker, animated: true)
     }
     
 }
@@ -104,25 +110,6 @@ extension ForgotPasswordViewController : UITextFieldDelegate {
         if textField.isEmpty {
             Utility.selectTextField(textField.superview!, isSelected: false)
         }
-    }
-}
-
-extension ForgotPasswordViewController: ADCountryPickerDelegate {
-    func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String, dialCode: String) {
-        picker.dismiss(animated: true, completion: nil)
-        if let flagImage = picker.getFlag(countryCode: code){
-            countryIconImgView.image = flagImage
-        }
-        else if code == "US" {
-            countryIconImgView.image = UIImage(named: "US Flag Local")
-        }
-        countryDialCodeLbl.text = dialCode
-    }
-    
-    func setupCountryPicker(){
-        picker.delegate = self
-        picker.showCallingCodes = true
-        picker.defaultCountryCode = "US"
     }
 }
 
