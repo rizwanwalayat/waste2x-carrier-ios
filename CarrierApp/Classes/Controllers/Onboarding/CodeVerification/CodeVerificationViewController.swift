@@ -35,7 +35,7 @@ class CodeVerificationViewController: BaseViewController {
         super.viewDidLoad()
 
         phoneNumberTextField.text = viewModel?.phoneFromUser
-        self.showToast(message: viewModel?.codeFromBackend ?? "No Code")
+//        self.showToast(message: viewModel?.codeFromBackend ?? "No Code")
         firstTextField.becomeFirstResponder()
     }
 

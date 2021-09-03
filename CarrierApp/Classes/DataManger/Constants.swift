@@ -15,7 +15,9 @@ var app_name = "CarrierApp"
 
 
 struct APIRoutes {
-    static var baseUrl = "https://enmass-cache-programme.appspot.com/"
+//    static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
+    static var baseUrl = "https://cache-admin-panel-production.appspot.com/" //Production
+
     static var imageBaseUrl = "/api/shared/user/userImage"
     
     // MARK: End Ponints
