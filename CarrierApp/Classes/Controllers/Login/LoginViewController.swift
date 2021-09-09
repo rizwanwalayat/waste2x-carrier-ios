@@ -103,8 +103,6 @@ class LoginViewController: BaseViewController {
     @IBAction func textFieldValueChanged(_ sender: Any){
         if phoneNoTextField.text!.count > 0 && passwordTextField.text!.count > 0{
     
-    
-}
             loginButton.makeEnable(value: true)
         }
         else {
