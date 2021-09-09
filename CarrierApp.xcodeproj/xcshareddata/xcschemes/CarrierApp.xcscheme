@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96B14F2826E8D59000B31FFB"
+               BuildableName = "EnMassTransitTests.xctest"
+               BlueprintName = "EnMassTransitTests"
+               ReferencedContainer = "container:CarrierApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "96B14F3926E8EA5300B31FFB"
+               BuildableName = "EnMassTransitAPITests.xctest"
+               BlueprintName = "EnMassTransitAPITests"
+               ReferencedContainer = "container:CarrierApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -178,6 +178,11 @@
 		969FB4E226B4743600C77CE0 /* DispatchesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969FB4DE26B4743600C77CE0 /* DispatchesDetailViewController.xib */; };
 		96AE407F26B84ABD008ABA66 /* DispatchesDetailPickDropCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE407D26B84ABD008ABA66 /* DispatchesDetailPickDropCell.swift */; };
 		96AE408026B84ABD008ABA66 /* DispatchesDetailPickDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96AE407E26B84ABD008ABA66 /* DispatchesDetailPickDropCell.xib */; };
+		96B14F2C26E8D59000B31FFB /* EnMassTransitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F2B26E8D59000B31FFB /* EnMassTransitTests.swift */; };
+		96B14F3D26E8EA5300B31FFB /* EnMassTransitAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F3C26E8EA5300B31FFB /* EnMassTransitAPITests.swift */; };
+		96B14F4926EA0B7D00B31FFB /* SignupCompleteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F4626EA0B7D00B31FFB /* SignupCompleteVM.swift */; };
+		96B14F4A26EA0B7D00B31FFB /* SignupCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F4726EA0B7D00B31FFB /* SignupCompleteViewController.swift */; };
+		96B14F4B26EA0B7D00B31FFB /* SignupCompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B14F4826EA0B7D00B31FFB /* SignupCompleteViewController.xib */; };
 		96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */; };
 		96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98726B197850032C9F2 /* CodeVerificationViewController+Extensions.swift */; };
 		96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */; };
@@ -198,6 +203,23 @@
 		96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0FC1126BD799D007094DC /* CodeVerificationVM.swift */; };
 		B15E6762F9E144B246EE40F4 /* Pods_CarrierApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96B14F2E26E8D59000B31FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0067A2B025274C0900CECA8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0067A2B725274C0900CECA8C;
+			remoteInfo = CarrierApp;
+		};
+		96B14F3F26E8EA5300B31FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0067A2B025274C0900CECA8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0067A2B725274C0900CECA8C;
+			remoteInfo = CarrierApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0067A2B825274C0900CECA8C /* EnMass Transit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EnMass Transit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,6 +398,16 @@
 		969FB4DE26B4743600C77CE0 /* DispatchesDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesDetailViewController.xib; sourceTree = "<group>"; };
 		96AE407D26B84ABD008ABA66 /* DispatchesDetailPickDropCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesDetailPickDropCell.swift; sourceTree = "<group>"; };
 		96AE407E26B84ABD008ABA66 /* DispatchesDetailPickDropCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DispatchesDetailPickDropCell.xib; sourceTree = "<group>"; };
+		96B14F2926E8D59000B31FFB /* EnMassTransitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnMassTransitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B14F2B26E8D59000B31FFB /* EnMassTransitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnMassTransitTests.swift; sourceTree = "<group>"; };
+		96B14F2D26E8D59000B31FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96B14F3526E8D9E600B31FFB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		96B14F3A26E8EA5300B31FFB /* EnMassTransitAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnMassTransitAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B14F3C26E8EA5300B31FFB /* EnMassTransitAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnMassTransitAPITests.swift; sourceTree = "<group>"; };
+		96B14F3E26E8EA5300B31FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96B14F4626EA0B7D00B31FFB /* SignupCompleteVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCompleteVM.swift; sourceTree = "<group>"; };
+		96B14F4726EA0B7D00B31FFB /* SignupCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCompleteViewController.swift; sourceTree = "<group>"; };
+		96B14F4826EA0B7D00B31FFB /* SignupCompleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupCompleteViewController.xib; sourceTree = "<group>"; };
 		96B4E98126B13E210032C9F2 /* AvailableLoadsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableLoadsDetailViewController.swift; sourceTree = "<group>"; };
 		96B4E98226B13E210032C9F2 /* AvailableLoadsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableLoadsDetailViewController.xib; sourceTree = "<group>"; };
 		96B4E98726B197850032C9F2 /* CodeVerificationViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CodeVerificationViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -406,13 +438,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96B14F2626E8D59000B31FFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96B14F3726E8EA5300B31FFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0067A2AF25274C0900CECA8C = {
 			isa = PBXGroup;
 			children = (
+				96B14F3526E8D9E600B31FFB /* README.md */,
 				0067A2BA25274C0900CECA8C /* CarrierApp */,
+				96B14F2A26E8D59000B31FFB /* EnMassTransitTests */,
+				96B14F3B26E8EA5300B31FFB /* EnMassTransitAPITests */,
 				0067A2B925274C0900CECA8C /* Products */,
 				8492EB8B64134913AA029EFA /* Pods */,
 				18397DC32660FA73003DE30C /* Recovered References */,
@@ -424,6 +473,8 @@
 			isa = PBXGroup;
 			children = (
 				0067A2B825274C0900CECA8C /* EnMass Transit.app */,
+				96B14F2926E8D59000B31FFB /* EnMassTransitTests.xctest */,
+				96B14F3A26E8EA5300B31FFB /* EnMassTransitAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -489,6 +540,7 @@
 		0067A2DE2527549400CECA8C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				96B14F4426EA0B7D00B31FFB /* Signup-Complete */,
 				18397DC82660FD35003DE30C /* Login */,
 				96893B9F26A5EFE500C4E0FD /* Forgot-Password */,
 				96B4E98526B197850032C9F2 /* CodeVerification */,
@@ -1230,6 +1282,42 @@
 			path = DispatchesDetailPickDropCell;
 			sourceTree = "<group>";
 		};
+		96B14F2A26E8D59000B31FFB /* EnMassTransitTests */ = {
+			isa = PBXGroup;
+			children = (
+				96B14F2B26E8D59000B31FFB /* EnMassTransitTests.swift */,
+				96B14F2D26E8D59000B31FFB /* Info.plist */,
+			);
+			path = EnMassTransitTests;
+			sourceTree = "<group>";
+		};
+		96B14F3B26E8EA5300B31FFB /* EnMassTransitAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				96B14F3C26E8EA5300B31FFB /* EnMassTransitAPITests.swift */,
+				96B14F3E26E8EA5300B31FFB /* Info.plist */,
+			);
+			path = EnMassTransitAPITests;
+			sourceTree = "<group>";
+		};
+		96B14F4426EA0B7D00B31FFB /* Signup-Complete */ = {
+			isa = PBXGroup;
+			children = (
+				96B14F4526EA0B7D00B31FFB /* ViewModel */,
+				96B14F4726EA0B7D00B31FFB /* SignupCompleteViewController.swift */,
+				96B14F4826EA0B7D00B31FFB /* SignupCompleteViewController.xib */,
+			);
+			path = "Signup-Complete";
+			sourceTree = "<group>";
+		};
+		96B14F4526EA0B7D00B31FFB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96B14F4626EA0B7D00B31FFB /* SignupCompleteVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		96B4E97F26B13C790032C9F2 /* AvailableLoadsDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1355,18 +1443,62 @@
 			productReference = 0067A2B825274C0900CECA8C /* EnMass Transit.app */;
 			productType = "com.apple.product-type.application";
 		};
+		96B14F2826E8D59000B31FFB /* EnMassTransitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96B14F3226E8D59000B31FFB /* Build configuration list for PBXNativeTarget "EnMassTransitTests" */;
+			buildPhases = (
+				96B14F2526E8D59000B31FFB /* Sources */,
+				96B14F2626E8D59000B31FFB /* Frameworks */,
+				96B14F2726E8D59000B31FFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96B14F2F26E8D59000B31FFB /* PBXTargetDependency */,
+			);
+			name = EnMassTransitTests;
+			productName = EnMassTransitTests;
+			productReference = 96B14F2926E8D59000B31FFB /* EnMassTransitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96B14F3926E8EA5300B31FFB /* EnMassTransitAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96B14F4126E8EA5400B31FFB /* Build configuration list for PBXNativeTarget "EnMassTransitAPITests" */;
+			buildPhases = (
+				96B14F3626E8EA5300B31FFB /* Sources */,
+				96B14F3726E8EA5300B31FFB /* Frameworks */,
+				96B14F3826E8EA5300B31FFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96B14F4026E8EA5300B31FFB /* PBXTargetDependency */,
+			);
+			name = EnMassTransitAPITests;
+			productName = EnMassTransitAPITests;
+			productReference = 96B14F3A26E8EA5300B31FFB /* EnMassTransitAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0067A2B025274C0900CECA8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = codesrbit;
 				TargetAttributes = {
 					0067A2B725274C0900CECA8C = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					96B14F2826E8D59000B31FFB = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 0067A2B725274C0900CECA8C;
+					};
+					96B14F3926E8EA5300B31FFB = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 0067A2B725274C0900CECA8C;
 					};
 				};
 			};
@@ -1384,6 +1516,8 @@
 			projectRoot = "";
 			targets = (
 				0067A2B725274C0900CECA8C /* CarrierApp */,
+				96B14F2826E8D59000B31FFB /* EnMassTransitTests */,
+				96B14F3926E8EA5300B31FFB /* EnMassTransitAPITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1431,6 +1565,7 @@
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
 				96B4E98426B13E210032C9F2 /* AvailableLoadsDetailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
+				96B14F4B26EA0B7D00B31FFB /* SignupCompleteViewController.xib in Resources */,
 				04F6FD1326C3D542006D1A80 /* MessagesTableViewCell.xib in Resources */,
 				9674909B26B32165001C4A62 /* DispatchesListViewController.xib in Resources */,
 				966F8F0026D8EC9700E9A27D /* Loader.json in Resources */,
@@ -1453,6 +1588,20 @@
 				0461744126BBBF290055DD3E /* FaqViewController.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
 				04C3091826B7E70F00BEC895 /* CreatePaymentViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96B14F2726E8D59000B31FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96B14F3826E8EA5300B31FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1610,6 +1759,7 @@
 				966F8EFE26D787E300E9A27D /* FirebaseManager.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
+				96B14F4A26EA0B7D00B31FFB /* SignupCompleteViewController.swift in Sources */,
 				9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */,
 				049C052426B0022200A81023 /* MainTabbarController.swift in Sources */,
 				18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */,
@@ -1662,6 +1812,7 @@
 				96C44C2C26B952BD00ED5696 /* DispatchesOrderDetail.swift in Sources */,
 				047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
+				96B14F4926EA0B7D00B31FFB /* SignupCompleteVM.swift in Sources */,
 				04206C4026BD72BF006AB6A4 /* AvailabelLoadsDataModel.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				969FB4E126B4743600C77CE0 /* DispatchesDetailViewController.swift in Sources */,
@@ -1673,7 +1824,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96B14F2526E8D59000B31FFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B14F2C26E8D59000B31FFB /* EnMassTransitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96B14F3626E8EA5300B31FFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B14F3D26E8EA5300B31FFB /* EnMassTransitAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96B14F2F26E8D59000B31FFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0067A2B725274C0900CECA8C /* CarrierApp */;
+			targetProxy = 96B14F2E26E8D59000B31FFB /* PBXContainerItemProxy */;
+		};
+		96B14F4026E8EA5300B31FFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0067A2B725274C0900CECA8C /* CarrierApp */;
+			targetProxy = 96B14F3F26E8EA5300B31FFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */ = {
@@ -1853,6 +2033,94 @@
 			};
 			name = Release;
 		};
+		96B14F3026E8D59000B31FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = EnMassTransitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.EnMassTransitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnMass Transit.app/EnMass Transit";
+			};
+			name = Debug;
+		};
+		96B14F3126E8D59000B31FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = EnMassTransitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.EnMassTransitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnMass Transit.app/EnMass Transit";
+			};
+			name = Release;
+		};
+		96B14F4226E8EA5400B31FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = EnMassTransitAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.EnMassTransitAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnMass Transit.app/EnMass Transit";
+			};
+			name = Debug;
+		};
+		96B14F4326E8EA5400B31FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = EnMassTransitAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.EnMassTransitAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnMass Transit.app/EnMass Transit";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1870,6 +2138,24 @@
 			buildConfigurations = (
 				0067A2CD25274C0B00CECA8C /* Debug */,
 				0067A2CE25274C0B00CECA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96B14F3226E8D59000B31FFB /* Build configuration list for PBXNativeTarget "EnMassTransitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96B14F3026E8D59000B31FFB /* Debug */,
+				96B14F3126E8D59000B31FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96B14F4126E8EA5400B31FFB /* Build configuration list for PBXNativeTarget "EnMassTransitAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96B14F4226E8EA5400B31FFB /* Debug */,
+				96B14F4326E8EA5400B31FFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
