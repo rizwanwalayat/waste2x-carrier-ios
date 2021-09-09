@@ -39,6 +39,7 @@ class ForgotPasswordViewController: BaseViewController {
     //MARK: - SetupView
     func setupView() {
         stackView.spacing = onboardingEstimatedSpcing
+        resetButton.setTitle(onboardingType.rawValue, for: .normal)
         resetButton.makeEnable(value: false)
     }
     
@@ -48,22 +49,32 @@ class ForgotPasswordViewController: BaseViewController {
 
     
     @IBAction func resetButtonPressed(_ sender: Any) {
-        if Utility.isTextFieldHasText(textField: phoneNoTextField)
-        {
-            let completePhoneNo = "\(countryDialCodeLbl.text ?? "")\(phoneNoTextField.text ?? "")"
+        
+        switch onboardingType {
+        case .SignUp:
             
-            viewModel?.sendOTPCode(phoneNumber: completePhoneNo, { result, error, status, message in
+            let codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
+            self.navigationController?.pushViewController(codeVC, animated: true)
+            
+        case .forgotPass:
+            
+            if Utility.isTextFieldHasText(textField: phoneNoTextField)
+            {
+                let completePhoneNo = "\(countryDialCodeLbl.text ?? "")\(phoneNoTextField.text ?? "")"
                 
-                if status ?? false, error == nil {
-                    var codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
-                    let codeVM = CodeVerificationVM(phoneFromUser: completePhoneNo, codeFromBackend: result as? String ?? "")
-                    codeVC.viewModel = codeVM
-                    self.navigationController?.pushViewController(codeVC, animated: true)
-                } else {
-                    self.showToast(message: error?.localizedDescription ?? message ?? "")
-                }
-            })
-           
+                viewModel?.sendOTPCode(phoneNumber: completePhoneNo, { result, error, status, message in
+                    
+                    if status ?? false, error == nil {
+                        let codeVC = CodeVerificationViewController(nibName: "CodeVerificationViewController", bundle: nil)
+                        let codeVM = CodeVerificationVM(phoneFromUser: completePhoneNo, codeFromBackend: result as? String ?? "")
+                        codeVC.viewModel = codeVM
+                        self.navigationController?.pushViewController(codeVC, animated: true)
+                    } else {
+                        self.showToast(message: error?.localizedDescription ?? message ?? "")
+                    }
+                })
+               
+            }
         }
     }
     

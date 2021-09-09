@@ -12,7 +12,7 @@ var kApplicationWindow = Utility.getAppDelegate()!.window
 var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 
 var app_name = "CarrierApp"
-
+var onboardingType = OnboardingType.SignUp
 
 struct APIRoutes {
     static var baseUrl = "https://enmass-cache-programme.appspot.com/"
@@ -45,4 +45,22 @@ struct APIRoutes {
 
 struct FireBaseVariables {
     static var fireBaseToken = ""
+}
+
+enum OnboardingType : String
+{
+    case SignUp = "Send Code"
+    case forgotPass = "Reset My Password"
+    
+    var FinalViewText : String {
+        
+        switch self {
+        case .SignUp:
+            return "Create Account"
+            
+        case .forgotPass:
+            return "Reset"
+        
+        }
+    }
 }

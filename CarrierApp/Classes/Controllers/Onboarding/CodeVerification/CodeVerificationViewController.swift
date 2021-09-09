@@ -41,24 +41,43 @@ class CodeVerificationViewController: BaseViewController {
 
     //MARK: - Actions
 
-    func checkCodeAndResetPassword(){
-        viewModel?.verifyOTP(phoneNumber: self.viewModel?.phoneFromUser ?? "", code: self.viewModel?.codeFromUser ?? "", { result, error, status, message in
-            if status ?? false, error == nil {
-                var resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
-                let resetPasswordVM = ResetPasswordVM(phoneFromUser: self.viewModel?.phoneFromUser ?? "", codeFromUser: self.viewModel?.codeFromUser ?? "")
-                resetPasswordVC.viewModel = resetPasswordVM
-                self.navigationController?.pushViewController(resetPasswordVC, animated: true)
-            } else {
-                self.showToast(message: error?.localizedDescription ?? message ?? "")
-            }
-        })
+    func checkCodeAndResetPassword()
+    {
+        switch onboardingType {
+        case .SignUp:
+            
+            let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
+            self.navigationController?.pushViewController(resetPasswordVC, animated: true)
+            
+        case .forgotPass:
+            
+            viewModel?.verifyOTP(phoneNumber: self.viewModel?.phoneFromUser ?? "", code: self.viewModel?.codeFromUser ?? "", { result, error, status, message in
+                if status ?? false, error == nil {
+                    let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
+                    let resetPasswordVM = ResetPasswordVM(phoneFromUser: self.viewModel?.phoneFromUser ?? "", codeFromUser: self.viewModel?.codeFromUser ?? "")
+                    resetPasswordVC.viewModel = resetPasswordVM
+                    self.navigationController?.pushViewController(resetPasswordVC, animated: true)
+                } else {
+                    self.showToast(message: error?.localizedDescription ?? message ?? "")
+                }
+            })
+        }
     }
     
     
     @IBAction func resendCodeButtonPressed(_ sender: Any) {
-        viewModel?.sendOTPCode(phoneNumber: self.viewModel?.phoneFromUser ?? "", { result, error, status, message in
-            self.showToast(message: error?.localizedDescription ?? message ?? "")
-        })
+        
+        switch onboardingType {
+        case .SignUp:
+            
+            print("Signup was pressed ... !")
+            
+        case .forgotPass:
+            
+            viewModel?.sendOTPCode(phoneNumber: self.viewModel?.phoneFromUser ?? "", { result, error, status, message in
+                self.showToast(message: error?.localizedDescription ?? message ?? "")
+            })
+        }
     }
     
 }

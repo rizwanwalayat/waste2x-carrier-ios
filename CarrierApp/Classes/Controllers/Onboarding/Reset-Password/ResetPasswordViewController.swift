@@ -31,6 +31,7 @@ class ResetPasswordViewController: BaseViewController {
     //MARK: - SetupView
     func setupView() {
         stackView.spacing = onboardingEstimatedSpcing
+        resetPasswordButton.setTitle(onboardingType.FinalViewText, for: .normal)
         resetPasswordButton.makeEnable(value: false)
     }
     

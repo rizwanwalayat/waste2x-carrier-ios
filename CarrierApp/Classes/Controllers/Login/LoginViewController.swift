@@ -75,6 +75,7 @@ class LoginViewController: BaseViewController {
     
     @IBAction func forgotPasswordPressed(_ sender: Any) {
     
+        onboardingType = .forgotPass
         let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
         self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
@@ -91,6 +92,14 @@ class LoginViewController: BaseViewController {
         }
         present(countryPicker, animated: true)
     }
+    
+    @IBAction func signupButtonPressed(_ sender: Any) {
+        
+        onboardingType = .SignUp
+        let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
+        self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
+    }
+    
     
 }
 extension LoginViewController : UITextFieldDelegate {
