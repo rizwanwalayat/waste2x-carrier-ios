@@ -86,6 +86,11 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.send_code, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     
+    func SendSignupCodeApi(phone: String, _ completionBlock: @escaping APIClientCompletionHandler){
+        let params = ["phone": phone] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.sendSignupCode, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
+    }
+    
     func verifyOTPApi(phone: String, code: String, _ completionBlock: @escaping APIClientCompletionHandler){
         let params = ["phone": phone, "code": code] as [String: AnyObject]
         _ = sendRequest(APIRoutes.verify_otp, parameters: params, httpMethod: .post, headers: nil, completionBlock: completionBlock)

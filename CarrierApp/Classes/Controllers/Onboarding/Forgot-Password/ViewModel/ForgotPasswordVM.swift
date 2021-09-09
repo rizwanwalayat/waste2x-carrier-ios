@@ -32,4 +32,25 @@ class ForgotPasswordVM: NSObject {
             }
         }
     }
+    
+    func sendSignupOTPCode(phoneNumber: String, _ completionHandler: @escaping ForgotPasswordCompletionHandler ) {
+        
+        Utility.showLoading()
+        
+        APIClient.shared.SendSignupCodeApi(phone: phoneNumber) { result, error, status, message in
+            Utility.hideLoading()
+            
+            if status, error == nil {
+                
+                guard let codeDict = result as? [String:Any],  let code = codeDict["code"] as? NSNumber
+                else {
+                    completionHandler(nil, error, status, message)
+                    return
+                }
+                completionHandler(code.stringValue, error, status, message)
+            } else {
+                completionHandler(nil, error, status, message)
+            }
+        }
+    }
 }
