@@ -33,8 +33,9 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
-        phoneNoTextField.text = "7734777019"
-        passwordTextField.text = "123456"
+//        phoneNoTextField.text = "7734777019"
+//        passwordTextField.text = "123456"
+        loginButton.makeEnable(value: false)
         stackView.spacing = onboardingEstimatedSpcing
         
     }
@@ -99,23 +100,22 @@ class LoginViewController: BaseViewController {
         let forgotPasswordVC = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
         self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
+    @IBAction func textFieldValueChanged(_ sender: Any){
+        if phoneNoTextField.text!.count > 0 && passwordTextField.text!.count > 0{
     
     
 }
-extension LoginViewController : UITextFieldDelegate {
-    
-   
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if phoneNoTextField.text!.count > 0 {
             loginButton.makeEnable(value: true)
         }
         else {
             loginButton.makeEnable(value: false)
         }
         
-        return true
     }
+    
+}
+extension LoginViewController : UITextFieldDelegate {
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         Utility.selectTextField(textField.superview!, isSelected: true)
