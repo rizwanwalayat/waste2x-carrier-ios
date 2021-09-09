@@ -46,8 +46,8 @@ class CodeVerificationViewController: BaseViewController {
         switch onboardingType {
         case .SignUp:
             
-            let resetPasswordVC = ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
-            self.navigationController?.pushViewController(resetPasswordVC, animated: true)
+            let signupCompleteVC = SignupCompleteViewController(nibName: "SignupCompleteViewController", bundle: nil)
+            self.navigationController?.pushViewController(signupCompleteVC, animated: true)
             
         case .forgotPass:
             
