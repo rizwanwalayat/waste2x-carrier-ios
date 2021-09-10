@@ -24,7 +24,7 @@
                 <outlet property="createAccountButton" destination="Ls1-Bi-pNd" id="L2V-br-ngE"/>
                 <outlet property="emailTextField" destination="p62-dT-BPd" id="NT2-q0-Lwv"/>
                 <outlet property="newPasswordTextField" destination="kvs-TZ-TcJ" id="gnT-CW-EGt"/>
-                <outlet property="selectWasteField" destination="tax-t1-HUk" id="A39-1i-moM"/>
+                <outlet property="selectWasteField" destination="tax-t1-HUk" id="mWu-8z-eCB"/>
                 <outlet property="stackView" destination="nhw-Mr-MA5" id="4Hb-JD-NCv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wasteCapsityTextField" destination="dZt-Ug-gsR" id="WWD-wE-Fnr"/>
@@ -64,7 +64,7 @@
                                                         <constraint firstItem="78F-bG-JaX" firstAttribute="centerX" secondItem="cYI-9t-YuD" secondAttribute="centerX" id="YfO-gh-Gqn"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6p-Os-M8b" userLabel="Password Field">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6p-Os-M8b" userLabel="Email">
                                                     <rect key="frame" x="0.0" y="199.5" width="335" height="58"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="WXj-T0-ICg">
@@ -85,7 +85,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="fledValueChanged:" destination="-1" eventType="editingChanged" id="Mik-ZJ-hKZ"/>
+                                                                <action selector="fliedValueChanged:" destination="-1" eventType="editingChanged" id="Mik-ZJ-hKZ"/>
                                                                 <outlet property="delegate" destination="-1" id="KjY-DT-iDV"/>
                                                             </connections>
                                                         </textField>
@@ -130,7 +130,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="fledValueChanged:" destination="-1" eventType="editingChanged" id="Go5-Ze-rQg"/>
+                                                                <action selector="fliedValueChanged:" destination="-1" eventType="editingChanged" id="Go5-Ze-rQg"/>
                                                                 <outlet property="delegate" destination="-1" id="iyz-9x-rDb"/>
                                                             </connections>
                                                         </textField>
@@ -154,7 +154,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iK3-ji-omT" userLabel="Password Field">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iK3-ji-omT" userLabel="ConfirmPassword Field">
                                                     <rect key="frame" x="0.0" y="347.5" width="335" height="58"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-inactive" translatesAutoresizingMaskIntoConstraints="NO" id="u8l-Vl-CwH">
@@ -175,7 +175,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="fledValueChanged:" destination="-1" eventType="editingChanged" id="4Hf-Ch-2QJ"/>
+                                                                <action selector="fliedValueChanged:" destination="-1" eventType="editingChanged" id="4Hf-Ch-2QJ"/>
                                                                 <outlet property="delegate" destination="-1" id="tYg-gi-Y4e"/>
                                                             </connections>
                                                         </textField>
@@ -199,7 +199,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McB-1e-A7I" userLabel="State">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McB-1e-A7I" userLabel="Waste Type">
                                                     <rect key="frame" x="0.0" y="421.5" width="335" height="58"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="EXn-SZ-kf0">
@@ -209,7 +209,7 @@
                                                                 <constraint firstAttribute="width" secondItem="EXn-SZ-kf0" secondAttribute="height" multiplier="1:1" id="grB-OC-hZb"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Waste Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tax-t1-HUk" customClass="DropDown" customModule="iOSDropDown">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Waste Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tax-t1-HUk">
                                                             <rect key="frame" x="16" y="0.0" width="319" height="58"/>
                                                             <color key="textColor" red="0.10980392160000001" green="0.14117647059999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -230,15 +230,25 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pk7-uT-8dd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="58"/>
+                                                            <connections>
+                                                                <action selector="wasteTypePressed:" destination="-1" eventType="touchUpInside" id="5xO-af-taE"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" name="bgColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Pk7-uT-8dd" secondAttribute="trailing" id="3JF-wL-q7l"/>
                                                         <constraint firstItem="tax-t1-HUk" firstAttribute="top" secondItem="McB-1e-A7I" secondAttribute="top" id="OsS-dl-G5f"/>
                                                         <constraint firstAttribute="height" constant="58" id="W8z-2I-CVl"/>
+                                                        <constraint firstItem="Pk7-uT-8dd" firstAttribute="leading" secondItem="McB-1e-A7I" secondAttribute="leading" id="WX2-06-kdI"/>
                                                         <constraint firstAttribute="trailing" secondItem="EXn-SZ-kf0" secondAttribute="trailing" constant="16" id="dwz-Mk-4Y1"/>
                                                         <constraint firstAttribute="trailing" secondItem="tax-t1-HUk" secondAttribute="trailing" id="eH6-OV-gqg"/>
                                                         <constraint firstAttribute="bottom" secondItem="tax-t1-HUk" secondAttribute="bottom" id="egQ-lR-LcH"/>
                                                         <constraint firstItem="tax-t1-HUk" firstAttribute="leading" secondItem="McB-1e-A7I" secondAttribute="leading" constant="16" id="erX-U6-fM0"/>
+                                                        <constraint firstItem="Pk7-uT-8dd" firstAttribute="top" secondItem="McB-1e-A7I" secondAttribute="top" id="reJ-9I-6aV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Pk7-uT-8dd" secondAttribute="bottom" id="uLg-Cv-vZD"/>
                                                         <constraint firstItem="EXn-SZ-kf0" firstAttribute="centerY" secondItem="McB-1e-A7I" secondAttribute="centerY" id="vsb-I0-xG5"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -250,7 +260,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAU-5s-k9N" userLabel="Password Field">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAU-5s-k9N" userLabel="Capacity">
                                                     <rect key="frame" x="0.0" y="495.5" width="335" height="58"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Package" translatesAutoresizingMaskIntoConstraints="NO" id="wpz-4U-YFW">
@@ -272,7 +282,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="fledValueChanged:" destination="-1" eventType="editingChanged" id="iy9-zq-cmI"/>
+                                                                <action selector="fliedValueChanged:" destination="-1" eventType="editingChanged" id="iy9-zq-cmI"/>
                                                                 <outlet property="delegate" destination="-1" id="4wb-vd-aPY"/>
                                                             </connections>
                                                         </textField>

@@ -22,4 +22,5 @@ target 'CarrierApp' do
   pod 'Firebase/Analytics'
   pod 'lottie-ios'
   pod "Columbus"
+  pod 'RSSelectionMenu'
 end
