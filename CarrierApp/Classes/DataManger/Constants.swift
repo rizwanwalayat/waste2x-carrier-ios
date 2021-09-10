@@ -42,7 +42,9 @@ struct APIRoutes {
     static var polyLineUrl = ""
     static var dispatchActions = "carriers/api/dispatch_actions"
     static var postImage = baseUrl + "carriers/api/pod_upload"
+    static var sendSignupCode = "carriers/api/signup/send_code"
 
+    
 }
 
 struct FireBaseVariables {

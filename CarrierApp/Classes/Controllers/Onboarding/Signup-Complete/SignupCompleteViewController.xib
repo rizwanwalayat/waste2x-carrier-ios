@@ -300,7 +300,7 @@
                                                             <rect key="frame" x="0.0" y="16" width="335" height="58"/>
                                                             <color key="backgroundColor" name="themeColor"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
-                                                            <state key="normal" title="Reset"/>
+                                                            <state key="normal" title="Create Account"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="4"/>
