@@ -17,6 +17,7 @@ class TrackerViewController: BaseViewController {
     var trackID = 1
     var viewModel:TrackerVM?
     var deliveryType = DispatchesDeliveryType.none
+    let marker = GMSMarker()
     
     /// for timer
     var timer = Timer()
@@ -38,6 +39,7 @@ class TrackerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickupLocationLabel.setAttributedTextInLable("From", "6C6C6C", 10, "Isale, Bujumbura Rural, Burundi", "6C6C6C", 10)
+        LocationManager.shared.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,13 +145,10 @@ extension TrackerViewController
     func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
         
         // MARK: Marker for source location
-        let marker = GMSMarker()
+
         marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
         marker.title = "Pickup"
         marker.icon = UIImage (named: "location-track-truck")
-        let  heading:Double = LocationManager.shared.currentHeading?.trueHeading ?? 0.0
-        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
-        marker.rotation = heading
         
         
         // MARK: Marker for destination location
@@ -160,11 +159,20 @@ extension TrackerViewController
         
         
         DispatchQueue.main.async {
-            marker.map = self.mapView
+            self.marker.map = self.mapView
             marker1.map = self.mapView
         }
     }
 }
 
-
-
+extension TrackerViewController : LocationManagerDelegate
+{
+    func headerUpdated(_ heading: CLHeading) {
+        
+        let  heading:Double = LocationManager.shared.currentHeading?.trueHeading ?? 0.0
+        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        marker.rotation = heading
+    }
+    
+    
+}

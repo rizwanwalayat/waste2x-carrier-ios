@@ -11,6 +11,9 @@ import Foundation
 import UIKit
 import GoogleMaps
 
+protocol LocationManagerDelegate {
+    func headerUpdated(_ heading: CLHeading)
+}
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
@@ -36,6 +39,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private(set) var currentLocation: CLLocationCoordinate2D!
     private(set) var currentHeading: CLHeading?
+    var delegate : LocationManagerDelegate?
 
     var authorizationChangeHandler : ((CLAuthorizationStatus)->Void)?
     
@@ -113,6 +117,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                          didUpdateHeading newHeading: CLHeading)
     {
         currentHeading = newHeading
+        delegate?.headerUpdated(newHeading)
     }
     
     /**************************************************/
