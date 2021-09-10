@@ -91,9 +91,25 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.sendSignupCode, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     
+    func resendSignupCodeApi(phone: String, _ completionBlock: @escaping APIClientCompletionHandler){
+        let params = ["phone": phone] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.resendSignupCode, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
+    }
+    
     func verifyOTPApi(phone: String, code: String, _ completionBlock: @escaping APIClientCompletionHandler){
         let params = ["phone": phone, "code": code] as [String: AnyObject]
         _ = sendRequest(APIRoutes.verify_otp, parameters: params, httpMethod: .post, headers: nil, completionBlock: completionBlock)
+    }
+    
+    func verifySignupOTPApi(phone: String, code: String, _ completionBlock: @escaping APIClientCompletionHandler){
+        let params = ["phone": phone, "code": code, "latitude": LocationManager.shared.currentLocation.latitude, "longitude": LocationManager.shared.currentLocation.longitude] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.verifySignupCode, parameters: params, httpMethod: .post, headers: nil, completionBlock: completionBlock)
+    }
+    
+    func createAccount(email: String, password: String, wasteIDs: String, capacity: String, _ completionBlock: @escaping APIClientCompletionHandler)
+    {
+        let params = ["email": email, "password": password, "waste_types": wasteIDs, "weight_capacity": capacity] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.createAccount, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     
     func LoadsApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {

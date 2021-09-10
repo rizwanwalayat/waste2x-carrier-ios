@@ -69,6 +69,7 @@
 		048B953C26B2A6E80013DAAD /* QuotationActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B953A26B2A6E80013DAAD /* QuotationActionViewController.swift */; };
 		048B953D26B2A6E80013DAAD /* QuotationActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B953B26B2A6E80013DAAD /* QuotationActionViewController.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
+		048F16BB26EB6C7700A94CFE /* SignupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F16B826EB6C7700A94CFE /* SignupDataModel.swift */; };
 		049C052426B0022200A81023 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C052326B0022200A81023 /* MainTabbarController.swift */; };
 		049F2AB826E10E8000433489 /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F2AB726E10E8000433489 /* CountryPickerConfig.swift */; };
 		04ABB4C626BACB0A00C24153 /* ResultLoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABB4C526BACB0A00C24153 /* ResultLoginUser.swift */; };
@@ -286,6 +287,7 @@
 		048B953A26B2A6E80013DAAD /* QuotationActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationActionViewController.swift; sourceTree = "<group>"; };
 		048B953B26B2A6E80013DAAD /* QuotationActionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationActionViewController.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
+		048F16B826EB6C7700A94CFE /* SignupDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupDataModel.swift; sourceTree = "<group>"; };
 		049C052326B0022200A81023 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		049F2AB726E10E8000433489 /* CountryPickerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
 		04ABB4C526BACB0A00C24153 /* ResultLoginUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultLoginUser.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				048F16B626EB6C6100A94CFE /* Signup */,
 				96E0EA8B26CBE7F8008E0329 /* Tracking */,
 				967A713B26BBCFC3002D72DD /* Observable.swift */,
 				04F6FD1426C3DB4C006D1A80 /* Messages */,
@@ -818,6 +821,14 @@
 				049F2AB726E10E8000433489 /* CountryPickerConfig.swift */,
 			);
 			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		048F16B626EB6C6100A94CFE /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				048F16B826EB6C7700A94CFE /* SignupDataModel.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		04C3091326B7E70F00BEC895 /* Payments */ = {
@@ -1815,6 +1826,7 @@
 				96B14F4926EA0B7D00B31FFB /* SignupCompleteVM.swift in Sources */,
 				04206C4026BD72BF006AB6A4 /* AvailabelLoadsDataModel.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
+				048F16BB26EB6C7700A94CFE /* SignupDataModel.swift in Sources */,
 				969FB4E126B4743600C77CE0 /* DispatchesDetailViewController.swift in Sources */,
 				04206C4826BD83C3006AB6A4 /* StatesDataModel.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,

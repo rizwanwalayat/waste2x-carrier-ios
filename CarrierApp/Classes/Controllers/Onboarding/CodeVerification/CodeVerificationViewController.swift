@@ -46,8 +46,21 @@ class CodeVerificationViewController: BaseViewController {
         switch onboardingType {
         case .SignUp:
             
-            let signupCompleteVC = SignupCompleteViewController(nibName: "SignupCompleteViewController", bundle: nil)
-            self.navigationController?.pushViewController(signupCompleteVC, animated: true)
+
+            viewModel?.verifySignupOTP(phoneNumber: self.viewModel?.phoneFromUser ?? "", code: self.viewModel?.codeFromUser ?? "", { result, error, status, message in
+                if status ?? false, error == nil, result != nil {
+
+                    let signupCompleteVC = SignupCompleteViewController(nibName: "SignupCompleteViewController", bundle: nil)
+                    let signupResVM = SignupCompleteVM(responseData: result!)
+                    signupCompleteVC.viewModel = signupResVM
+                    
+                    self.navigationController?.pushViewController(signupCompleteVC, animated: true)
+                    
+                } else {
+                    self.showToast(message: error?.localizedDescription ?? message ?? "")
+                }
+            })
+            
             
         case .forgotPass:
             
@@ -71,6 +84,11 @@ class CodeVerificationViewController: BaseViewController {
         case .SignUp:
             
             print("Signup was pressed ... !")
+            
+            viewModel?.sendSignupOTPCode(phoneNumber: self.viewModel?.phoneFromUser ?? "", { result, error, status, message in
+                
+                self.showToast(message: error?.localizedDescription ?? message ?? "")
+            })
             
         case .forgotPass:
             

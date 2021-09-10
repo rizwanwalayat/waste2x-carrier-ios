@@ -5,30 +5,36 @@
 //  Created by Phaedra Solutions  on 06/08/2021.
 //  Copyright © 2021 codesrbit. All rights reserved.
 //
-
+import ObjectMapper
 import Foundation
 
-typealias SignupCompleteCompletionHandler = (_ result: Any?, _ error: Error?, _ status: Bool?, _ message: String?) -> ()
+typealias SignupCompleteCompletionHandler = (_ result: SignUpDataModel?, _ error: Error?, _ status: Bool?, _ message: String?) -> ()
 
 
 class SignupCompleteVM: NSObject {
-    var phoneFromUser: String
-    var codeFromUser: String
-    var newPasswordFromUser: String = ""
     
-    init(phoneFromUser: String, codeFromUser: String) {
-        self.phoneFromUser = phoneFromUser
-        self.codeFromUser = codeFromUser
+    var data : SignUpDataModel?
+    
+    init(responseData : SignUpDataModel) {
+        data = responseData
     }
     
-    func resetPassword(phone: String, code: String, password: String, _ completion: @escaping SignupCompleteCompletionHandler) {
+    func createAccount(email: String, password: String, wasteIDs: String, capacity: String, _ completion: @escaping SignupCompleteCompletionHandler) {
         Utility.showLoading()
         
-        APIClient.shared.resetPasswordApi(phone: phone, code: code, password: password) { result, error, status, message in
+        APIClient.shared.createAccount(email: email, password: password, wasteIDs: wasteIDs, capacity: capacity) { result, error, status, message in
             Utility.hideLoading()
             
             if status , error == nil {
-                completion(result, nil, status, message)
+                
+                let newResult = ["result" : result]
+                if let data = Mapper<SignUpDataModel>().map(JSON: newResult as [String : Any]) {
+                    completion(data, nil, status, message)
+                }
+                else {
+                    completion(nil, nil, false, message)
+                }
+
             } else {
                 completion(nil, error, status, message)
             }

@@ -15,8 +15,8 @@ var app_name = "CarrierApp"
 var onboardingType = OnboardingType.SignUp
 
 struct APIRoutes {
-//    static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
-    static var baseUrl = "https://cache-admin-panel-production.appspot.com/" //Production
+    static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
+//    static var baseUrl = "https://cache-admin-panel-production.appspot.com/" //Production
 
     static var imageBaseUrl = "/api/shared/user/userImage"
     
@@ -43,7 +43,9 @@ struct APIRoutes {
     static var dispatchActions = "carriers/api/dispatch_actions"
     static var postImage = baseUrl + "carriers/api/pod_upload"
     static var sendSignupCode = "carriers/api/signup/send_code"
-
+    static var resendSignupCode = "carriers/api/signup/resend_code"
+    static var verifySignupCode = "carriers/api/signup/verify_code"
+    static var createAccount = "carriers/api/signup/select_waste_type"
     
 }
 

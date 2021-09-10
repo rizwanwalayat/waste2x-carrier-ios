@@ -52,22 +52,22 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="E4I-BM-74d">
-                                            <rect key="frame" x="70" y="346" width="274.5" height="28.5"/>
+                                            <rect key="frame" x="76.5" y="346" width="261" height="28.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code is sent to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVb-5p-YR1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="28.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="28.5"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                     <color key="textColor" name="secondaryText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1 252 223 5542" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q2-CR-wnP" userLabel="Phone Number">
-                                                    <rect key="frame" x="109" y="0.0" width="110.5" height="28.5"/>
+                                                    <rect key="frame" x="100" y="0.0" width="106" height="28.5"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                     <color key="textColor" name="secondaryText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztd-YI-e1s">
-                                                    <rect key="frame" x="224.5" y="0.0" width="50" height="28.5"/>
+                                                    <rect key="frame" x="211" y="0.0" width="50" height="28.5"/>
                                                     <state key="normal">
                                                         <attributedString key="attributedTitle">
                                                             <fragment content="Change">
@@ -238,16 +238,16 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlP-9Y-ttv" userLabel="Request again View">
-                                            <rect key="frame" x="85.5" y="497.5" width="243.5" height="32"/>
+                                            <rect key="frame" x="96" y="497.5" width="222" height="29"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t receive code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjG-0V-aOt" userLabel="Didn't receive code?">
-                                                    <rect key="frame" x="0.0" y="0.0" width="141.5" height="32"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="29"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                     <color key="textColor" name="secondaryText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3i-ID-8Ko">
-                                                    <rect key="frame" x="151.5" y="0.0" width="92" height="32"/>
+                                                    <rect key="frame" x="139" y="0.0" width="83" height="29"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                     <state key="normal" title="Resend code">
                                                         <color key="titleColor" name="themeColor"/>
