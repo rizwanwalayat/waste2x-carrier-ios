@@ -24,7 +24,7 @@ class SignupCompleteViewController: BaseViewController {
     
     //MARK:- Variables
     var viewModel: SignupCompleteVM?
-    var wasteId = ""
+    var wasteIds = ""
    
     
     //MARK: - Lifecycle
@@ -45,53 +45,61 @@ class SignupCompleteViewController: BaseViewController {
     func showCountries()
         {
         guard let wasteTypes = viewModel?.data?.result?.waste_types.map({ $0.title }) else {return}
-        guard let Ids = viewModel?.data?.result?.waste_types.map({ $0.id }) else {return}
+        
             let selectionMenu = RSSelectionMenu(selectionStyle: .multiple, dataSource: wasteTypes) { (cell, country, indexPath) in
                 
                 cell.textLabel?.text = country
                 cell.backgroundView?.backgroundColor = .white
                 cell.backgroundColor = .white
-                // customization
-                // set image
                 cell.imageView?.image = nil
-//                cell.tintColor = APP_COLOUR // #colorLiteral(red: 0.9843137255, green: 0.6039215686, blue: 0.2078431373, alpha: 1)
             }
             
-            selectionMenu.onDismiss = { [weak self] selectedItems in
+            selectionMenu.onDismiss = { selectedItems in
                 
                 if selectedItems.count > 0
                 {
+                    Utility.selectTextField(self.selectWasteField.superview!, isSelected: true)
+                    var wasteType = ""
                     
                     for item in selectedItems {
                         
-                        let id = self?.viewModel?.data?.result?.waste_types.map({ type -> SignupWaste_types in
-                            type.title == item
-                            return type
-                        })
-                       
-//                        if let row = self?.viewModel?.data?.result?.waste_types.firstIndex(where: {$0.title == item}) {
-//                            let id = self?.viewModel?.data?.result?.waste_types[row].id
-//                            print(id)
-//                        }
-                      
+//                        let id = self?.viewModel?.data?.result?.waste_types.map({ type -> SignupWaste_types in
+//                            type.title == item
+//                            return type
+//                        })
+                        
+                        //  for ids handlings
+                        if let obj = self.viewModel?.data?.result?.waste_types.first(where: {$0.title == item}) {
+                           
+                            if self.wasteIds.count > 0 {
+                                
+                                self.wasteIds = "\(self.wasteIds), \(obj.id)"
+                            }
+                            else
+                            {
+                                self.wasteIds = "\(obj.id)"
+                            }
+                        }
+                        
+                    /// for  title handling
+                        if wasteType.count > 0 {
+                            
+                            wasteType = "\(wasteType), \(item)"
+                        }
+                        else
+                        {
+                            wasteType = "\(item)"
+                        }
 
                     }
-                    let countryName = selectedItems.first!
-                    print(countryName)
                     
-                    self?.selectWasteField.text = countryName
+                    self.selectWasteField.text = wasteType
+                }
+                else {
+                    Utility.selectTextField(self.selectWasteField.superview!, isSelected: false)
                 }
                 
             }
-            
-//            // show searchbar
-//            selectionMenu.showSearchBar(withPlaceHolder: NSLocalizedString("id_search_country", comment: ""), barTintColor: UIColor.white) { [weak self] (searchText) -> ([String]) in
-//
-//                // return filtered array based on any condition
-//                // here let's return array where name starts with specified search text
-//
-//                return countryNames.filter({ $0.lowercased().hasPrefix(searchText.lowercased()) })
-//            }
             
         selectionMenu.leftBarButtonTitle = "Cancel"
         selectionMenu.setNavigationBar(title: "Waste Type")
@@ -100,35 +108,6 @@ class SignupCompleteViewController: BaseViewController {
             // show as PresentationStyle = push
             selectionMenu.show(style: .present, from: self)
         }
-    
-   
-//    func dropDownHandlings()
-//    {
-//        selectWasteField.attributedPlaceholder = NSAttributedString(string: "Select Waste",
-//                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: "A1A4B2")])
-//
-//        guard let wasteTypes = viewModel?.data?.result?.waste_types.map({ $0.title }) else {return}
-//        guard let Ids = viewModel?.data?.result?.waste_types.map({ $0.id }) else {return}
-//
-//        selectWasteField.optionArray = wasteTypes
-//        selectWasteField.optionIds = Ids
-//        selectWasteField.rowHeight = 40
-//        selectWasteField.checkMarkEnabled = false
-//        let point = selectWasteField.superview!.convert(selectWasteField.frame.origin, to: self.view)
-//        let estimatedHeight =  CGFloat(40 * wasteTypes.count)
-//        let maxHeight = ScreenSize.SCREEN_HEIGHT - point.y - 100 // 100 is bottom margin
-//        if estimatedHeight > maxHeight{
-//
-//            selectWasteField.listHeight = maxHeight
-//        }
-//        else
-//        {
-//            selectWasteField.listHeight = estimatedHeight
-//        }
-//        selectWasteField.didSelect{(selectedText , index ,id) in
-//            self.wasteId = "\(id)"
-//        }
-//    }
     
     
     //MARK: - IBActions
@@ -140,12 +119,16 @@ class SignupCompleteViewController: BaseViewController {
     
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         
-        viewModel?.createAccount(email: emailTextField.text ?? "", password: newPasswordTextField.text ?? "", wasteIDs: wasteId, capacity: wasteCapsityTextField.text ?? "", { result, error, Success, message in
+        viewModel?.createAccount(email: emailTextField.text ?? "", password: newPasswordTextField.text ?? "", wasteIDs: wasteIds, capacity: wasteCapsityTextField.text ?? "", { result, error, Success, message in
             
             if Success ?? false, error == nil, result != nil {
 
+                let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
+                Utility.setupRoot([vc], navgationController: self.navigationController)
                 
             } else {
+                
+                DataManager.shared.removeAuthToken()
                 self.showToast(message: error?.localizedDescription ?? message ?? "")
             }
         })

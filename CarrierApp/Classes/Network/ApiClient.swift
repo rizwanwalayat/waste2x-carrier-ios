@@ -102,14 +102,22 @@ class APIClient: APIClientHandler {
     }
     
     func verifySignupOTPApi(phone: String, code: String, _ completionBlock: @escaping APIClientCompletionHandler){
-        let params = ["phone": phone, "code": code, "latitude": LocationManager.shared.currentLocation.latitude, "longitude": LocationManager.shared.currentLocation.longitude] as [String: AnyObject]
-        _ = sendRequest(APIRoutes.verifySignupCode, parameters: params, httpMethod: .post, headers: nil, completionBlock: completionBlock)
+        var params = ["phone": phone, "code": code] as [String : Any]
+        
+        if LocationManager.shared.currentLocation != nil {
+            params["latitude"] = LocationManager.shared.currentLocation.latitude
+            params["longitude"] = LocationManager.shared.currentLocation.longitude
+        }
+        let prameter = params as [String: AnyObject]
+        
+        _ = sendRequest(APIRoutes.verifySignupCode, parameters: prameter, httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     
     func createAccount(email: String, password: String, wasteIDs: String, capacity: String, _ completionBlock: @escaping APIClientCompletionHandler)
     {
-        let params = ["email": email, "password": password, "waste_types": wasteIDs, "weight_capacity": capacity] as [String: AnyObject]
-        _ = sendRequest(APIRoutes.createAccount, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
+        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let params = [ "email": email, "password": password, "waste_types": wasteIDs, "weight_capacity": capacity] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.createAccount, parameters: params , httpMethod: .post, headers: headers, completionBlock: completionBlock)
     }
     
     func LoadsApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {

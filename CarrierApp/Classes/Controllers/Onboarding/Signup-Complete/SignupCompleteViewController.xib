@@ -51,9 +51,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="183.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Carriers Logo" translatesAutoresizingMaskIntoConstraints="NO" id="78F-bG-JaX">
-                                                            <rect key="frame" x="100.5" y="30" width="134" height="123.5"/>
+                                                            <rect key="frame" x="105.5" y="30" width="124" height="123.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="78F-bG-JaX" secondAttribute="height" multiplier="90:83" id="e7Y-zh-lsL"/>
+                                                                <constraint firstAttribute="width" secondItem="78F-bG-JaX" secondAttribute="height" multiplier="1:1" id="e7Y-zh-lsL"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
@@ -210,7 +210,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Waste Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tax-t1-HUk">
-                                                            <rect key="frame" x="16" y="0.0" width="319" height="58"/>
+                                                            <rect key="frame" x="16" y="0.0" width="277" height="58"/>
                                                             <color key="textColor" red="0.10980392160000001" green="0.14117647059999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" textContentType="password"/>
@@ -244,7 +244,7 @@
                                                         <constraint firstAttribute="height" constant="58" id="W8z-2I-CVl"/>
                                                         <constraint firstItem="Pk7-uT-8dd" firstAttribute="leading" secondItem="McB-1e-A7I" secondAttribute="leading" id="WX2-06-kdI"/>
                                                         <constraint firstAttribute="trailing" secondItem="EXn-SZ-kf0" secondAttribute="trailing" constant="16" id="dwz-Mk-4Y1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="tax-t1-HUk" secondAttribute="trailing" id="eH6-OV-gqg"/>
+                                                        <constraint firstItem="EXn-SZ-kf0" firstAttribute="leading" secondItem="tax-t1-HUk" secondAttribute="trailing" constant="8" id="eFh-eG-p9U"/>
                                                         <constraint firstAttribute="bottom" secondItem="tax-t1-HUk" secondAttribute="bottom" id="egQ-lR-LcH"/>
                                                         <constraint firstItem="tax-t1-HUk" firstAttribute="leading" secondItem="McB-1e-A7I" secondAttribute="leading" constant="16" id="erX-U6-fM0"/>
                                                         <constraint firstItem="Pk7-uT-8dd" firstAttribute="top" secondItem="McB-1e-A7I" secondAttribute="top" id="reJ-9I-6aV"/>
@@ -275,7 +275,7 @@
                                                             <rect key="frame" x="48" y="14" width="277" height="30"/>
                                                             <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                                     <color key="value" name="inactiveGrey"/>
