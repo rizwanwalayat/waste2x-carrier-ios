@@ -18,6 +18,7 @@ class TrackerViewController: BaseViewController {
     var viewModel:TrackerVM?
     var deliveryType = DispatchesDeliveryType.none
     let marker = GMSMarker()
+    var isMapLoaded = false
     
     /// for timer
     var timer = Timer()
@@ -82,7 +83,7 @@ class TrackerViewController: BaseViewController {
 extension TrackerViewController
 {
     func fetchGoogleMapData(sLat: Double, sLon: Double, dLat: Double, dLon: Double) {
-        mapView.clear()
+        
         
         let origin = "\(sLat),\(sLon)"
         let destination = "\(dLat),\(dLon)"
@@ -91,6 +92,8 @@ extension TrackerViewController
         PolyLineAPIModel.PolyLineAPICall { jsonData, error, status, message in
     
             if jsonData?.routes != nil{
+                
+                self.mapView.clear()
                 if let item = jsonData!.routes.first {
                     self.deliveryLocationLabel.text = item.legs[0].end_address
                     self.timeLabel.text = item.legs[0].duration?.text
@@ -104,13 +107,18 @@ extension TrackerViewController
                     polyline.map = self.mapView
                     
                     DispatchQueue.main.async {
-                        let cam = GMSCameraPosition(latitude: sLat, longitude: sLon, zoom: 15)
+                        
+                        let currentZoom = self.mapView.camera.zoom
+                        let cam = GMSCameraPosition(latitude: sLat, longitude: sLon, zoom: (self.isMapLoaded ? currentZoom : 15))
                         self.mapView.animate(to: cam)
 
+                        self.isMapLoaded = true
 //                     Zoom for complete Path
 //                        let bounds = GMSCoordinateBounds(path: path!)
 //                        self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
                     }
+                    
+                    self.markerUpdate(s_lat: sLat, s_lon: sLon, d_lat: dLat, d_lon: dLon)
                 }
             }
         }
@@ -137,8 +145,6 @@ extension TrackerViewController
             }
             
             fetchGoogleMapData(sLat:sLat, sLon:sLon, dLat: dLat, dLon: dLon)
-            
-            self.markerUpdate(s_lat: sLat, s_lon: sLon, d_lat: dLat, d_lon: dLon)
         }
     }
     
