@@ -149,6 +149,7 @@
 		18E1631226C00A1C00DD2EED /* ContractsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631126C00A1C00DD2EED /* ContractsResult.swift */; };
 		18E1631426C00A8900DD2EED /* DispatchContractsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631326C00A8900DD2EED /* DispatchContractsModel.swift */; };
 		18E1631726C00BBE00DD2EED /* ContractsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631626C00BBE00DD2EED /* ContractsViewModel.swift */; };
+		960AE14526EF63EC00EF1FA8 /* EnMassTransitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AE14426EF63EC00EF1FA8 /* EnMassTransitUITests.swift */; };
 		9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */; };
 		9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */; };
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
@@ -206,6 +207,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		960AE14726EF63EC00EF1FA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0067A2B025274C0900CECA8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0067A2B725274C0900CECA8C;
+			remoteInfo = CarrierApp;
+		};
 		96B14F2E26E8D59000B31FFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0067A2B025274C0900CECA8C /* Project object */;
@@ -369,6 +377,9 @@
 		18E1631626C00BBE00DD2EED /* ContractsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsViewModel.swift; sourceTree = "<group>"; };
 		30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarrierApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32353D33B65F658FE2977E9B /* Pods-CarrierApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarrierApp.debug.xcconfig"; path = "Target Support Files/Pods-CarrierApp/Pods-CarrierApp.debug.xcconfig"; sourceTree = "<group>"; };
+		960AE14226EF63EC00EF1FA8 /* EnMassTransitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnMassTransitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		960AE14426EF63EC00EF1FA8 /* EnMassTransitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnMassTransitUITests.swift; sourceTree = "<group>"; };
+		960AE14626EF63EC00EF1FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListTableViewCell.swift; sourceTree = "<group>"; };
 		9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListTableViewCell.xib; sourceTree = "<group>"; };
 		9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +451,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		960AE13F26EF63EC00EF1FA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		96B14F2626E8D59000B31FFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -464,6 +482,7 @@
 				0067A2BA25274C0900CECA8C /* CarrierApp */,
 				96B14F2A26E8D59000B31FFB /* EnMassTransitTests */,
 				96B14F3B26E8EA5300B31FFB /* EnMassTransitAPITests */,
+				960AE14326EF63EC00EF1FA8 /* EnMassTransitUITests */,
 				0067A2B925274C0900CECA8C /* Products */,
 				8492EB8B64134913AA029EFA /* Pods */,
 				18397DC32660FA73003DE30C /* Recovered References */,
@@ -477,6 +496,7 @@
 				0067A2B825274C0900CECA8C /* EnMass Transit.app */,
 				96B14F2926E8D59000B31FFB /* EnMassTransitTests.xctest */,
 				96B14F3A26E8EA5300B31FFB /* EnMassTransitAPITests.xctest */,
+				960AE14226EF63EC00EF1FA8 /* EnMassTransitUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1126,6 +1146,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		960AE14326EF63EC00EF1FA8 /* EnMassTransitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				960AE14426EF63EC00EF1FA8 /* EnMassTransitUITests.swift */,
+				960AE14626EF63EC00EF1FA8 /* Info.plist */,
+			);
+			path = EnMassTransitUITests;
+			sourceTree = "<group>";
+		};
 		9659287E26B03186004EF2DF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1454,6 +1483,24 @@
 			productReference = 0067A2B825274C0900CECA8C /* EnMass Transit.app */;
 			productType = "com.apple.product-type.application";
 		};
+		960AE14126EF63EC00EF1FA8 /* EnMassTransitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 960AE14B26EF63EC00EF1FA8 /* Build configuration list for PBXNativeTarget "EnMassTransitUITests" */;
+			buildPhases = (
+				960AE13E26EF63EC00EF1FA8 /* Sources */,
+				960AE13F26EF63EC00EF1FA8 /* Frameworks */,
+				960AE14026EF63EC00EF1FA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				960AE14826EF63EC00EF1FA8 /* PBXTargetDependency */,
+			);
+			name = EnMassTransitUITests;
+			productName = EnMassTransitUITests;
+			productReference = 960AE14226EF63EC00EF1FA8 /* EnMassTransitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		96B14F2826E8D59000B31FFB /* EnMassTransitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96B14F3226E8D59000B31FFB /* Build configuration list for PBXNativeTarget "EnMassTransitTests" */;
@@ -1503,6 +1550,10 @@
 					0067A2B725274C0900CECA8C = {
 						CreatedOnToolsVersion = 11.6;
 					};
+					960AE14126EF63EC00EF1FA8 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 0067A2B725274C0900CECA8C;
+					};
 					96B14F2826E8D59000B31FFB = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 0067A2B725274C0900CECA8C;
@@ -1529,6 +1580,7 @@
 				0067A2B725274C0900CECA8C /* CarrierApp */,
 				96B14F2826E8D59000B31FFB /* EnMassTransitTests */,
 				96B14F3926E8EA5300B31FFB /* EnMassTransitAPITests */,
+				960AE14126EF63EC00EF1FA8 /* EnMassTransitUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1599,6 +1651,13 @@
 				0461744126BBBF290055DD3E /* FaqViewController.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
 				04C3091826B7E70F00BEC895 /* CreatePaymentViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		960AE14026EF63EC00EF1FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1836,6 +1895,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		960AE13E26EF63EC00EF1FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960AE14526EF63EC00EF1FA8 /* EnMassTransitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		96B14F2526E8D59000B31FFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1855,6 +1922,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		960AE14826EF63EC00EF1FA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0067A2B725274C0900CECA8C /* CarrierApp */;
+			targetProxy = 960AE14726EF63EC00EF1FA8 /* PBXContainerItemProxy */;
+		};
 		96B14F2F26E8D59000B31FFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0067A2B725274C0900CECA8C /* CarrierApp */;
@@ -2045,6 +2117,48 @@
 			};
 			name = Release;
 		};
+		960AE14926EF63EC00EF1FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = EnMassTransitUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.EnMassTransitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarrierApp;
+			};
+			name = Debug;
+		};
+		960AE14A26EF63EC00EF1FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = EnMassTransitUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.EnMassTransitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarrierApp;
+			};
+			name = Release;
+		};
 		96B14F3026E8D59000B31FFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2150,6 +2264,15 @@
 			buildConfigurations = (
 				0067A2CD25274C0B00CECA8C /* Debug */,
 				0067A2CE25274C0B00CECA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		960AE14B26EF63EC00EF1FA8 /* Build configuration list for PBXNativeTarget "EnMassTransitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				960AE14926EF63EC00EF1FA8 /* Debug */,
+				960AE14A26EF63EC00EF1FA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -37,7 +37,6 @@ class LoginViewController: BaseViewController {
 //        passwordTextField.text = "123456"
         loginButton.makeEnable(value: false)
         stackView.spacing = onboardingEstimatedSpcing
-        
     }
     
     
