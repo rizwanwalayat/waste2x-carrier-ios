@@ -48,6 +48,16 @@
                ReferencedContainer = "container:CarrierApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "960AE14126EF63EC00EF1FA8"
+               BuildableName = "EnMassTransitUITests.xctest"
+               BlueprintName = "EnMassTransitUITests"
+               ReferencedContainer = "container:CarrierApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
