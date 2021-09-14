@@ -157,6 +157,7 @@
 		966F8EFE26D787E300E9A27D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F8EFD26D787E300E9A27D /* FirebaseManager.swift */; };
 		966F8F0026D8EC9700E9A27D /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 966F8EFF26D8EC9600E9A27D /* Loader.json */; };
 		966F8F0226D8EE5E00E9A27D /* LoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F8F0126D8EE5E00E9A27D /* LoaderAnimation.swift */; };
+		96721C9F26F10634009A6F4D /* EnMassTransitAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96721C9E26F10634009A6F4D /* EnMassTransitAPITests.swift */; };
 		9672B23926C118F100E8E72F /* DispatchesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23826C118F100E8E72F /* DispatchesListModel.swift */; };
 		9672B23B26C11AE000E8E72F /* DispatchesListResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */; };
 		9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */; };
@@ -181,7 +182,6 @@
 		96AE407F26B84ABD008ABA66 /* DispatchesDetailPickDropCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE407D26B84ABD008ABA66 /* DispatchesDetailPickDropCell.swift */; };
 		96AE408026B84ABD008ABA66 /* DispatchesDetailPickDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96AE407E26B84ABD008ABA66 /* DispatchesDetailPickDropCell.xib */; };
 		96B14F2C26E8D59000B31FFB /* EnMassTransitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F2B26E8D59000B31FFB /* EnMassTransitTests.swift */; };
-		96B14F3D26E8EA5300B31FFB /* EnMassTransitAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F3C26E8EA5300B31FFB /* EnMassTransitAPITests.swift */; };
 		96B14F4926EA0B7D00B31FFB /* SignupCompleteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F4626EA0B7D00B31FFB /* SignupCompleteVM.swift */; };
 		96B14F4A26EA0B7D00B31FFB /* SignupCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B14F4726EA0B7D00B31FFB /* SignupCompleteViewController.swift */; };
 		96B14F4B26EA0B7D00B31FFB /* SignupCompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B14F4826EA0B7D00B31FFB /* SignupCompleteViewController.xib */; };
@@ -388,6 +388,7 @@
 		966F8EFD26D787E300E9A27D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		966F8EFF26D8EC9600E9A27D /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
 		966F8F0126D8EE5E00E9A27D /* LoaderAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimation.swift; sourceTree = "<group>"; };
+		96721C9E26F10634009A6F4D /* EnMassTransitAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnMassTransitAPITests.swift; sourceTree = "<group>"; };
 		9672B23826C118F100E8E72F /* DispatchesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListModel.swift; sourceTree = "<group>"; };
 		9672B23A26C11AE000E8E72F /* DispatchesListResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResultItem.swift; sourceTree = "<group>"; };
 		9672B23C26C12E9000E8E72F /* DispatchesListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesListResult.swift; sourceTree = "<group>"; };
@@ -416,7 +417,6 @@
 		96B14F2D26E8D59000B31FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B14F3526E8D9E600B31FFB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96B14F3A26E8EA5300B31FFB /* EnMassTransitAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnMassTransitAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96B14F3C26E8EA5300B31FFB /* EnMassTransitAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnMassTransitAPITests.swift; sourceTree = "<group>"; };
 		96B14F3E26E8EA5300B31FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B14F4626EA0B7D00B31FFB /* SignupCompleteVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCompleteVM.swift; sourceTree = "<group>"; };
 		96B14F4726EA0B7D00B31FFB /* SignupCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCompleteViewController.swift; sourceTree = "<group>"; };
@@ -1334,7 +1334,7 @@
 		96B14F3B26E8EA5300B31FFB /* EnMassTransitAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				96B14F3C26E8EA5300B31FFB /* EnMassTransitAPITests.swift */,
+				96721C9E26F10634009A6F4D /* EnMassTransitAPITests.swift */,
 				96B14F3E26E8EA5300B31FFB /* Info.plist */,
 			);
 			path = EnMassTransitAPITests;
@@ -1915,7 +1915,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B14F3D26E8EA5300B31FFB /* EnMassTransitAPITests.swift in Sources */,
+				96721C9F26F10634009A6F4D /* EnMassTransitAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2210,6 +2210,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Pods/Firebase/CoreOnly/Sources\"";
 				INFOPLIST_FILE = EnMassTransitAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2232,6 +2233,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Pods/Firebase/CoreOnly/Sources\"";
 				INFOPLIST_FILE = EnMassTransitAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
