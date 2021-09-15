@@ -19,21 +19,23 @@ class EnMassTransitAPITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testSignupSendCodeAPI() throws {
-        let phone:String = "+17743777019"
+    func testSignupSendCodeAPI(phone: String = "+17743777019") throws {
         let promise = expectation(description: "Status Code: 200")
-       
-        //        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone)
-        APIClient.shared.SendSignupCodeApi(phone: phone) { data, error, status, message in
+        
+        let forgotPasswordVM = ForgotPasswordVM()
+        //        APIClient.shared.SendSignupCodeApi(phone: phone)
+        
+        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { data, error, status, message in
             XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
-                promise.fulfill()
+            promise.fulfill()
         }
         
         waitForExpectations(timeout: 10) { error in
             if let _ = error {
                 XCTAssert(false, "Timeout")
             }
-        }    }
+        }
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
