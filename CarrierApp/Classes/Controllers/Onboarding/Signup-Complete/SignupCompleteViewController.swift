@@ -123,7 +123,7 @@ class SignupCompleteViewController: BaseViewController {
             
             if Success ?? false, error == nil, result != nil {
 
-                let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
+                let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
                 Utility.setupRoot([vc], navgationController: self.navigationController)
                 
             } else {

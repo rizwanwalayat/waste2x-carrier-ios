@@ -13,7 +13,7 @@ var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 
 var app_name = "CarrierApp"
 var onboardingType = OnboardingType.SignUp
-
+var defaultSideMenuIndex = 2
 struct APIRoutes {
     static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
 //    static var baseUrl = "https://cache-admin-panel-production.appspot.com/" //Production
