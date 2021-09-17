@@ -63,7 +63,7 @@ class LoginViewController: BaseViewController {
                 DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
                 DataManager.shared.savePhoneNumber(completePhoneNo)
                 
-                let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
+                let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
                 Utility.setupRoot([vc], navgationController: self.navigationController)
             }
             else

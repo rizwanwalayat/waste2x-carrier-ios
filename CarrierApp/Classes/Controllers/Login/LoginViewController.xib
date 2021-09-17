@@ -272,16 +272,16 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovO-Td-w6Z" userLabel="Request again View">
                                                             <rect key="frame" x="75" y="13" width="224.5" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-AE-PBW" userLabel="Didn't receive code?">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="170.5" height="32"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-AE-PBW" userLabel="Didn't receive code?">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="166.5" height="32"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                                     <color key="textColor" name="secondaryText"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWy-pY-O4d">
-                                                                    <rect key="frame" x="174.5" y="0.0" width="50" height="32"/>
+                                                                    <rect key="frame" x="170.5" y="0.0" width="54" height="32"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
-                                                                    <state key="normal" title="Signup">
+                                                                    <state key="normal" title="Sign Up">
                                                                         <color key="titleColor" name="themeColor"/>
                                                                     </state>
                                                                     <connections>

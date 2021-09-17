@@ -2,11 +2,12 @@
 //  EnMassTransitAPITests.swift
 //  EnMassTransitAPITests
 //
-//  Created by Phaedra Solutions  on 08/09/2021.
+//  Created by Phaedra Solutions  on 14/09/2021.
 //  Copyright © 2021 codesrbit. All rights reserved.
 //
 
 import XCTest
+@testable import EnMass_Transit
 
 class EnMassTransitAPITests: XCTestCase {
 
@@ -18,14 +19,27 @@ class EnMassTransitAPITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSignupSendCodeAPI(phone: String = "+17743777019") throws {
+        let promise = expectation(description: "Status Code: 200")
+        
+        let forgotPasswordVM = ForgotPasswordVM()
+        //        APIClient.shared.SendSignupCodeApi(phone: phone)
+        
+        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { data, error, status, message in
+            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
+            promise.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTAssert(false, "Timeout")
+            }
+        }
     }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
