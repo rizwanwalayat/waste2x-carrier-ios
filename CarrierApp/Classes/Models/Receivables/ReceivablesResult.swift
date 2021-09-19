@@ -12,11 +12,11 @@ import ObjectMapper
 class ReceivablesResult : Mappable {
     
     var id = -1
-    var dispatchId = ""
+    var dispatchId = 0
     var currency = ""
-    var receivedAmount = ""
-    var outstandingAmount = ""
-    var total = ""
+    var receivedAmount = 0
+    var outstandingAmount = 0
+    var total = 0
     var status = ""
 
     required init?(map: Map) {
