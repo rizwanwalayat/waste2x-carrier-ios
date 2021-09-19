@@ -41,20 +41,18 @@ class ReceivableLIstTableViewCell: UITableViewCell {
     func config(_ status : ReceivableStatus)
     {
         switch status {
-        case .delivered:
+        case .completed, .delivered:
             
             statusValueLabel.text = status.rawValue
             statusValueLabel.textColor = UIColor(hexString: "1BB55C")
             bottomSepratorView.backgroundColor = UIColor(hexString: "1BB55C")
             
-        case .inTransit:
-            
+        case .pending, .inTransit:
             statusValueLabel.text = status.rawValue
             statusValueLabel.textColor = UIColor(hexString: "FFBB12")
             bottomSepratorView.backgroundColor = UIColor(hexString: "FFBB12")
             
         case .scheduled:
-            
             statusValueLabel.text = status.rawValue
             statusValueLabel.textColor = UIColor(hexString: "E74C3C")
             bottomSepratorView.backgroundColor = UIColor(hexString: "E74C3C")
@@ -63,6 +61,11 @@ class ReceivableLIstTableViewCell: UITableViewCell {
 }
 
 enum ReceivableStatus : String{
+    //New Statuses
+    case pending = "Pending"
+    case completed = "Completed"
+    
+    //Older Statues
     case delivered = "Delivered"
     case inTransit = "In Transit"
     case scheduled = "Scheduled"
