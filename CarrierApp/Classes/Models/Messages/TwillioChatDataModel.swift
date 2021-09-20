@@ -111,6 +111,8 @@ class TwillioChatDataModel: NSObject {
             client.delegate = nil
             client.shutdown()
             self.client = nil
+            self.messages.removeAll()
+
         }
     }
     
