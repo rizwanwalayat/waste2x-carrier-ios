@@ -84,22 +84,14 @@ extension ReceivableListViewController: UITableViewDelegate, UITableViewDataSour
         
         if let dataOfModel = viewModel?.data?.result[indexPath.row] {
             
-            
-            if dataOfModel.status == "Completed" {
-                cell.config(.completed)
+            if dataOfModel.status == "Paid" {
+                cell.config(.paid)
             }
             else if dataOfModel.status == "Pending" {
                 cell.config(.pending)
             }
-            else if dataOfModel.status == "Delivered" {
-                cell.config(.delivered)
-            }
-            else if dataOfModel.status == "In Transit" {
-                cell.config(.inTransit)
-            }
             else {
-                cell.config(.scheduled)
-                
+                cell.config(.pending)
             }
             
             cell.dispatchNoValueLabel.text = "\(dataOfModel.dispatchId)"
@@ -108,7 +100,6 @@ extension ReceivableListViewController: UITableViewDelegate, UITableViewDataSour
             cell.totalAmountValueLabel.text = "\(dataOfModel.total)".appendDollarSign()
             cell.receivedAmountValueLabel.text = "\(dataOfModel.receivedAmount)".appendDollarSign()
                 
-            
         }
         
         return cell
