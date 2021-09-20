@@ -18,7 +18,7 @@ The `baseUrl` can be changed from `Constants.swift` file to point to stagging, p
 **Production** is for Client Testing
 **Live** is for the Live App Store
 ##### 2. Firebase
-`GoogleInfo.plist` file is already installed from Firebase, which can be replaced by downloading form Firebase Console
+`GoogleService-Info.plist` file is already installed from Firebase, which can be replaced by downloading form Firebase Console
 ##### 3. Google Maps
 Google Maps is already integrated. Its API Key is assigned `googleAPIKey` in `Constants.swift` file, and can be changed by getting a new key from Google Developer API Console
 
@@ -37,5 +37,4 @@ Google Maps is already integrated. Its API Key is assigned `googleAPIKey` in `Co
 11. In this new Window select upload and click on next. 
 12. Now after some time the Upload window will appear. Now click on Upload button the application will start to upload and progress bar will appear.
 
-**************  Process related to xCode is finished   *****************
-
+The App should be uploaded to the TestFlight section on [App Store Connect](https://appstoreconnect.apple.com/ 'App Store Connect') for Beta Testing and Publishing to the App Store.
