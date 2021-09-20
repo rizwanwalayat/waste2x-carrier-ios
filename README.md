@@ -37,4 +37,4 @@ Google Maps is already integrated. Its API Key is assigned `googleAPIKey` in `Co
 11. In this new Window select upload and click on next. 
 12. Now after some time the Upload window will appear. Now click on Upload button the application will start to upload and progress bar will appear.
 
-The App should be uploaded to the TestFlight section on [App Store Connect](https://appstoreconnect.apple.com/ 'App Store Connect') for Beta Testing and Publishing to the App Store.
+In a few mintues, the App should be available under the TestFlight section on [App Store Connect](https://appstoreconnect.apple.com/ 'App Store Connect') for Beta Testing and Publishing to the App Store.
