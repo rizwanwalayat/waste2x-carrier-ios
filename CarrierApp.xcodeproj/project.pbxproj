@@ -1372,8 +1372,8 @@
 			isa = PBXGroup;
 			children = (
 				96E0FC0C26BD7913007094DC /* ViewModel */,
-				96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */,
 				96B4E98726B197850032C9F2 /* CodeVerificationViewController+Extensions.swift */,
+				96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */,
 				96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */,
 			);
 			path = CodeVerification;
@@ -2073,7 +2073,7 @@
 				CODE_SIGN_ENTITLEMENTS = CarrierApp/CarrierApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = "$(SRCROOT)/CarrierApp/Info.plist";
@@ -2099,7 +2099,7 @@
 				CODE_SIGN_ENTITLEMENTS = CarrierApp/CarrierApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = "$(SRCROOT)/CarrierApp/Info.plist";
