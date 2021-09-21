@@ -23,7 +23,8 @@ class EnMassTransitUITests: XCTestCase {
     var key7: XCUIElement!
     var key8: XCUIElement!
     var key9: XCUIElement!
-        
+    var codeString = ""
+
     override func setUpWithError() throws {
         
         try super.setUpWithError()
@@ -108,9 +109,28 @@ class EnMassTransitUITests: XCTestCase {
     }
     
     func testSignupUser() throws {
+        
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery/*@START_MENU_TOKEN@*/.buttons["SignupBtn"].staticTexts["Sign Up"]/*[[".buttons[\"Sign Up\"].staticTexts[\"Sign Up\"]",".buttons[\"SignupBtn\"].staticTexts[\"Sign Up\"]",".staticTexts[\"Sign Up\"]"],[[[-1,2],[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
+        
+        key1.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        elementsQuery/*@START_MENU_TOKEN@*/.staticTexts["Send Code"]/*[[".buttons[\"Send Code\"].staticTexts[\"Send Code\"]",".staticTexts[\"Send Code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+    }
+    
+    func testSignupUser1() throws {
 
         let elementsQuery = app.scrollViews.otherElements
-        elementsQuery/*@START_MENU_TOKEN@*/.staticTexts["Signup"]/*[[".buttons[\"Signup\"].staticTexts[\"Signup\"]",".staticTexts[\"Signup\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        elementsQuery.staticTexts["SignupBtn"].tap()
         elementsQuery.textFields["Phone Number"].tap()
         
         key1.tap()
@@ -128,7 +148,7 @@ class EnMassTransitUITests: XCTestCase {
         
        
         do {
-            let code = try testSignupSendCodeAPI(phone: "+17743777019")
+//            let code = try testSignupSendCodeAPI()
             
             let app = XCUIApplication()
             let key = app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
@@ -146,45 +166,5 @@ class EnMassTransitUITests: XCTestCase {
         }
     }
     
-    func testSignupSendCodeAPI(phone: String = "+17743777019") throws -> String {
-        
-        let promise = expectation(description: "Status Code: 200")
-        let forgotPasswordVM = ForgotPasswordVM()
-        var codeString = ""
-        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { result, error, status, message in
-            
-            guard let codeDict = result as? [String:Any],  let code = codeDict["code"] as? NSNumber
-            else { return }
-            codeString = code.stringValue
-
-            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
-            promise.fulfill()
-        }
-        
-        waitForExpectations(timeout: 10) { error in
-            if let _ = error {
-                XCTAssert(false, "Timeout")
-            }
-        }
-        return codeString
-    }
-    
-    func testVerfiySignupOTPAPI(phone: String = "+17743777019", code: String = "0000") throws {
-        
-        let promise = expectation(description: "Status Code: 200")
-        let codeVerificationVM = CodeVerificationVM(phoneFromUser: phone, codeFromBackend: code)
-        
-        codeVerificationVM.verifySignupOTP(phoneNumber: phone, code: code) { data, error, status, message in
-            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
-            promise.fulfill()
-        }
-        
-        waitForExpectations(timeout: 10) { error in
-            if let _ = error {
-                XCTAssert(false, "Timeout")
-            }
-        }
-    }
-
 
 }

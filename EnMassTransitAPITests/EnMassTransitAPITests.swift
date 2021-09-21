@@ -19,24 +19,48 @@ class EnMassTransitAPITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testSignupSendCodeAPI(phone: String = "+17743777019") throws {
+    func testSignupSendCodeAPI() throws {
+        let phone: String = "+17743777019"
         let promise = expectation(description: "Status Code: 200")
-        
         let forgotPasswordVM = ForgotPasswordVM()
         //        APIClient.shared.SendSignupCodeApi(phone: phone)
-        
-        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { data, error, status, message in
+
+        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { result, error, status, message in
+
+            guard let codeDict = result as? [String:Any],  let code = codeDict["code"] as? NSNumber
+            else { return }
+            let codeString = code.stringValue
+
             XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
             promise.fulfill()
         }
-        
+
         waitForExpectations(timeout: 10) { error in
             if let _ = error {
                 XCTAssert(false, "Timeout")
             }
         }
     }
+    
 
+    //    func testVerfiySignupOTPAPI(phone: String = "+17743777019", code: String = "0000") throws {
+    //
+    //        let promise = expectation(description: "Status Code: 200")
+    //        let codeVerificationVM = CodeVerificationVM(phoneFromUser: phone, codeFromBackend: code)
+    //
+    //        codeVerificationVM.verifySignupOTP(phoneNumber: phone, code: code) { data, error, status, message in
+    //            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
+    //            promise.fulfill()
+    //        }
+    //
+    //        waitForExpectations(timeout: 10) { error in
+    //            if let _ = error {
+    //                XCTAssert(false, "Timeout")
+    //            }
+    //        }
+    //    }
+
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
