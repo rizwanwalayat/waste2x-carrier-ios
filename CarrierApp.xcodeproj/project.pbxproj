@@ -1372,8 +1372,8 @@
 			isa = PBXGroup;
 			children = (
 				96E0FC0C26BD7913007094DC /* ViewModel */,
-				96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */,
 				96B4E98726B197850032C9F2 /* CodeVerificationViewController+Extensions.swift */,
+				96B4E98826B197850032C9F2 /* CodeVerificationViewController.swift */,
 				96B4E98926B197850032C9F2 /* CodeVerificationViewController.xib */,
 			);
 			path = CodeVerification;
