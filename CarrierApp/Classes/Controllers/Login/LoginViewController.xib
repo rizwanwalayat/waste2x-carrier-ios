@@ -280,6 +280,7 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWy-pY-O4d">
                                                                     <rect key="frame" x="170.5" y="0.0" width="54" height="32"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="SignupBtn"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                                     <state key="normal" title="Sign Up">
                                                                         <color key="titleColor" name="themeColor"/>

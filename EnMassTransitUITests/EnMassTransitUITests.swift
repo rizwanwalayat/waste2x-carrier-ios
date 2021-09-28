@@ -23,7 +23,8 @@ class EnMassTransitUITests: XCTestCase {
     var key7: XCUIElement!
     var key8: XCUIElement!
     var key9: XCUIElement!
-        
+    var codeString = ""
+
     override func setUpWithError() throws {
         
         try super.setUpWithError()
@@ -108,83 +109,22 @@ class EnMassTransitUITests: XCTestCase {
     }
     
     func testSignupUser() throws {
-
+        
         let elementsQuery = app.scrollViews.otherElements
-        elementsQuery/*@START_MENU_TOKEN@*/.staticTexts["Signup"]/*[[".buttons[\"Signup\"].staticTexts[\"Signup\"]",".staticTexts[\"Signup\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        elementsQuery.textFields["Phone Number"].tap()
+        elementsQuery/*@START_MENU_TOKEN@*/.buttons["SignupBtn"].staticTexts["Sign Up"]/*[[".buttons[\"Sign Up\"].staticTexts[\"Sign Up\"]",".buttons[\"SignupBtn\"].staticTexts[\"Sign Up\"]",".staticTexts[\"Sign Up\"]"],[[[-1,2],[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
         
         key1.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
+        key0.tap()
         
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-  
         app.toolbars["Toolbar"].buttons["Done"].tap()
         elementsQuery/*@START_MENU_TOKEN@*/.staticTexts["Send Code"]/*[[".buttons[\"Send Code\"].staticTexts[\"Send Code\"]",".staticTexts[\"Send Code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-       
-        do {
-            let code = try testSignupSendCodeAPI(phone: "+17743777019")
-            
-            let app = XCUIApplication()
-            let key = app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-            key.tap()
-            key.tap()
-            
-            let key2 = app/*@START_MENU_TOKEN@*/.keys["3"]/*[[".keyboards.keys[\"3\"]",".keys[\"3\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-            key2.tap()
-            key2.tap()
-            app/*@START_MENU_TOKEN@*/.keys["4"]/*[[".keyboards.keys[\"4\"]",".keys[\"4\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-                        
-            
-        } catch {
-            
-        }
-    }
-    
-    func testSignupSendCodeAPI(phone: String = "+17743777019") throws -> String {
-        
-        let promise = expectation(description: "Status Code: 200")
-        let forgotPasswordVM = ForgotPasswordVM()
-        var codeString = ""
-        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { result, error, status, message in
-            
-            guard let codeDict = result as? [String:Any],  let code = codeDict["code"] as? NSNumber
-            else { return }
-            codeString = code.stringValue
 
-            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
-            promise.fulfill()
-        }
-        
-        waitForExpectations(timeout: 10) { error in
-            if let _ = error {
-                XCTAssert(false, "Timeout")
-            }
-        }
-        return codeString
     }
-    
-    func testVerfiySignupOTPAPI(phone: String = "+17743777019", code: String = "0000") throws {
-        
-        let promise = expectation(description: "Status Code: 200")
-        let codeVerificationVM = CodeVerificationVM(phoneFromUser: phone, codeFromBackend: code)
-        
-        codeVerificationVM.verifySignupOTP(phoneNumber: phone, code: code) { data, error, status, message in
-            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
-            promise.fulfill()
-        }
-        
-        waitForExpectations(timeout: 10) { error in
-            if let _ = error {
-                XCTAssert(false, "Timeout")
-            }
-        }
-    }
-
-
+ 
 }
