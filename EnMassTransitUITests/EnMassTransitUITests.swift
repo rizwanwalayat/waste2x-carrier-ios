@@ -126,45 +126,5 @@ class EnMassTransitUITests: XCTestCase {
         elementsQuery/*@START_MENU_TOKEN@*/.staticTexts["Send Code"]/*[[".buttons[\"Send Code\"].staticTexts[\"Send Code\"]",".staticTexts[\"Send Code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
 
     }
-    
-    func testSignupUser1() throws {
-
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.staticTexts["SignupBtn"].tap()
-        elementsQuery.textFields["Phone Number"].tap()
-        
-        key1.tap()
-        
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-        key0.tap()
-  
-        app.toolbars["Toolbar"].buttons["Done"].tap()
-        elementsQuery/*@START_MENU_TOKEN@*/.staticTexts["Send Code"]/*[[".buttons[\"Send Code\"].staticTexts[\"Send Code\"]",".staticTexts[\"Send Code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-       
-        do {
-//            let code = try testSignupSendCodeAPI()
-            
-            let app = XCUIApplication()
-            let key = app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-            key.tap()
-            key.tap()
-            
-            let key2 = app/*@START_MENU_TOKEN@*/.keys["3"]/*[[".keyboards.keys[\"3\"]",".keys[\"3\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-            key2.tap()
-            key2.tap()
-            app/*@START_MENU_TOKEN@*/.keys["4"]/*[[".keyboards.keys[\"4\"]",".keys[\"4\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-                        
-            
-        } catch {
-            
-        }
-    }
-    
-
+ 
 }

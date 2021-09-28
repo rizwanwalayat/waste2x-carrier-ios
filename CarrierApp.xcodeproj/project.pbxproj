@@ -203,6 +203,7 @@
 		96E0EA9126CFDEC1008E0329 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0EA9026CFDEC1008E0329 /* NotificationName.swift */; };
 		96E0FC1026BD7985007094DC /* ResetPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0FC0F26BD7985007094DC /* ResetPasswordVM.swift */; };
 		96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0FC1126BD799D007094DC /* CodeVerificationVM.swift */; };
+		96E8A82D2702005F00F03A34 /* EnMassTransitAPIOnboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8A82C2702005F00F03A34 /* EnMassTransitAPIOnboardTests.swift */; };
 		B15E6762F9E144B246EE40F4 /* Pods_CarrierApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30829EA8A06A0150A2B32D41 /* Pods_CarrierApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -440,6 +441,7 @@
 		96E0EA9026CFDEC1008E0329 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		96E0FC0F26BD7985007094DC /* ResetPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVM.swift; sourceTree = "<group>"; };
 		96E0FC1126BD799D007094DC /* CodeVerificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationVM.swift; sourceTree = "<group>"; };
+		96E8A82C2702005F00F03A34 /* EnMassTransitAPIOnboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnMassTransitAPIOnboardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1334,6 +1336,7 @@
 		96B14F3B26E8EA5300B31FFB /* EnMassTransitAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				96E8A82C2702005F00F03A34 /* EnMassTransitAPIOnboardTests.swift */,
 				96721C9E26F10634009A6F4D /* EnMassTransitAPITests.swift */,
 				96B14F3E26E8EA5300B31FFB /* Info.plist */,
 			);
@@ -1916,6 +1919,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96721C9F26F10634009A6F4D /* EnMassTransitAPITests.swift in Sources */,
+				96E8A82D2702005F00F03A34 /* EnMassTransitAPIOnboardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

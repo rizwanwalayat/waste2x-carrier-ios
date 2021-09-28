@@ -10,56 +10,111 @@ import XCTest
 @testable import EnMass_Transit
 
 class EnMassTransitAPITests: XCTestCase {
-
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        DataManager.shared.saveAuthToken("a96201bf94444ba5ee1757bc66cbb782dd80838a")
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testSignupSendCodeAPI() throws {
-        let phone: String = "+17743777019"
+    
+    func testDispatchesListAPI() throws {
+        
         let promise = expectation(description: "Status Code: 200")
-        let forgotPasswordVM = ForgotPasswordVM()
-        //        APIClient.shared.SendSignupCodeApi(phone: phone)
-
-        forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { result, error, status, message in
-
-            guard let codeDict = result as? [String:Any],  let code = codeDict["code"] as? NSNumber
-            else { return }
-            let codeString = code.stringValue
-
-            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
+        let viewModel = DispatchesListVM()
+        
+        viewModel.fetchDispatchesData({ result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
+            
             promise.fulfill()
-        }
-
+        })
+        
         waitForExpectations(timeout: 10) { error in
             if let _ = error {
-                XCTAssert(false, "Timeout")
+                XCTFail("Timeout after 10sec")
             }
         }
     }
     
-
-    //    func testVerfiySignupOTPAPI(phone: String = "+17743777019", code: String = "0000") throws {
-    //
-    //        let promise = expectation(description: "Status Code: 200")
-    //        let codeVerificationVM = CodeVerificationVM(phoneFromUser: phone, codeFromBackend: code)
-    //
-    //        codeVerificationVM.verifySignupOTP(phoneNumber: phone, code: code) { data, error, status, message in
-    //            XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
-    //            promise.fulfill()
-    //        }
-    //
-    //        waitForExpectations(timeout: 10) { error in
-    //            if let _ = error {
-    //                XCTAssert(false, "Timeout")
-    //            }
-    //        }
-    //    }
-
+    func testDispatchesDetailAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        let viewModel = DispatchesDetailVM()
+        viewModel.id = 55 // Setting Dispatch ID in VM to fetch data from API function
+        viewModel.FetchDispatchesDetailData({ result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
+            
+            promise.fulfill()
+        })
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout after 10sec")
+            }
+        }
+    }
+    
+    func testQuotationsListAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        let viewModel = QuotationViewModel()
+        
+        viewModel.FetchQuotationData({ result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
+            
+            promise.fulfill()
+        })
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout after 10sec")
+            }
+        }
+    }
+    
+    
+    func testQuotationsDetailAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        let viewModel = QuotationViewModel()
+        let quotationNo = "72" // Sending this Quotation No to Fetch Function
+        viewModel.FetchQuotationDetailData(qoute: quotationNo, { result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
+            
+            promise.fulfill()
+        })
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout after 10sec")
+            }
+        }
+    }
+    
+    func testReceivablesListAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        let viewModel = ReceiveableViewModel()
+        
+        viewModel.FetchReceiveableData({ result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
+            
+            promise.fulfill()
+        })
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout after 10sec")
+            }
+        }
+    }
+    
     
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
@@ -67,5 +122,5 @@ class EnMassTransitAPITests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
 }
