@@ -315,11 +315,13 @@ extension DispatchesDetailViewController
     
     func startUpdatingLocation() {
         LocationManager.shared.startUpdatingLocation()
-        FirebaseManager.shared.startUpdatingLocation(dispatchID: viewModel?.id ?? -1 )
+        FirebaseManager.shared.startUpdatingLocation(dispatchID: viewModel?.id ?? -1, viewModel?.data )
+        DataManager.shared.saveDispatchesInTransitData(dispatchID: viewModel?.id ?? -1, viewModel?.data)
     }
     
     func stopUpdatingLocation() {
         LocationManager.shared.stopUpdatingLocation()
         FirebaseManager.shared.stopUpdatingLocation()
+        DataManager.shared.removeDispatchesInTransit()
     }
 }

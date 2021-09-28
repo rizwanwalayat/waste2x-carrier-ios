@@ -61,12 +61,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func startUpdatingLocation() {
         manager.startUpdatingLocation()
+        manager.allowsBackgroundLocationUpdates = true
     }
     
     /**************************************************/
     
     func stopUpdatingLocation() {
         manager.stopUpdatingLocation()
+        manager.allowsBackgroundLocationUpdates = false
     }
     
     /**************************************************/

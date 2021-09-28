@@ -83,6 +83,8 @@
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access is required in order to accept and track shipments.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location access is required in order to accept and track shipments.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>access</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -99,6 +101,8 @@
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
@@ -120,5 +124,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>CFBundleSignature</key>
+	<string></string>
 </dict>
 </plist>

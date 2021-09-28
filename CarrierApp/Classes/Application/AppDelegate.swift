@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         
         LocationManager.shared.requestUserPermissionsAndStartUpdatingLocation()
+        dispatchesInTransitHandlings()
         return true
     }
 
@@ -77,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         
+        stopUpdatingLocation()
     }
         
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
@@ -148,6 +150,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Color of the default search text.
           let attributedPlaceholder = NSAttributedString(string: "Search", attributes: placeholderAttributes as [NSAttributedString.Key : Any])
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = attributedPlaceholder
+    }
+    
+    
+    func dispatchesInTransitHandlings()
+    {
+        let (id, dispatches) = DataManager.shared.fetchDispatchesInTransitData()
+        if id != nil && dispatches != nil {
+            
+            startUpdatingLocation(id!, data: dispatches!)
+        }
+    }
+    
+    func startUpdatingLocation(_ id: Int, data : DispatchesDetailModel) {
+        LocationManager.shared.startUpdatingLocation()
+        FirebaseManager.shared.startUpdatingLocation(dispatchID: id, data )
+    }
+    
+    func stopUpdatingLocation() {
+        LocationManager.shared.stopUpdatingLocation()
+        FirebaseManager.shared.stopUpdatingLocation()
     }
 }
 
