@@ -28,7 +28,7 @@ class EnMassTransitAPIOnboardTests: XCTestCase {
         
             forgotPasswordVM.sendSignupOTPCode(phoneNumber: phone) { result, error, status, message in
                 
-                XCTAssert(status ==  true && error == nil, "Data Returned with No Error")
+                XCTAssert(status ==  true && error == nil, "Data Returned with Error")
                 
                 guard let code = result as? String
                 else {
