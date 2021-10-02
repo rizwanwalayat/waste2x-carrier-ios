@@ -7,7 +7,7 @@ The Project can be cloned from the following URL:
 `git@github.com:enmassenergy/waste2x-carrier-iOS.git`
 
 ### How to Start Working?
-1. The `main` branch should have the latest stable code. And the `Dev-Backend` is being used to merge everyday code between developers.
+1. The `master` branch should have the latest stable code. And the `Dev-Backend` is being used to merge everyday code between developers.
 2. Open shell window/terminal and navigate to project folder
 4. Run `pod install`
 5. Open `CarrierApp.xcworkspace` and run the project on selected device or simulator
