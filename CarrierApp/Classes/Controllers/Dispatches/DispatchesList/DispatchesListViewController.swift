@@ -104,14 +104,12 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
         return viewModel?.data?.result?.array[selectedTab].count ?? 0
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesListTableViewCell", for: indexPath) as! DispatchesListTableViewCell
         let cellData = viewModel?.data?.result?.array[selectedTab][indexPath.row]
         cell.configCell(data: cellData!, status: dispatchesStatusArray[selectedTab])
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
