@@ -30,7 +30,7 @@ class DispatchesListResultItem: Mappable {
         date_created <- map["date_created"]
         pick_up <- map["pick_up"]
         drop_off <- map["drop_off"]
-        dispatch_rep <- map["dispatches_rep"]
+        dispatch_rep <- map["dispatch_rep"]
     }
     
 }

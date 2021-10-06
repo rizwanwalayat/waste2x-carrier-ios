@@ -155,7 +155,7 @@ class QuotationDetailResult : Mappable {
     var commodity = ""
     var origin = ""
     var destination = ""
-    var quantity = -1.0
+    var quantity = 0.0
     var unit = ""
     var quotationStatus = QuotationsStatusess.pending
 
