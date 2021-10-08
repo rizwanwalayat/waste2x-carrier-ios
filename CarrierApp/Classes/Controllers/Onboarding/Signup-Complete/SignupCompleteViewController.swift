@@ -25,7 +25,8 @@ class SignupCompleteViewController: BaseViewController {
     //MARK:- Variables
     var viewModel: SignupCompleteVM?
     var wasteIds = ""
-   
+    var selectedWasteTypes = [String]()
+
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -42,56 +43,69 @@ class SignupCompleteViewController: BaseViewController {
         createAccountButton.makeEnable(value: false)
     }
     
-    func showCountries()
+    func showWasteTypes()
         {
         guard let wasteTypes = viewModel?.data?.result?.waste_types.map({ $0.title }) else {return}
         
-            let selectionMenu = RSSelectionMenu(selectionStyle: .multiple, dataSource: wasteTypes) { (cell, country, indexPath) in
+            let selectionMenu = RSSelectionMenu(selectionStyle: .multiple, dataSource: wasteTypes) { (cell, waste, indexPath) in
                 
-                cell.textLabel?.text = country
+                cell.textLabel?.text = waste
                 cell.backgroundView?.backgroundColor = .white
                 cell.backgroundColor = .white
                 cell.imageView?.image = nil
+                
             }
-            
+        
+            selectionMenu.setSelectedItems(items: selectedWasteTypes) { item, index, isSelected, selectedItems in
+                self.selectedWasteTypes = selectedItems
+            }
+
+        
             selectionMenu.onDismiss = { selectedItems in
                 
-                if selectedItems.count > 0
-                {
+                if selectedItems.count > 0 {
                     Utility.selectTextField(self.selectWasteField.superview!, isSelected: true)
-                    var wasteType = ""
                     
-                    for item in selectedItems {
-                        
-//                        let id = self?.viewModel?.data?.result?.waste_types.map({ type -> SignupWaste_types in
-//                            type.title == item
-//                            return type
-//                        })
-                        
-                        //  for ids handlings
-                        if let obj = self.viewModel?.data?.result?.waste_types.first(where: {$0.title == item}) {
-                           
-                            if self.wasteIds.count > 0 {
-                                
-                                self.wasteIds = "\(self.wasteIds), \(obj.id)"
-                            }
-                            else
-                            {
-                                self.wasteIds = "\(obj.id)"
-                            }
-                        }
-                        
-                    /// for  title handling
-                        if wasteType.count > 0 {
-                            
-                            wasteType = "\(wasteType), \(item)"
-                        }
-                        else
-                        {
-                            wasteType = "\(item)"
-                        }
-
-                    }
+                    let wasteType = selectedItems.joined(separator: ", ")
+                    
+                    self.wasteIds = self.viewModel?.data?.result?.waste_types.compactMap({ item in
+                        return selectedItems.contains(item.title) ? String(item.id) : nil
+                    }).joined(separator: ", ") ?? ""
+                    
+                    
+//                    var wasteType = ""
+//
+//                    for item in selectedItems {
+//
+////                        let id = self?.viewModel?.data?.result?.waste_types.map({ type -> SignupWaste_types in
+////                            type.title == item
+////                            return type
+////                        })
+//
+//                        //  for ids handlings
+//                        if let obj = self.viewModel?.data?.result?.waste_types.first(where: {$0.title == item}) {
+//
+//                            if self.wasteIds.count > 0 {
+//
+//                                self.wasteIds = "\(self.wasteIds), \(obj.id)"
+//                            }
+//                            else
+//                            {
+//                                self.wasteIds = "\(obj.id)"
+//                            }
+//                        }
+//
+//                    /// for  title handling
+//                        if wasteType.count > 0 {
+//
+//                            wasteType = "\(wasteType), \(item)"
+//                        }
+//                        else
+//                        {
+//                            wasteType = "\(item)"
+//                        }
+//
+//                    }
                     
                     self.selectWasteField.text = wasteType
                 }
@@ -113,7 +127,7 @@ class SignupCompleteViewController: BaseViewController {
     //MARK: - IBActions
     
     @IBAction func wasteTypePressed(_ sender: Any){
-        showCountries()
+        showWasteTypes()
         
     }
     
