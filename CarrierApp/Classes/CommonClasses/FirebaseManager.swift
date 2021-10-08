@@ -25,7 +25,9 @@ class FirebaseManager: NSObject {
         self.dispatchID = dispatchID
         self.viewModel = viewModel
         self.timer.invalidate()
-        // timer will call after 3 mintues 
+        // updating location immediately on firebase for the first time
+        updateLocationOnFirebase()
+        // afterwards updating function will call after every 3 mintues using a timer
         self.timer = Timer.scheduledTimer(timeInterval: 180.0, target: self, selector: #selector(self.updateLocationOnFirebase), userInfo: nil, repeats: true)
     }
     

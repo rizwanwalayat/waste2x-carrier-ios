@@ -32,7 +32,8 @@ class QuotationDetailViewController: BaseViewController {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var unitValueLabel: UILabel!
     @IBOutlet weak var acceptButton: UIButton!
-    
+    @IBOutlet weak var blinderScreen: UIView!
+
     //MARK: - Variables
     var viewModel : QuotationViewModel?
     var quoteNo = Int()
@@ -41,7 +42,7 @@ class QuotationDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        blinderScreen.isHidden = false
         self.acceptButton.makeEnable(value: false)
         quotationNoLabel.setAttributedTextInLable("Quote", "1C2439", 16, " #38", "1C2439", 16)
     }
@@ -62,6 +63,7 @@ class QuotationDetailViewController: BaseViewController {
     }
     func dataUpdate() {
         if let dataOfModel = viewModel?.detaildata?.result{
+            blinderScreen.isHidden = true
             self.originAddressLabel.text = dataOfModel.origin
             self.destinationAdressLabel.text = dataOfModel.destination
             self.priceValueLabel.text = "\(dataOfModel.price)".appendDollarSign()
