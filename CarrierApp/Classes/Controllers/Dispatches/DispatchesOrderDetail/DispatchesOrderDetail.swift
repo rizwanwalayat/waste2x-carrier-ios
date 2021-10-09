@@ -58,8 +58,8 @@ class DispatchesOrderDetail: BaseViewController {
     {
         quotationNoLabel.text = viewModel?.data?.result?.shipment?.order_id ?? "-"
         commodityValueLabel.text = viewModel?.data?.result?.shipment?.commodity ?? "-"
-        packageValueLabel.text = viewModel?.data?.result?.shipment?.packages ?? "-"
-        weightValueLabel.text = viewModel?.data?.result?.shipment?.weight ?? "-"
+        packageValueLabel.text =  String(describing: viewModel?.data?.result?.shipment?.packages ?? 0)
+        weightValueLabel.text = String(describing: viewModel?.data?.result?.shipment?.weight ?? 0)
         DimensionsValueLabel.text = viewModel?.data?.result?.shipment?.dimensions ?? "-"
         shipperValueLabel.text = viewModel?.data?.result?.shipment?.shipper ?? "-"
         consigneeValueLabel.text = viewModel?.data?.result?.shipment?.consignee ?? "-"

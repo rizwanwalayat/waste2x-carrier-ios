@@ -222,7 +222,7 @@ class AvailableLoadsViewController: BaseViewController{
         }
         else
         {
-            self.showToast(message: "Please select at-least one filter")
+            self.showToast(message: "Please select at least one filter")
         }
     }
 }
