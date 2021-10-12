@@ -17,12 +17,8 @@ class DispatchesOrderDetail: BaseViewController {
     @IBOutlet weak var originDestinationHolderView: UIView!
     @IBOutlet weak var commodityLabel: UILabel!
     @IBOutlet weak var commodityValueLabel: UILabel!
-    @IBOutlet weak var packageLabel: UILabel!
-    @IBOutlet weak var packageValueLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var weightValueLabel: UILabel!
-    @IBOutlet weak var dimensionsLabel: UILabel!
-    @IBOutlet weak var DimensionsValueLabel: UILabel!
     @IBOutlet weak var shipperLabel: UILabel!
     @IBOutlet weak var shipperValueLabel: UILabel!
     @IBOutlet weak var consigneeLabel: UILabel!
@@ -31,8 +27,7 @@ class DispatchesOrderDetail: BaseViewController {
     @IBOutlet weak var pickupValueLabel: UILabel!
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var deliveryValueLabel: UILabel!
-    @IBOutlet weak var refNumberLabel: UILabel!
-    @IBOutlet weak var refNumberValueLabel: UILabel!
+  
     
     
     // MARK: - Variables
@@ -57,14 +52,11 @@ class DispatchesOrderDetail: BaseViewController {
     func populateControllersData()
     {
         quotationNoLabel.text = viewModel?.data?.result?.shipment?.order_id ?? "-"
-        commodityValueLabel.text = "Crop Waste - Wheat, Inorganic, Organic, Plastic"//viewModel?.data?.result?.shipment?.commodity ?? "-"
-        packageValueLabel.text =  String(describing: viewModel?.data?.result?.shipment?.packages ?? 0)
-        weightValueLabel.text = String(describing: viewModel?.data?.result?.shipment?.weight ?? 0)
-        DimensionsValueLabel.text = viewModel?.data?.result?.shipment?.dimensions ?? "-"
+        commodityValueLabel.text = viewModel?.data?.result?.shipment?.commodity ?? "-"
+        weightValueLabel.text = viewModel?.data?.result?.shipment?.weight != 0 ? "\(viewModel?.data?.result?.shipment?.weight ?? 0)" : "Weight not available."
         shipperValueLabel.text = viewModel?.data?.result?.shipment?.shipper ?? "-"
         consigneeValueLabel.text = viewModel?.data?.result?.shipment?.consignee ?? "-"
         pickupValueLabel.text = viewModel?.data?.result?.shipment?.pickup ?? "-"
         deliveryValueLabel.text = viewModel?.data?.result?.shipment?.delivery ?? "-"
-        refNumberValueLabel.text = viewModel?.data?.result?.shipment?.ref_number ?? "-"
     }
 }
