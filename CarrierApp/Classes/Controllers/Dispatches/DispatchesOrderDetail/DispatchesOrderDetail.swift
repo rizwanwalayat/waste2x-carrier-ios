@@ -57,7 +57,7 @@ class DispatchesOrderDetail: BaseViewController {
     func populateControllersData()
     {
         quotationNoLabel.text = viewModel?.data?.result?.shipment?.order_id ?? "-"
-        commodityValueLabel.text = viewModel?.data?.result?.shipment?.commodity ?? "-"
+        commodityValueLabel.text = "Crop Waste - Wheat, Inorganic, Organic, Plastic"//viewModel?.data?.result?.shipment?.commodity ?? "-"
         packageValueLabel.text =  String(describing: viewModel?.data?.result?.shipment?.packages ?? 0)
         weightValueLabel.text = String(describing: viewModel?.data?.result?.shipment?.weight ?? 0)
         DimensionsValueLabel.text = viewModel?.data?.result?.shipment?.dimensions ?? "-"

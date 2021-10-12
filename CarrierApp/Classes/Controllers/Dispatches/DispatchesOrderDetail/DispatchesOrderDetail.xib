@@ -119,14 +119,14 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vb-M8-glB">
                                     <rect key="frame" x="24" y="54.5" width="366" height="128"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Z4E-ap-5mw">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Z4E-ap-5mw">
                                             <rect key="frame" x="16" y="8" width="334" height="112"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFh-lN-O7C" userLabel="Commodity Package View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="58"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfK-ps-ebG" userLabel="Commodity">
-                                                            <rect key="frame" x="0.0" y="0.0" width="234" height="48"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="234" height="58"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commodity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9I-1c-tUd" userLabel="Commodity Label">
                                                                     <rect key="frame" x="0.0" y="0.0" width="72" height="17"/>
@@ -137,11 +137,12 @@
                                                                     <color key="textColor" red="0.32156862749999998" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Crop Waste - Cotton" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-p3-6bc">
-                                                                    <rect key="frame" x="0.0" y="17" width="234" height="31"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Crop Waste - Cotton, Inorganic Waste, Organic Waste, Plastic Waste" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-p3-6bc">
+                                                                    <rect key="frame" x="0.0" y="17" width="234" height="41"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                                                                     <color key="textColor" red="0.10980392160000001" green="0.14117647059999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                                 </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,7 +156,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kf-37-QFp" userLabel="Package">
-                                                            <rect key="frame" x="234" y="0.0" width="100" height="48"/>
+                                                            <rect key="frame" x="234" y="0.0" width="100" height="58"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Package" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmR-zB-hYO" userLabel="Package Label">
                                                                     <rect key="frame" x="47.5" y="0.0" width="52.5" height="17"/>
@@ -167,7 +168,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQm-5k-wKP" userLabel="Package Quantity">
-                                                                    <rect key="frame" x="90" y="17" width="10" height="31"/>
+                                                                    <rect key="frame" x="90" y="17" width="10" height="41"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                                                                     <color key="textColor" red="0.10980392160000001" green="0.14117647059999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -195,11 +196,11 @@
                                                         <constraint firstAttribute="trailing" secondItem="6kf-37-QFp" secondAttribute="trailing" id="mgw-Tn-lVi"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-ne-9gs" userLabel="Lower Stack View">
-                                                    <rect key="frame" x="0.0" y="64" width="334" height="48"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-ne-9gs" userLabel="Lower Stack View">
+                                                    <rect key="frame" x="0.0" y="74" width="334" height="38"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXA-6B-VT8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="176.5" height="48"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="167" height="38"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XId-gP-QUc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="42.5" height="17"/>
@@ -210,8 +211,8 @@
                                                                     <color key="textColor" red="0.32156862749999998" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rmp-Fy-cMS">
-                                                                    <rect key="frame" x="0.0" y="17" width="24.5" height="31"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rmp-Fy-cMS">
+                                                                    <rect key="frame" x="0.0" y="17" width="24.5" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                                                                     <color key="textColor" red="0.10980392160000001" green="0.14117647059999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -227,10 +228,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09E-kI-1j4">
-                                                            <rect key="frame" x="176.5" y="0.0" width="157.5" height="48"/>
+                                                            <rect key="frame" x="167" y="0.0" width="167" height="38"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimensions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLE-6t-Qg0">
-                                                                    <rect key="frame" x="87.5" y="0.0" width="70" height="17"/>
+                                                                    <rect key="frame" x="97" y="0.0" width="70" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="jsf-ZD-vCG"/>
                                                                     </constraints>
@@ -239,7 +240,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rb1-jv-XOq">
-                                                                    <rect key="frame" x="0.0" y="17" width="157.5" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="17" width="167" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                                                                     <color key="textColor" red="0.10980392160000001" green="0.14117647059999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
