@@ -11,17 +11,20 @@ import UIKit
 class DispatchesListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bottomBorder: UIView!
-    @IBOutlet weak var dispatchesButton: UIImageView!
-    @IBOutlet weak var dateCreatedLabel: UILabel!
-    @IBOutlet weak var dispatchRepLabel: UILabel!
+    @IBOutlet weak var dispatchButton: UIButton!
+    @IBOutlet weak var deliveryDateLabel: UILabel!
+    @IBOutlet weak var commodityLabel: UILabel!
     @IBOutlet weak var pickUpLabel: UILabel!
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var dispatchIDLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var expandView: UIStackView!
+    @IBOutlet weak var expandArrow: UIImageView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        expandView.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,10 +33,20 @@ class DispatchesListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func toggleCard(){
+        let arrowImage = expandView.isHidden ? UIImage(named: "Arrow Up") : UIImage(named: "Arrow Down")
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.layoutIfNeeded()}, completion: { finished in
+                self.expandView.isHidden = !self.expandView.isHidden
+                self.expandArrow.image = arrowImage
+        })
+    }
+    
     func configCell(data: DispatchesListResultItem, status: DispatchesStatus) {
         
-        dateCreatedLabel.text = data.date_created
-        dispatchRepLabel.text = data.dispatch_rep
+        deliveryDateLabel.text = data.date_created
+        commodityLabel.text = data.dispatch_rep
         pickUpLabel.text = data.pick_up
         deliveryLabel.text = data.drop_off
         dispatchIDLabel.text = "\(data.id)"
@@ -43,17 +56,16 @@ class DispatchesListTableViewCell: UITableViewCell {
         switch status {
         case .scheduled:
             statusColor = UIColor(named: "redScheduled") ??  UIColor.red
-            dispatchesButton.setImageColor(color: statusColor)
-            bottomBorder.backgroundColor = statusColor
+          
         case .in_transit:
             statusColor = UIColor(named: "yellowTransit") ??  UIColor.red
-            dispatchesButton.setImageColor(color: statusColor)
-            bottomBorder.backgroundColor = statusColor
+            
         case .delivered:
             statusColor = UIColor(named: "greenDelivered") ??  UIColor.red
-            dispatchesButton.setImageColor(color: statusColor)
-            bottomBorder.backgroundColor = statusColor
+            
             
         }
+        dispatchButton.backgroundColor = statusColor
+        bottomBorder.backgroundColor = statusColor
     }
 }
