@@ -251,9 +251,12 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
     }
     
     @objc func viewOrderDetailBtnPressed(_ sender: UIButton){
-        let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
-        orderDetailVC.viewModel = self.viewModel
-        self.navigationController?.pushViewController(orderDetailVC, animated: true)
+//        let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
+//        orderDetailVC.viewModel = self.viewModel
+//        self.navigationController?.pushViewController(orderDetailVC, animated: true)
+        
+        let detailVC = CompleteDispatchViewController(nibName: "CompleteDispatchViewController", bundle: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     @objc func departedPressed(_ sender: UIButton)
@@ -286,11 +289,11 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
     {
         if sender.tag == 1 && selectedState == .pickupImage{
             
-            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
             
         }
         if sender.tag == 2 && selectedState == .deliveryImage{
-            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
         }
     }
 }

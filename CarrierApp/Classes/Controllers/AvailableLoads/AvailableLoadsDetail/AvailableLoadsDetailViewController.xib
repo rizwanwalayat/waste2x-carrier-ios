@@ -21,7 +21,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvailableLoadsDetailViewController" customModule="CarrierApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvailableLoadsDetailViewController" customModule="EnMass_Transit" customModuleProvider="target">
             <connections>
                 <outlet property="acceptButton" destination="Les-zT-dKv" id="r4o-6c-bDq"/>
                 <outlet property="baseHolderView" destination="NR9-O7-asr" id="v3d-dI-lUm"/>
