@@ -92,6 +92,14 @@ class DispatchesListViewController: BaseViewController {
         checkData()
         
     }
+    @objc func DispatchDetailBtnPressed(sender:UIButton){
+        let indexPathRow = sender.tag
+        let detailVC = DispatchesDetailViewController(nibName: "DispatchesDetailViewController", bundle: nil)
+        let detailVM = DispatchesDetailVM()
+        detailVM.id = viewModel?.data?.result?.array[selectedTab][indexPathRow].id ?? 0
+        detailVC.viewModel = detailVM
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSource
@@ -106,6 +114,8 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DispatchesListTableViewCell", for: indexPath) as! DispatchesListTableViewCell
+        cell.dispatchButton.tag = indexPath.row
+        cell.dispatchButton.addTarget(self, action: #selector(DispatchDetailBtnPressed(sender:)), for: .touchUpInside)
         let cellData = viewModel?.data?.result?.array[selectedTab][indexPath.row]
         cell.configCell(data: cellData!, status: dispatchesStatusArray[selectedTab])
         return cell
@@ -116,11 +126,10 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = DispatchesDetailViewController(nibName: "DispatchesDetailViewController", bundle: nil)
-        let detailVM = DispatchesDetailVM()
-        detailVM.id = viewModel?.data?.result?.array[selectedTab][indexPath.row].id ?? 0
-        detailVC.viewModel = detailVM
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath) as? DispatchesListTableViewCell
+        {
+            cell.toggleCard()
+        }
     }
 }
 

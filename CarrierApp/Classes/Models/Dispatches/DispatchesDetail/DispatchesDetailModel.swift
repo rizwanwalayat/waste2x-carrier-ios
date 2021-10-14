@@ -114,8 +114,8 @@ class DispatchesDetailShipmentModel: Mappable {
     var transporter_name = ""
     var transporter_phone = ""
     var commodity = ""
-    var packages = ""
-    var weight = ""
+    var packages = 0
+    var weight = 0.0
     var dimensions = ""
     var shipper = ""
     var consignee = ""
