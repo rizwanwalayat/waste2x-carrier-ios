@@ -35,10 +35,9 @@ class DispatchesListTableViewCell: UITableViewCell {
     
     func toggleCard(){
         let arrowImage = expandView.isHidden ? UIImage(named: "Arrow Up") : UIImage(named: "Arrow Down")
-        
+        self.expandView.isHidden = !self.expandView.isHidden
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
             self.layoutIfNeeded()}, completion: { finished in
-                self.expandView.isHidden = !self.expandView.isHidden
                 self.expandArrow.image = arrowImage
         })
     }

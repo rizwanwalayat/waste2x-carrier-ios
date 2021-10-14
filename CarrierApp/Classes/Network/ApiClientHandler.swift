@@ -22,6 +22,8 @@ class APIClientHandler: TSAPIClient {
     func sendRequestUsingMultipart (_ url: String, parameters: [String : AnyObject]?, httpMethod: HTTPMethod = .post, headers: [String : String]?, completionBlock: @escaping APIClientCompletionHandler) {
         var parameters = parameters
         
+        print("\(String(describing: url))")
+
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             
             for (key, value) in parameters ?? [:] {
@@ -41,6 +43,8 @@ class APIClientHandler: TSAPIClient {
             switch encodingResult {
                 
             case .success(let upload, _ , _):
+                
+
                 upload.uploadProgress(closure: { (progress) in
                     print(progress)
                 })
@@ -49,9 +53,11 @@ class APIClientHandler: TSAPIClient {
                     
                     switch response.result {
                     case .success(let resultData):
+                        self.showRequestDetailForSuccess(responseObject: response)
                         completionBlock(resultData as AnyObject, nil, self.status,self.message)
                         
                     case .failure(let error):
+                        self.showRequestDetailForFailure(responseObject: response)
                         completionBlock(error as AnyObject, error as NSError, self.status,self.message)
                     }
                     
