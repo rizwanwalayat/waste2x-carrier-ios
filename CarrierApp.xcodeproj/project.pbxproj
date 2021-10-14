@@ -72,6 +72,10 @@
 		048F16BB26EB6C7700A94CFE /* SignupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F16B826EB6C7700A94CFE /* SignupDataModel.swift */; };
 		049C052426B0022200A81023 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C052326B0022200A81023 /* MainTabbarController.swift */; };
 		049F2AB826E10E8000433489 /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F2AB726E10E8000433489 /* CountryPickerConfig.swift */; };
+		04A8AB3F2716BEB000E3C756 /* CompleteDispatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8AB3D2716BEB000E3C756 /* CompleteDispatchViewController.swift */; };
+		04A8AB402716BEB000E3C756 /* CompleteDispatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8AB3E2716BEB000E3C756 /* CompleteDispatchViewController.xib */; };
+		04A8AB442717061A00E3C756 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8AB422717061A00E3C756 /* ImagesCollectionViewCell.swift */; };
+		04A8AB452717061A00E3C756 /* ImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8AB432717061A00E3C756 /* ImagesCollectionViewCell.xib */; };
 		04ABB4C626BACB0A00C24153 /* ResultLoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABB4C526BACB0A00C24153 /* ResultLoginUser.swift */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
 		04C3091826B7E70F00BEC895 /* CreatePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C3091426B7E70F00BEC895 /* CreatePaymentViewController.xib */; };
@@ -299,6 +303,10 @@
 		048F16B826EB6C7700A94CFE /* SignupDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupDataModel.swift; sourceTree = "<group>"; };
 		049C052326B0022200A81023 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		049F2AB726E10E8000433489 /* CountryPickerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
+		04A8AB3D2716BEB000E3C756 /* CompleteDispatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDispatchViewController.swift; sourceTree = "<group>"; };
+		04A8AB3E2716BEB000E3C756 /* CompleteDispatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteDispatchViewController.xib; sourceTree = "<group>"; };
+		04A8AB422717061A00E3C756 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		04A8AB432717061A00E3C756 /* ImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesCollectionViewCell.xib; sourceTree = "<group>"; };
 		04ABB4C526BACB0A00C24153 /* ResultLoginUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultLoginUser.swift; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		04C3091426B7E70F00BEC895 /* CreatePaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePaymentViewController.xib; sourceTree = "<group>"; };
@@ -853,6 +861,25 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
+		04A8AB3C2716BE7200E3C756 /* CompleteDispatche */ = {
+			isa = PBXGroup;
+			children = (
+				04A8AB3D2716BEB000E3C756 /* CompleteDispatchViewController.swift */,
+				04A8AB3E2716BEB000E3C756 /* CompleteDispatchViewController.xib */,
+				04A8AB41271705E800E3C756 /* ImagesCollectionViewCell */,
+			);
+			path = CompleteDispatche;
+			sourceTree = "<group>";
+		};
+		04A8AB41271705E800E3C756 /* ImagesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04A8AB422717061A00E3C756 /* ImagesCollectionViewCell.swift */,
+				04A8AB432717061A00E3C756 /* ImagesCollectionViewCell.xib */,
+			);
+			path = ImagesCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		04C3091326B7E70F00BEC895 /* Payments */ = {
 			isa = PBXGroup;
 			children = (
@@ -1204,6 +1231,7 @@
 		9674909226B2EAA7001C4A62 /* Dispatches */ = {
 			isa = PBXGroup;
 			children = (
+				04A8AB3C2716BE7200E3C756 /* CompleteDispatche */,
 				96C44C2926B952BC00ED5696 /* DispatchesOrderDetail */,
 				04C3091C26B81BB400BEC895 /* Tracker */,
 				969FB4D926B4743600C77CE0 /* DispatchesDetail */,
@@ -1596,6 +1624,7 @@
 				969FB4E026B4743600C77CE0 /* DispatchesDetailStatusCell.xib in Resources */,
 				04D2422626B4070200312E2E /* ContractsViewController.xib in Resources */,
 				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
+				04A8AB402716BEB000E3C756 /* CompleteDispatchViewController.xib in Resources */,
 				04028FF526B419640053F41C /* LogoutViewController.xib in Resources */,
 				9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */,
 				0480668326B0306700DF4B1E /* QuotationDetailViewController.xib in Resources */,
@@ -1604,6 +1633,7 @@
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
+				04A8AB452717061A00E3C756 /* ImagesCollectionViewCell.xib in Resources */,
 				04D2422026B3D02100312E2E /* ReceivableLIstTableViewCell.xib in Resources */,
 				04D2422B26B4078200312E2E /* ContractsTableViewCell.xib in Resources */,
 				04206C3126BD388C006AB6A4 /* ContactViewController.xib in Resources */,
@@ -1768,6 +1798,7 @@
 				96893BA326A5F05100C4E0FD /* ForgotPasswordViewController.swift in Sources */,
 				045DDAE426BC146F00B3E232 /* Others.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
+				04A8AB3F2716BEB000E3C756 /* CompleteDispatchViewController.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				04206C4D26BD8608006AB6A4 /* CitiesResult.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
@@ -1830,6 +1861,7 @@
 				9672B23B26C11AE000E8E72F /* DispatchesListResultItem.swift in Sources */,
 				96B4E98B26B197850032C9F2 /* CodeVerificationViewController.swift in Sources */,
 				966F8EFE26D787E300E9A27D /* FirebaseManager.swift in Sources */,
+				04A8AB442717061A00E3C756 /* ImagesCollectionViewCell.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				96B14F4A26EA0B7D00B31FFB /* SignupCompleteViewController.swift in Sources */,

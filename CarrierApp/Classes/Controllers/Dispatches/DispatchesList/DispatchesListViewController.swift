@@ -130,6 +130,9 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
         {
             cell.toggleCard()
         }
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
 

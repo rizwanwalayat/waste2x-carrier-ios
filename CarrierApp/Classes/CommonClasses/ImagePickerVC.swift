@@ -21,9 +21,21 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
     //MARK: - Helper Methods
     /*****************************************/
 
-    func showImagePickerFromVC(fromVC:BaseViewController)
+    func showImagePickerFromVC(fromVC:BaseViewController, isGalleryOpen : Bool?)
     {
         sourceVC = fromVC
+        
+        if let galleryOpen = isGalleryOpen {
+            
+            if galleryOpen {
+                self.userClickedOnGallery()
+            }
+            else
+            {
+                self.userClickedOnCamera()
+            }
+        }
+        
         let alertController = UIAlertController.init(title: "", message: "Select image From?", preferredStyle: .actionSheet)
         
         let galleryButton = UIAlertAction.init(title: "Gallery", style: .default) { (completed) in
