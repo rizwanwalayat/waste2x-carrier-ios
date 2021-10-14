@@ -130,9 +130,8 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
         {
             cell.toggleCard()
         }
-        
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        tableView.reloadRows(at: [indexPath], with: .fade)
+       
     }
 }
 
