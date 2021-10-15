@@ -23,4 +23,5 @@ target 'CarrierApp' do
   pod 'lottie-ios'
   pod "Columbus"
   pod 'RSSelectionMenu'
+  pod 'DKImagePickerController'
 end
