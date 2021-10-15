@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import DKImagePickerController
 
 class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
@@ -54,6 +55,37 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
         
     }
 
+    func showImagePickerForMultipleSelection(fromVC: BaseViewController, isGalleryOpen : Bool?, selectionLimit : Int)
+    {
+        sourceVC = fromVC
+        let pickerController = DKImagePickerController()
+        pickerController.maxSelectableCount = selectionLimit
+        pickerController.sourceType = .both
+        pickerController.assetType = .allPhotos
+        pickerController.UIDelegate
+        if let galleryOpen = isGalleryOpen {
+            
+            if galleryOpen {
+                pickerController.sourceType = .photo
+            }
+            else
+            {
+                pickerController.sourceType = .camera
+            }
+        }
+        
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            print(assets)
+            
+            self.sourceVC.perform(#selector(BaseViewController.imageSelectedFromGalleryOrCamera(selectedImages:)), with: assets, afterDelay: 0.3)
+            
+        }
+        
+        sourceVC.popoverPresentationController?.sourceView = sourceVC.view
+        sourceVC.present(pickerController, animated: true, completion: nil)
+        
+    }
     /*****************************************/
 
     func userClickedOnGallery()
@@ -159,6 +191,12 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
             
         }
     }
+    
+    /*****************************************/
+    // MARK: DKImagePickerControllerBaseUIDelegate
+    /*****************************************/
+    
+    
     
     /*****************************************/
     //MARK: UIImagePickerController Delegate.

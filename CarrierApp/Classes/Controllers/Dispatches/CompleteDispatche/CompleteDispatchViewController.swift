@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKImagePickerController
 
 class CompleteDispatchViewController: BaseViewController {
 
@@ -86,20 +87,32 @@ class CompleteDispatchViewController: BaseViewController {
     
     @IBAction func uploadImageButtonPressed(_ sender: Any) {
         
-        ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: true)
+        if imagesArray.count == 5 {
+            
+            let maxLimit = 5 - imagesArray.count
+            ImagePickerVC.shared.showImagePickerForMultipleSelection(fromVC: self, isGalleryOpen: true, selectionLimit: maxLimit)
+        }
+        else {
+            showToast(message: "Images Limit reached")
+        }
     }
     
     @IBAction func useCamButtonPressed(_ sender: Any) {
         
-        ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: false)
+        if imagesArray.count == 5 {
+            let maxLimit = 5 - imagesArray.count
+            ImagePickerVC.shared.showImagePickerForMultipleSelection(fromVC: self, isGalleryOpen: false, selectionLimit: maxLimit)
+        }
+        else {
+            showToast(message: "Images Limit reached")
+        }
     }
     
     
     // MARK: - Selectors
-    @objc override func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
+    @objc override func imageSelectedFromGalleryOrCamera(selectedImages:[DKAsset]){
         
-        imagesArray.append(selectedImage)
-        collectionViewImages.reloadData()
+        getAssetThumbnail(assets: selectedImages)
         
     }
     
@@ -138,4 +151,24 @@ extension CompleteDispatchViewController: UICollectionViewDelegate, UICollection
         let size = (collectionViewImages.bounds.width / 3) - 8
         return CGSize(width: size, height: size)
     }
+}
+
+
+// MARK: - Custom Methods
+extension CompleteDispatchViewController {
+    
+    func getAssetThumbnail(assets: [DKAsset]){
+            
+            for asset in assets {
+                
+                asset.fetchImage(with: CGSize(width: 100, height: 100)) { img, response in
+                    
+                    if let image = img {
+                        
+                        self.imagesArray.append(image)
+                    }
+                }
+                self.collectionViewImages.reloadData()
+            }
+        }
 }

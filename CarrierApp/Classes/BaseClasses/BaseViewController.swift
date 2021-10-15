@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import GoogleMaps
+import DKImagePickerController
 
 class BaseViewController: UIViewController {
 
@@ -35,6 +36,10 @@ class BaseViewController: UIViewController {
     /**************************************************/
     
     @objc func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
+        
+    }
+    
+    @objc func imageSelectedFromGalleryOrCamera(selectedImages:[DKAsset]){
         
     }
     

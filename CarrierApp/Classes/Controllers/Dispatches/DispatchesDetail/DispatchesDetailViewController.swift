@@ -251,12 +251,9 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
     }
     
     @objc func viewOrderDetailBtnPressed(_ sender: UIButton){
-//        let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
-//        orderDetailVC.viewModel = self.viewModel
-//        self.navigationController?.pushViewController(orderDetailVC, animated: true)
-        
-        let detailVC = CompleteDispatchViewController(nibName: "CompleteDispatchViewController", bundle: nil)
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        let orderDetailVC = DispatchesOrderDetail(nibName: "DispatchesOrderDetail", bundle: nil)
+        orderDetailVC.viewModel = self.viewModel
+        self.navigationController?.pushViewController(orderDetailVC, animated: true)
     }
     
     @objc func departedPressed(_ sender: UIButton)
