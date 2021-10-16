@@ -56,6 +56,8 @@
 		0461744326BBBF290055DD3E /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461743F26BBBF290055DD3E /* FaqTableViewCell.swift */; };
 		0461744426BBBF290055DD3E /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461744026BBBF290055DD3E /* FaqViewController.swift */; };
 		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
+		046D93D7271AF77600E84C66 /* CreateAnOtherLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D93D5271AF77600E84C66 /* CreateAnOtherLoadViewController.swift */; };
+		046D93D8271AF77600E84C66 /* CreateAnOtherLoadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D93D6271AF77600E84C66 /* CreateAnOtherLoadViewController.xib */; };
 		047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */; };
 		047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */; };
 		047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */; };
@@ -287,6 +289,8 @@
 		0461743F26BBBF290055DD3E /* FaqTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		0461744026BBBF290055DD3E /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
 		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
+		046D93D5271AF77600E84C66 /* CreateAnOtherLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnOtherLoadViewController.swift; sourceTree = "<group>"; };
+		046D93D6271AF77600E84C66 /* CreateAnOtherLoadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAnOtherLoadViewController.xib; sourceTree = "<group>"; };
 		047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPickerViewController.xib; sourceTree = "<group>"; };
 		047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLocationAutoCompleteTableViewCell.swift; sourceTree = "<group>"; };
@@ -791,6 +795,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		046D93D4271AF75600E84C66 /* PopupAnotherLoad */ = {
+			isa = PBXGroup;
+			children = (
+				046D93D5271AF77600E84C66 /* CreateAnOtherLoadViewController.swift */,
+				046D93D6271AF77600E84C66 /* CreateAnOtherLoadViewController.xib */,
+			);
+			path = PopupAnotherLoad;
+			sourceTree = "<group>";
+		};
 		047E83D2268338DC006A0F18 /* LocationPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -866,6 +879,7 @@
 			children = (
 				04A8AB3D2716BEB000E3C756 /* CompleteDispatchViewController.swift */,
 				04A8AB3E2716BEB000E3C756 /* CompleteDispatchViewController.xib */,
+				046D93D4271AF75600E84C66 /* PopupAnotherLoad */,
 				04A8AB41271705E800E3C756 /* ImagesCollectionViewCell */,
 			);
 			path = CompleteDispatche;
@@ -1645,6 +1659,7 @@
 				9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */,
 				96C44C2D26B952BD00ED5696 /* DispatchesOrderDetail.xib in Resources */,
 				96893BA126A5F02D00C4E0FD /* ForgotPasswordViewController.xib in Resources */,
+				046D93D8271AF77600E84C66 /* CreateAnOtherLoadViewController.xib in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
 				18397E282660FF54003DE30C /* Poppins-MediumItalic.ttf in Resources */,
@@ -1820,6 +1835,7 @@
 				045DDAE526BC146F00B3E232 /* Result.swift in Sources */,
 				18E1631226C00A1C00DD2EED /* ContractsResult.swift in Sources */,
 				96B4E98A26B197850032C9F2 /* CodeVerificationViewController+Extensions.swift in Sources */,
+				046D93D7271AF77600E84C66 /* CreateAnOtherLoadViewController.swift in Sources */,
 				188D008026C273190076B5CE /* CreatePayment.swift in Sources */,
 				96E0FC1226BD799D007094DC /* CodeVerificationVM.swift in Sources */,
 				045DDAE326BC146F00B3E232 /* Faqs.swift in Sources */,

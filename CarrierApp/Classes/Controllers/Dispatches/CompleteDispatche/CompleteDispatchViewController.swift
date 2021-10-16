@@ -71,17 +71,18 @@ class CompleteDispatchViewController: BaseViewController {
     
     @IBAction func completeDispatchButtonPressed(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Please Select", message: "", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "I’m All Done", style: .default, handler: { action in
+        let actionVc = CreateAnOtherLoadViewController(nibName: "CreateAnOtherLoadViewController", bundle: nil)
+        actionVc.modalPresentationStyle = .overFullScreen
+        actionVc.iAmAllDoneButtonPressed = {
             
-        }))
+            // i am all done code run here
+        }
         
-        alert.addAction(UIAlertAction(title: "Create Another Load", style: .default, handler: { action in
+        actionVc.createAnothetLoadButtonPressed = {
             
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+            // create an other load code here 
+        }
+        self.present(actionVc, animated: false, completion: nil)
     
     }
     
