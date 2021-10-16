@@ -87,7 +87,7 @@ class CompleteDispatchViewController: BaseViewController {
     
     @IBAction func uploadImageButtonPressed(_ sender: Any) {
         
-        if imagesArray.count == 5 {
+        if imagesArray.count < 5 {
             
             let maxLimit = 5 - imagesArray.count
             ImagePickerVC.shared.showImagePickerForMultipleSelection(fromVC: self, isGalleryOpen: true, selectionLimit: maxLimit)
@@ -99,7 +99,7 @@ class CompleteDispatchViewController: BaseViewController {
     
     @IBAction func useCamButtonPressed(_ sender: Any) {
         
-        if imagesArray.count == 5 {
+        if imagesArray.count < 5 {
             let maxLimit = 5 - imagesArray.count
             ImagePickerVC.shared.showImagePickerForMultipleSelection(fromVC: self, isGalleryOpen: false, selectionLimit: maxLimit)
         }
