@@ -42,8 +42,9 @@ class DispatchesDetailViewController: BaseViewController {
         viewModel?.FetchDispatchesDetailData({ data, error, status, message in
             if (status ?? false), error == nil {
                 self.isDataLoaded = true
-                self.tableView.reloadData()
                 self.dataPopulateHandlings()
+                self.tableView.reloadData()
+
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
             }
@@ -126,9 +127,6 @@ class DispatchesDetailViewController: BaseViewController {
         })
     }
     
-    private func markBtnCompleted(){
-        
-    }
     
     fileprivate func locationUpdateAndSwitchHandlings(_ flag : Bool) {
         
