@@ -62,7 +62,6 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
         pickerController.maxSelectableCount = selectionLimit
         pickerController.sourceType = .both
         pickerController.assetType = .allPhotos
-        pickerController.UIDelegate
         if let galleryOpen = isGalleryOpen {
             
             if galleryOpen {
