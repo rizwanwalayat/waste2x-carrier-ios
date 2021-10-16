@@ -20,7 +20,9 @@ class DispatchesDetailViewController: BaseViewController {
     
     var viewModel: DispatchesDetailVM?
     var isDataLoaded: Bool = false
-    var selectedState = DispatchesActionsType.departedToPickup
+//    var selectedState = DispatchesActionsType.departToPickup
+    var selectedState = 0
+    var dispatchStates = DispatchesActionsType.allCases
     var deliveryType = DispatchesDeliveryType.none
     var isSwitchButtonOn = false
     
@@ -67,36 +69,28 @@ class DispatchesDetailViewController: BaseViewController {
     private func dataPopulateHandlings()
     {
         if viewModel?.data?.result?.dispatchStatus == .in_transit{
-            
             locationUpdateAndSwitchHandlings(true)
         }
         
-        
-        if viewModel?.data?.result?.delivery?.isImage ?? false {
-            selectedState = .none
+        if viewModel?.data?.result?.dispatchStatus == .delivered {
+            selectedState = 5
             deliveryType = .none
             locationUpdateAndSwitchHandlings(false)
-            
         }
         else if !Utility.isBlankString(text: viewModel?.data?.result?.delivery?.arrival ?? "") {
-            selectedState = .deliveryImage
+            selectedState = 4
             deliveryType = .delivery
         }
-        
         else if !Utility.isBlankString(text: viewModel?.data?.result?.delivery?.departure ?? "") {
-            selectedState = .delivered
-            deliveryType = .delivery
-        }
-        else if viewModel?.data?.result?.pickup?.isImage ?? false {
-            selectedState = .departedToDeliver
+            selectedState = 3
             deliveryType = .delivery
         }
         else if !Utility.isBlankString(text: viewModel?.data?.result?.pickup?.arrival ?? "") {
-            selectedState = .pickupImage
-            deliveryType = .pickup
+            selectedState = 2
+            deliveryType = .delivery
         }
         else if !Utility.isBlankString(text: viewModel?.data?.result?.pickup?.departure ?? "") {
-            selectedState = .pickupArrived
+            selectedState = 1
             deliveryType = .pickup
         }
         
@@ -132,6 +126,10 @@ class DispatchesDetailViewController: BaseViewController {
         })
     }
     
+    private func markBtnCompleted(){
+        
+    }
+    
     fileprivate func locationUpdateAndSwitchHandlings(_ flag : Bool) {
         
         if !flag {
@@ -152,12 +150,6 @@ class DispatchesDetailViewController: BaseViewController {
         }
     }
     
-    @objc override func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
-        
-        let params : [String : Any] = ["image": selectedImage,
-                      "receipt_type": selectedState.rawValue]
-        sendImage(params)
-    }
     
 }
 
@@ -192,14 +184,11 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
             // cell's button handlings
             cell.departedBtn.tag = indexPath.row
             cell.arrivedBtn.tag = indexPath.row
-            cell.imageUploadBtn.tag = indexPath.row
             cell.departedBtn.addTarget(self, action: #selector(departedPressed(_:)), for: .touchUpInside)
             cell.arrivedBtn.addTarget(self, action: #selector(arrivalPressed(_:)), for: .touchUpInside)
-            cell.imageUploadBtn.addTarget(self, action: #selector(camImagePressed(_:)), for: .touchUpInside)
             
             cell.departedBtn.makeEnable(value: false)
             cell.arrivedBtn.makeEnable(value: false)
-            cell.imageUploadBtn.makeEnable(value: false)
             
             
             // cell's data handling
@@ -209,19 +198,22 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
                 let cellData = viewModel?.data?.result?.pickup
                 cell.configCell(data: cellData, status: DispatchesDeliveryType.pickup)
                 
-                cell.departedBtn.makeEnable(value: selectedState == .departedToPickup)
-                cell.arrivedBtn.makeEnable(value: selectedState == .pickupArrived)
-                cell.imageUploadBtn.makeEnable(value: selectedState == .pickupImage)
+                cell.markDepartCompleted(value: selectedState > 1)
+                cell.markArrivedCompleted(value: selectedState > 2 )
+                cell.departedBtn.makeEnable(value: selectedState == 0 )
+                cell.arrivedBtn.makeEnable(value: selectedState == 1)
                 
             }
             else if indexPath.row == 2
             {
-                cell.departedBtn.makeEnable(value: selectedState == .departedToDeliver)
-                cell.arrivedBtn.makeEnable(value: selectedState == .delivered)
-                cell.imageUploadBtn.makeEnable(value: selectedState == .deliveryImage)
-                
+            
                 let cellData = viewModel?.data?.result?.delivery
                 cell.configCell(data: cellData, status: DispatchesDeliveryType.delivery)
+                
+                cell.markDepartCompleted(value: selectedState > 3)
+                cell.markArrivedCompleted(value: selectedState > 4 )
+                cell.departedBtn.makeEnable(value: selectedState == 2)
+                cell.arrivedBtn.makeEnable(value: selectedState == 3)
             }
             
             
@@ -258,41 +250,41 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
     
     @objc func departedPressed(_ sender: UIButton)
     {
-        if sender.tag == 1 && selectedState == .departedToPickup {
+        if sender.tag == 1 && selectedState == 0 {
             
             locationUpdateAndSwitchHandlings(true)
-            sendDisptachAction(action: .departedToPickup)
+            sendDisptachAction(action: .departToPickup)
         }
-        if sender.tag == 2 && selectedState == .departedToDeliver{
+        if sender.tag == 2 && selectedState == 2{
             
-            sendDisptachAction(action: .departedToDeliver)
+            sendDisptachAction(action: .departToDeliver)
         }
 
     }
 
     @objc func arrivalPressed(_ sender: UIButton)
     {
-        if sender.tag == 1 && selectedState == .pickupArrived{
+        if sender.tag == 1 && selectedState == 1{
             
-            sendDisptachAction(action: .pickupArrived)
+            sendDisptachAction(action: .pickupArrive)
         }
-        if sender.tag == 2 && selectedState == .delivered {
+        if sender.tag == 2 && selectedState == 3 {
             
             sendDisptachAction(action: .delivered)
         }
     }
 
-    @objc func camImagePressed(_ sender: UIButton)
-    {
-        if sender.tag == 1 && selectedState == .pickupImage{
-            
-            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
-            
-        }
-        if sender.tag == 2 && selectedState == .deliveryImage{
-            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
-        }
-    }
+//    @objc func camImagePressed(_ sender: UIButton)
+//    {
+//        if sender.tag == 1 && selectedState == .pickupImage{
+//
+//            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
+//
+//        }
+//        if sender.tag == 2 && selectedState == .deliveryImage{
+//            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
+//        }
+//    }
 }
 
 extension DispatchesDetailViewController

@@ -14,14 +14,27 @@ enum DispatchesDeliveryType: String {
     case none = ""
 }
 
-enum DispatchesActionsType: String {
-    case departedToPickup = "Departed To Pickup"
-    case pickupArrived = "Pickup Arrived"
-    case pickupImage = "PICK_UP"
-    case departedToDeliver = "Departed To Deliver"
-    case delivered = "Delivered"
-    case deliveryImage = "DROP_OFF"
+enum DispatchesActionsType: String, CaseIterable {
     case none = ""
+    case departToPickup = "Departed To Pickup"
+    case pickupArrive = "Pickup Arrived"
+    case departToDeliver = "Departed To Deliver"
+    case delivered = "Delivered"
+    case deliveryImage = "POD"
+    
+    init?(id: Int) {
+        switch id {
+        case 0: self = .none
+        case 1: self = .departToPickup
+        case 2: self = .pickupArrive
+        case 3: self = .departToPickup
+        case 4: self = .delivered
+        case 5: self = .deliveryImage
+        default: return nil
+        }
+   
+    }
+ 
 }
 
 protocol DispatchesDetailDelegate: AnyObject {
@@ -33,12 +46,11 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
     @IBOutlet weak var DeliveryIcon: UIImageView!
     @IBOutlet weak var DeliveryLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var commodityLabel: UILabel!
-    @IBOutlet weak var arrivalLabel: UILabel!
-    @IBOutlet weak var departureLabel: UILabel!
+ 
     @IBOutlet weak var departedBtn: UIButton!
     @IBOutlet weak var arrivedBtn: UIButton!
-    @IBOutlet weak var imageUploadBtn: UIButton!
+    @IBOutlet weak var departCompletedView: UIView!
+    @IBOutlet weak var arrivedCompletedView: UIView!
     
     
     weak var delegate: DispatchesDetailDelegate?
@@ -70,11 +82,14 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
         }
         
         locationLabel.text = data?.location
-        commodityLabel.text = data?.commodity
-        arrivalLabel.text = data?.arrival
-        departureLabel.text = data?.departure
     }
 
+    func markDepartCompleted(value: Bool){
+        departCompletedView.isHidden = !value
+    }
+    func markArrivedCompleted(value: Bool){
+        arrivedCompletedView.isHidden = !value
+    }
 
 //    //MARK: - Actions
 //    @IBAction func departedPressed(_ sender: Any) {
