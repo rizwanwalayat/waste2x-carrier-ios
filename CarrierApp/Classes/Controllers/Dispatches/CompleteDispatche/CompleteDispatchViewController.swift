@@ -224,7 +224,12 @@ extension CompleteDispatchViewController {
             
             if (success ?? false), error == nil {
                 
-                print(response)
+                if let result = response as? [String: Any] {
+                    let message = result["message"] as? String
+                    self.showToast(message: message ?? "POD upload successfully. Trip status is completed")
+                    let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
+                    self.navigationController?.setViewControllers([vc], animated: true)
+                }
 
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )

@@ -133,8 +133,8 @@ class DispatchesDetailViewController: BaseViewController {
                 isSwitchButtonOn = true
             }
         }
-        let indexPath = IndexPath(item: 0, section: 0)
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+//        let indexPath = IndexPath(item: 0, section: 0)
+//        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     
@@ -260,18 +260,6 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
             sendDisptachAction(action: .delivered)
         }
     }
-
-//    @objc func camImagePressed(_ sender: UIButton)
-//    {
-//        if sender.tag == 1 && selectedState == .pickupImage{
-//
-//            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
-//
-//        }
-//        if sender.tag == 2 && selectedState == .deliveryImage{
-//            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
-//        }
-//    }
 }
 
 extension DispatchesDetailViewController
