@@ -24,11 +24,12 @@ extension UIButton
     {
         self.isEnabled = value
         if value {
-            self.alpha = 1
+            self.backgroundColor = UIColor.appColor
+            self.setTitleColor(UIColor.white, for: .normal)
         } else {
-            self.alpha = 0.5
+            self.backgroundColor = UIColor(named: "buttonLight")
+            self.setTitleColor(UIColor.appColor, for: .normal)
         }
-        
     }
     
     func makeEnableForContactsScreen(value : Bool)

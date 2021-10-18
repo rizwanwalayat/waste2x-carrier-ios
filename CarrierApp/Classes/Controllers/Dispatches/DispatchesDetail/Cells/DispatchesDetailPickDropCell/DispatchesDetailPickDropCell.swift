@@ -73,10 +73,10 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
         switch status {
         case .pickup:
             DeliveryIcon.image = UIImage(named: "Pick up Icon with Bg Big")
-            DeliveryLabel.text = "Pickup"
+            DeliveryLabel.text = "Trip To Pickup Site"
         case .delivery:
             DeliveryIcon.image = UIImage(named: "Drop Off Icon with Bg Big")
-            DeliveryLabel.text = "Delivery"
+            DeliveryLabel.text = "Trip To Delivery Site"
         case .none:
             print("")
         }

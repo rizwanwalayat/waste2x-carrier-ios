@@ -70,7 +70,17 @@ class DispatchesDetailViewController: BaseViewController {
     private func dataPopulateHandlings()
     {
         if viewModel?.data?.result?.dispatchStatus == .in_transit{
-            locationUpdateAndSwitchHandlings(true)
+            
+            if !Utility.isBlankString(text: viewModel?.data?.result?.delivery?.arrival ?? "") {
+               
+                locationUpdateAndSwitchHandlings(false)
+                let vc = CompleteDispatchViewController(nibName: "CompleteDispatchViewController", bundle: nil)
+                vc.disptachId = viewModel?.id ?? 0
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            } else {
+                locationUpdateAndSwitchHandlings(true)
+            }
         }
         
         if viewModel?.data?.result?.dispatchStatus == .delivered {
@@ -107,7 +117,10 @@ class DispatchesDetailViewController: BaseViewController {
         viewModel?.sendDispatchAction(action: action, { data, error, status, message in
             if status ?? false, error == nil
             {
-                self.loadDispatchesDetails()
+                self.showToast(message: message)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                    self.loadDispatchesDetails()
+                })
                 
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
@@ -122,9 +135,6 @@ class DispatchesDetailViewController: BaseViewController {
             
             isSwitchButtonOn = false
             
-            let vc = CompleteDispatchViewController(nibName: "CompleteDispatchViewController", bundle: nil)
-            vc.disptachId = viewModel?.id ?? 0
-            self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
             startUpdatingLocation()
