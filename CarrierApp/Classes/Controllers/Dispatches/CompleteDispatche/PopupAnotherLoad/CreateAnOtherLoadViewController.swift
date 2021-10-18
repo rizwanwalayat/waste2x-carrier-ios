@@ -55,11 +55,11 @@ class CreateAnOtherLoadViewController: BaseViewController {
             switch buttonState {
             case .createAnotherLoad:
                 
-                self.iAmAllDoneButtonPressed?()
+                self.createAnothetLoadButtonPressed?()
                 
             case .iAmAllDone:
                 
-                self.createAnothetLoadButtonPressed?()
+                self.iAmAllDoneButtonPressed?()
                 
             case .none:
                 

@@ -21,7 +21,7 @@ class DispatchesListResultItem: Mappable {
     var weight : String
     
     required init?(map: Map) {
-        id = -1
+        id = 0
         date_created = ""
         pick_up = ""
         drop_off = ""

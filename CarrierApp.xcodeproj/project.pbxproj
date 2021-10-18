@@ -28,6 +28,7 @@
 		04028FF426B419640053F41C /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04028FF226B419640053F41C /* LogoutViewController.swift */; };
 		04028FF526B419640053F41C /* LogoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04028FF326B419640053F41C /* LogoutViewController.xib */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
+		0418D81D271D842F00B3910C /* CompleteDispatchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418D81C271D842F00B3910C /* CompleteDispatchVM.swift */; };
 		04206C3126BD388C006AB6A4 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04206C2F26BD388C006AB6A4 /* ContactViewController.xib */; };
 		04206C3226BD388C006AB6A4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04206C3026BD388C006AB6A4 /* ContactViewController.swift */; };
 		04206C3626BD3D63006AB6A4 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04206C3426BD3D63006AB6A4 /* ContactTableViewCell.xib */; };
@@ -263,6 +264,7 @@
 		04028FF226B419640053F41C /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		04028FF326B419640053F41C /* LogoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutViewController.xib; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
+		0418D81C271D842F00B3910C /* CompleteDispatchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDispatchVM.swift; sourceTree = "<group>"; };
 		04206C2F26BD388C006AB6A4 /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		04206C3026BD388C006AB6A4 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		04206C3426BD3D63006AB6A4 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
@@ -677,6 +679,14 @@
 			path = Logout;
 			sourceTree = "<group>";
 		};
+		0418D81B271D841900B3910C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0418D81C271D842F00B3910C /* CompleteDispatchVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		04206C2E26BD388C006AB6A4 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +901,7 @@
 		04A8AB3C2716BE7200E3C756 /* CompleteDispatche */ = {
 			isa = PBXGroup;
 			children = (
+				0418D81B271D841900B3910C /* ViewModel */,
 				04A8AB3D2716BEB000E3C756 /* CompleteDispatchViewController.swift */,
 				04A8AB3E2716BEB000E3C756 /* CompleteDispatchViewController.xib */,
 				046D93D4271AF75600E84C66 /* PopupAnotherLoad */,
@@ -1831,6 +1842,7 @@
 				04A8AB3F2716BEB000E3C756 /* CompleteDispatchViewController.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				04206C4D26BD8608006AB6A4 /* CitiesResult.swift in Sources */,
+				0418D81D271D842F00B3910C /* CompleteDispatchVM.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,

@@ -115,40 +115,26 @@ class DispatchesDetailViewController: BaseViewController {
         })
     }
     
-    private func sendImage(_ params: [String: Any])
-    {
-        viewModel?.uploadImageToServer(params, { data, error, status, message in
-            
-            if status ?? false, error == nil
-            {
-                self.showToast(message: "Image uploaded successfully" )
-                self.loadDispatchesDetails()
-                
-            } else {
-                self.showToast(message: error?.localizedDescription ?? message )
-            }
-        })
-    }
-    
-    
     fileprivate func locationUpdateAndSwitchHandlings(_ flag : Bool) {
         
         if !flag {
             stopUpdatingLocation()
             
             isSwitchButtonOn = false
-//            let indexPath = IndexPath(item: 0, section: 0)
-//            tableView.reloadRows(at: [indexPath], with: .automatic)
+            
+            let vc = CompleteDispatchViewController(nibName: "CompleteDispatchViewController", bundle: nil)
+            vc.disptachId = viewModel?.id ?? 0
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
             startUpdatingLocation()
             
             if !isSwitchButtonOn {
                 isSwitchButtonOn = true
-//                let indexPath = IndexPath(item: 0, section: 0)
-//                tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         }
+//        let indexPath = IndexPath(item: 0, section: 0)
+//        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     
@@ -274,18 +260,6 @@ extension DispatchesDetailViewController: DispatchesDetailDelegate
             sendDisptachAction(action: .delivered)
         }
     }
-
-//    @objc func camImagePressed(_ sender: UIButton)
-//    {
-//        if sender.tag == 1 && selectedState == .pickupImage{
-//
-//            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
-//
-//        }
-//        if sender.tag == 2 && selectedState == .deliveryImage{
-//            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
-//        }
-//    }
 }
 
 extension DispatchesDetailViewController
