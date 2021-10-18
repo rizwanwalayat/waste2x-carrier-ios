@@ -73,6 +73,8 @@
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048F16BB26EB6C7700A94CFE /* SignupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F16B826EB6C7700A94CFE /* SignupDataModel.swift */; };
 		049C052426B0022200A81023 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C052326B0022200A81023 /* MainTabbarController.swift */; };
+		049D24CF271D3A120037B3E9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D24CD271D3A120037B3E9 /* ProfileViewController.swift */; };
+		049D24D0271D3A120037B3E9 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049D24CE271D3A120037B3E9 /* ProfileViewController.xib */; };
 		049F2AB826E10E8000433489 /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F2AB726E10E8000433489 /* CountryPickerConfig.swift */; };
 		04A8AB3F2716BEB000E3C756 /* CompleteDispatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8AB3D2716BEB000E3C756 /* CompleteDispatchViewController.swift */; };
 		04A8AB402716BEB000E3C756 /* CompleteDispatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8AB3E2716BEB000E3C756 /* CompleteDispatchViewController.xib */; };
@@ -306,6 +308,8 @@
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		048F16B826EB6C7700A94CFE /* SignupDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupDataModel.swift; sourceTree = "<group>"; };
 		049C052326B0022200A81023 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
+		049D24CD271D3A120037B3E9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		049D24CE271D3A120037B3E9 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		049F2AB726E10E8000433489 /* CountryPickerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
 		04A8AB3D2716BEB000E3C756 /* CompleteDispatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDispatchViewController.swift; sourceTree = "<group>"; };
 		04A8AB3E2716BEB000E3C756 /* CompleteDispatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteDispatchViewController.xib; sourceTree = "<group>"; };
@@ -550,6 +554,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				049D24CC271D39F40037B3E9 /* profile */,
 				04206C2E26BD388C006AB6A4 /* Contact */,
 				0461743B26BBBF290055DD3E /* Faq */,
 				96C44C2E26B9862800ED5696 /* Settings */,
@@ -872,6 +877,15 @@
 				048F16B826EB6C7700A94CFE /* SignupDataModel.swift */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		049D24CC271D39F40037B3E9 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				049D24CD271D3A120037B3E9 /* ProfileViewController.swift */,
+				049D24CE271D3A120037B3E9 /* ProfileViewController.xib */,
+			);
+			path = profile;
 			sourceTree = "<group>";
 		};
 		04A8AB3C2716BE7200E3C756 /* CompleteDispatche */ = {
@@ -1638,6 +1652,7 @@
 				969FB4E026B4743600C77CE0 /* DispatchesDetailStatusCell.xib in Resources */,
 				04D2422626B4070200312E2E /* ContractsViewController.xib in Resources */,
 				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
+				049D24D0271D3A120037B3E9 /* ProfileViewController.xib in Resources */,
 				04A8AB402716BEB000E3C756 /* CompleteDispatchViewController.xib in Resources */,
 				04028FF526B419640053F41C /* LogoutViewController.xib in Resources */,
 				9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */,
@@ -1890,6 +1905,7 @@
 				96C44C3226B9862800ED5696 /* SettingsViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				18BB558426C11CF800E51BB4 /* QuotationViewModel.swift in Sources */,
+				049D24CF271D3A120037B3E9 /* ProfileViewController.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				04C3091F26B81BB400BEC895 /* TrackerViewController.swift in Sources */,
 				96E0EA8F26CFD94E008E0329 /* LocationManager.swift in Sources */,
