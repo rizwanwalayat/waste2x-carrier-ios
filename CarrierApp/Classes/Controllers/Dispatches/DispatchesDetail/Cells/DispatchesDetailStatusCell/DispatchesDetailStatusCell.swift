@@ -13,12 +13,10 @@ class DispatchesDetailStatusCell: BaseTableViewCell {
     // MARK: - Outlets
     
 
-    @IBOutlet weak var vehicleTypeLabel : UILabel!
-    @IBOutlet weak var regNoLabel : UILabel!
-    @IBOutlet weak var dateCreatedValueLabel: UILabel!
+    @IBOutlet weak var deliveryDateLabel : UILabel!
+    @IBOutlet weak var deliveryDateValueLabel: UILabel!
     @IBOutlet weak var dispatchStatusLabel: UILabel!
     @IBOutlet weak var dispatchIDLabel: UILabel!
-    @IBOutlet weak var deliveredTimeLabel: UILabel!
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var coloredStatusView: UIView!
     @IBOutlet weak var viewOrderDetailBtn: UIButton!
@@ -45,12 +43,10 @@ class DispatchesDetailStatusCell: BaseTableViewCell {
     
     func configCell(data: DispatchesDetailDetailsModel?, status: DispatchesStatus)
     {
-        vehicleTypeLabel.text = data?.vehicle_type
-        regNoLabel.text = data?.reg_number
-        dateCreatedValueLabel.text = data?.created_at
+//        vehicleTypeLabel.text = data?.vehicle_type
+        deliveryDateValueLabel.text = data?.delivery_date
         dispatchIDLabel.text = "#\(data?.dispatch_id ?? 0)"
-        deliveredTimeLabel.text = status == .delivered ? data?.delivery_time : ""
-//        dispatchStatusLabel.text = 
+  
         
         switch status {
         case .scheduled:
