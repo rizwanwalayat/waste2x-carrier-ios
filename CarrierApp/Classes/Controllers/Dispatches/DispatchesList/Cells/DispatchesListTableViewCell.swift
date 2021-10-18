@@ -33,18 +33,42 @@ class DispatchesListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func toggleCard(){
-        let arrowImage = expandView.isHidden ? UIImage(named: "Arrow Up") : UIImage(named: "Arrow Down")
-        self.expandView.isHidden = !self.expandView.isHidden
+    func expand()
+    {
+        self.expandView.isHidden = false
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.layoutIfNeeded()}, completion: { finished in
-                self.expandArrow.image = arrowImage
-        })
+                        self.layoutIfNeeded()}, completion: { finished in
+                            if self.expandArrow.image == UIImage(named: "Arrow Up")
+                            {
+                                self.expandArrow.image = UIImage(named: "Arrow Down")
+                            }
+                            else
+                            {
+                                self.expandArrow.image = UIImage(named: "Arrow Up")
+                            }
+                        })
     }
+    
+    func collapse()
+    {
+        self.expandView.isHidden = true
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
+                        self.layoutIfNeeded()}, completion: { finished in
+                            if self.expandArrow.image == UIImage(named: "Arrow Up")
+                            {
+                                self.expandArrow.image = UIImage(named: "Arrow Down")
+                            }
+                            else
+                            {
+                                self.expandArrow.image = UIImage(named: "Arrow Up")
+                            }
+                        })
+    }
+    
     
     func configCell(data: DispatchesListResultItem, status: DispatchesStatus) {
         
-        deliveryDateLabel.text = data.date_created
+        deliveryDateLabel.text = data.deliveryDate
         commodityLabel.text = data.dispatch_rep
         pickUpLabel.text = data.pick_up
         deliveryLabel.text = data.drop_off

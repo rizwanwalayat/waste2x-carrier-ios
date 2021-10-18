@@ -20,6 +20,7 @@ class DispatchesListViewController: BaseViewController {
     var selectedTab = 0
     var dispatchesStatusArray = [DispatchesStatus.scheduled, DispatchesStatus.in_transit, DispatchesStatus.delivered]
     var viewModel: DispatchesListVM?
+    var selectedIndex : IndexPath?
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel : UILabel!
@@ -125,12 +126,39 @@ extension DispatchesListViewController : UITableViewDelegate, UITableViewDataSou
         UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? DispatchesListTableViewCell
-        {
-            cell.toggleCard()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        tableView.beginUpdates()
+        if selectedIndex == indexPath {
+            
+            if let cell = tableView.cellForRow(at: indexPath) as? DispatchesListTableViewCell
+            {
+                cell.collapse()
+                self.selectedIndex = nil
+            }
         }
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        else if selectedIndex != nil
+        {
+            if let cell = tableView.cellForRow(at: selectedIndex!) as? DispatchesListTableViewCell
+            {
+                cell.collapse()
+            }
+            
+            if let cell = tableView.cellForRow(at: indexPath) as? DispatchesListTableViewCell
+            {
+                cell.expand()
+            }
+            selectedIndex = indexPath
+        }
+        else if selectedIndex == nil {
+            if let cell = tableView.cellForRow(at: indexPath) as? DispatchesListTableViewCell
+            {
+                cell.expand()
+                self.selectedIndex = indexPath
+            }
+        }
+        
+        tableView.endUpdates()
        
     }
 }

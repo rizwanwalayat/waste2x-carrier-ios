@@ -16,6 +16,9 @@ class DispatchesListResultItem: Mappable {
     var pick_up: String
     var drop_off: String
     var dispatch_rep: String
+    var commodity : String
+    var deliveryDate : String
+    var weight : String
     
     required init?(map: Map) {
         id = -1
@@ -23,6 +26,9 @@ class DispatchesListResultItem: Mappable {
         pick_up = ""
         drop_off = ""
         dispatch_rep = ""
+        commodity = ""
+        deliveryDate = ""
+        weight = ""
     }
     
     func mapping(map: Map) {
@@ -31,6 +37,9 @@ class DispatchesListResultItem: Mappable {
         pick_up <- map["pick_up"]
         drop_off <- map["drop_off"]
         dispatch_rep <- map["dispatch_rep"]
+        commodity <- map["commodity"]
+        deliveryDate <- map["delivery_date"]
+        weight <- map["weight"]
     }
     
 }
