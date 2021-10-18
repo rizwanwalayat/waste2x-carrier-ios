@@ -37,7 +37,7 @@ struct NetworkingConnection {
         
     class func setupHomeAsRootViewController () {
         
-        let vc = CompleteDispatchViewController(nibName: "CompleteDispatchViewController", bundle: nil)
+        let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
         let navigationController = BaseNavigationViewController()
         navigationController.setViewControllers([vc], animated: true)//viewControllers = [vc]
         navigationController.navigationBar.isHidden = true

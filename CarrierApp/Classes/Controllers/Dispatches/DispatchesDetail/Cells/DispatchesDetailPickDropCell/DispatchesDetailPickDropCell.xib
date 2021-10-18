@@ -97,7 +97,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-ck-U0F">
+                                                    <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-ck-U0F" userLabel="Completed View">
                                                         <rect key="frame" x="0.0" y="0.0" width="147" height="39"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tick Mark" translatesAutoresizingMaskIntoConstraints="NO" id="dnQ-Kf-WGZ">
@@ -151,7 +151,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQW-Yh-N2L">
+                                                    <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQW-Yh-N2L" userLabel="Completed View">
                                                         <rect key="frame" x="0.0" y="0.0" width="147" height="39"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tick Mark" translatesAutoresizingMaskIntoConstraints="NO" id="X7p-L2-rE2">
@@ -225,6 +225,8 @@
                 <outlet property="DeliveryIcon" destination="85K-fN-ssv" id="oEm-wu-v6L"/>
                 <outlet property="DeliveryLabel" destination="ovJ-Kw-BvW" id="EoG-9H-bJ1"/>
                 <outlet property="arrivedBtn" destination="saK-zH-KEB" id="E2X-Op-tL1"/>
+                <outlet property="arrivedCompletedView" destination="xQW-Yh-N2L" id="pit-Yc-NCf"/>
+                <outlet property="departCompletedView" destination="JiX-ck-U0F" id="AEn-oW-Mlt"/>
                 <outlet property="departedBtn" destination="iVq-Qf-J1A" id="vEd-Fk-VMJ"/>
                 <outlet property="locationLabel" destination="KeT-kp-lEm" id="nUA-SQ-7DL"/>
             </connections>
