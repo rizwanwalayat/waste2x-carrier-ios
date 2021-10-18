@@ -137,16 +137,16 @@ class DispatchesDetailViewController: BaseViewController {
             stopUpdatingLocation()
             
             isSwitchButtonOn = false
-            let indexPath = IndexPath(item: 0, section: 0)
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+//            let indexPath = IndexPath(item: 0, section: 0)
+//            tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         else {
             startUpdatingLocation()
             
             if !isSwitchButtonOn {
                 isSwitchButtonOn = true
-                let indexPath = IndexPath(item: 0, section: 0)
-                tableView.reloadRows(at: [indexPath], with: .automatic)
+//                let indexPath = IndexPath(item: 0, section: 0)
+//                tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         }
     }
@@ -199,10 +199,10 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
                 let cellData = viewModel?.data?.result?.pickup
                 cell.configCell(data: cellData, status: DispatchesDeliveryType.pickup)
                 
-                cell.markDepartCompleted(value: selectedState > 0)
-                cell.markArrivedCompleted(value: selectedState > 1 )
                 cell.departedBtn.makeEnable(value: selectedState == 0 )
                 cell.arrivedBtn.makeEnable(value: selectedState == 1)
+                cell.markDepartCompleted(value: selectedState > 0)
+                cell.markArrivedCompleted(value: selectedState > 1 )
                 
             }
             else if indexPath.row == 2
@@ -210,11 +210,11 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
             
                 let cellData = viewModel?.data?.result?.delivery
                 cell.configCell(data: cellData, status: DispatchesDeliveryType.delivery)
-                
-                cell.markDepartCompleted(value: selectedState > 2)
-                cell.markArrivedCompleted(value: selectedState > 3 )
+            
                 cell.departedBtn.makeEnable(value: selectedState == 2)
                 cell.arrivedBtn.makeEnable(value: selectedState == 3)
+                cell.markDepartCompleted(value: selectedState > 2)
+                cell.markArrivedCompleted(value: selectedState > 3 )
             }
             
             

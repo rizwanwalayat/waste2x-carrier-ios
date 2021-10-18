@@ -97,7 +97,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-ck-U0F" userLabel="Completed View">
+                                                    <view hidden="YES" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-ck-U0F" userLabel="Completed View">
                                                         <rect key="frame" x="0.0" y="0.0" width="147" height="39"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tick Mark" translatesAutoresizingMaskIntoConstraints="NO" id="dnQ-Kf-WGZ">
@@ -151,7 +151,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQW-Yh-N2L" userLabel="Completed View">
+                                                    <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQW-Yh-N2L" userLabel="Completed View">
                                                         <rect key="frame" x="0.0" y="0.0" width="147" height="39"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tick Mark" translatesAutoresizingMaskIntoConstraints="NO" id="X7p-L2-rE2">

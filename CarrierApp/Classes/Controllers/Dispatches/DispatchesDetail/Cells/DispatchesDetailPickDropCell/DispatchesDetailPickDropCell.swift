@@ -86,10 +86,23 @@ class DispatchesDetailPickDropCell: BaseTableViewCell {
 
     func markDepartCompleted(value: Bool){
         departCompletedView.isHidden = !value
+        markedButtonColor(value: value, button: departedBtn)
+
     }
     func markArrivedCompleted(value: Bool){
         arrivedCompletedView.isHidden = !value
+        markedButtonColor(value: value, button: arrivedBtn)
+      
     }
+    func markedButtonColor(value: Bool, button: UIButton){
+        if value{
+            button.alpha = 1
+            button.backgroundColor = UIColor(named: "greenDelivered")
+            button.setTitleColor(.white, for: .normal)
+        } 
+    }
+  
+    
 
 //    //MARK: - Actions
 //    @IBAction func departedPressed(_ sender: Any) {
