@@ -22,6 +22,8 @@ class CompleteDispatchViewController: BaseViewController {
     // MARK: - Variables
     
     var imagesArray = [UIImage]()
+    var viewModel : CompleteDispatchViewModel?
+    var disptachId = Int()
     
     // MARK: - Controller's Lifecycle
     
@@ -42,6 +44,8 @@ class CompleteDispatchViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         collectionViewImages.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        
+        viewModel = CompleteDispatchViewModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,18 +75,21 @@ class CompleteDispatchViewController: BaseViewController {
     
     @IBAction func completeDispatchButtonPressed(_ sender: Any) {
         
-        let actionVc = CreateAnOtherLoadViewController(nibName: "CreateAnOtherLoadViewController", bundle: nil)
-        actionVc.modalPresentationStyle = .overFullScreen
-        actionVc.iAmAllDoneButtonPressed = {
+        if allFieldsAuth() {
             
-            // i am all done code run here
-        }
-        
-        actionVc.createAnothetLoadButtonPressed = {
+            let actionVc = CreateAnOtherLoadViewController(nibName: "CreateAnOtherLoadViewController", bundle: nil)
+            actionVc.modalPresentationStyle = .overFullScreen
+            actionVc.iAmAllDoneButtonPressed = {
+                
+                self.iAmAllDoneDataSentToServer()
+            }
             
-            // create an other load code here 
+            actionVc.createAnothetLoadButtonPressed = {
+                
+                // create an other load code here
+            }
+            self.present(actionVc, animated: false, completion: nil)
         }
-        self.present(actionVc, animated: false, completion: nil)
     
     }
     
@@ -158,18 +165,70 @@ extension CompleteDispatchViewController: UICollectionViewDelegate, UICollection
 // MARK: - Custom Methods
 extension CompleteDispatchViewController {
     
-    func getAssetThumbnail(assets: [DKAsset]){
+    fileprivate func getAssetThumbnail(assets: [DKAsset]){
+        
+        for asset in assets {
             
-            for asset in assets {
+            asset.fetchImage(with: CGSize(width: 100, height: 100)) { img, response in
                 
-                asset.fetchImage(with: CGSize(width: 100, height: 100)) { img, response in
+                if let image = img {
                     
-                    if let image = img {
-                        
-                        self.imagesArray.append(image)
-                    }
+                    self.imagesArray.append(image)
                 }
-                self.collectionViewImages.reloadData()
             }
+            self.collectionViewImages.reloadData()
         }
+    }
+    
+    fileprivate func allFieldsAuth() -> Bool
+    {
+        if imagesArray.count > 0 && weightDeliverTextField.text!.count > 0{
+            
+            return true
+        }
+        else {
+            if imagesArray.count == 0{
+                self.showToast(message: "Please upload images")
+            }
+            else {
+                self.showToast(message: "Please enter delivery weight")
+            }
+            
+            return false
+        }
+    }
+    
+    fileprivate func getParamsForIamAllDone() -> [String : Any]
+    {
+        var postDict = [String: Any]()
+        
+        let deliveryWeight = weightDeliverTextField.text ?? ""
+        
+        postDict["delivered_weight"] = deliveryWeight
+        postDict["receipt_type"] = "POD"
+        postDict["image"] = imagesArray
+        postDict["dispatch_id"] = disptachId
+        
+        return postDict
+    }
+}
+
+
+// MARK: - API Calling related methods
+extension CompleteDispatchViewController {
+    
+    fileprivate func iAmAllDoneDataSentToServer()
+    {
+        let params = getParamsForIamAllDone()
+        viewModel?.compeleteDispatch(params, { response, error, success, message in
+            
+            if (success ?? false), error == nil {
+                
+                print(response)
+
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message )
+            }
+        })
+    }
 }

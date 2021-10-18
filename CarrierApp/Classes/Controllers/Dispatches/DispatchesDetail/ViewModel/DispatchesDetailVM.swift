@@ -10,7 +10,6 @@ import Foundation
 import ObjectMapper
 
 typealias DispatchesDetailCompletionHandler = (_ data: DispatchesDetailModel?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
-typealias DispatchActionCompletionHandler = (_ data: Any?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
 
 class DispatchesDetailVM: NSObject {
     var data: DispatchesDetailModel?
@@ -41,20 +40,6 @@ class DispatchesDetailVM: NSObject {
             Utility.hideLoading()
             if status, error == nil {
                 completionHandler(result, error, status, message)
-            }
-        }
-    }
-    
-    func uploadImageToServer(_ params : [String: Any], _ completionHandler: @escaping DispatchActionCompletionHandler){
-        
-        var parameters = params
-        parameters["dispatch_id"] = id
-        Utility.showLoading()
-        APIClient.shared.saveDispatchesImage(params: parameters) { result, error, success, message in
-            
-            Utility.hideLoading()
-            if success, error == nil {
-                completionHandler(result, error, success, message)
             }
         }
     }

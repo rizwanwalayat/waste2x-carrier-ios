@@ -29,9 +29,15 @@ class APIClientHandler: TSAPIClient {
             for (key, value) in parameters ?? [:] {
                 
                 if key == "image" {
-                    let image = value as! UIImage
-                    let data = image.jpeg(.lowest)
-                    multipartFormData.append(data!, withName: "image", fileName: "image1.jpeg", mimeType: "image/jpeg")
+                    let images = value as! [UIImage]
+                    
+                    var count = 0
+                    for image in images {
+                        
+                        count = count + 1
+                        let data = image.jpeg(.lowest)
+                        multipartFormData.append(data!, withName: "image", fileName: "image\(count).jpeg", mimeType: "image/jpeg")
+                    }
                     parameters?.removeValue(forKey: "image")
                 } else {
                     multipartFormData.append(String(describing: value).data(using: .utf8)!, withName: key)
