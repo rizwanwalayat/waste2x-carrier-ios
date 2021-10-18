@@ -92,7 +92,7 @@ class DispatchesDetailDetailsModel: Mappable {
     var delivery_time = ""
     var vehicle_type = ""
     var reg_number = ""
-    var created_at = ""
+    var delivery_date = ""
 
     
     required init?(map: Map) {
@@ -104,7 +104,7 @@ class DispatchesDetailDetailsModel: Mappable {
         delivery_time <- map["delivery_time"]
         vehicle_type <- map["vehicle_type"]
         reg_number <- map["reg_number"]
-        created_at <- map["created_at"]
+        delivery_date <- map["delivery_date"]
     }
 }
 
