@@ -19,6 +19,7 @@ class SideMenuViewController: BaseViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var leadingConstOfScrollView : NSLayoutConstraint!
     @IBOutlet weak var mainShadowView: UIView!
+    @IBOutlet weak var userImage: UIImageView!
     
     //MARK: - Variables
     
@@ -37,6 +38,8 @@ class SideMenuViewController: BaseViewController {
         leadingConstOfScrollView.constant    = -270
         mainShadowView.alpha                 = 0
         self.selectionIndex = Global.shared.sidemenuLastSlectedIndex
+  
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -67,6 +70,8 @@ class SideMenuViewController: BaseViewController {
     
     func customMethodsForSideMenu()
     {
+      
+        
 //        editProfileLabel.text           = "Edit Profile"
         let swipeLeftMainView           = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeftMainView.direction     = .left
@@ -80,6 +85,7 @@ class SideMenuViewController: BaseViewController {
         self.headerView.addGestureRecognizer(swipeLeftMainView)
         self.tableView.addGestureRecognizer(swipeLeftSubView)
         
+       
     }
     
     func hideSideMenu(completionHandler : @escaping( ) -> Void)
@@ -117,6 +123,14 @@ class SideMenuViewController: BaseViewController {
         print("Side Menu gesture Cliceked ")
         hideSideMenu {
             //nil
+        }
+    }
+    
+    @IBAction func userImageTapped(_ sender: Any) {
+        self.hideSideMenu {
+
+            let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+            Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
         }
     }
     
