@@ -50,7 +50,8 @@ class MessagesTableViewCell: UITableViewCell {
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
         if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased() {
             
-            let phone = DataManager.shared.`fetchPhoneNumber`().trimmingCharacters(in: .whitespaces).uppercased()
+            var phone = DataManager.shared.getUsersDetail()?.phone ?? ""
+            phone = phone.trimmingCharacters(in: .whitespaces).uppercased()
             let authorPhone = author.split(separator: "=").last ?? ""
             if authorPhone == phone
             {

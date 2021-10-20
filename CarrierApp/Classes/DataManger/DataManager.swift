@@ -19,15 +19,9 @@ class DataManager {
 extension DataManager
 {
     
-    
-    func saveAuthToken(_ token : String)
-    {
-        UserDefaults.standard.set(token, forKey: "auth_token")
-    }
-    
-    func savePhoneNumber(_ token : String)
-    {
-        UserDefaults.standard.set(token, forKey: "phone_number")
+    func saveUsersDetail(_ objectString : String) {
+        
+        UserDefaults.standard.set(objectString, forKey: "user_complete_detal")
     }
     
     func saveDispatchesInTransitData(dispatchID: Int, _ viewModel : DispatchesDetailModel?)
@@ -43,25 +37,14 @@ extension DataManager
 // MARK: - Methods for get values
 extension DataManager
 {
-    
-    func fetchAuthToken() -> String
-    {
-        var token = ""
+    func getUsersDetail() -> ResultLoginUser? {
+        
+        var user: ResultLoginUser?
 
-        if UserDefaults.standard.string(forKey: "auth_token") != nil {
-            token = UserDefaults.standard.string(forKey: "auth_token")!
+        if UserDefaults.standard.object(forKey: "user_complete_detal") != nil {
+            user = Mapper<ResultLoginUser>().map(JSONString:UserDefaults.standard.string(forKey: "user_complete_detal")!)
         }
-        return token
-    }
-    
-    func fetchPhoneNumber() -> String
-    {
-        var token = ""
-
-        if UserDefaults.standard.string(forKey: "phone_number") != nil {
-            token = UserDefaults.standard.string(forKey: "phone_number")!
-        }
-        return token
+        return user
     }
     
     func fetchDispatchesInTransitData() -> (Int?, DispatchesDetailModel?)
@@ -91,5 +74,10 @@ extension DataManager
     func removeDispatchesInTransit()
     {
         UserDefaults.standard.removeObject(forKey: "dispatches_IntransitData")
+    }
+    
+    func removeUserDetial() {
+        
+        UserDefaults.standard.removeObject(forKey: "user_complete_detal")
     }
 }

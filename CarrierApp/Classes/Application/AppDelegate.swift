@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
 
         // [END register_for_notifications]
-        if DataManager.shared.fetchAuthToken() == ""{
+        if DataManager.shared.getUsersDetail() == nil {
             Utility.loginRootViewController()
         }
         else{

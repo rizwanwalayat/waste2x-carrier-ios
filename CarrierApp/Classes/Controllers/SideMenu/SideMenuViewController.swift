@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SideMenuViewController: BaseViewController {
     
@@ -34,7 +35,7 @@ class SideMenuViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        phoneNumberLabel.text =  DataManager.shared.fetchPhoneNumber()
+        populateUsersData()
         leadingConstOfScrollView.constant    = -270
         mainShadowView.alpha                 = 0
         self.selectionIndex = Global.shared.sidemenuLastSlectedIndex
@@ -66,6 +67,20 @@ class SideMenuViewController: BaseViewController {
         }, completion: { (finished) -> Void in
         // ....
         })
+    }
+    
+    fileprivate func populateUsersData(){
+        
+        guard let usersData = DataManager.shared.getUsersDetail() else { return }
+        phoneNumberLabel.text =  usersData.phone
+        userImage.startAnimating()
+        downloadImageFromServer(usersData.image) { image, error, success in
+            
+            self.userImage.stopAnimating()
+            if success ?? false && image != nil {
+                self.userImage.image = image
+            }
+        }
     }
     
     func customMethodsForSideMenu()
@@ -287,7 +302,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
 extension SideMenuViewController{
     
     
-    func paymentApi(){
+    fileprivate func paymentApi(){
         PaymentModel.paymentApiFunction{ result, error, status,message in
             Global.shared.paymentModel = result
             if Global.shared.paymentModel?.result?.details_submitted == true {
@@ -299,6 +314,16 @@ extension SideMenuViewController{
                 let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
                 Utility.setupRoot([self.fromVC!, vc], navgationController: self.fromVC!.navigationController)
             }
+        }
+    }
+    
+    fileprivate func downloadImageFromServer(_ urlStr : String, _ completionHandler : @escaping(_ image : UIImage?, _ error: Error?, _ status: Bool?) -> Void)
+    {
+        guard let imageUrl = URL(string: urlStr) else { print("URL not created for imagesURL String"); return }
+        
+        SDWebImageManager.shared.loadImage(with: imageUrl, options: .avoidAutoSetImage, progress: nil) { image, data, error, type, success, url in
+            
+            completionHandler(image, error, success)
         }
     }
 }

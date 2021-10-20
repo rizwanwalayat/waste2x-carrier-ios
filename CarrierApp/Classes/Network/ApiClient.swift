@@ -77,7 +77,7 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.login , parameters: params ,httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }
     func FaqApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.faqs , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     
@@ -115,25 +115,25 @@ class APIClient: APIClientHandler {
     
     func createAccount(email: String, password: String, wasteIDs: String, capacity: String, _ completionBlock: @escaping APIClientCompletionHandler)
     {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         let params = [ "email": email, "password": password, "waste_types": wasteIDs, "weight_capacity": capacity] as [String: AnyObject]
         _ = sendRequest(APIRoutes.createAccount, parameters: params , httpMethod: .post, headers: headers, completionBlock: completionBlock)
     }
     
     func LoadsApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         let parameters = params as [String : AnyObject]
         _ = sendRequest(APIRoutes.loads , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
     func StatesApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         let parameters = params as [String : AnyObject]
         _ = sendRequest(APIRoutes.states , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
     func CitiesApiFunctionCall(_ params: [String : Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         let parameters = params as [String : AnyObject]
         _ = sendRequest(APIRoutes.cities , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
@@ -143,59 +143,59 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.reset_password, parameters: params , httpMethod: .post, headers: nil, completionBlock: completionBlock)
     }
     func ReceivablesApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.receivables , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     func QuotationApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.quotations , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     func quotationDetailApiFunctionCall(quote: String,_ completionBlock: @escaping APIClientCompletionHandler){
         let params = ["quote_id": quote] as [String:String]
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.quotationsDetail, parameters: params as [String: AnyObject], httpMethod: .post, headers: headers, completionBlock: completionBlock)
     }
     func quotationResponceApiFunctionCall(responce: String,id:Int,_ completionBlock: @escaping APIClientCompletionHandler){
         let params = ["response": responce,"quote_id":id] as [String:AnyObject]
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.quotationsResponce, parameters: params as [String: AnyObject], httpMethod: .post, headers: headers, completionBlock: completionBlock)
     }
     func ContractsApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.contracts , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     
     func sendQuotationFunctionCall(_ params: [String: Any], _ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         let parameters = params as [String : AnyObject]
         _ = sendRequest(APIRoutes.create_quotation , parameters: parameters ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     func DispatchesListApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.dispatches , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
         
     func PaymentApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let params = [String : AnyObject]()
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.paymentUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     func createPaymentApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let params = [String : AnyObject]()
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.createPaymentUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     func DispatchesDetailApiFunctionCall(dispatch_id: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["dispatch_id": dispatch_id] as [String: AnyObject]
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.dispatchesDetail , parameters: params , httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
 
     func fetchTwillioAccessToken(_ completionBlock: @escaping APIClientCompletionHandler)
     {
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         
-        let phone = DataManager.shared.fetchPhoneNumber()
+        let phone = DataManager.shared.getUsersDetail()?.phone ?? ""
         let url = "carriers/fetch_twilio_access_token/\(phone)"
         _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
@@ -207,13 +207,13 @@ class APIClient: APIClientHandler {
     
     func DispatchActionsApiFunctionCall(dispatch_id: String, action: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["dispatch_id": dispatch_id, "action": action ] as [String: AnyObject]
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.dispatchActions , parameters: params , httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
     func saveDispatchesImage(params : [String: Any],_ completionBlock: @escaping APIClientCompletionHandler) {
 
-        let headers = ["Authorization": "token " + (DataManager.shared.fetchAuthToken())]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUsersDetail()?.auth_token ?? "")]
         let parameters = params as [String : AnyObject]
         sendRequestUsingMultipart(APIRoutes.postImage, parameters: parameters, headers: headers, completionBlock: completionBlock)
     }

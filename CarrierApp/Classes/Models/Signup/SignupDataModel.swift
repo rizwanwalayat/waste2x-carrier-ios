@@ -24,6 +24,10 @@ class SignUpDataModel : Mappable {
 class SignupResult : Mappable {
     var id = -1
     var auth_token = ""
+    var image = ""
+    var phone = ""
+    var email = ""
+    var name = ""
     var waste_types = [SignupWaste_types]()
 
     required init?(map: Map) {
@@ -35,6 +39,10 @@ class SignupResult : Mappable {
         id <- map["id"]
         auth_token <- map["auth_token"]
         waste_types <- map["waste_types"]
+        image <- map["image"]
+        phone <- map["phone"]
+        email <- map["email"]
+        name <- map["name"]
     }
 
 }
