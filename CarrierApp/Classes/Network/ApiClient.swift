@@ -217,4 +217,11 @@ class APIClient: APIClientHandler {
         let parameters = params as [String : AnyObject]
         sendRequestUsingMultipart(APIRoutes.postImage, parameters: parameters, headers: headers, completionBlock: completionBlock)
     }
+    
+    func updateUserName(userName: String,_ completionBlock: @escaping APIClientCompletionHandler) {
+
+        let headers = ["Authorization": "token " + (DataManager.shared.getAuthToken())]
+        let parameters = ["name": userName] as [String: AnyObject]
+        _ = sendRequest(APIRoutes.editProfile , parameters: parameters , httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
 }

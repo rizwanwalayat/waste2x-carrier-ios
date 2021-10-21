@@ -12,13 +12,17 @@ class ProfileViewController: BaseViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var userImage:UIImageView!
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var userEmail: UITextField!
+    @IBOutlet weak var userPhone: UITextField!
     
-    
+    var viewModel: ProfileEditVM?
     // MARK: - Controller's lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        populateUserData()
+        
        
     }
     
@@ -26,8 +30,9 @@ class ProfileViewController: BaseViewController {
     // MARK: - Actions
     @IBAction func editBtnPressed(_ sender: Any) {
         let popupVC = PopupProfileEdit(nibName: "PopupProfileEdit", bundle: nil)
+        popupVC.nameToEdit = self.userName.text ?? ""
         popupVC.modalPresentationStyle = .overFullScreen
-        self.present(popupVC, animated: true, completion: nil)
+        self.present(popupVC, animated: false, completion: nil)
     }
     
     @IBAction func editPhotoPressed(_ sender: UIButton){
@@ -39,4 +44,20 @@ class ProfileViewController: BaseViewController {
         userImage.image = selectedImage
     }
     
+    fileprivate func populateUserData(){
+        
+        guard let user = DataManager.shared.getUsersDetail() else {return}
+        
+        userName.text = user.name
+        userEmail.text = user.email
+        userPhone.text = user.phone
+        
+        self.downloadImageFromServer(user.image) { image, error, success in
+            
+            self.userImage.stopAnimating()
+            if success ?? false && image != nil {
+                self.userImage.image = image
+            }
+        }
+    }
 }

@@ -17,19 +17,19 @@ class PopupProfileEdit: BaseViewController {
     }
     // MARK: - Outlets
     
+    @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var mainContentView: UIView!
-    
     
     var iAmAllDoneButtonPressed: (()->())?
     var createAnothetLoadButtonPressed: (()->())?
-    
+    var nameToEdit: String?
     // MARK: - Controller's Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.mainContentView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-        
+        self.userName.text = nameToEdit ?? ""
     }
     
     override func viewDidAppear(_ animated: Bool) {
