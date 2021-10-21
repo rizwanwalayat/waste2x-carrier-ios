@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: BaseViewController {
 
     // MARK: - Outlets
-    
+    @IBOutlet weak var userImage:UIImageView!
     
     
     // MARK: - Controller's lifecycle
@@ -28,6 +28,15 @@ class ProfileViewController: BaseViewController {
         let popupVC = PopupProfileEdit(nibName: "PopupProfileEdit", bundle: nil)
         popupVC.modalPresentationStyle = .overFullScreen
         self.present(popupVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func editPhotoPressed(_ sender: UIButton){
+        ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
+        
+    }
+    
+    override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
+        userImage.image = selectedImage
     }
     
 }
