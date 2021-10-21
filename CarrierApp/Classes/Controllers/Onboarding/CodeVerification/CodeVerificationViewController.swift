@@ -54,9 +54,9 @@ class CodeVerificationViewController: BaseViewController {
                     let signupResVM = SignupCompleteVM(responseData: result!)
                     signupCompleteVC.viewModel = signupResVM
                     
-                    if let resultString = result?.result?.toJSONString() {
+                    if let authToken = result?.result?.auth_token {
                         
-                        DataManager.shared.saveUsersDetail(resultString)
+                        DataManager.shared.saveAuthToken(authToken)
                     }
                     
                     self.navigationController?.pushViewController(signupCompleteVC, animated: true)

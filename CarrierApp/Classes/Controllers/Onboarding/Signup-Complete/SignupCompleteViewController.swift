@@ -137,6 +137,10 @@ class SignupCompleteViewController: BaseViewController {
             
             if Success ?? false, error == nil, result != nil {
 
+                if let resultString = result?.result?.toJSONString() {
+                    DataManager.shared.saveUsersDetail(resultString)
+                }
+                
                 let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
                 Utility.setupRoot([vc], navgationController: self.navigationController)
                 
