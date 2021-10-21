@@ -24,5 +24,10 @@ class ProfileViewController: BaseViewController {
     
     
     // MARK: - Actions
+    @IBAction func editBtnPressed(_ sender: Any) {
+        let popupVC = PopupProfileEdit(nibName: "PopupProfileEdit", bundle: nil)
+        popupVC.modalPresentationStyle = .overFullScreen
+        self.present(popupVC, animated: true, completion: nil)
+    }
     
 }

@@ -179,6 +179,8 @@
 		9674909C26B32165001C4A62 /* DispatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674909A26B32165001C4A62 /* DispatchesListViewController.swift */; };
 		967A713A26BBCD5E002D72DD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A713926BBCD5E002D72DD /* LoginViewModel.swift */; };
 		967A713C26BBCFC3002D72DD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A713B26BBCFC3002D72DD /* Observable.swift */; };
+		967B03B42720441700199487 /* PopupProfileEdit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967B03B22720441600199487 /* PopupProfileEdit.xib */; };
+		967B03B52720441700199487 /* PopupProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B03B32720441600199487 /* PopupProfileEdit.swift */; };
 		9686049326C51AA800B7F24C /* DispatchesDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686049226C51AA800B7F24C /* DispatchesDetailVM.swift */; };
 		9686049726C51FD900B7F24C /* DispatchesDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686049626C51FD900B7F24C /* DispatchesDetailModel.swift */; };
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
@@ -420,6 +422,8 @@
 		9674909A26B32165001C4A62 /* DispatchesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchesListViewController.swift; sourceTree = "<group>"; };
 		967A713926BBCD5E002D72DD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		967A713B26BBCFC3002D72DD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		967B03B22720441600199487 /* PopupProfileEdit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupProfileEdit.xib; sourceTree = "<group>"; };
+		967B03B32720441600199487 /* PopupProfileEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupProfileEdit.swift; sourceTree = "<group>"; };
 		9686049226C51AA800B7F24C /* DispatchesDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesDetailVM.swift; sourceTree = "<group>"; };
 		9686049626C51FD900B7F24C /* DispatchesDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesDetailModel.swift; sourceTree = "<group>"; };
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -556,7 +560,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				049D24CC271D39F40037B3E9 /* profile */,
+				049D24CC271D39F40037B3E9 /* Profile */,
 				04206C2E26BD388C006AB6A4 /* Contact */,
 				0461743B26BBBF290055DD3E /* Faq */,
 				96C44C2E26B9862800ED5696 /* Settings */,
@@ -889,13 +893,14 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
-		049D24CC271D39F40037B3E9 /* profile */ = {
+		049D24CC271D39F40037B3E9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				967B03B12720441600199487 /* PopupProfileEdit */,
 				049D24CD271D3A120037B3E9 /* ProfileViewController.swift */,
 				049D24CE271D3A120037B3E9 /* ProfileViewController.xib */,
 			);
-			path = profile;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		04A8AB3C2716BE7200E3C756 /* CompleteDispatche */ = {
@@ -1307,6 +1312,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		967B03B12720441600199487 /* PopupProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				967B03B22720441600199487 /* PopupProfileEdit.xib */,
+				967B03B32720441600199487 /* PopupProfileEdit.swift */,
+			);
+			path = PopupProfileEdit;
+			sourceTree = "<group>";
+		};
 		9686049126C51A8300B7F24C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1678,6 +1692,7 @@
 				04D2422B26B4078200312E2E /* ContractsTableViewCell.xib in Resources */,
 				04206C3126BD388C006AB6A4 /* ContactViewController.xib in Resources */,
 				96C44C3126B9862800ED5696 /* SettingsViewController.xib in Resources */,
+				967B03B42720441700199487 /* PopupProfileEdit.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				04F6FD1126C3D542006D1A80 /* ChatMessagesViewController.xib in Resources */,
 				043A477226DE2434007109B4 /* GoogleService-Info.plist in Resources */,
@@ -1840,6 +1855,7 @@
 				045DDAE426BC146F00B3E232 /* Others.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
 				04A8AB3F2716BEB000E3C756 /* CompleteDispatchViewController.swift in Sources */,
+				967B03B52720441700199487 /* PopupProfileEdit.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				04206C4D26BD8608006AB6A4 /* CitiesResult.swift in Sources */,
 				0418D81D271D842F00B3910C /* CompleteDispatchVM.swift in Sources */,
