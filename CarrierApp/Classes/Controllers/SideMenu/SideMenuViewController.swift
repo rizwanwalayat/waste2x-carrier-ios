@@ -34,7 +34,7 @@ class SideMenuViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        phoneNumberLabel.text =  DataManager.shared.fetchPhoneNumber()
+        populateUsersData()
         leadingConstOfScrollView.constant    = -270
         mainShadowView.alpha                 = 0
         self.selectionIndex = Global.shared.sidemenuLastSlectedIndex
@@ -66,6 +66,20 @@ class SideMenuViewController: BaseViewController {
         }, completion: { (finished) -> Void in
         // ....
         })
+    }
+    
+    fileprivate func populateUsersData(){
+        
+        guard let usersData = DataManager.shared.getUsersDetail() else { return }
+        phoneNumberLabel.text =  usersData.phone
+        userImage.startAnimating()
+        self.downloadImageFromServer(usersData.image) { image, error, success in
+            
+            self.userImage.stopAnimating()
+            if success ?? false && image != nil {
+                self.userImage.image = image
+            }
+        }
     }
     
     func customMethodsForSideMenu()
@@ -287,7 +301,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
 extension SideMenuViewController{
     
     
-    func paymentApi(){
+    fileprivate func paymentApi(){
         PaymentModel.paymentApiFunction{ result, error, status,message in
             Global.shared.paymentModel = result
             if Global.shared.paymentModel?.result?.details_submitted == true {

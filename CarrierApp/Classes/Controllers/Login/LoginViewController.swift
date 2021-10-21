@@ -60,8 +60,11 @@ class LoginViewController: BaseViewController {
             
             if (status ?? false)
             {
-                DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
-                DataManager.shared.savePhoneNumber(completePhoneNo)
+                // to save record on userDefults 
+                if let resultString = result?.result?.toJSONString() {
+                    
+                    DataManager.shared.saveUsersDetail(resultString)
+                }
                 
                 let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
                 Utility.setupRoot([vc], navgationController: self.navigationController)

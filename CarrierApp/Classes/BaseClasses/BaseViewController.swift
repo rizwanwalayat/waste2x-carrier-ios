@@ -159,6 +159,16 @@ class BaseViewController: UIViewController {
         self.present(alertCont, animated: true, completion: nil)
     }
     
+    func downloadImageFromServer(_ urlStr : String, _ completionHandler : @escaping(_ image : UIImage?, _ error: Error?, _ status: Bool?) -> Void)
+    {
+        guard let imageUrl = URL(string: urlStr) else { print("URL not created for imagesURL String"); return }
+        
+        SDWebImageManager.shared.loadImage(with: imageUrl, options: .avoidAutoSetImage, progress: nil) { image, data, error, type, success, url in
+            
+            completionHandler(image, error, success)
+        }
+    }
+    
     
     @IBAction func backPressed(_ sender: UIButton){
         if let navigationController = self.navigationController {

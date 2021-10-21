@@ -59,7 +59,7 @@ class TwillioChatDataModel: NSObject {
             return
         }
         
-        let phoneNo = DataManager.shared.fetchPhoneNumber()
+        let phoneNo = DataManager.shared.getUsersDetail()?.phone ?? ""
         channelsList.channel(withSidOrUniqueName: phoneNo, completion: { (result, channel) in
             completion(result, channel)
         })
@@ -90,7 +90,7 @@ class TwillioChatDataModel: NSObject {
             return
         }
         
-        let phoneNo = DataManager.shared.fetchPhoneNumber()
+        let phoneNo = DataManager.shared.getUsersDetail()?.phone ?? ""
     
         let options: [String: Any] = [
             TCHChannelOptionUniqueName: phoneNo,
