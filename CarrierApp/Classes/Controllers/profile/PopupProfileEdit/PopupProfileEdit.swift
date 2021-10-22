@@ -21,7 +21,7 @@ class PopupProfileEdit: BaseViewController {
     @IBOutlet weak var mainContentView: UIView!
     
     var iAmAllDoneButtonPressed: (()->())?
-    var createAnothetLoadButtonPressed: (()->())?
+    var changedUserName: (()->())?
     var viewModel: ProfileEditVM?
 
     // MARK: - Controller's Lifecycle
@@ -57,7 +57,7 @@ class PopupProfileEdit: BaseViewController {
             switch buttonState {
             case .save:
                 
-                self.createAnothetLoadButtonPressed?()
+                self.changedUserName?()
                 
             case .cancel:
                 
