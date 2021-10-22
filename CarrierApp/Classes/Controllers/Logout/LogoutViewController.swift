@@ -39,7 +39,6 @@ class LogoutViewController: BaseViewController {
     
     func logoutRemoveToken(){
         Global.shared.sidemenuLastSlectedIndex = defaultSideMenuIndex
-        DataManager.shared.removeAuthToken()
         DataManager.shared.removeUserDetial()
         TwillioChatDataModel.shared.shutdown()
 
