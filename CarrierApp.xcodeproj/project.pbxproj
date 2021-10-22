@@ -181,6 +181,7 @@
 		967A713C26BBCFC3002D72DD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A713B26BBCFC3002D72DD /* Observable.swift */; };
 		967B03B42720441700199487 /* PopupProfileEdit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967B03B22720441600199487 /* PopupProfileEdit.xib */; };
 		967B03B52720441700199487 /* PopupProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B03B32720441600199487 /* PopupProfileEdit.swift */; };
+		967B03BA2721C3BA00199487 /* ProfileEditVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B03B92721C3BA00199487 /* ProfileEditVM.swift */; };
 		9686049326C51AA800B7F24C /* DispatchesDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686049226C51AA800B7F24C /* DispatchesDetailVM.swift */; };
 		9686049726C51FD900B7F24C /* DispatchesDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686049626C51FD900B7F24C /* DispatchesDetailModel.swift */; };
 		96893B9E26A5DA7900C4E0FD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96893B9D26A5DA7900C4E0FD /* UIImageView.swift */; };
@@ -424,6 +425,7 @@
 		967A713B26BBCFC3002D72DD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		967B03B22720441600199487 /* PopupProfileEdit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupProfileEdit.xib; sourceTree = "<group>"; };
 		967B03B32720441600199487 /* PopupProfileEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupProfileEdit.swift; sourceTree = "<group>"; };
+		967B03B92721C3BA00199487 /* ProfileEditVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditVM.swift; sourceTree = "<group>"; };
 		9686049226C51AA800B7F24C /* DispatchesDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesDetailVM.swift; sourceTree = "<group>"; };
 		9686049626C51FD900B7F24C /* DispatchesDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchesDetailModel.swift; sourceTree = "<group>"; };
 		96893B9D26A5DA7900C4E0FD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -903,7 +905,7 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		04A8AB3C2716BE7200E3C756 /* CompleteDispatche */ = {
+		04A8AB3C2716BE7200E3C756 /* CompleteDispatch */ = {
 			isa = PBXGroup;
 			children = (
 				0418D81B271D841900B3910C /* ViewModel */,
@@ -912,7 +914,7 @@
 				046D93D4271AF75600E84C66 /* PopupAnotherLoad */,
 				04A8AB41271705E800E3C756 /* ImagesCollectionViewCell */,
 			);
-			path = CompleteDispatche;
+			path = CompleteDispatch;
 			sourceTree = "<group>";
 		};
 		04A8AB41271705E800E3C756 /* ImagesCollectionViewCell */ = {
@@ -1275,7 +1277,7 @@
 		9674909226B2EAA7001C4A62 /* Dispatches */ = {
 			isa = PBXGroup;
 			children = (
-				04A8AB3C2716BE7200E3C756 /* CompleteDispatche */,
+				04A8AB3C2716BE7200E3C756 /* CompleteDispatch */,
 				96C44C2926B952BC00ED5696 /* DispatchesOrderDetail */,
 				04C3091C26B81BB400BEC895 /* Tracker */,
 				969FB4D926B4743600C77CE0 /* DispatchesDetail */,
@@ -1315,10 +1317,19 @@
 		967B03B12720441600199487 /* PopupProfileEdit */ = {
 			isa = PBXGroup;
 			children = (
+				967B03B82721C28600199487 /* ViewModel */,
 				967B03B22720441600199487 /* PopupProfileEdit.xib */,
 				967B03B32720441600199487 /* PopupProfileEdit.swift */,
 			);
 			path = PopupProfileEdit;
+			sourceTree = "<group>";
+		};
+		967B03B82721C28600199487 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				967B03B92721C3BA00199487 /* ProfileEditVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9686049126C51A8300B7F24C /* ViewModel */ = {
@@ -1863,6 +1874,7 @@
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
+				967B03BA2721C3BA00199487 /* ProfileEditVM.swift in Sources */,
 				0480668226B0306700DF4B1E /* QuotationDetailViewController.swift in Sources */,
 				04F6FD1926C3DB4D006D1A80 /* MessagesResult.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
