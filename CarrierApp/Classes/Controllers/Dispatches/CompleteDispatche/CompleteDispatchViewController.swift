@@ -77,18 +77,7 @@ class CompleteDispatchViewController: BaseViewController {
         
         if allFieldsAuth() {
             
-            let actionVc = CreateAnOtherLoadViewController(nibName: "CreateAnOtherLoadViewController", bundle: nil)
-            actionVc.modalPresentationStyle = .overFullScreen
-            actionVc.iAmAllDoneButtonPressed = {
-                
-                self.iAmAllDoneDataSentToServer()
-            }
-            
-            actionVc.createAnothetLoadButtonPressed = {
-                
-                // create an other load code here
-            }
-            self.present(actionVc, animated: false, completion: nil)
+            self.iAmAllDoneDataSentToServer()
         }
     
     }
@@ -225,15 +214,62 @@ extension CompleteDispatchViewController {
             if (success ?? false), error == nil {
                 
                 if let result = response as? [String: Any] {
-                    let message = result["message"] as? String
-                    self.showToast(message: message ?? "POD upload successfully. Trip status is completed")
+                    let userMessage = result["message"] as? String
+                    self.showToast(message: userMessage ?? "POD upload successfully. Trip status is completed")
+                }
+                self.popupHandlings()
+                
+
+            } else {
+                
+                self.showToast(message: error?.localizedDescription ?? message)
+            }
+        })
+    }
+    
+    fileprivate func createAnotherLoad()
+    {
+        viewModel?.createAnOtherDispatch("\(disptachId)", { response, error, success, message in
+            
+            if (success ?? false), error == nil {
+                
+                var userMessage : String?
+                if let result = response as? [String: Any] {
+                    userMessage = result["message"] as? String
+                }
+                
+                self.showAlerts("Success", userMessage ?? "New Load has been created") {
+                    
                     let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
                     self.navigationController?.setViewControllers([vc], animated: true)
                 }
 
             } else {
-                self.showToast(message: error?.localizedDescription ?? message )
+                self.showAlerts("Error", error?.localizedDescription ?? message) {
+                    
+                    let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
+                    self.navigationController?.setViewControllers([vc], animated: true)
+                }
+                
             }
         })
+    }
+    
+    fileprivate func popupHandlings(){
+        
+        
+        let actionVc = CreateAnOtherLoadViewController(nibName: "CreateAnOtherLoadViewController", bundle: nil)
+        actionVc.modalPresentationStyle = .overFullScreen
+        actionVc.iAmAllDoneButtonPressed = {
+            
+            let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
+            self.navigationController?.setViewControllers([vc], animated: true)
+        }
+        
+        actionVc.createAnothetLoadButtonPressed = {
+            
+            self.createAnotherLoad()
+        }
+        self.present(actionVc, animated: false, completion: nil)
     }
 }

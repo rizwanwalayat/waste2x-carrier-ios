@@ -217,4 +217,10 @@ class APIClient: APIClientHandler {
         let parameters = params as [String : AnyObject]
         sendRequestUsingMultipart(APIRoutes.postImage, parameters: parameters, headers: headers, completionBlock: completionBlock)
     }
+    
+    func createAnotherDispatch(dispatch_id: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = ["trip_id": dispatch_id] as [String: AnyObject]
+        let headers = ["Authorization": "token " + (DataManager.shared.getAuthToken())]
+        _ = sendRequest(APIRoutes.createAnotherLoad , parameters: params , httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
 }

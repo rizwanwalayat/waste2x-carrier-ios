@@ -24,4 +24,16 @@ class CompleteDispatchViewModel: NSObject {
             }
         }
     }
+    
+    func createAnOtherDispatch(_ dispatchId : String, _ completionHandler: @escaping DispatchActionCompletionHandler){
+        
+        Utility.showLoading()
+        APIClient.shared.createAnotherDispatch(dispatch_id: dispatchId) { result, error, success, message in
+            
+            Utility.hideLoading()
+            if success, error == nil {
+                completionHandler(result, error, success, message)
+            }
+        }
+    }
 }

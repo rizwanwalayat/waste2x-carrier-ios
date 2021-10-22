@@ -146,7 +146,6 @@ class SignupCompleteViewController: BaseViewController {
                 
             } else {
                 
-                DataManager.shared.removeAuthToken()
                 self.showToast(message: error?.localizedDescription ?? message ?? "")
             }
         })
