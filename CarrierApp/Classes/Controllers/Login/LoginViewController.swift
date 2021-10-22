@@ -64,6 +64,7 @@ class LoginViewController: BaseViewController {
                 if let resultString = result?.result?.toJSONString() {
                     
                     DataManager.shared.saveUsersDetail(resultString)
+                    DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
                 }
                 
                 let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
