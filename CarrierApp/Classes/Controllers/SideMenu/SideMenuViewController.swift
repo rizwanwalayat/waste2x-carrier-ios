@@ -20,6 +20,52 @@ enum menuSelections:String {
     case contact = "Contact"
     case logout = "Logout"
     case none = ""
+    
+    var Image : UIImage {
+        
+        switch self {
+        
+        case .myAvailableLoads:
+            
+            return #imageLiteral(resourceName: "available-Loads")
+        
+        case .myQuotations:
+            
+            return #imageLiteral(resourceName: "Quotations")
+        
+        case .myDispatches:
+            
+            return #imageLiteral(resourceName: "Dispatches")
+            
+        case .myReceivables:
+            
+            return #imageLiteral(resourceName: "Receivable")
+            
+        case .myContracts:
+            
+            return #imageLiteral(resourceName: "Contract")
+            
+        case .payments:
+            
+            return #imageLiteral(resourceName: "Payment")
+            
+        case .faq:
+            
+            return #imageLiteral(resourceName: "FAQs")
+            
+        case .contact:
+            
+            return #imageLiteral(resourceName: "Contact")
+            
+        case .logout:
+            
+            return #imageLiteral(resourceName: "Logout")
+            
+        case .none:
+            
+            return #imageLiteral(resourceName: "Logout")
+        }
+    }
 }
 
 
@@ -39,13 +85,7 @@ class SideMenuViewController: BaseViewController {
     //MARK: - Variables
     
     var selectionIndex = menuSelections.none
-    var reload = -1
-    var timerTest : Timer?
-    var counter = 0
-//    var imgArray = [#imageLiteral(resourceName: "available-Loads"),#imageLiteral(resourceName: "Quotations"), #imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Contract"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
-    var imgArray = [#imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
-//    var textArray = ["My Available Loads","My Quotations", "My Dispatches", "My Receivables", "My Contracts", "Payments", "FAQ", "Contact", "Logout"]
-    var textArray = [menuSelections.myDispatches, menuSelections.myReceivables, menuSelections.payments, menuSelections.faq, menuSelections.contact, menuSelections.logout]
+    var menuArray = [menuSelections.myDispatches, menuSelections.myReceivables, menuSelections.payments, menuSelections.faq, menuSelections.contact, menuSelections.logout]
 
     let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
     var fromVC : UIViewController?
@@ -171,13 +211,13 @@ class SideMenuViewController: BaseViewController {
 //MARK: - Extentions
 extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return textArray.count
+        return menuArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(SideMenuItemsTableViewCell.self, indexPath: indexPath)
         
-        if selectionIndex == textArray[indexPath.row]
+        if selectionIndex == menuArray[indexPath.row]
         {
             cell.selectionView.isHidden = false
             cell.imgView.tintColor = UIColor.appColor
@@ -188,7 +228,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             cell.imgView.tintColor = unSelectedBodyLabelTextColor
         }
         
-        cell.config(textArray[indexPath.row].rawValue, imgArray[indexPath.row])
+        cell.config(menuArray[indexPath.row].rawValue, menuArray[indexPath.row].Image)
         
         return cell
         
@@ -196,7 +236,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         var isNeedToUpdateValue = true
-        let currentSelection = textArray[indexPath.row]
+        let currentSelection = menuArray[indexPath.row]
         switch currentSelection {
         case .myAvailableLoads:
                     

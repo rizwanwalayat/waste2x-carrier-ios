@@ -20,6 +20,8 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string></string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -81,9 +83,9 @@
 	<string>App will use your FaceID to login app.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string></string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location access is required in order to accept and track shipments.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location access is required in order to accept and track shipments.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access is required in order to accept and track shipments.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>access</string>
@@ -124,7 +126,5 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>CFBundleSignature</key>
-	<string></string>
 </dict>
 </plist>
