@@ -224,6 +224,15 @@ class APIClient: APIClientHandler {
         let parameters = ["name": userName] as [String: AnyObject]
         _ = sendRequest(APIRoutes.editProfile , parameters: parameters , httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
+    
+    func saveUserImage(image : UIImage,_ completionBlock: @escaping APIClientCompletionHandler) {
+        
+        let headers = ["Authorization": "token " + (DataManager.shared.getAuthToken())]
+        let parameters = ["image": [image]] as [String: AnyObject]
+        let url = APIRoutes.baseUrl + APIRoutes.editProfile
+        sendRequestUsingMultipart(url, parameters: parameters, headers: headers, completionBlock: completionBlock)
+    }
+    
     func createAnotherDispatch(dispatch_id: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["trip_id": dispatch_id] as [String: AnyObject]
         let headers = ["Authorization": "token " + (DataManager.shared.getAuthToken())]

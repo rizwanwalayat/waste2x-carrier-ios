@@ -53,7 +53,7 @@ class ProfileViewController: BaseViewController {
     }
     
     override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
-        userImage.image = selectedImage
+        uploadImageToserver(selectedImage)
     }
     
     fileprivate func populateUserData(){
@@ -70,5 +70,26 @@ class ProfileViewController: BaseViewController {
                 self.userImage.image = image
             }
         }
+    }
+    
+    fileprivate func uploadImageToserver(_ imageToUplaod: UIImage )
+    {
+        viewModel?.uploadImage(imageToUplaod, { response, error, success, message in
+            
+            if (success ?? false), error == nil {
+                
+                self.userImage.image = imageToUplaod
+                    
+                // to save record on userDefults
+                if let resultString = response?.result?.toJSONString() {
+                    
+                    DataManager.shared.saveUsersDetail(resultString)
+                }
+
+            } else {
+                
+                self.showToast(message: error?.localizedDescription ?? message)
+            }
+        })
     }
 }

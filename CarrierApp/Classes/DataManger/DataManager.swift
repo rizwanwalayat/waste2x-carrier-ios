@@ -37,48 +37,11 @@ extension DataManager
         UserDefaults.standard.set(dataDict, forKey: "dispatches_IntransitData")
     }
     
-    func saveUserImage(_ userImage : UIImage)
-    {
-        guard let imageData = userImage.pngData() else {return }
-        UserDefaults.standard.set(imageData, forKey: "user_image")
-    }
-    
-    func saveUserName(_ name : String) {
-        
-        UserDefaults.standard.set(name, forKey: "user_name")
-    }
-    
 }
 
 // MARK: - Methods for get values
 extension DataManager
 {
-    
-    func getuserImage() -> (UIImage?, String?)
-    {
-        if let imageData = UserDefaults.standard.object(forKey: "user_image") as? Data {
-            let image = UIImage(data: imageData)
-            return (image, nil)
-        }
-        else if let userDetial = self.getUsersDetail() {
-            return (nil, userDetial.image)
-        }
-        
-        return (nil, nil)
-    }
-    
-    func getUserName() -> String
-    {
-        if let name = UserDefaults.standard.object(forKey: "user_name") as? String {
-            return name
-        }
-        else if let userDetial = self.getUsersDetail() {
-            return userDetial.name
-        }
-       
-        return ""
-    }
-    
     func getUsersDetail() -> ResultLoginUser? {
         
         var user: ResultLoginUser?
@@ -134,7 +97,5 @@ extension DataManager
         
         UserDefaults.standard.removeObject(forKey: "user_complete_detal")
         UserDefaults.standard.removeObject(forKey: "auth_token")
-        UserDefaults.standard.removeObject(forKey: "user_image")
-        UserDefaults.standard.removeObject(forKey: "user_name")
     }
 }

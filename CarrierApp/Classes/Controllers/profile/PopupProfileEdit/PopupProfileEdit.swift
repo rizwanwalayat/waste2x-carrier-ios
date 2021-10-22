@@ -87,6 +87,10 @@ class PopupProfileEdit: BaseViewController {
             if status ?? false, error == nil {
                 self.showToast(message: message)
                 self.hidePopup(.save)
+                if let resultString = result?.result?.toJSONString() {
+                    
+                    DataManager.shared.saveUsersDetail(resultString)
+                }
             } else {
                 self.showToast(message: error?.localizedDescription ?? message)
             }
