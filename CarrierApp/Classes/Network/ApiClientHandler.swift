@@ -74,6 +74,7 @@ class APIClientHandler: TSAPIClient {
         })
     }
     
+    
     func rawRequest(url: String, method: HTTPMethod, parameters: [String:AnyObject]?, headers: [String : String]?, completionBlock: @escaping APIClientCompletionHandler) {
         
         let request = Alamofire.request(url, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)

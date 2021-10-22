@@ -27,8 +27,11 @@ class SideMenuViewController: BaseViewController {
     var reload = -1
     var timerTest : Timer?
     var counter = 0
-    var imgArray = [#imageLiteral(resourceName: "available-Loads"),#imageLiteral(resourceName: "Quotations"), #imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Contract"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
-    var textArray = ["My Available Loads","My Quotations", "My Dispatches", "My Receivables", "My Contracts", "Payments", "FAQ", "Contact", "Logout"]
+//    var imgArray = [#imageLiteral(resourceName: "available-Loads"),#imageLiteral(resourceName: "Quotations"), #imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Contract"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
+    var imgArray = [#imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
+//    var textArray = ["My Available Loads","My Quotations", "My Dispatches", "My Receivables", "My Contracts", "Payments", "FAQ", "Contact", "Logout"]
+    var textArray = ["My Dispatches", "My Receivables", "Payments", "FAQ", "Contact", "Logout"]
+
     let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
     var fromVC : UIViewController?
     
@@ -142,7 +145,7 @@ class SideMenuViewController: BaseViewController {
     
     @IBAction func userImageTapped(_ sender: Any) {
         self.hideSideMenu {
-
+            self.selectionIndex = Global.shared.sidemenuLastSlectedIndex = -1
             let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
             Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
         }

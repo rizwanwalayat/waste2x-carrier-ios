@@ -21,7 +21,7 @@ extension DataManager
     
     func saveUsersDetail(_ objectString : String) {
         
-        UserDefaults.standard.set(objectString, forKey: "user_complete_detal")
+        UserDefaults.standard.set(objectString, forKey: "user_complete_detail")
     }
     
     func saveAuthToken(_ token : String) {
@@ -46,8 +46,8 @@ extension DataManager
         
         var user: ResultLoginUser?
 
-        if UserDefaults.standard.object(forKey: "user_complete_detal") != nil {
-            user = Mapper<ResultLoginUser>().map(JSONString:UserDefaults.standard.string(forKey: "user_complete_detal")!)
+        if UserDefaults.standard.object(forKey: "user_complete_detail") != nil {
+            user = Mapper<ResultLoginUser>().map(JSONString:UserDefaults.standard.string(forKey: "user_complete_detail")!)
         }
         return user
     }
@@ -95,7 +95,7 @@ extension DataManager
     
     func removeUserDetial() {
         
-        UserDefaults.standard.removeObject(forKey: "user_complete_detal")
+        UserDefaults.standard.removeObject(forKey: "user_complete_detail")
         UserDefaults.standard.removeObject(forKey: "auth_token")
     }
 }

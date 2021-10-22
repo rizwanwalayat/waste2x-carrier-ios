@@ -21,13 +21,11 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = ProfileEditVM()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel = ProfileEditVM()
         viewModel?.getUserData()
-
     }
     
    
