@@ -32,6 +32,7 @@ class ProfileEditVM: NSObject {
             
             Utility.hideLoading()
             if success, error == nil {
+                self.userName = newName
                 completionHandler(result, error, success, message)
             }
         }
