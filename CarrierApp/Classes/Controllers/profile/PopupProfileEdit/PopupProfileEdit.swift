@@ -11,8 +11,8 @@ import UIKit
 class PopupProfileEdit: BaseViewController {
 
     enum ButtonSelectedStates {
-        case iAmAllDone
-        case createAnotherLoad
+        case cancel
+        case save
         case none
     }
     // MARK: - Outlets
@@ -22,14 +22,16 @@ class PopupProfileEdit: BaseViewController {
     
     var iAmAllDoneButtonPressed: (()->())?
     var createAnothetLoadButtonPressed: (()->())?
-    var nameToEdit: String?
+    var viewModel: ProfileEditVM?
+
     // MARK: - Controller's Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.mainContentView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-        self.userName.text = nameToEdit ?? ""
+        
+        self.userName.text = viewModel?.userName ?? ""
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,11 +55,11 @@ class PopupProfileEdit: BaseViewController {
         }) { (success) in
             
             switch buttonState {
-            case .createAnotherLoad:
+            case .save:
                 
                 self.createAnothetLoadButtonPressed?()
                 
-            case .iAmAllDone:
+            case .cancel:
                 
                 self.iAmAllDoneButtonPressed?()
                 
@@ -75,14 +77,20 @@ class PopupProfileEdit: BaseViewController {
         hidePopup(.none)
         
     }
-    @IBAction func iAmAllDonePressed(_ sender: Any) {
+    @IBAction func cancelBtnPressed(_ sender: Any) {
     
-        hidePopup(.iAmAllDone)
+        hidePopup(.cancel)
         
     }
-    @IBAction func createAnotherLoadPressed(_ sender: Any) {
-        
-        hidePopup(.createAnotherLoad)
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        viewModel?.editUserName(newName: userName.text ?? viewModel?.userName ?? "", { result, error, status, message in
+            if status ?? false, error == nil {
+                self.showToast(message: message)
+                self.hidePopup(.save)
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message)
+            }
+        })
     }
 
 }

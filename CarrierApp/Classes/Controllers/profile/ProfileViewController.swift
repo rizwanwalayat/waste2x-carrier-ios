@@ -26,11 +26,15 @@ class ProfileViewController: BaseViewController {
        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel = ProfileEditVM()
+        viewModel?.getUserData()
+    }
     
     // MARK: - Actions
     @IBAction func editBtnPressed(_ sender: Any) {
         let popupVC = PopupProfileEdit(nibName: "PopupProfileEdit", bundle: nil)
-        popupVC.nameToEdit = self.userName.text ?? ""
+        popupVC.viewModel = self.viewModel
         popupVC.modalPresentationStyle = .overFullScreen
         self.present(popupVC, animated: false, completion: nil)
     }
@@ -46,13 +50,12 @@ class ProfileViewController: BaseViewController {
     
     fileprivate func populateUserData(){
         
-        guard let user = DataManager.shared.getUsersDetail() else {return}
+        userName.text = viewModel?.userName
+        userEmail.text = viewModel?.userEmail
+        userPhone.text = viewModel?.userPhone
         
-        userName.text = user.name
-        userEmail.text = user.email
-        userPhone.text = user.phone
         
-        self.downloadImageFromServer(user.image) { image, error, success in
+        self.downloadImageFromServer(viewModel?.userImage ?? "") { image, error, success in
             
             self.userImage.stopAnimating()
             if success ?? false && image != nil {

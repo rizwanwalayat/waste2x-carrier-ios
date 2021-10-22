@@ -11,7 +11,19 @@ typealias ProfileEditCompletionHandler = (_ data: Any?, _ error: Error?, _ statu
 import Foundation
 
 class ProfileEditVM: NSObject {
+    var userName: String?
+    var userEmail: String?
+    var userPhone: String?
+    var userImage: String?
     
+    func getUserData(){
+        
+        guard let user = DataManager.shared.getUsersDetail() else {return}
+        userName = user.name
+        userEmail = user.email
+        userPhone = user.phone
+        userImage = user.image
+    }
     
     func editUserName(newName: String, _ completionHandler: @escaping ProfileEditCompletionHandler){
         
