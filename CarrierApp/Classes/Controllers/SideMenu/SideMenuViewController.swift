@@ -7,10 +7,21 @@
 //
 
 import UIKit
-
 class SideMenuViewController: BaseViewController {
     
-    
+    enum menuSelections:String {
+        case myAvailableLoads = "My Available Loads"
+        case myQuotations = "My Quotations"
+        case myDispatches = "My Dispatches"
+        case myReceivables = "My Receivables"
+        case myContracts = "My Contracts"
+        case payments = "Payments"
+        case faq = "FAQ"
+        case contact = "Contact"
+        case logout = "Logout"
+        case none = ""
+    }
+
     //MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,7 +41,7 @@ class SideMenuViewController: BaseViewController {
 //    var imgArray = [#imageLiteral(resourceName: "available-Loads"),#imageLiteral(resourceName: "Quotations"), #imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Contract"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
     var imgArray = [#imageLiteral(resourceName: "Dispatches"), #imageLiteral(resourceName: "Receivable"), #imageLiteral(resourceName: "Payment"), #imageLiteral(resourceName: "FAQs"), #imageLiteral(resourceName: "Contact"), #imageLiteral(resourceName: "Logout")]
 //    var textArray = ["My Available Loads","My Quotations", "My Dispatches", "My Receivables", "My Contracts", "Payments", "FAQ", "Contact", "Logout"]
-    var textArray = ["My Dispatches", "My Receivables", "Payments", "FAQ", "Contact", "Logout"]
+    var textArray = [menuSelections.myDispatches, menuSelections.myReceivables, menuSelections.payments, menuSelections.faq, menuSelections.contact, menuSelections.logout]
 
     let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
     var fromVC : UIViewController?
@@ -145,7 +156,8 @@ class SideMenuViewController: BaseViewController {
     
     @IBAction func userImageTapped(_ sender: Any) {
         self.hideSideMenu {
-            self.selectionIndex = Global.shared.sidemenuLastSlectedIndex = -1
+            self.selectionIndex = -1
+            Global.shared.sidemenuLastSlectedIndex = -1
             let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
             Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
         }
@@ -173,7 +185,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             cell.imgView.tintColor = unSelectedBodyLabelTextColor
         }
         
-        cell.config(textArray[indexPath.row], imgArray[indexPath.row])
+        cell.config(textArray[indexPath.row].rawValue, imgArray[indexPath.row])
         
         return cell
         
@@ -181,11 +193,12 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         var isNeedToUpdateValue = true
-        switch indexPath.row {
-        case 0:
+        let currentSelection = textArray[indexPath.row]
+        switch currentSelection {
+        case .myAvailableLoads:
                     
             // Available loads controller shows
-            if selectionIndex != 0 {
+            if currentSelection != .myAvailableLoads{
                 
                 self.hideSideMenu {
                     let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
@@ -194,10 +207,10 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 
             }
 
-        case 1:
+        case .myQuotations:
             
             // Quotations loads controller shows
-            if selectionIndex != 1 {
+            if currentSelection != .myQuotations {
                 
                 self.hideSideMenu {
                     let vc = QuotationListViewController(nibName: "QuotationListViewController", bundle: nil)
@@ -205,19 +218,19 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
-        case 2:
+        case .myDispatches:
             
             // Dispatches controller shows
-            if selectionIndex != 2 {
+            if currentSelection != .myDispatches {
                 
                 self.hideSideMenu {
                     let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
                     Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
             }
-        case 3:
+        case .myReceivables:
             
-            if selectionIndex != 3 {
+            if currentSelection != .myReceivables {
                 
                 self.hideSideMenu {
                     let vc = ReceivableListViewController(nibName: "ReceivableListViewController", bundle: nil)
@@ -225,9 +238,9 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
-        case 4:
+        case .myContracts:
             
-            if selectionIndex != 4 {
+            if currentSelection != .myContracts {
                 
                 self.hideSideMenu {
                     let vc = ContractsViewController(nibName: "ContractsViewController", bundle: nil)
@@ -235,20 +248,20 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
-        case 5:
+        case .payments:
             
-            if selectionIndex != 5
-            {
+            if currentSelection != .payments {
+
                 isNeedToUpdateValue = false
                 self.hideSideMenu {
                     self.paymentApi()
                 }
             }
             
-        case 6:
+        case .faq:
             
-            if selectionIndex != 6
-            {
+            if currentSelection != .faq {
+                
                 isNeedToUpdateValue = false
                 self.hideSideMenu {
                     let vc = FaqViewController(nibName: "FaqViewController", bundle: nil)
@@ -256,10 +269,10 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
-        case 7:
+        case .contact:
             
-            if selectionIndex != 7
-            {
+            if currentSelection != .contact {
+                
                 isNeedToUpdateValue = false
                 self.hideSideMenu {
                     let vc = ContactViewController(nibName: "ContactViewController", bundle: nil)
@@ -267,7 +280,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                 }
             }
             
-        case 8:
+        case .logout:
             
             isNeedToUpdateValue = false
             let actionVc = LogoutViewController(nibName: "LogoutViewController", bundle: nil)
@@ -281,8 +294,8 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             }
             self.present(actionVc, animated: false, completion: nil)
             
-        default:
-            
+      
+        case .none:
             break
         }
         
