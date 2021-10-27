@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController" customModule="CarrierApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController" customModule="EnMass_Transit" customModuleProvider="target">
             <connections>
                 <outlet property="baseHolderView" destination="T7f-08-cda" id="5Og-fu-pzZ"/>
                 <outlet property="connectButton" destination="C7T-lh-K6N" id="sGZ-Ed-6sj"/>

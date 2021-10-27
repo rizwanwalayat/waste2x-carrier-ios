@@ -48,9 +48,8 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXy-jt-DD8">
                             <rect key="frame" x="20" y="225" width="187" height="67.5"/>
-                            <string key="text">300 Morris Street
-Fifth Floor Durham, 
-NC 27701, USA</string>
+                            <string key="text">201 West Main Street, Suite 211
+Durham, NC 27701</string>
                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>

@@ -76,7 +76,7 @@
 	<string>Bluetooth access is required in order to connect to supported card readers.
 </string>
 	<key>NSCameraUsageDescription</key>
-	<string>Uses camera in order to scan QR Code</string>
+	<string>Uses camera in order to capture photos of order details receipt and sites location </string>
 	<key>NSContactsUsageDescription</key>
 	<string>Need Contacts to Invite</string>
 	<key>NSFaceIDUsageDescription</key>
@@ -88,9 +88,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access is required in order to accept and track shipments.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>access</string>
+	<string>Uses photo Library in order to take photos of order details receipt and sites location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>access</string>
+	<string>Uses photo Library in order to take photos of order details receipt and sites location</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-Black.ttf</string>

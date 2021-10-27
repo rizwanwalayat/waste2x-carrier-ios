@@ -103,6 +103,8 @@
 		04DB591D26AED6A500C88804 /* QuotationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB591B26AED6A500C88804 /* QuotationListViewController.swift */; };
 		04DB592226AEE96600C88804 /* QuotationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */; };
 		04DB592326AEE96600C88804 /* QuotationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */; };
+		04DC49F0272970460089FA45 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC49EE272970460089FA45 /* WebViewViewController.swift */; };
+		04DC49F1272970460089FA45 /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC49EF272970460089FA45 /* WebViewViewController.xib */; };
 		04EFF03A26C4E89000551B9A /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF03926C4E89000551B9A /* MessagesViewModel.swift */; };
 		04F6FD0F26C3D542006D1A80 /* ChatMessagesExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0926C3D542006D1A80 /* ChatMessagesExtenstions.swift */; };
 		04F6FD1026C3D542006D1A80 /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */; };
@@ -340,6 +342,8 @@
 		04DB591B26AED6A500C88804 /* QuotationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationListViewController.swift; sourceTree = "<group>"; };
 		04DB592026AEE96600C88804 /* QuotationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsTableViewCell.swift; sourceTree = "<group>"; };
 		04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotationsTableViewCell.xib; sourceTree = "<group>"; };
+		04DC49EE272970460089FA45 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		04DC49EF272970460089FA45 /* WebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
 		04EFF03926C4E89000551B9A /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		04F6FD0926C3D542006D1A80 /* ChatMessagesExtenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesExtenstions.swift; sourceTree = "<group>"; };
 		04F6FD0A26C3D542006D1A80 /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
@@ -933,6 +937,7 @@
 				04C3091626B7E70F00BEC895 /* CreatePaymentViewController.swift */,
 				04C3091526B7E70F00BEC895 /* PaymentViewController.xib */,
 				04C3091726B7E70F00BEC895 /* PaymentViewController.swift */,
+				04DC49F2272970490089FA45 /* WebView */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -1023,6 +1028,15 @@
 				04DB592126AEE96600C88804 /* QuotationsTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		04DC49F2272970490089FA45 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				04DC49EE272970460089FA45 /* WebViewViewController.swift */,
+				04DC49EF272970460089FA45 /* WebViewViewController.xib */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		04F6FD0726C3D542006D1A80 /* Messages */ = {
@@ -1723,6 +1737,7 @@
 				04C3092026B81BB400BEC895 /* TrackerViewController.xib in Resources */,
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
+				04DC49F1272970460089FA45 /* WebViewViewController.xib in Resources */,
 				96AE408026B84ABD008ABA66 /* DispatchesDetailPickDropCell.xib in Resources */,
 				04206C3626BD3D63006AB6A4 /* ContactTableViewCell.xib in Resources */,
 				9674909026B28EF8001C4A62 /* ResetPasswordViewController.xib in Resources */,
@@ -1918,6 +1933,7 @@
 				966F8F0226D8EE5E00E9A27D /* LoaderAnimation.swift in Sources */,
 				9674909126B28EF8001C4A62 /* ResetPasswordViewController.swift in Sources */,
 				04F6FD1226C3D542006D1A80 /* MessagesTableViewCell.swift in Sources */,
+				04DC49F0272970460089FA45 /* WebViewViewController.swift in Sources */,
 				0455470026C13A1D00781C83 /* AvailableLoadsDetailsVM.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				04C3D36026B2C45C005FCF5A /* AvailableLoadsListViewController.swift in Sources */,
@@ -2181,7 +2197,7 @@
 				CODE_SIGN_ENTITLEMENTS = CarrierApp/CarrierApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = "$(SRCROOT)/CarrierApp/Info.plist";
@@ -2190,7 +2206,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit;
 				PRODUCT_NAME = "EnMass Transit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2207,7 +2223,7 @@
 				CODE_SIGN_ENTITLEMENTS = CarrierApp/CarrierApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = "$(SRCROOT)/CarrierApp/Info.plist";
@@ -2216,7 +2232,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit;
 				PRODUCT_NAME = "EnMass Transit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
