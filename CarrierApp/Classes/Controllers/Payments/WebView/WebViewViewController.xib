@@ -8,15 +8,9 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Poppins-SemiBold.ttf">
-            <string>Poppins-SemiBold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewViewController" customModule="EnMass_Transit" customModuleProvider="target">
             <connections>
-                <outlet property="mainView" destination="kka-fX-A1X" id="BeA-GO-gDg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,82 +18,12 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylw-tL-oQq">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="NavBar Header" translatesAutoresizingMaskIntoConstraints="NO" id="TRu-bJ-vOr">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
-                        </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7U-J4-gMZ">
-                            <rect key="frame" x="0.0" y="56.5" width="414" height="85.5"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sD9-LS-5rg">
-                                    <rect key="frame" x="16" y="17" width="32" height="32"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="sD9-LS-5rg" secondAttribute="height" multiplier="1:1" id="H0y-XC-3KB"/>
-                                        <constraint firstAttribute="height" constant="32" id="NLT-l7-BzV"/>
-                                    </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="BackButton"/>
-                                    <connections>
-                                        <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="94T-A8-2lL"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Payment Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7W0-az-npt">
-                                    <rect key="frame" x="91.5" y="20" width="231" height="25.5"/>
-                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="sD9-LS-5rg" firstAttribute="centerY" secondItem="7W0-az-npt" secondAttribute="centerY" id="9hI-zE-LKf"/>
-                                <constraint firstAttribute="bottom" secondItem="7W0-az-npt" secondAttribute="bottom" constant="40" id="CLC-6r-BSB"/>
-                                <constraint firstItem="sD9-LS-5rg" firstAttribute="leading" secondItem="W7U-J4-gMZ" secondAttribute="leading" constant="16" id="Ief-7B-fS3"/>
-                                <constraint firstItem="7W0-az-npt" firstAttribute="centerX" secondItem="W7U-J4-gMZ" secondAttribute="centerX" id="JlY-ak-dXy"/>
-                                <constraint firstItem="7W0-az-npt" firstAttribute="top" secondItem="W7U-J4-gMZ" secondAttribute="top" constant="20" id="ZPK-Z1-KMv"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="W7U-J4-gMZ" secondAttribute="bottom" id="Fvb-hY-Wbw"/>
-                        <constraint firstAttribute="trailing" secondItem="W7U-J4-gMZ" secondAttribute="trailing" id="H0X-lp-yXO"/>
-                        <constraint firstAttribute="trailing" secondItem="TRu-bJ-vOr" secondAttribute="trailing" id="NFQ-aR-03z"/>
-                        <constraint firstItem="W7U-J4-gMZ" firstAttribute="leading" secondItem="ylw-tL-oQq" secondAttribute="leading" id="NpQ-EJ-Si7"/>
-                        <constraint firstItem="TRu-bJ-vOr" firstAttribute="leading" secondItem="ylw-tL-oQq" secondAttribute="leading" id="hD7-2m-vRF"/>
-                        <constraint firstItem="TRu-bJ-vOr" firstAttribute="top" secondItem="ylw-tL-oQq" secondAttribute="top" id="hgV-Og-MUq"/>
-                        <constraint firstAttribute="bottom" secondItem="TRu-bJ-vOr" secondAttribute="bottom" id="mAJ-Uy-YsZ"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isMenuShow" value="NO"/>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kka-fX-A1X">
-                    <rect key="frame" x="0.0" y="114" width="414" height="782"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="ylw-tL-oQq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0eq-Xu-Gbc"/>
-                <constraint firstItem="ylw-tL-oQq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DQd-pe-Qtu"/>
-                <constraint firstAttribute="bottom" secondItem="kka-fX-A1X" secondAttribute="bottom" id="Hqb-IV-Wnu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kka-fX-A1X" secondAttribute="trailing" id="Lb1-vY-EPT"/>
-                <constraint firstItem="ylw-tL-oQq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OXh-Ho-XB5"/>
-                <constraint firstItem="W7U-J4-gMZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12.5" id="dSu-6E-IjC"/>
-                <constraint firstItem="kka-fX-A1X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gtC-46-wyC"/>
-                <constraint firstItem="kka-fX-A1X" firstAttribute="top" secondItem="ylw-tL-oQq" secondAttribute="bottom" constant="-28" id="lkh-8F-JMR"/>
-            </constraints>
             <point key="canvasLocation" x="24.637681159420293" y="71.651785714285708"/>
         </view>
     </objects>
     <resources>
-        <image name="BackButton" width="9" height="15"/>
-        <image name="NavBar Header" width="375" height="142"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

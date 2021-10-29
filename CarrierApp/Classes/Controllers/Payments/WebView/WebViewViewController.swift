@@ -18,32 +18,23 @@ class WebViewViewController: BaseViewController {
     var webView   : WKWebView!
     var urlString =  ""
     
+    
     // MARK: - Outlets
     
-    
-    @IBOutlet weak var mainView : UIView!
+    @IBOutlet weak var backShadowView : UIView!
     
     
     //MARK: Controllers LifeCycle
     
     override func loadView()
     {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
-        self.mainView = webView
+        setupWebView()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string:urlString)
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
-        
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.appColor
-        self.navigationController?.topViewController?.title = "Create Payment Account"
+        loadWebView()
+        setupNavigation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,9 +62,39 @@ class WebViewViewController: BaseViewController {
         Utility.hideLoading()
         self.navigationController?.navigationBar.isHidden = true
     }
+    
+    fileprivate func setupWebView()
+    {
+        Utility.showLoading()
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        self.view = webView
+        
+        loadWebView()
+    }
+    
+    fileprivate func loadWebView()
+    {
+        let myURL = URL(string:urlString)
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
+    }
+    
+    fileprivate func setupNavigation(){
+        
+        self.navigationController?.delegate = self
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.appColor
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBar Header"),
+                                                                    for: .default)
+        self.navigationItem.backBarButtonItem?.title = ""
+        self.navigationController?.topViewController?.title = "Create Payment Account"
+    }
 }
 
-extension WebViewViewController: WKUIDelegate, WKNavigationDelegate {
+extension WebViewViewController: WKUIDelegate, WKNavigationDelegate, UINavigationControllerDelegate{
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("pageLoadingFinish")
@@ -94,4 +115,11 @@ extension WebViewViewController: WKUIDelegate, WKNavigationDelegate {
         Utility.setupRoot([vc], navgationController: self.navigationController)
     }
     
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        DispatchQueue.main.async {
+            viewController.navigationItem.backBarButtonItem = item
+        }
+    }
 }

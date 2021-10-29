@@ -42,6 +42,7 @@ struct NetworkingConnection {
         navigationController.setViewControllers([vc], animated: true)//viewControllers = [vc]
         navigationController.navigationBar.isHidden = true
         navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.tintColor = .white
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
         kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
