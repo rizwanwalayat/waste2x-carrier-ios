@@ -13,6 +13,7 @@ class EnMassTransitAPITests: XCTestCase {
     
     override func setUpWithError() throws {
         DataManager.shared.saveAuthToken("a96201bf94444ba5ee1757bc66cbb782dd80838a")
+        DataManager.shared.saveUsersDetail("{\"phone\":\"+17734777019\",\"email\":\"+17734777019@cache.com\",\"name\":\"Brian Smith\",\"auth_token\":\"a96201bf94444ba5ee1757bc66cbb782dd80838a\",\"id\":265645,\"image\":\"https:\\/\\/storage.googleapis.com\\/staging-cache\\/user-activity\\/phaedra_solution_JPEG_38472504718216_9114838128545487973-2021-10-25-014118.png\"}")
     }
     
     override func tearDownWithError() throws {
@@ -115,6 +116,23 @@ class EnMassTransitAPITests: XCTestCase {
         }
     }
     
+    func testTwilioFetchToken() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        let viewModel = MessagesViewModel()
+        viewModel.fetchTwillioAccessToken({ result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
+            
+            promise.fulfill()
+        })
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout after 10sec")
+            }
+        }
+    }
     
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
