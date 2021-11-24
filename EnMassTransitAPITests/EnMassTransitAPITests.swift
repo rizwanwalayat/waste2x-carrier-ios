@@ -13,9 +13,7 @@ class EnMassTransitAPITests: XCTestCase {
     
     override func setUpWithError() throws {
         DataManager.shared.saveAuthToken("a96201bf94444ba5ee1757bc66cbb782dd80838a")
-        
-        DataManager.shared.saveUsersDetail("{\"email\":\"+12202@cache.com\",\"auth_token\":\"4ae3dfabbeadca4575be730024716bcaed283b00\",\"id\":269295,\"phone\":\"+12202\",\"name\":\" Naeem Hussain\",\"image\":\"https:\\/\\/storage.googleapis.com\\/staging-cache\\/user-activity\\/image1-2021-11-01-101149.jpeg\"}")
-        
+        DataManager.shared.saveUsersDetail("{\"phone\":\"+17734777019\",\"email\":\"+17734777019@cache.com\",\"name\":\"Brian Smith\",\"auth_token\":\"a96201bf94444ba5ee1757bc66cbb782dd80838a\",\"id\":265645,\"image\":\"https:\\/\\/storage.googleapis.com\\/staging-cache\\/user-activity\\/phaedra_solution_JPEG_38472504718216_9114838128545487973-2021-10-25-014118.png\"}")
     }
     
     override func tearDownWithError() throws {
@@ -118,45 +116,20 @@ class EnMassTransitAPITests: XCTestCase {
         }
     }
     
-    func testPaymentAPI() throws {
-        
-        let promise = expectation(description: "Status Code: 200")
-        
-        PaymentModel.paymentApiFunction { result, error, status,message in
-            
-            XCTAssert(status == true && error == nil, "Data returned with error, \(message ?? "")")
-           
-            
-            promise.fulfill()
-            
-        }
-        self.waitForExpectations(timeout: 10) { error in
-            if let _ = error {
-                XCTFail("Timeout")
-            }
-        }
-    }
-    
-    func testMessagestAPIToFetchAccessToken() throws {
+    func testTwilioFetchToken() throws {
         
         let promise = expectation(description: "Status Code: 200")
         let viewModel = MessagesViewModel()
-        
-        viewModel.fetchTwillioAccessToken({ data, error, success, message in
-            XCTAssert(success == true && error == nil, "Data returned with error, \(message)")
+        viewModel.fetchTwillioAccessToken({ result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
             
-            guard let resultData = data?.result, let accessToken = resultData.access_token else
-            {
-                XCTFail("Expected non-nil result")
-                return
-            }
             promise.fulfill()
-           
         })
         
-        self.waitForExpectations(timeout: 10) { error in
+        waitForExpectations(timeout: 10) { error in
             if let _ = error {
-                XCTFail("Timeout")
+                XCTFail("Timeout after 10sec")
             }
         }
     }
