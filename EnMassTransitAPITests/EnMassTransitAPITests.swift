@@ -13,6 +13,9 @@ class EnMassTransitAPITests: XCTestCase {
     
     override func setUpWithError() throws {
         DataManager.shared.saveAuthToken("a96201bf94444ba5ee1757bc66cbb782dd80838a")
+        
+        DataManager.shared.saveUsersDetail("{\"email\":\"+12202@cache.com\",\"auth_token\":\"4ae3dfabbeadca4575be730024716bcaed283b00\",\"id\":269295,\"phone\":\"+12202\",\"name\":\" Naeem Hussain\",\"image\":\"https:\\/\\/storage.googleapis.com\\/staging-cache\\/user-activity\\/image1-2021-11-01-101149.jpeg\"}")
+        
     }
     
     override func tearDownWithError() throws {
@@ -115,6 +118,48 @@ class EnMassTransitAPITests: XCTestCase {
         }
     }
     
+    func testPaymentAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        
+        PaymentModel.paymentApiFunction { result, error, status,message in
+            
+            XCTAssert(status == true && error == nil, "Data returned with error, \(message ?? "")")
+           
+            
+            promise.fulfill()
+            
+        }
+        self.waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout")
+            }
+        }
+    }
+    
+    func testMessagestAPIToFetchAccessToken() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        let viewModel = MessagesViewModel()
+        
+        viewModel.fetchTwillioAccessToken({ data, error, success, message in
+            XCTAssert(success == true && error == nil, "Data returned with error, \(message)")
+            
+            guard let resultData = data?.result, let accessToken = resultData.access_token else
+            {
+                XCTFail("Expected non-nil result")
+                return
+            }
+            promise.fulfill()
+           
+        })
+        
+        self.waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout")
+            }
+        }
+    }
     
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
