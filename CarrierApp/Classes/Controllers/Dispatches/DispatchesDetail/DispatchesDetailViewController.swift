@@ -231,15 +231,6 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
                 cell.markArrivedCompleted(value: selectedState > 3 )
             }
             
-            
-            // only for if location access is not granted
-            if !isLocationServicesEnabled() {
-                
-                cell.departedBtn.makeEnable(value: false)
-                cell.arrivedBtn.makeEnable(value: false)
-            }
-            
-            
             return cell
             
         }

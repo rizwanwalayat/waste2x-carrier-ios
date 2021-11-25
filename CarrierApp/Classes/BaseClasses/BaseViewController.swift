@@ -153,7 +153,7 @@ class BaseViewController: UIViewController {
 
         alertCont.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
 
-            //self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }))
 
         self.present(alertCont, animated: true, completion: nil)
