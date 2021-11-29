@@ -127,4 +127,8 @@ class EnMassTransitUITests: XCTestCase {
 
     }
  
+    func testForgotPassword() throws
+    {
+                                                        
+    }
 }

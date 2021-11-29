@@ -97,8 +97,7 @@ class CompleteDispatchViewController: BaseViewController {
     @IBAction func useCamButtonPressed(_ sender: Any) {
         
         if imagesArray.count < 5 {
-            let maxLimit = 5 - imagesArray.count
-            ImagePickerVC.shared.showImagePickerForMultipleSelection(fromVC: self, isGalleryOpen: false, selectionLimit: maxLimit)
+            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: false)
         }
         else {
             showToast(message: "Images Limit reached")
@@ -110,7 +109,12 @@ class CompleteDispatchViewController: BaseViewController {
     @objc override func imageSelectedFromGalleryOrCamera(selectedImages:[DKAsset]){
         
         getAssetThumbnail(assets: selectedImages)
+    }
+    
+    @objc override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
         
+        self.imagesArray.append(selectedImage)
+        self.collectionViewImages.reloadData()
     }
     
     @objc func deleteImageButtonPressed(_ sender : UIButton){

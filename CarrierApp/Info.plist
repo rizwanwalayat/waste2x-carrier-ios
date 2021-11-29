@@ -87,8 +87,6 @@
 	<string>Location access is required in order to accept and track shipments.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access is required in order to accept and track shipments.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Uses photo Library in order to take photos of order details receipt and sites location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Uses photo Library in order to take photos of order details receipt and sites location</string>
 	<key>UIAppFonts</key>

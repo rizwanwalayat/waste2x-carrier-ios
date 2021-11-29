@@ -118,9 +118,27 @@ class DispatchesDetailViewController: BaseViewController {
             if status ?? false, error == nil
             {
                 self.showToast(message: message)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+//                    self.loadDispatchesDetails()
+//                })
+                self.selectedState += 1
+                
+                if self.selectedState == 0 || self.selectedState == 1 {
+                    self.deliveryType = .pickup
+                    self.viewModel?.data?.result?.dispatchStatus = .in_transit
+                }
+                if self.selectedState == 2 || self.selectedState == 3  {
+                    self.deliveryType = .delivery
+                    self.viewModel?.data?.result?.dispatchStatus = .in_transit
+                }
+                if self.selectedState == 4 || self.selectedState == 5 {
+                    self.deliveryType = .none
+                    self.viewModel?.data?.result?.dispatchStatus = .delivered
                     self.loadDispatchesDetails()
-                })
+                }
+                
+                
+                self.tableView.reloadData()
                 
             } else {
                 self.showToast(message: error?.localizedDescription ?? message )
@@ -212,7 +230,6 @@ extension DispatchesDetailViewController : UITableViewDelegate, UITableViewDataS
                 cell.markDepartCompleted(value: selectedState > 2)
                 cell.markArrivedCompleted(value: selectedState > 3 )
             }
-            
             
             return cell
             
