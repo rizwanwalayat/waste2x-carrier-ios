@@ -24,17 +24,15 @@ class PaymentViewController: BaseViewController {
     }
     
     @IBAction func connectStripeAccount(_ sender: Any) {
-       // Utility.setupHomeAsRootViewController()
-        
-//        let vc = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
-//        Utility.setupRoot([vc], navgationController: self.navigationController)
+       
         CreatePaymentModel.CreatePaymentApiFunction { result, error, status,message in
 //            if let url = URL(string: "\(result!.result)") {
 //                UIApplication.shared.open(url)
 //            }
+            let vcHome = AvailableLoadsViewController(nibName: "AvailableLoadsViewController", bundle: nil)
             let vc = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
             vc.urlString = result!.result // "https://www.google.com/"
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.setViewControllers([vcHome, vc], animated: true)
             
         }
     }
