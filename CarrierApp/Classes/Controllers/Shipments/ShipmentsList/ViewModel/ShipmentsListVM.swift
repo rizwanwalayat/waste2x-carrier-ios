@@ -17,7 +17,7 @@ class ShipmentsListVM: NSObject {
         super.init()
     }
 
-    func fetchDispatchesData(_ completionhandler: @escaping ShipmentsListCompletionHandler) {
+    func fetchShipmentsData(_ completionhandler: @escaping ShipmentsListCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.ShipmentsListApiFunctionCall { result, error, status, message in
             Utility.hideLoading()

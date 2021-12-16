@@ -23,50 +23,28 @@ enum menuSelections:String {
     case none = ""
     
     var Image : UIImage {
-        
         switch self {
-        
         case .myAvailableLoads:
-            
             return #imageLiteral(resourceName: "available-Loads")
-        
         case .myQuotations:
-            
             return #imageLiteral(resourceName: "Quotations")
-        
         case .myDispatches:
-            
             return #imageLiteral(resourceName: "Dispatches")
-        
         case .myShipments:
             return #imageLiteral(resourceName: "Dispatches")
-
         case .myReceivables:
-            
             return #imageLiteral(resourceName: "Receivable")
-            
         case .myContracts:
-            
             return #imageLiteral(resourceName: "Contract")
-            
         case .payments:
-            
             return #imageLiteral(resourceName: "Payment")
-            
         case .faq:
-            
             return #imageLiteral(resourceName: "FAQs")
-            
         case .contact:
-            
             return #imageLiteral(resourceName: "Contact")
-            
         case .logout:
-            
             return #imageLiteral(resourceName: "Logout")
-            
         case .none:
-            
             return #imageLiteral(resourceName: "Logout")
         }
     }
@@ -89,7 +67,7 @@ class SideMenuViewController: BaseViewController {
     //MARK: - Variables
     
     var selectionIndex = menuSelections.none
-    var menuArray = [menuSelections.myDispatches, menuSelections.myReceivables, menuSelections.payments, menuSelections.faq, menuSelections.contact, menuSelections.logout]
+    var menuArray = [menuSelections.myShipments, menuSelections.myDispatches, menuSelections.myReceivables, menuSelections.payments, menuSelections.faq, menuSelections.contact, menuSelections.logout]
 
     let unSelectedBodyLabelTextColor = UIColor(named: "unselectedText")
     var fromVC : UIViewController?

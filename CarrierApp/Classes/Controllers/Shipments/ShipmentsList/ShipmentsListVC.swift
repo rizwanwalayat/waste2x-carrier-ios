@@ -37,7 +37,7 @@ class ShipmentsListVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel = ShipmentsListVM()
-        viewModel?.fetchDispatchesData({ result, error, status, message in
+        viewModel?.fetchShipmentsData({ result, error, status, message in
             
             if status ?? false, error == nil {
                 self.checkData()
@@ -76,8 +76,6 @@ class ShipmentsListVC: BaseViewController {
     func unSelectTabs(){
         scheduledTab.isSelected = false
         scheduledTab.backgroundColor = .clear
-        inTransitTab.isSelected = false
-        inTransitTab.backgroundColor = .clear
         deliveredTab.isSelected = false
         deliveredTab.backgroundColor = .clear
     }
@@ -92,14 +90,7 @@ class ShipmentsListVC: BaseViewController {
         checkData()
         
     }
-    @objc func DispatchDetailBtnPressed(sender:UIButton){
-        let indexPathRow = sender.tag
-        let detailVC = DispatchesDetailViewController(nibName: "DispatchesDetailViewController", bundle: nil)
-        let detailVM = DispatchesDetailVM()
-        detailVM.id = viewModel?.data?.result?.array[selectedTab][indexPathRow].id ?? 0
-        detailVC.viewModel = detailVM
-        self.navigationController?.pushViewController(detailVC, animated: true)
-    }
+  
 }
 
 extension ShipmentsListVC : UITableViewDelegate, UITableViewDataSource
@@ -114,8 +105,7 @@ extension ShipmentsListVC : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShipmentsListTableViewCell", for: indexPath) as! ShipmentsListTableViewCell
-        cell.dispatchButton.tag = indexPath.row
-        cell.dispatchButton.addTarget(self, action: #selector(DispatchDetailBtnPressed(sender:)), for: .touchUpInside)
+  
         let cellData = viewModel?.data?.result?.array[selectedTab][indexPath.row]
         cell.configCell(data: cellData!, status: shipmentsStatusArray[selectedTab])
         return cell
@@ -125,39 +115,8 @@ extension ShipmentsListVC : UITableViewDelegate, UITableViewDataSource
         UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        tableView.beginUpdates()
-        if selectedIndex == indexPath {
-            
-            if let cell = tableView.cellForRow(at: indexPath) as? ShipmentsListTableViewCell
-            {
-                cell.collapse()
-                self.selectedIndex = nil
-            }
-        }
-        else if selectedIndex != nil
-        {
-            if let cell = tableView.cellForRow(at: selectedIndex!) as? ShipmentsListTableViewCell
-            {
-                cell.collapse()
-            }
-            
-            if let cell = tableView.cellForRow(at: indexPath) as? ShipmentsListTableViewCell
-            {
-                cell.expand()
-            }
-            selectedIndex = indexPath
-        }
-        else if selectedIndex == nil {
-            if let cell = tableView.cellForRow(at: indexPath) as? ShipmentsListTableViewCell
-            {
-                cell.expand()
-                self.selectedIndex = indexPath
-            }
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
-        tableView.endUpdates()
        
     }
 }

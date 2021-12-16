@@ -29,7 +29,6 @@ class ShipmentsListModel: Mappable {
 class ShipmentsListResult: Mappable {
     var array: [[ShipmentsListResultItem]] = []
     var scheduled = [ShipmentsListResultItem]()
-    var in_transit = [ShipmentsListResultItem]()
     var delivered = [ShipmentsListResultItem]()
     
     
@@ -39,49 +38,36 @@ class ShipmentsListResult: Mappable {
     
     func mapping(map: Map) {
         scheduled <- map["scheduled"]
-        in_transit <- map["in_transit"]
         delivered <- map["delivered"]
         postMapping()
     }
     
     func postMapping(){
         array.insert(scheduled, at: 0)
-        array.insert(in_transit, at: 1)
-        array.insert(delivered, at: 2)
+        array.insert(delivered, at: 1)
     }
 }
 
 class ShipmentsListResultItem: Mappable {
     
     var id: Int
-    var date_created: String
-    var pick_up: String
-    var drop_off: String
-    var dispatch_rep: String
-    var commodity : String
+    var destination: String
+    var deliveryLocation : String
     var deliveryDate : String
-    var weight : String
     
     required init?(map: Map) {
         id = 0
-        date_created = ""
-        pick_up = ""
-        drop_off = ""
-        dispatch_rep = ""
-        commodity = ""
+        destination = ""
+        deliveryLocation = ""
         deliveryDate = ""
-        weight = ""
+     
     }
     
     func mapping(map: Map) {
         id <- map["id"]
-        date_created <- map["date_created"]
-        pick_up <- map["pick_up"]
-        drop_off <- map["drop_off"]
-        dispatch_rep <- map["dispatch_rep"]
-        commodity <- map["commodity"]
+        destination <- map["destination"]
+        deliveryLocation <- map["delivery_location"]
         deliveryDate <- map["delivery_date"]
-        weight <- map["weight"]
     }
     
 }
