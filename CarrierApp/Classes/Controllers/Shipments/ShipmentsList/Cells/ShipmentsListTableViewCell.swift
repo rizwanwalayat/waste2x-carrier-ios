@@ -1,5 +1,5 @@
 //
-//  DispatchesListTableViewCell.swift
+//  ShipmentsListTableViewCell.swift
 //  CarrierApp
 //
 //  Created by Phaedra Solutions  on 29/07/2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DispatchesListTableViewCell: UITableViewCell {
+class ShipmentsListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bottomBorder: UIView!
     @IBOutlet weak var dispatchButton: UIButton!
@@ -66,20 +66,13 @@ class DispatchesListTableViewCell: UITableViewCell {
     }
     
     
-    func configCell(data: DispatchesListResultItem, status: DispatchesStatus) {
+    func configCell(data: ShipmentsListResultItem, status: ShipmentsStatus) {
         
         deliveryDateLabel.text = data.deliveryDate
         commodityLabel.text = data.dispatch_rep
+        pickUpLabel.text = data.pick_up
         deliveryLabel.text = data.drop_off
         dispatchIDLabel.text = "\(data.id)"
-        
-        if data.pick_up.isEmpty {
-            pickUpLabel.text = "--"
-            dispatchButton.isHidden = true
-        } else {
-            pickUpLabel.text = data.pick_up
-            dispatchButton.isHidden = false
-        }
         
         var statusColor: UIColor
         
@@ -90,7 +83,7 @@ class DispatchesListTableViewCell: UITableViewCell {
         case .in_transit:
             statusColor = UIColor(named: "yellowTransit") ??  UIColor.red
             
-        case .delivered:
+        case .completed:
             statusColor = UIColor(named: "greenDelivered") ??  UIColor.red
             
             

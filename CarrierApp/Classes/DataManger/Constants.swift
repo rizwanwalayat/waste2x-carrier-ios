@@ -49,6 +49,8 @@ struct APIRoutes {
     static var verifySignupCode = "carriers/api/signup/verify_code"
     static var createAccount = "carriers/api/signup/select_waste_type"
     static var editProfile = "carriers/api/edit_profile"
+    static var shipments = "carriers/api/shipments"
+
 
     
 }

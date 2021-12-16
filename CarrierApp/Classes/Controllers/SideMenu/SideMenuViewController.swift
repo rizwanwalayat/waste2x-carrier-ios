@@ -13,6 +13,7 @@ enum menuSelections:String {
     case myAvailableLoads = "My Available Loads"
     case myQuotations = "My Quotations"
     case myDispatches = "My Dispatches"
+    case myShipments = "My Shipments"
     case myReceivables = "My Receivables"
     case myContracts = "My Contracts"
     case payments = "Payments"
@@ -36,7 +37,10 @@ enum menuSelections:String {
         case .myDispatches:
             
             return #imageLiteral(resourceName: "Dispatches")
-            
+        
+        case .myShipments:
+            return #imageLiteral(resourceName: "Dispatches")
+
         case .myReceivables:
             
             return #imageLiteral(resourceName: "Receivable")
@@ -271,6 +275,15 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
                     Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
                 }
             }
+            
+        case .myShipments:
+            if selectionIndex != .myShipments {
+                
+                self.hideSideMenu {
+                    let vc = ShipmentsListVC(nibName: "ShipmentsListVC", bundle: nil)
+                    Utility.setupRoot([vc], navgationController: self.fromVC!.navigationController)
+                }
+            }
         case .myReceivables:
             
             if selectionIndex != .myReceivables {
@@ -340,6 +353,8 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
       
         case .none:
             break
+      
+   
         }
         
         if isNeedToUpdateValue{

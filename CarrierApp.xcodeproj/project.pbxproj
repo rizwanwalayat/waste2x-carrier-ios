@@ -161,6 +161,12 @@
 		18E1631426C00A8900DD2EED /* DispatchContractsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631326C00A8900DD2EED /* DispatchContractsModel.swift */; };
 		18E1631726C00BBE00DD2EED /* ContractsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1631626C00BBE00DD2EED /* ContractsViewModel.swift */; };
 		960AE14526EF63EC00EF1FA8 /* EnMassTransitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960AE14426EF63EC00EF1FA8 /* EnMassTransitUITests.swift */; };
+		964DB1932768D74800E29677 /* ShipmentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DB18C2768D74800E29677 /* ShipmentsListVC.swift */; };
+		964DB1942768D74800E29677 /* ShipmentsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DB18E2768D74800E29677 /* ShipmentsListVM.swift */; };
+		964DB1952768D74800E29677 /* ShipmentsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DB1902768D74800E29677 /* ShipmentsListTableViewCell.swift */; };
+		964DB1962768D74800E29677 /* ShipmentsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964DB1912768D74800E29677 /* ShipmentsListTableViewCell.xib */; };
+		964DB1972768D74800E29677 /* ShipmentsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964DB1922768D74800E29677 /* ShipmentsListVC.xib */; };
+		964DB19C2768DA9400E29677 /* ShipmentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DB19B2768DA9400E29677 /* ShipmentsListModel.swift */; };
 		9659288126B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */; };
 		9659288226B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */; };
 		9659288626B06D28004EF2DF /* AvailableLoadsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9659288426B06D28004EF2DF /* AvailableLoadsListViewController.xib */; };
@@ -398,6 +404,12 @@
 		960AE14226EF63EC00EF1FA8 /* EnMassTransitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnMassTransitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		960AE14426EF63EC00EF1FA8 /* EnMassTransitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnMassTransitUITests.swift; sourceTree = "<group>"; };
 		960AE14626EF63EC00EF1FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		964DB18C2768D74800E29677 /* ShipmentsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipmentsListVC.swift; sourceTree = "<group>"; };
+		964DB18E2768D74800E29677 /* ShipmentsListVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipmentsListVM.swift; sourceTree = "<group>"; };
+		964DB1902768D74800E29677 /* ShipmentsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipmentsListTableViewCell.swift; sourceTree = "<group>"; };
+		964DB1912768D74800E29677 /* ShipmentsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipmentsListTableViewCell.xib; sourceTree = "<group>"; };
+		964DB1922768D74800E29677 /* ShipmentsListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipmentsListVC.xib; sourceTree = "<group>"; };
+		964DB19B2768DA9400E29677 /* ShipmentsListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipmentsListModel.swift; sourceTree = "<group>"; };
 		9659287F26B031A8004EF2DF /* AvailableLoadsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListTableViewCell.swift; sourceTree = "<group>"; };
 		9659288026B031A8004EF2DF /* AvailableLoadsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableLoadsListTableViewCell.xib; sourceTree = "<group>"; };
 		9659288326B06D28004EF2DF /* AvailableLoadsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLoadsListViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +539,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				964DB1992768D94500E29677 /* Shipments */,
 				048F16B626EB6C6100A94CFE /* Signup */,
 				96E0EA8B26CBE7F8008E0329 /* Tracking */,
 				967A713B26BBCFC3002D72DD /* Observable.swift */,
@@ -546,6 +559,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				964DB1982768D75500E29677 /* Shipments */,
 				049D24CC271D39F40037B3E9 /* Profile */,
 				04206C2E26BD388C006AB6A4 /* Contact */,
 				0461743B26BBBF290055DD3E /* Faq */,
@@ -1224,6 +1238,58 @@
 			path = EnMassTransitUITests;
 			sourceTree = "<group>";
 		};
+		964DB18B2768D74800E29677 /* ShipmentsList */ = {
+			isa = PBXGroup;
+			children = (
+				964DB18C2768D74800E29677 /* ShipmentsListVC.swift */,
+				964DB1922768D74800E29677 /* ShipmentsListVC.xib */,
+				964DB18D2768D74800E29677 /* ViewModel */,
+				964DB18F2768D74800E29677 /* Cells */,
+			);
+			path = ShipmentsList;
+			sourceTree = "<group>";
+		};
+		964DB18D2768D74800E29677 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				964DB18E2768D74800E29677 /* ShipmentsListVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		964DB18F2768D74800E29677 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				964DB1902768D74800E29677 /* ShipmentsListTableViewCell.swift */,
+				964DB1912768D74800E29677 /* ShipmentsListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		964DB1982768D75500E29677 /* Shipments */ = {
+			isa = PBXGroup;
+			children = (
+				964DB18B2768D74800E29677 /* ShipmentsList */,
+			);
+			path = Shipments;
+			sourceTree = "<group>";
+		};
+		964DB1992768D94500E29677 /* Shipments */ = {
+			isa = PBXGroup;
+			children = (
+				964DB19A2768DA7800E29677 /* ShipmentsList */,
+			);
+			path = Shipments;
+			sourceTree = "<group>";
+		};
+		964DB19A2768DA7800E29677 /* ShipmentsList */ = {
+			isa = PBXGroup;
+			children = (
+				964DB19B2768DA9400E29677 /* ShipmentsListModel.swift */,
+			);
+			path = ShipmentsList;
+			sourceTree = "<group>";
+		};
 		9659287E26B03186004EF2DF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1712,6 +1778,8 @@
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
 				0461744126BBBF290055DD3E /* FaqViewController.xib in Resources */,
+				964DB1962768D74800E29677 /* ShipmentsListTableViewCell.xib in Resources */,
+				964DB1972768D74800E29677 /* ShipmentsListVC.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
 				04C3091826B7E70F00BEC895 /* CreatePaymentViewController.xib in Resources */,
 			);
@@ -1828,6 +1896,7 @@
 				0418D81D271D842F00B3910C /* CompleteDispatchVM.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
+				964DB1952768D74800E29677 /* ShipmentsListTableViewCell.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				967B03BA2721C3BA00199487 /* ProfileEditVM.swift in Sources */,
@@ -1855,6 +1924,7 @@
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				04D2421F26B3D02100312E2E /* ReceivableLIstTableViewCell.swift in Sources */,
 				04F6FD0F26C3D542006D1A80 /* ChatMessagesExtenstions.swift in Sources */,
+				964DB1932768D74800E29677 /* ShipmentsListVC.swift in Sources */,
 				04C3091B26B7E70F00BEC895 /* PaymentViewController.swift in Sources */,
 				04206C4326BD72BF006AB6A4 /* CountriesDataModel.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
@@ -1891,6 +1961,7 @@
 				966F8EFE26D787E300E9A27D /* FirebaseManager.swift in Sources */,
 				04A8AB442717061A00E3C756 /* ImagesCollectionViewCell.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
+				964DB19C2768DA9400E29677 /* ShipmentsListModel.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				96B14F4A26EA0B7D00B31FFB /* SignupCompleteViewController.swift in Sources */,
 				9672B23D26C12E9000E8E72F /* DispatchesListResult.swift in Sources */,
@@ -1951,6 +2022,7 @@
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				048F16BB26EB6C7700A94CFE /* SignupDataModel.swift in Sources */,
 				969FB4E126B4743600C77CE0 /* DispatchesDetailViewController.swift in Sources */,
+				964DB1942768D74800E29677 /* ShipmentsListVM.swift in Sources */,
 				04206C4826BD83C3006AB6A4 /* StatesDataModel.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				0480667D26B012E400DF4B1E /* HeaderView.swift in Sources */,

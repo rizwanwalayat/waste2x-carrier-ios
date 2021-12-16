@@ -238,4 +238,9 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.getAuthToken())]
         _ = sendRequest(APIRoutes.createAnotherLoad , parameters: params , httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
+    
+    func ShipmentsListApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.getAuthToken())]
+        _ = sendRequest(APIRoutes.shipments , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
 }
