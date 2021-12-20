@@ -43,16 +43,17 @@ class ShipmentsListVC: BaseViewController {
                 self.checkData()
             } else {
                 self.showToast(message: error?.localizedDescription ?? message)
+                self.showNoDataLabel(true)
             }
         })
     }
     
-    func tableviewHandlings()
-    {
-        tableView.register(ShipmentsListTableViewCell.self, forCellReuseIdentifier: "ShipmentsListTableViewCell")
+    func tableviewHandlings(){
+        tableView.register(UINib(nibName: "ShipmentsListTableViewCell", bundle: nil), forCellReuseIdentifier: "ShipmentsListTableViewCell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
     }
+    
     func checkData(){
         if let count = viewModel?.data?.result?.array[selectedTab].count, count > 0 {
             self.tableView.reloadData()
@@ -65,12 +66,16 @@ class ShipmentsListVC: BaseViewController {
     func showTable(_ flag: Bool){
         if flag {
             tableView.isHidden = false
-            noDataLabel.isHidden = true
+            showNoDataLabel(false)
         } else {
             tableView.isHidden = true
-            noDataLabel.text = "No \(shipmentsStatusArray[selectedTab].rawValue) Shipments Available"
-            noDataLabel.isHidden = false
+            showNoDataLabel(true)
         }
+    }
+    
+    func showNoDataLabel(_ flag: Bool) {
+        noDataLabel.text = "No \(shipmentsStatusArray[selectedTab].rawValue) Shipments Available"
+        noDataLabel.isHidden = !flag
     }
     
     func unSelectTabs(){

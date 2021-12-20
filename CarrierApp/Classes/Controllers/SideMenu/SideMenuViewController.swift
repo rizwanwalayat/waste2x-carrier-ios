@@ -31,7 +31,7 @@ enum menuSelections:String {
         case .myDispatches:
             return #imageLiteral(resourceName: "Dispatches")
         case .myShipments:
-            return #imageLiteral(resourceName: "Dispatches")
+            return #imageLiteral(resourceName: "Shipments")
         case .myReceivables:
             return #imageLiteral(resourceName: "Receivable")
         case .myContracts:

@@ -22,7 +22,7 @@ class Global {
     var location = CLLocation()
     var fireBaseToken = ""
     var paymentModel : PaymentModel?
-    var sidemenuLastSlectedIndex = menuSelections.myDispatches
+    var sidemenuLastSlectedIndex = menuSelections.myShipments
     
     func convertLocationToAddress(location: CLLocation, _ completionHandler: ((Bool, String?) -> Void)?)
     {

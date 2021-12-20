@@ -88,10 +88,10 @@ class DispatchesListTableViewCell: UITableViewCell {
             statusColor = UIColor(named: "redScheduled") ??  UIColor.red
           
         case .in_transit:
-            statusColor = UIColor(named: "yellowTransit") ??  UIColor.red
+            statusColor = UIColor(named: "yellowTransit") ??  UIColor.yellow
             
         case .delivered:
-            statusColor = UIColor(named: "greenDelivered") ??  UIColor.red
+            statusColor = UIColor(named: "greenDelivered") ??  UIColor.green
             
             
         }

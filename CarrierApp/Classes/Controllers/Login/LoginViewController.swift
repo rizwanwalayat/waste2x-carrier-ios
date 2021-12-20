@@ -67,7 +67,7 @@ class LoginViewController: BaseViewController {
                     DataManager.shared.saveAuthToken(result?.result?.auth_token ?? "")
                 }
                 
-                let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
+                let vc = ShipmentsListVC(nibName: "ShipmentsListVC", bundle: nil)
                 Utility.setupRoot([vc], navgationController: self.navigationController)
             }
             else
