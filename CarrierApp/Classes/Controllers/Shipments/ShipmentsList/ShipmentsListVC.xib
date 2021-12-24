@@ -122,7 +122,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                            <state key="normal" title="Delivered" image="Delivered Icon Inactive">
+                                            <state key="normal" title="Completed" image="Delivered Icon Inactive">
                                                 <color key="titleColor" name="tabUnselectedGrey"/>
                                             </state>
                                             <state key="selected" title="Delivered" image="Delivered Icon">
