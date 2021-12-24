@@ -18,6 +18,7 @@ class BaseViewController: UIViewController {
     
     var sideMenuLastSelectedIndex = -1
     var onboardingEstimatedSpcing : CGFloat = 0.0
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()

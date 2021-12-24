@@ -47,7 +47,7 @@ class ShipmentsListTableViewCell: UITableViewCell {
           
             
         case .completed:
-            statusColor = UIColor(named: "greenDelivered") ??  UIColor.red
+            statusColor = UIColor(named: "greenDelivered") ??  UIColor.green
             
             
         }

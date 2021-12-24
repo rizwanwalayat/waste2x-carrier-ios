@@ -141,7 +141,7 @@ class SignupCompleteViewController: BaseViewController {
                     DataManager.shared.saveUsersDetail(resultString)
                 }
                 
-                let vc = DispatchesListViewController(nibName: "DispatchesListViewController", bundle: nil)
+                let vc = ShipmentsListVC(nibName: "ShipmentsListVC", bundle: nil)
                 Utility.setupRoot([vc], navgationController: self.navigationController)
                 
             } else {

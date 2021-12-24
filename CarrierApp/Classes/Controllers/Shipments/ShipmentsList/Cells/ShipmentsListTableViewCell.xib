@@ -119,7 +119,7 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-4h-CeI" userLabel="Bottom Border View">
                                 <rect key="frame" x="0.0" y="306.5" width="342" height="3"/>
-                                <color key="backgroundColor" name="yellowTransit"/>
+                                <color key="backgroundColor" name="redScheduled"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ShipmentsListTableViewCell"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="pSr-04-X7k"/>
@@ -165,8 +165,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="yellowTransit">
-            <color red="0.98400002717971802" green="0.77999997138977051" blue="0.027000000700354576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="redScheduled">
+            <color red="0.90600001811981201" green="0.29800000786781311" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

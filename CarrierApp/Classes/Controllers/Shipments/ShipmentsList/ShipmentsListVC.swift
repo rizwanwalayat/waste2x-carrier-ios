@@ -33,10 +33,22 @@ class ShipmentsListVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableviewHandlings()
+        
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
+    @objc func refresh(_ sender: AnyObject) {
+        self.fetchAPIData()
+        refreshControl.endRefreshing()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         viewModel = ShipmentsListVM()
+        fetchAPIData()
+    }
+    
+    func fetchAPIData() {
         viewModel?.fetchShipmentsData({ result, error, status, message in
             
             if status ?? false, error == nil {
@@ -65,10 +77,8 @@ class ShipmentsListVC: BaseViewController {
     
     func showTable(_ flag: Bool){
         if flag {
-            tableView.isHidden = false
             showNoDataLabel(false)
         } else {
-            tableView.isHidden = true
             showNoDataLabel(true)
         }
     }

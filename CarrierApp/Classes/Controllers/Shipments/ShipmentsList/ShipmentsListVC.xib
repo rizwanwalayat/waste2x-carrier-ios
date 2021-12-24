@@ -91,6 +91,13 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-lg-8QU">
                     <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
+                        <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Dispatches Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNZ-S4-Boj" userLabel="No Data Label">
+                            <rect key="frame" x="115.5" y="387" width="183.5" height="21"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                            <color key="textColor" name="secondaryText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZx-mo-sCY" userLabel="Tab View">
                             <rect key="frame" x="60" y="16" width="294" height="38"/>
                             <subviews>
@@ -125,7 +132,7 @@
                                             <state key="normal" title="Completed" image="Delivered Icon Inactive">
                                                 <color key="titleColor" name="tabUnselectedGrey"/>
                                             </state>
-                                            <state key="selected" title="Delivered" image="Delivered Icon">
+                                            <state key="selected" title="Completed" image="Delivered Icon">
                                                 <color key="titleColor" name="tabSelectedBlack"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -155,13 +162,6 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Dispatches Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNZ-S4-Boj" userLabel="No Data Label">
-                            <rect key="frame" x="115.5" y="387" width="183.5" height="21"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
-                            <color key="textColor" name="secondaryText"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m1T-JN-NcH">
                             <rect key="frame" x="20" y="79" width="374" height="715.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
