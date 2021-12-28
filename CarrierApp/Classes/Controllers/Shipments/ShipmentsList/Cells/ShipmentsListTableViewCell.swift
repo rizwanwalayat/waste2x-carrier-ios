@@ -40,15 +40,12 @@ class ShipmentsListTableViewCell: UITableViewCell {
         shipmentIDLabel.text = "\(data.id)"
         
         var statusColor: UIColor
-        
         switch status {
         case .scheduled:
             statusColor = UIColor(named: "redScheduled") ??  UIColor.red
-          
             
         case .completed:
             statusColor = UIColor(named: "greenDelivered") ??  UIColor.green
-            
             
         }
         bottomBorder.backgroundColor = statusColor

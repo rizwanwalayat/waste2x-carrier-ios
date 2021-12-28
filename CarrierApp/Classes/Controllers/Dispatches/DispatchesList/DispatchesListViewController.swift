@@ -56,11 +56,12 @@ class DispatchesListViewController: BaseViewController {
     }
     func checkData(){
         if let count = viewModel?.data?.result?.array[selectedTab].count, count > 0 {
-            self.tableView.reloadData()
             showTable(true)
         } else {
             showTable(false)
         }
+        self.tableView.reloadData()
+
     }
     
     func showTable(_ flag: Bool){

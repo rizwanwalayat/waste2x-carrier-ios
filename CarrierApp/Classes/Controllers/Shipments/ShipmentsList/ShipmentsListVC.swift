@@ -55,7 +55,6 @@ class ShipmentsListVC: BaseViewController {
                 self.checkData()
             } else {
                 self.showToast(message: error?.localizedDescription ?? message)
-                self.showNoDataLabel(true)
             }
         })
     }
@@ -68,25 +67,23 @@ class ShipmentsListVC: BaseViewController {
     
     func checkData(){
         if let count = viewModel?.data?.result?.array[selectedTab].count, count > 0 {
-            self.tableView.reloadData()
             showTable(true)
         } else {
             showTable(false)
         }
+        self.tableView.reloadData()
+
     }
     
     func showTable(_ flag: Bool){
         if flag {
-            showNoDataLabel(false)
+            noDataLabel.isHidden = true
         } else {
-            showNoDataLabel(true)
+            noDataLabel.text = "No \(shipmentsStatusArray[selectedTab].rawValue) Shipments Available"
+            noDataLabel.isHidden = false
         }
     }
     
-    func showNoDataLabel(_ flag: Bool) {
-        noDataLabel.text = "No \(shipmentsStatusArray[selectedTab].rawValue) Shipments Available"
-        noDataLabel.isHidden = !flag
-    }
     
     func unSelectTabs(){
         scheduledTab.isSelected = false
