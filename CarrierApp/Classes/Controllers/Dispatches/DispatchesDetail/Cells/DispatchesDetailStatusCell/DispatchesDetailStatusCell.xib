@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -116,7 +116,7 @@
                                                 <rect key="frame" x="9" y="2" width="67.5" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="14"/>
-                                                <color key="textColor" name="yellowTransitText"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -147,7 +147,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="yellowTransit"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="luP-Xv-BLk" secondAttribute="bottom" constant="6" id="1ON-W4-Xad"/>
                                     <constraint firstItem="luP-Xv-BLk" firstAttribute="top" secondItem="nWP-1n-U2l" secondAttribute="bottom" constant="7" id="3Zd-An-m0Y"/>
@@ -230,12 +229,6 @@
         </namedColor>
         <namedColor name="themeColor">
             <color red="0.16500000655651093" green="0.49000000953674316" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="yellowTransit">
-            <color red="0.98400002717971802" green="0.77999997138977051" blue="0.027000000700354576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="yellowTransitText">
-            <color red="1" green="0.73299998044967651" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

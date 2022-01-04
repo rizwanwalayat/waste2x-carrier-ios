@@ -109,8 +109,8 @@ class DispatchesDetailDetailsModel: Mappable {
 }
 
 class DispatchesDetailShipmentModel: Mappable {
-    var shipment_id = ""
-    var order_id = ""
+    var shipment_id = 0
+    var order_id = 0
     var transporter_name = ""
     var transporter_phone = ""
     var commodity = ""

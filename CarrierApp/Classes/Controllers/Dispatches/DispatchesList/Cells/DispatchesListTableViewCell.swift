@@ -69,9 +69,10 @@ class DispatchesListTableViewCell: UITableViewCell {
     func configCell(data: DispatchesListResultItem, status: DispatchesStatus) {
         
         deliveryDateLabel.text = data.deliveryDate
-        commodityLabel.text = data.dispatch_rep
+        commodityLabel.text = data.commodity
         deliveryLabel.text = data.drop_off
         dispatchIDLabel.text = "\(data.id)"
+        weightLabel.text = data.weight
         
         if data.pick_up.isEmpty {
             pickUpLabel.text = "--"

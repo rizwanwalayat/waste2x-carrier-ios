@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -156,7 +155,6 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDD-io-8cm">
                                                         <rect key="frame" x="92.5" y="0.0" width="125" height="39"/>
-                                                        <color key="backgroundColor" name="yellowTransit"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="39" id="Wol-OX-Scu"/>
                                                             <constraint firstAttribute="width" constant="125" id="sYr-5A-iji"/>
@@ -200,7 +198,6 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-4h-CeI" userLabel="Bottom Border View">
                                 <rect key="frame" x="0.0" y="306.5" width="342" height="3"/>
-                                <color key="backgroundColor" name="yellowTransit"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="pSr-04-X7k"/>
                                 </constraints>
@@ -253,9 +250,6 @@
     </objects>
     <resources>
         <image name="Arrow Down" width="14" height="14"/>
-        <namedColor name="yellowTransit">
-            <color red="0.98400002717971802" green="0.77999997138977051" blue="0.027000000700354576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -51,7 +51,7 @@ class DispatchesOrderDetail: BaseViewController {
 
     func populateControllersData()
     {
-        quotationNoLabel.text = viewModel?.data?.result?.shipment?.order_id ?? "-"
+        quotationNoLabel.text = "\(viewModel?.data?.result?.shipment?.order_id ?? 0)"
         commodityValueLabel.text = viewModel?.data?.result?.shipment?.commodity ?? "-"
         weightValueLabel.text = viewModel?.data?.result?.shipment?.weight != 0 ? "\(viewModel?.data?.result?.shipment?.weight ?? 0)" : "Weight not available."
         shipperValueLabel.text = viewModel?.data?.result?.shipment?.shipper ?? "-"
