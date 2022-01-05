@@ -91,6 +91,7 @@ class DispatchesListViewController: BaseViewController {
         sender.backgroundColor = .white
     
         selectedTab = sender.tag
+        selectedIndex = nil
         checkData()
         
     }

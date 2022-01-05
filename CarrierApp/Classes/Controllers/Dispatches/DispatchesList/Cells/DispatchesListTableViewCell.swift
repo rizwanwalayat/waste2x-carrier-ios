@@ -67,20 +67,15 @@ class DispatchesListTableViewCell: UITableViewCell {
     
     
     func configCell(data: DispatchesListResultItem, status: DispatchesStatus) {
+        // ExpandView Collapsed Initially with Arrow Down
+        self.expandView.isHidden = true
+        self.expandArrow.image = UIImage(named: "Arrow Down")
         
-        deliveryDateLabel.text = data.deliveryDate
+        // Populating Data
         commodityLabel.text = data.commodity
         deliveryLabel.text = data.drop_off
         dispatchIDLabel.text = "\(data.id)"
         weightLabel.text = data.weight
-        
-        if data.pick_up.isEmpty {
-            pickUpLabel.text = "--"
-            dispatchButton.isHidden = true
-        } else {
-            pickUpLabel.text = data.pick_up
-            dispatchButton.isHidden = false
-        }
         
         var statusColor: UIColor
         
@@ -96,7 +91,20 @@ class DispatchesListTableViewCell: UITableViewCell {
             
             
         }
-        dispatchButton.backgroundColor = statusColor
         bottomBorder.backgroundColor = statusColor
+        
+        if data.pick_up.isEmpty {
+            pickUpLabel.text = "--"
+            deliveryDateLabel.text = "--"
+            dispatchButton.isEnabled = false
+            dispatchButton.backgroundColor = UIColor(named: "innerBorderColor") ?? UIColor.lightGray
+            dispatchButton.setTitleColor(UIColor(named: "tabUnselectedGrey") ?? UIColor.gray, for: .disabled)
+        } else {
+            pickUpLabel.text = data.pick_up
+            deliveryDateLabel.text = data.deliveryDate
+            dispatchButton.isEnabled = true
+            dispatchButton.backgroundColor = statusColor
+            dispatchButton.titleLabel?.textColor = UIColor.white
+        }
     }
 }
